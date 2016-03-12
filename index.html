@@ -190,6 +190,126 @@
             
             
               
+                <a class="post-title-link" href="/2016/03/12/create-github-page-with-hexo/" itemprop="url">
+                  在Github上利用Hexo创建博客
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            Posted on
+            <time itemprop="dateCreated" datetime="2016-03-12T13:49:00+08:00" content="2016-03-12">
+              2016-03-12
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody">
+            
+              <h1 id="在Github上利用Hexo创建博客"><a href="#在Github上利用Hexo创建博客" class="headerlink" title="在Github上利用Hexo创建博客"></a>在Github上利用Hexo创建博客</h1><blockquote>
+<p><a href="https://hexo.io" title="https://hexo.io" target="_blank" rel="external">Hexo</a>是一款基于Nodejs的，快速、简单且功能强大的博客框架。支持多线程，支持markdown编写文章，可以方便的生成静态网页托管在github上。</p>
+</blockquote>
+<h2 id="Install-Hexo"><a href="#Install-Hexo" class="headerlink" title="Install Hexo"></a>Install Hexo</h2><p>步骤：</p>
+<p>1 安装 Git</p>
+<blockquote>
+<p>下载并安装 msysgit</p>
+</blockquote>
+<p>2 安装 node.js 和 npm</p>
+<blockquote>
+<p>下载并安装 nodejs</p>
+</blockquote>
+<p>3 安装 Hexo</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-cli -g</span><br></pre></td></tr></table></figure>
+<p>4 创建Hexo文件夹</p>
+<blockquote>
+<p>创建一个文件夹用于编写本地博客，如（<code>E:\hexo</code>）。</p>
+</blockquote>
+<p>在此文件夹中输入以下命令进行初始化：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo init</span><br></pre></td></tr></table></figure>
+<p>5 安装依赖包</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install</span><br></pre></td></tr></table></figure>
+<p>至此，我们就安装好Hexo了，并且可以开始撰写本地博客了。</p>
+<h2 id="Using-Hexo"><a href="#Using-Hexo" class="headerlink" title="Using Hexo"></a>Using Hexo</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">Usage: hexo &lt;<span class="built_in">command</span>&gt;</span><br><span class="line"></span><br><span class="line">Commands:</span><br><span class="line">  clean     Removed generated files and cache.</span><br><span class="line">  config    Get or <span class="built_in">set</span> configurations.</span><br><span class="line">  deploy    Deploy your website.</span><br><span class="line">  generate  Generate static files.</span><br><span class="line">  <span class="built_in">help</span>      Get <span class="built_in">help</span> on a command.</span><br><span class="line">  init      Create a new Hexo folder.</span><br><span class="line">  list      List the information of the site</span><br><span class="line">  migrate   Migrate your site from other system to Hexo.</span><br><span class="line">  new       Create a new post.</span><br><span class="line">  publish   Moves a draft post from _drafts to _posts folder.</span><br><span class="line">  render    Render files with renderer plugins.</span><br><span class="line">  server    Start the server.</span><br><span class="line">  version   Display version information.</span><br></pre></td></tr></table></figure>
+<p><strong>常用命令：</strong></p>
+<p>创建一篇新的博客</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo new</span><br><span class="line">or</span><br><span class="line">hexo n</span><br></pre></td></tr></table></figure>
+<p>生成静态博客文件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo generate</span><br><span class="line">or</span><br><span class="line">hexo g</span><br></pre></td></tr></table></figure>
+<p>启动本地服务</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo server</span><br><span class="line">or</span><br><span class="line">hexo s</span><br></pre></td></tr></table></figure>
+<p>执行可以在浏览器中输入<a href="http://localhost:4000" title="localhost:4000" target="_blank" rel="external">localhost:4000</a> 预览博客。</p>
+<h2 id="Deploy"><a href="#Deploy" class="headerlink" title="Deploy"></a>Deploy</h2><p>部署之前先要配置一下Hexo。</p>
+<p>1 安装<strong>hexo-deployer-git</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
+<p>2 在目录 <code>E:\hexo</code> 下，编辑 <code>_config.yml</code>（将<strong>xyz</strong>换成你自己的github用户名）：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  <span class="built_in">type</span>: git</span><br><span class="line">  repository: https://github.com/xyz/xyz.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
+<p>执行下列指令即可完成部署。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo generate</span><br><span class="line">hexo deploy</span><br></pre></td></tr></table></figure>
+<p>中途会提示输入GitHub账号和密码，正常输入即可。</p>
+<h2 id="Tips"><a href="#Tips" class="headerlink" title="Tips"></a>Tips</h2><ol>
+<li>每次修改本地文件后，需要执行 <code>hexo generate</code> 才能生成新的博客文件。</li>
+<li>所有hexo命令都要在 hexo 文件目录下执行。</li>
+<li>发布后GitHub会有一定的延时</li>
+</ol>
+
+            
+          </span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
                 <a class="post-title-link" href="/2016/03/05/shuffle-algorithm/" itemprop="url">
                   Shuffle Algorthim
                 </a>
@@ -720,7 +840,7 @@ function fisherYatesShuffle(array) {
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">2</span>
+              <span class="site-state-item-count">3</span>
               <span class="site-state-item-name">posts</span>
             </a>
           </div>
@@ -734,7 +854,7 @@ function fisherYatesShuffle(array) {
 
           <div class="site-state-item site-state-tags">
             <a href="/tags">
-              <span class="site-state-item-count">2</span>
+              <span class="site-state-item-count">4</span>
               <span class="site-state-item-name">tags</span>
               </a>
           </div>

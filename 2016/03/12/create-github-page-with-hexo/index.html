@@ -34,7 +34,7 @@
 
 
 
-  <meta name="keywords" content="algorithm,visualization," />
+  <meta name="keywords" content="github,hexo," />
 
 
 
@@ -43,49 +43,55 @@
   <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.2" />
 
 
-<meta name="description" content="Shuffle Algorithm
-  
-  
-    MathJax.Hub.Config({tex2jax: {inlineMath: [[&apos;$&apos;,&apos;$&apos;], [&apos;\\(&apos;,&apos;\\)&apos;]]}});
-  
-  
-  
+<meta name="description" content="在Github上利用Hexo创建博客
+Hexo是一款基于Nodejs的，快速、简单且功能强大的博客框架。支持多线程，支持markdown编写文章，可以方便的生成静态网页托管在github上。
 
-  
-    /* remove class of theme */
-    /*.one-column .main-inner {
-      width: 9">
+Install Hexo步骤：
+1 安装 Git
+
+下载并安装 msysgit
+
+2 安装 node.js 和 npm
+
+下载并安装 nodejs
+
+3 安装 Hexo
+1$ npm install hex">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Shuffle Algorthim">
-<meta property="og:url" content="https://quarkchaos.github.com/2016/03/05/shuffle-algorithm/index.html">
+<meta property="og:title" content="在Github上利用Hexo创建博客">
+<meta property="og:url" content="https://quarkchaos.github.com/2016/03/12/create-github-page-with-hexo/index.html">
 <meta property="og:site_name" content="Jason Wang's Notes">
-<meta property="og:description" content="Shuffle Algorithm
-  
-  
-    MathJax.Hub.Config({tex2jax: {inlineMath: [[&apos;$&apos;,&apos;$&apos;], [&apos;\\(&apos;,&apos;\\)&apos;]]}});
-  
-  
-  
+<meta property="og:description" content="在Github上利用Hexo创建博客
+Hexo是一款基于Nodejs的，快速、简单且功能强大的博客框架。支持多线程，支持markdown编写文章，可以方便的生成静态网页托管在github上。
 
-  
-    /* remove class of theme */
-    /*.one-column .main-inner {
-      width: 9">
-<meta property="og:updated_time" content="2016-03-12T05:23:49.872Z">
+Install Hexo步骤：
+1 安装 Git
+
+下载并安装 msysgit
+
+2 安装 node.js 和 npm
+
+下载并安装 nodejs
+
+3 安装 Hexo
+1$ npm install hex">
+<meta property="og:updated_time" content="2016-03-12T07:02:16.607Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Shuffle Algorthim">
-<meta name="twitter:description" content="Shuffle Algorithm
-  
-  
-    MathJax.Hub.Config({tex2jax: {inlineMath: [[&apos;$&apos;,&apos;$&apos;], [&apos;\\(&apos;,&apos;\\)&apos;]]}});
-  
-  
-  
+<meta name="twitter:title" content="在Github上利用Hexo创建博客">
+<meta name="twitter:description" content="在Github上利用Hexo创建博客
+Hexo是一款基于Nodejs的，快速、简单且功能强大的博客框架。支持多线程，支持markdown编写文章，可以方便的生成静态网页托管在github上。
 
-  
-    /* remove class of theme */
-    /*.one-column .main-inner {
-      width: 9">
+Install Hexo步骤：
+1 安装 Git
+
+下载并安装 msysgit
+
+2 安装 node.js 和 npm
+
+下载并安装 nodejs
+
+3 安装 Hexo
+1$ npm install hex">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -97,7 +103,7 @@
 
 
 
-  <title> Shuffle Algorthim | Jason Wang's Notes </title>
+  <title> 在Github上利用Hexo创建博客 | Jason Wang's Notes </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="en">
@@ -222,7 +228,7 @@
             
             
               
-                Shuffle Algorthim
+                在Github上利用Hexo创建博客
               
             
           </h1>
@@ -231,8 +237,8 @@
         <div class="post-meta">
           <span class="post-time">
             Posted on
-            <time itemprop="dateCreated" datetime="2016-03-05T21:22:50+08:00" content="2016-03-05">
-              2016-03-05
+            <time itemprop="dateCreated" datetime="2016-03-12T13:49:00+08:00" content="2016-03-12">
+              2016-03-12
             </time>
           </span>
 
@@ -255,356 +261,52 @@
       
 
       
-        <span itemprop="articleBody"><html>
-
-<head>
-  <meta charset="utf-8">
-  <title>Shuffle Algorithm</title>
-  <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
-  <script type="text/x-mathjax-config">
-    MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
-  </script>
-  <script type="text/javascript" async src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML">
-  </script>
-
-  <style>
-    /* remove class of theme */
-    /*.one-column .main-inner {
-      width: 960px; 
-    }
-    .main-inner {
-      width: 960px; 
-    }*/
-    
-    div.shuffle-algorithm {
-      background: #fcfcfa;
-      color: #333;
-      font-family: "Microsoft YaHei", Helvetica, sans-serif;
-      margin: 1em auto 4em auto;
-      position: relative;
-      width: 960px;
-    }
-    
-    .shuffle-algorithm header,
-    .shuffle-algorithm footer {
-      font-size: small;
-    }
-    
-    .shuffle-algorithm footer {
-      margin-top: 8em;
-    }
-    
-    .shuffle-algorithm p,
-    .shuffle-algorithm pre {
-      width: 720px;
-    }
-    
-    .shuffle-algorithm aside {
-      width: 200px;
-      position: absolute;
-      right: 0;
-      font-size: small;
-    }
-    
-    .shuffle-algorithm h1 {
-      font-size: 48px;
-      font-weight: 100;
-      margin-bottom: 1em;
-    }
-    
-    .shuffle-algorithm .lib-name {
-      color: firebrick;
-    }
-    
-    .shuffle-algorithm .chart {
-      width: 960px;
-      height: 80px;
-    }
-    
-    .shuffle-algorithm .naive-shuffle {
-      height: 160px;
-    }
-    
-    .shuffle-algorithm .play path {
-      stroke: #fff;
-      stroke-width: 6px;
-      fill: #fc0;
-    }
-    
-    .shuffle-algorithm .play:hover path {
-      fill: red;
-    }
-    
-    .shuffle-algorithm .play rect {
-      fill: none;
-      pointer-events: all;
-      cursor: pointer;
-    }
-  </style>
-</head>
-
-<body>
-  <div class="shuffle-algorithm">
-    <header>
-      <p>Febrary 28, 2016 / <a class="author" href="" rel="author">Jason Wang</a></p>
-      <h1>洗牌算法</h1>
-    </header>
-    <div>
-      <p>为了保证打牌时的公平性，洗牌后的牌堆应当是完全随机的。</p>
-      <p>从概率的角度来说，牌堆可以看成一个编号为 $ 1 $ 到 $ n $ 的数的序列，这个序列的排列组合数为 $ n! $。</p>
-
-      <svg class="chart unshuffled"/>
-      <aside>整齐的牌堆</aside>
-      <p>完全随机也就是说每一种排列组合出现的概率相等，概率为 $ \frac{1}{n!} $</p>
-
-
-      <h3>朴素洗牌算法</h3>
-      <p>所谓朴素，就是说每次从未取出的数中随机取出一个数，排成序列。</p>
-
-      <svg class="chart naive-shuffle"/>
-      <aside>点击开始洗牌</aside>
-
-      <p>JavaScript的代码如下：</p>
-      <pre>
-        <code class="javascript">
-function naiveShuffle(array) {
-  var shuffle = [];
-  var n = array.length;
-  var i;
-
-  while (n) {
-    // Pick a random element
-    i = Math.floor(Math.random() * n--);
-
-    // Add the element to new pack
-    // Re-order the left elements
-    shuffle.push(array.splice(i, 1));
-  }
-
-  return shuffle;
-}
-        </code>
-      </pre>
-
-      <p>取第一个数时，从 $ n $ 个数中随机取一个数（有 $ n $ 种可能）；取第二个数时，从剩下的 $ n - 1 $ 个数中随机取一个数（有 $n - 1$ 种可能）；如此重复 $n$ 次，则可得到一个序列。</p>
-      <p>此序列的概率为 $ \frac{1}{n!} $ ， 与完全随机的概率一致。</p>
-      <p>分析一下此算法的性能</p>
-      <p>空间: $ O(n) $, 需要一个额外的大小为 $ n $ 的空间存储结果</p>
-      <p>时间: $ O(n^{2}) $, while循环的复杂度为 $ O(n) $ , 循环内整理牌堆的复杂度也为 $ O(n) $。</p>
-
-
-      <h3>Fisher-Yates算法</h3>
-      <p>接下来介绍一种更为有效的算法。</p>
-      <svg class="chart fisher-yates-shuffle"/>
-      <pre>
-        <code class="javascript">
-function fisherYatesShuffle(array) {
-  var n = array.length;
-  var i;
-
-  while (n) {
-    // Pick a random element
-    i = Math.floor(Math.random() * n--);
-
-    // Swap the random element with element in position n.
-    t = array[n];
-    array[n] = array[i];
-    array[i] = t;
-  }
-
-  return array;
-}
-        </code>
-      </pre>
-      <p>从第 $ 1 $ 到 $ n $ 个数中随机选取一个数，和第 $ n $ 个数交换，每次将 $ n $ 的值减 $ 1 $ ，如此重复 $ n $ 次，则可得到一个序列。</p>
-      <p>此序列的概率同样为 $ \frac{1}{n!} $ 。</p>
-      <p>同样分析一下此算法的性能</p>
-      <p>空间: $ O(0) $, 因为将当前位置的数存放在与之交换的数的位置上，所以不需要额外的空间。</p>
-      <p>时间: $ O(n) $, while循环的复杂度为 $ O(n) $ , 循环内操作的复杂度为 $ O(1) $。</p>
-    </div>
-    <footer>
-      <p>本文主要参考了Mike Bostock的 <a href="https://bost.ocks.org/mike/shuffle/" target="_blank" rel="external">"Fisher–Yates Shuffle"</a></p>
-      <p><span class="lib-name">可视化</span>使用了<a href="https://d3js.org/" target="_blank" rel="external">D3.js</a></p>
-      <p><span class="lib-name">语法高亮</span>使用了<a href="https://www.highlightjs.org/" target="_blank" rel="external">highlightjs</a></p>
-      <p><span class="lib-name">数学公式引擎</span>使用了<a href="https://www.mathjax.org/" target="_blank" rel="external">MathJax</a></p>
-    </footer>
-  </div>
-
-  <script>
-    var n = 200;
-
-    var margin = {
-      top: 10,
-      right: 0,
-      bottom: 10,
-      left: 0
-    };
-
-    var width = 960;
-    var height = 80;
-
-    var areaWidth = width - margin.left - margin.right;
-    var areaHeight = height - margin.top - margin.bottom;
-
-    var barOffset = areaWidth / n;
-    var barWidth = 2;
-    var barHeight = areaHeight;
-    var minBarHeight = 10;
-
-    function x(d) {
-      return d * barOffset;
-    }
-
-    /**
-     * Create a chart of bars to demonstrate algorithm
-     * @param options.update - callback of update d3 chart
-     * @param options.y - Y offset of chart
-     */
-    function createChart(options) {
-
-      var update = options.update;
-      var y = options.y || 0;
-
-
-      var chart = d3.select(options.chart)
-        .append('g')
-        .attr('transform', 'translate(' + margin.left + ',' + margin.top + ')');
-
-      var bar = chart.selectAll('rect')
-        .data(d3.range(n))
-        .enter().append('rect')
-        .attr('x', 0)
-        .attr('y', function(d, i) {
-          return (1 - i / n) * (barHeight - minBarHeight);
-        })
-        .attr('width', barWidth)
-        .attr('height', function(d, i) {
-          return minBarHeight + i / n * (barHeight - minBarHeight);
-        })
-        .style('fill', function(d, i) {
-          var h = 420 - i / n * 60;
-          h = h >= 360 ? h - 360 : h;
-          return d3.hsl(h, 1, 0.5);
-        })
-        .style('stroke', '#000')
-        .style('stroke-width', 0);
-
-      reset(chart);
-
-      if (options.play) {
-        var play = chart.append('g')
-          .attr("class", "play")
-          .on("click", start);
-
-        play.append("path")
-          .attr("d", "M-30,-30L30,0L-30,30Z")
-          .attr("transform", "translate(" + areaWidth / 2 + "," + (y + areaHeight / 2) + ")scale(.4)");
-
-        play.append("rect")
-          .attr("width", areaWidth)
-          .attr("height", areaHeight);
-      }
-      
-      return chart;
-
-      function start() {
-        play.style("display", "none");
-        var m = n;
-        if (bar.shuffled) {
-          reset(chart);
-          bar.shuffled = false;
-        }
-        bar = chart.selectAll('rect');
-        var interval = setInterval(function() {
-          m = update(bar, m, y);
-          if (m == 0) {
-            setTimeout(function() {
-              play.style("display", null);
-            }, 1000);
-            bar.shuffled = true;
-            clearInterval(interval);
-          }
-        }, 100);
-      }
-
-      function reset(chart) {
-        chart.selectAll("rect")
-          .attr("transform", function(d, i) {
-            return "translate(" + x(i) + "," + y + ")";
-          });
-      }
-    }
-
-    // unshuffled
-    createChart({
-      chart: '.unshuffled'
-    });
-
-    // naive-shuffle
-    createChart({
-      y: height,
-      chart: '.naive-shuffle',
-      play: true,
-      update: function(bar, m, y) {
-        var i = Math.floor(Math.random() * m);
-        var a = bar[0].splice(i, 1)[0];
-
-        d3.select(a)
-          .style('stroke-width', '2px')
-          .transition()
-          .duration(1000)
-          .style('stroke-width', '0')
-          .attr("transform", "translate(" + x(n - m) + "," + 0 + ")");
-
-        bar.attr("transform", function(d, i) {
-          return "translate(" + x(i) + "," + y + ")";
-        });
-        return --m;
-      }
-    });
-
-    // Fisher–Yates Shuffle
-    createChart({
-      chart: '.fisher-yates-shuffle',
-      play: true,
-
-      update: function(bar, m) {
-        var i = Math.floor(Math.random() * m);
-        m--;
-        var a = bar[0][i];
-        var b = bar[0][m];
-
-        //        console.log('i: ' + i + ', m: ' + m);
-
-        bar[0][i] = b;
-        bar[0][m] = a;
-
-        d3.select(b)
-          .transition()
-          .duration(1000)
-          .style('stroke-width', '0')
-          .attr("transform", "translate(" + x(i) + "," + 0 + ")");
-
-        d3.select(a) // in position m
-          .style('stroke-width', '2px')
-          .transition()
-          .duration(1000)
-          .style('stroke-width', '0')
-          .attr("transform", "translate(" + x(m) + "," + 0 + ")")
-
-        return m;
-      }
-    });
-  </script>
-</body>
-
-<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.2.0/styles/default.min.css">
-<script src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.2.0/highlight.min.js"></script>
-<script>
-  hljs.initHighlightingOnLoad();
-</script>
-
-</html></span>
+        <span itemprop="articleBody"><h1 id="在Github上利用Hexo创建博客"><a href="#在Github上利用Hexo创建博客" class="headerlink" title="在Github上利用Hexo创建博客"></a>在Github上利用Hexo创建博客</h1><blockquote>
+<p><a href="https://hexo.io" title="https://hexo.io" target="_blank" rel="external">Hexo</a>是一款基于Nodejs的，快速、简单且功能强大的博客框架。支持多线程，支持markdown编写文章，可以方便的生成静态网页托管在github上。</p>
+</blockquote>
+<h2 id="Install-Hexo"><a href="#Install-Hexo" class="headerlink" title="Install Hexo"></a>Install Hexo</h2><p>步骤：</p>
+<p>1 安装 Git</p>
+<blockquote>
+<p>下载并安装 msysgit</p>
+</blockquote>
+<p>2 安装 node.js 和 npm</p>
+<blockquote>
+<p>下载并安装 nodejs</p>
+</blockquote>
+<p>3 安装 Hexo</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-cli -g</span><br></pre></td></tr></table></figure>
+<p>4 创建Hexo文件夹</p>
+<blockquote>
+<p>创建一个文件夹用于编写本地博客，如（<code>E:\hexo</code>）。</p>
+</blockquote>
+<p>在此文件夹中输入以下命令进行初始化：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo init</span><br></pre></td></tr></table></figure>
+<p>5 安装依赖包</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install</span><br></pre></td></tr></table></figure>
+<p>至此，我们就安装好Hexo了，并且可以开始撰写本地博客了。</p>
+<h2 id="Using-Hexo"><a href="#Using-Hexo" class="headerlink" title="Using Hexo"></a>Using Hexo</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">Usage: hexo &lt;<span class="built_in">command</span>&gt;</span><br><span class="line"></span><br><span class="line">Commands:</span><br><span class="line">  clean     Removed generated files and cache.</span><br><span class="line">  config    Get or <span class="built_in">set</span> configurations.</span><br><span class="line">  deploy    Deploy your website.</span><br><span class="line">  generate  Generate static files.</span><br><span class="line">  <span class="built_in">help</span>      Get <span class="built_in">help</span> on a command.</span><br><span class="line">  init      Create a new Hexo folder.</span><br><span class="line">  list      List the information of the site</span><br><span class="line">  migrate   Migrate your site from other system to Hexo.</span><br><span class="line">  new       Create a new post.</span><br><span class="line">  publish   Moves a draft post from _drafts to _posts folder.</span><br><span class="line">  render    Render files with renderer plugins.</span><br><span class="line">  server    Start the server.</span><br><span class="line">  version   Display version information.</span><br></pre></td></tr></table></figure>
+<p><strong>常用命令：</strong></p>
+<p>创建一篇新的博客</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo new</span><br><span class="line">or</span><br><span class="line">hexo n</span><br></pre></td></tr></table></figure>
+<p>生成静态博客文件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo generate</span><br><span class="line">or</span><br><span class="line">hexo g</span><br></pre></td></tr></table></figure>
+<p>启动本地服务</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo server</span><br><span class="line">or</span><br><span class="line">hexo s</span><br></pre></td></tr></table></figure>
+<p>执行可以在浏览器中输入<a href="http://localhost:4000" title="localhost:4000" target="_blank" rel="external">localhost:4000</a> 预览博客。</p>
+<h2 id="Deploy"><a href="#Deploy" class="headerlink" title="Deploy"></a>Deploy</h2><p>部署之前先要配置一下Hexo。</p>
+<p>1 安装<strong>hexo-deployer-git</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
+<p>2 在目录 <code>E:\hexo</code> 下，编辑 <code>_config.yml</code>（将<strong>xyz</strong>换成你自己的github用户名）：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  <span class="built_in">type</span>: git</span><br><span class="line">  repository: https://github.com/xyz/xyz.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
+<p>执行下列指令即可完成部署。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo generate</span><br><span class="line">hexo deploy</span><br></pre></td></tr></table></figure>
+<p>中途会提示输入GitHub账号和密码，正常输入即可。</p>
+<h2 id="Tips"><a href="#Tips" class="headerlink" title="Tips"></a>Tips</h2><ol>
+<li>每次修改本地文件后，需要执行 <code>hexo generate</code> 才能生成新的博客文件。</li>
+<li>所有hexo命令都要在 hexo 文件目录下执行。</li>
+<li>发布后GitHub会有一定的延时</li>
+</ol>
+</span>
       
     </div>
 
@@ -612,9 +314,9 @@ function fisherYatesShuffle(array) {
       
         <div class="post-tags">
           
-            <a href="/tags/algorithm/" rel="tag">#algorithm</a>
+            <a href="/tags/github/" rel="tag">#github</a>
           
-            <a href="/tags/visualization/" rel="tag">#visualization</a>
+            <a href="/tags/hexo/" rel="tag">#hexo</a>
           
         </div>
       
@@ -623,17 +325,13 @@ function fisherYatesShuffle(array) {
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/03/05/hello-world/" rel="next" title="Hello Hexo">
-                <i class="fa fa-chevron-left"></i> Hello Hexo
+              <a href="/2016/03/05/shuffle-algorithm/" rel="next" title="Shuffle Algorthim">
+                <i class="fa fa-chevron-left"></i> Shuffle Algorthim
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/03/12/create-github-page-with-hexo/" rel="prev" title="在Github上利用Hexo创建博客">
-                在Github上利用Hexo创建博客 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -740,7 +438,7 @@ function fisherYatesShuffle(array) {
           <div class="post-toc">
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">洗牌算法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.0.1.</span> <span class="nav-text">朴素洗牌算法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.0.2.</span> <span class="nav-text">Fisher-Yates算法</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#在Github上利用Hexo创建博客"><span class="nav-number">1.</span> <span class="nav-text">在Github上利用Hexo创建博客</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Install-Hexo"><span class="nav-number">1.1.</span> <span class="nav-text">Install Hexo</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Using-Hexo"><span class="nav-number">1.2.</span> <span class="nav-text">Using Hexo</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Deploy"><span class="nav-number">1.3.</span> <span class="nav-text">Deploy</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Tips"><span class="nav-number">1.4.</span> <span class="nav-text">Tips</span></a></li></ol></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>
