@@ -63,6 +63,16 @@
 
 
 
+<script>
+  var _hmt = _hmt || [];
+  (function() {
+    var hm = document.createElement("script");
+    hm.src = "//hm.baidu.com/hm.js?ea2c42d3a5f14cd212a7a74fe032f86d";
+    var s = document.getElementsByTagName("script")[0]; 
+    s.parentNode.insertBefore(hm, s);
+  })();
+</script>
+
   <title> Jason Wang's Notes </title>
 </head>
 
@@ -173,6 +183,127 @@
       <div class="main-inner">
         <div id="content" class="content"> 
   <section id="posts" class="posts-expand">
+    
+      
+
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                <a class="post-title-link" href="/2016/03/12/configure-PPTP-VPN-in-Ubuntu/" itemprop="url">
+                  Ubuntu下配置PPTP VPN
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            Posted on
+            <time itemprop="dateCreated" datetime="2016-03-12T15:22:29+08:00" content="2016-03-12">
+              2016-03-12
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody">
+            
+              <h1 id="Configure-PPTP-VPN-in-Ubuntu"><a href="#Configure-PPTP-VPN-in-Ubuntu" class="headerlink" title="Configure PPTP VPN in Ubuntu"></a>Configure PPTP VPN in Ubuntu</h1><h2 id="安装pptpd"><a href="#安装pptpd" class="headerlink" title="安装pptpd"></a>安装pptpd</h2><pre><code>$ sudo apt-get install pptpd
+</code></pre><h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><p><strong>编辑pptpd.conf</strong></p>
+<pre><code>$ sudo vi /etc/pptpd.conf
+</code></pre><p>修改如下两行：</p>
+<pre><code>localip xxx.xxx.xxx.xxx
+remoteip 192.168.1.100-200
+</code></pre><blockquote>
+<p>localip: Ubuntu主机的IP</p>
+<p>remoteip: 分配给Client的IP段</p>
+</blockquote>
+<p><strong>设置Windows Client的DNS</strong></p>
+<pre><code>$ sudo vi /etc/ppp/pptpd-options
+</code></pre><p>修改<code>ms-dns</code>，修改为google的dns：</p>
+<pre><code>ms-dns 8.8.8.8
+ms-dns 8.8.4.4
+</code></pre><p><strong>设置账号</strong></p>
+<pre><code>$ sudo vi /etc/ppp/chap-secrets
+</code></pre><p>添加一行，依次为：用户名，服务，密码，限制ip：</p>
+<pre><code>&quot;user&quot; pptpd &quot;user&quot; *
+</code></pre><p>或</p>
+<pre><code>username * password *
+</code></pre><p><strong>重启服务</strong></p>
+<pre><code>$ sudo /etc/init.d/pptpd restart
+</code></pre><p>执行以上步骤后VPN即可连接上了，但是还无法上网。</p>
+<h2 id="设置IP转发"><a href="#设置IP转发" class="headerlink" title="设置IP转发"></a>设置IP转发</h2><p><strong>允许转发</strong></p>
+<pre><code>$ sudo vi /etc/sysctl.conf
+</code></pre><p>去掉文件中这一行的注释：</p>
+<pre><code>net.ipv4.ip_forward=1
+</code></pre><p>使设置生效：</p>
+<pre><code>$ sudo sysctl -p
+</code></pre><p><strong>设置<code>NAT</code></strong></p>
+<pre><code>$ sudo iptables -t nat -A POSTROUTING -s 192.168.1.0/24 -o eth0 -j MASQUERADE
+</code></pre><p>设置MTU，防止包过大：</p>
+<pre><code>$ sudo iptables -A FORWARD -s 192.168.1.0/24 -p tcp -m tcp --tcp-flags SYN,RST SYN -j TCPMSS --set-mss 1200
+</code></pre><p><strong>保存设置</strong></p>
+<pre><code>$ sudo iptables-save
+</code></pre><p>将输出保存到以下文件中</p>
+<pre><code>$ sudo /etc/iptables-rules
+</code></pre><p><strong>自动加载规则</strong></p>
+<p>编辑网卡文件，加载网卡时自动加载规则</p>
+<pre><code>$ sudo vi  /etc/network/interfaces
+</code></pre><p>添加一行：</p>
+<pre><code>pre-up iptables-restore &lt; /etc/iptables-rules
+</code></pre><blockquote>
+<p>Fin</p>
+</blockquote>
+
+            
+          </span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
     
       
 
@@ -840,7 +971,7 @@ function fisherYatesShuffle(array) {
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">3</span>
+              <span class="site-state-item-count">4</span>
               <span class="site-state-item-name">posts</span>
             </a>
           </div>
@@ -854,7 +985,7 @@ function fisherYatesShuffle(array) {
 
           <div class="site-state-item site-state-tags">
             <a href="/tags">
-              <span class="site-state-item-count">4</span>
+              <span class="site-state-item-count">6</span>
               <span class="site-state-item-name">tags</span>
               </a>
           </div>

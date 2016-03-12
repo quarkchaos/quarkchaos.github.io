@@ -34,7 +34,7 @@
 
 
 
-  <meta name="keywords" content="github,hexo," />
+  <meta name="keywords" content="ubuntu,vpn," />
 
 
 
@@ -43,55 +43,40 @@
   <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.2" />
 
 
-<meta name="description" content="在Github上利用Hexo创建博客
-Hexo是一款基于Nodejs的，快速、简单且功能强大的博客框架。支持多线程，支持markdown编写文章，可以方便的生成静态网页托管在github上。
+<meta name="description" content="Configure PPTP VPN in Ubuntu安装pptpd$ sudo apt-get install pptpd
+配置编辑pptpd.conf
+$ sudo vi /etc/pptpd.conf
+修改如下两行：
+localip xxx.xxx.xxx.xxx
+remoteip 192.168.1.100-200
 
-Install Hexo步骤：
-1 安装 Git
-
-下载并安装 msysgit
-
-2 安装 node.js 和 npm
-
-下载并安装 nodejs
-
-3 安装 Hexo
-1$ npm install hex">
+localip: Ubuntu主机的IP
+remoteip: 分配给C">
 <meta property="og:type" content="article">
-<meta property="og:title" content="在Github上利用Hexo创建博客">
-<meta property="og:url" content="https://quarkchaos.github.com/2016/03/12/create-github-page-with-hexo/index.html">
+<meta property="og:title" content="Ubuntu下配置PPTP VPN">
+<meta property="og:url" content="https://quarkchaos.github.com/2016/03/12/configure-PPTP-VPN-in-Ubuntu/index.html">
 <meta property="og:site_name" content="Jason Wang's Notes">
-<meta property="og:description" content="在Github上利用Hexo创建博客
-Hexo是一款基于Nodejs的，快速、简单且功能强大的博客框架。支持多线程，支持markdown编写文章，可以方便的生成静态网页托管在github上。
+<meta property="og:description" content="Configure PPTP VPN in Ubuntu安装pptpd$ sudo apt-get install pptpd
+配置编辑pptpd.conf
+$ sudo vi /etc/pptpd.conf
+修改如下两行：
+localip xxx.xxx.xxx.xxx
+remoteip 192.168.1.100-200
 
-Install Hexo步骤：
-1 安装 Git
-
-下载并安装 msysgit
-
-2 安装 node.js 和 npm
-
-下载并安装 nodejs
-
-3 安装 Hexo
-1$ npm install hex">
-<meta property="og:updated_time" content="2016-03-12T07:02:16.607Z">
+localip: Ubuntu主机的IP
+remoteip: 分配给C">
+<meta property="og:updated_time" content="2016-03-12T08:03:36.996Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="在Github上利用Hexo创建博客">
-<meta name="twitter:description" content="在Github上利用Hexo创建博客
-Hexo是一款基于Nodejs的，快速、简单且功能强大的博客框架。支持多线程，支持markdown编写文章，可以方便的生成静态网页托管在github上。
+<meta name="twitter:title" content="Ubuntu下配置PPTP VPN">
+<meta name="twitter:description" content="Configure PPTP VPN in Ubuntu安装pptpd$ sudo apt-get install pptpd
+配置编辑pptpd.conf
+$ sudo vi /etc/pptpd.conf
+修改如下两行：
+localip xxx.xxx.xxx.xxx
+remoteip 192.168.1.100-200
 
-Install Hexo步骤：
-1 安装 Git
-
-下载并安装 msysgit
-
-2 安装 node.js 和 npm
-
-下载并安装 nodejs
-
-3 安装 Hexo
-1$ npm install hex">
+localip: Ubuntu主机的IP
+remoteip: 分配给C">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -113,7 +98,7 @@ Install Hexo步骤：
   })();
 </script>
 
-  <title> 在Github上利用Hexo创建博客 | Jason Wang's Notes </title>
+  <title> Ubuntu下配置PPTP VPN | Jason Wang's Notes </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="en">
@@ -238,7 +223,7 @@ Install Hexo步骤：
             
             
               
-                在Github上利用Hexo创建博客
+                Ubuntu下配置PPTP VPN
               
             
           </h1>
@@ -247,7 +232,7 @@ Install Hexo步骤：
         <div class="post-meta">
           <span class="post-time">
             Posted on
-            <time itemprop="dateCreated" datetime="2016-03-12T13:49:00+08:00" content="2016-03-12">
+            <time itemprop="dateCreated" datetime="2016-03-12T15:22:29+08:00" content="2016-03-12">
               2016-03-12
             </time>
           </span>
@@ -271,51 +256,52 @@ Install Hexo步骤：
       
 
       
-        <span itemprop="articleBody"><h1 id="在Github上利用Hexo创建博客"><a href="#在Github上利用Hexo创建博客" class="headerlink" title="在Github上利用Hexo创建博客"></a>在Github上利用Hexo创建博客</h1><blockquote>
-<p><a href="https://hexo.io" title="https://hexo.io" target="_blank" rel="external">Hexo</a>是一款基于Nodejs的，快速、简单且功能强大的博客框架。支持多线程，支持markdown编写文章，可以方便的生成静态网页托管在github上。</p>
+        <span itemprop="articleBody"><h1 id="Configure-PPTP-VPN-in-Ubuntu"><a href="#Configure-PPTP-VPN-in-Ubuntu" class="headerlink" title="Configure PPTP VPN in Ubuntu"></a>Configure PPTP VPN in Ubuntu</h1><h2 id="安装pptpd"><a href="#安装pptpd" class="headerlink" title="安装pptpd"></a>安装pptpd</h2><pre><code>$ sudo apt-get install pptpd
+</code></pre><h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><p><strong>编辑pptpd.conf</strong></p>
+<pre><code>$ sudo vi /etc/pptpd.conf
+</code></pre><p>修改如下两行：</p>
+<pre><code>localip xxx.xxx.xxx.xxx
+remoteip 192.168.1.100-200
+</code></pre><blockquote>
+<p>localip: Ubuntu主机的IP</p>
+<p>remoteip: 分配给Client的IP段</p>
 </blockquote>
-<h2 id="Install-Hexo"><a href="#Install-Hexo" class="headerlink" title="Install Hexo"></a>Install Hexo</h2><p>步骤：</p>
-<p>1 安装 Git</p>
-<blockquote>
-<p>下载并安装 msysgit</p>
+<p><strong>设置Windows Client的DNS</strong></p>
+<pre><code>$ sudo vi /etc/ppp/pptpd-options
+</code></pre><p>修改<code>ms-dns</code>，修改为google的dns：</p>
+<pre><code>ms-dns 8.8.8.8
+ms-dns 8.8.4.4
+</code></pre><p><strong>设置账号</strong></p>
+<pre><code>$ sudo vi /etc/ppp/chap-secrets
+</code></pre><p>添加一行，依次为：用户名，服务，密码，限制ip：</p>
+<pre><code>&quot;user&quot; pptpd &quot;user&quot; *
+</code></pre><p>或</p>
+<pre><code>username * password *
+</code></pre><p><strong>重启服务</strong></p>
+<pre><code>$ sudo /etc/init.d/pptpd restart
+</code></pre><p>执行以上步骤后VPN即可连接上了，但是还无法上网。</p>
+<h2 id="设置IP转发"><a href="#设置IP转发" class="headerlink" title="设置IP转发"></a>设置IP转发</h2><p><strong>允许转发</strong></p>
+<pre><code>$ sudo vi /etc/sysctl.conf
+</code></pre><p>去掉文件中这一行的注释：</p>
+<pre><code>net.ipv4.ip_forward=1
+</code></pre><p>使设置生效：</p>
+<pre><code>$ sudo sysctl -p
+</code></pre><p><strong>设置<code>NAT</code></strong></p>
+<pre><code>$ sudo iptables -t nat -A POSTROUTING -s 192.168.1.0/24 -o eth0 -j MASQUERADE
+</code></pre><p>设置MTU，防止包过大：</p>
+<pre><code>$ sudo iptables -A FORWARD -s 192.168.1.0/24 -p tcp -m tcp --tcp-flags SYN,RST SYN -j TCPMSS --set-mss 1200
+</code></pre><p><strong>保存设置</strong></p>
+<pre><code>$ sudo iptables-save
+</code></pre><p>将输出保存到以下文件中</p>
+<pre><code>$ sudo /etc/iptables-rules
+</code></pre><p><strong>自动加载规则</strong></p>
+<p>编辑网卡文件，加载网卡时自动加载规则</p>
+<pre><code>$ sudo vi  /etc/network/interfaces
+</code></pre><p>添加一行：</p>
+<pre><code>pre-up iptables-restore &lt; /etc/iptables-rules
+</code></pre><blockquote>
+<p>Fin</p>
 </blockquote>
-<p>2 安装 node.js 和 npm</p>
-<blockquote>
-<p>下载并安装 nodejs</p>
-</blockquote>
-<p>3 安装 Hexo</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-cli -g</span><br></pre></td></tr></table></figure>
-<p>4 创建Hexo文件夹</p>
-<blockquote>
-<p>创建一个文件夹用于编写本地博客，如（<code>E:\hexo</code>）。</p>
-</blockquote>
-<p>在此文件夹中输入以下命令进行初始化：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo init</span><br></pre></td></tr></table></figure>
-<p>5 安装依赖包</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install</span><br></pre></td></tr></table></figure>
-<p>至此，我们就安装好Hexo了，并且可以开始撰写本地博客了。</p>
-<h2 id="Using-Hexo"><a href="#Using-Hexo" class="headerlink" title="Using Hexo"></a>Using Hexo</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">Usage: hexo &lt;<span class="built_in">command</span>&gt;</span><br><span class="line"></span><br><span class="line">Commands:</span><br><span class="line">  clean     Removed generated files and cache.</span><br><span class="line">  config    Get or <span class="built_in">set</span> configurations.</span><br><span class="line">  deploy    Deploy your website.</span><br><span class="line">  generate  Generate static files.</span><br><span class="line">  <span class="built_in">help</span>      Get <span class="built_in">help</span> on a command.</span><br><span class="line">  init      Create a new Hexo folder.</span><br><span class="line">  list      List the information of the site</span><br><span class="line">  migrate   Migrate your site from other system to Hexo.</span><br><span class="line">  new       Create a new post.</span><br><span class="line">  publish   Moves a draft post from _drafts to _posts folder.</span><br><span class="line">  render    Render files with renderer plugins.</span><br><span class="line">  server    Start the server.</span><br><span class="line">  version   Display version information.</span><br></pre></td></tr></table></figure>
-<p><strong>常用命令：</strong></p>
-<p>创建一篇新的博客</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo new</span><br><span class="line">or</span><br><span class="line">hexo n</span><br></pre></td></tr></table></figure>
-<p>生成静态博客文件</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo generate</span><br><span class="line">or</span><br><span class="line">hexo g</span><br></pre></td></tr></table></figure>
-<p>启动本地服务</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo server</span><br><span class="line">or</span><br><span class="line">hexo s</span><br></pre></td></tr></table></figure>
-<p>执行可以在浏览器中输入<a href="http://localhost:4000" title="localhost:4000" target="_blank" rel="external">localhost:4000</a> 预览博客。</p>
-<h2 id="Deploy"><a href="#Deploy" class="headerlink" title="Deploy"></a>Deploy</h2><p>部署之前先要配置一下Hexo。</p>
-<p>1 安装<strong>hexo-deployer-git</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
-<p>2 在目录 <code>E:\hexo</code> 下，编辑 <code>_config.yml</code>（将<strong>xyz</strong>换成你自己的github用户名）：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  <span class="built_in">type</span>: git</span><br><span class="line">  repository: https://github.com/xyz/xyz.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
-<p>执行下列指令即可完成部署。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo generate</span><br><span class="line">hexo deploy</span><br></pre></td></tr></table></figure>
-<p>中途会提示输入GitHub账号和密码，正常输入即可。</p>
-<h2 id="Tips"><a href="#Tips" class="headerlink" title="Tips"></a>Tips</h2><ol>
-<li>每次修改本地文件后，需要执行 <code>hexo generate</code> 才能生成新的博客文件。</li>
-<li>所有hexo命令都要在 hexo 文件目录下执行。</li>
-<li>发布后GitHub会有一定的延时</li>
-</ol>
 </span>
       
     </div>
@@ -324,9 +310,9 @@ Install Hexo步骤：
       
         <div class="post-tags">
           
-            <a href="/tags/github/" rel="tag">#github</a>
+            <a href="/tags/ubuntu/" rel="tag">#ubuntu</a>
           
-            <a href="/tags/hexo/" rel="tag">#hexo</a>
+            <a href="/tags/vpn/" rel="tag">#vpn</a>
           
         </div>
       
@@ -335,17 +321,13 @@ Install Hexo步骤：
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/03/05/shuffle-algorithm/" rel="next" title="Shuffle Algorthim">
-                <i class="fa fa-chevron-left"></i> Shuffle Algorthim
+              <a href="/2016/03/12/create-github-page-with-hexo/" rel="next" title="在Github上利用Hexo创建博客">
+                <i class="fa fa-chevron-left"></i> 在Github上利用Hexo创建博客
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/03/12/configure-PPTP-VPN-in-Ubuntu/" rel="prev" title="Ubuntu下配置PPTP VPN">
-                Ubuntu下配置PPTP VPN <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -452,7 +434,7 @@ Install Hexo步骤：
           <div class="post-toc">
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#在Github上利用Hexo创建博客"><span class="nav-number">1.</span> <span class="nav-text">在Github上利用Hexo创建博客</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Install-Hexo"><span class="nav-number">1.1.</span> <span class="nav-text">Install Hexo</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Using-Hexo"><span class="nav-number">1.2.</span> <span class="nav-text">Using Hexo</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Deploy"><span class="nav-number">1.3.</span> <span class="nav-text">Deploy</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Tips"><span class="nav-number">1.4.</span> <span class="nav-text">Tips</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Configure-PPTP-VPN-in-Ubuntu"><span class="nav-number">1.</span> <span class="nav-text">Configure PPTP VPN in Ubuntu</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装pptpd"><span class="nav-number">1.1.</span> <span class="nav-text">安装pptpd</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置"><span class="nav-number">1.2.</span> <span class="nav-text">配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#设置IP转发"><span class="nav-number">1.3.</span> <span class="nav-text">设置IP转发</span></a></li></ol></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>
