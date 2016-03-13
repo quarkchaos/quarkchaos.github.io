@@ -34,7 +34,7 @@
 
 
 
-  <meta name="keywords" content="algorithm,visualization," />
+  <meta name="keywords" content="chrome," />
 
 
 
@@ -43,49 +43,28 @@
   <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.2" />
 
 
-<meta name="description" content="Shuffle Algorithm
-  
-  
-    MathJax.Hub.Config({tex2jax: {inlineMath: [[&apos;$&apos;,&apos;$&apos;], [&apos;\\(&apos;,&apos;\\)&apos;]]}});
-  
-  
-  
-
-  
-    /* remove class of theme */
-    /*.one-column .main-inner {
-      width: 9">
+<meta name="description" content="如何下载离线版Windows Chrome安装文件方法如下：
+对于Stable Chrome来说，只需要在Chrome的“最终用户许可协议”页面链接后面添加”?standalone=1″即可，也就是：
+http://www.google.com/chrome/eula.html?standalone=1
+对于特定版本的Chrome来说，按以下地址：
+http://dl.google.com/chr">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Shuffle Algorthim">
-<meta property="og:url" content="https://quarkchaos.github.com/2016/03/05/shuffle-algorithm/index.html">
+<meta property="og:title" content="如何下载离线版Windows Chrome安装文件">
+<meta property="og:url" content="https://quarkchaos.github.com/2016/03/13/how-to-download-chrome-installation-package/index.html">
 <meta property="og:site_name" content="Jason Wang's Notes">
-<meta property="og:description" content="Shuffle Algorithm
-  
-  
-    MathJax.Hub.Config({tex2jax: {inlineMath: [[&apos;$&apos;,&apos;$&apos;], [&apos;\\(&apos;,&apos;\\)&apos;]]}});
-  
-  
-  
-
-  
-    /* remove class of theme */
-    /*.one-column .main-inner {
-      width: 9">
-<meta property="og:updated_time" content="2016-03-12T05:23:49.872Z">
+<meta property="og:description" content="如何下载离线版Windows Chrome安装文件方法如下：
+对于Stable Chrome来说，只需要在Chrome的“最终用户许可协议”页面链接后面添加”?standalone=1″即可，也就是：
+http://www.google.com/chrome/eula.html?standalone=1
+对于特定版本的Chrome来说，按以下地址：
+http://dl.google.com/chr">
+<meta property="og:updated_time" content="2016-03-13T12:09:56.699Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Shuffle Algorthim">
-<meta name="twitter:description" content="Shuffle Algorithm
-  
-  
-    MathJax.Hub.Config({tex2jax: {inlineMath: [[&apos;$&apos;,&apos;$&apos;], [&apos;\\(&apos;,&apos;\\)&apos;]]}});
-  
-  
-  
-
-  
-    /* remove class of theme */
-    /*.one-column .main-inner {
-      width: 9">
+<meta name="twitter:title" content="如何下载离线版Windows Chrome安装文件">
+<meta name="twitter:description" content="如何下载离线版Windows Chrome安装文件方法如下：
+对于Stable Chrome来说，只需要在Chrome的“最终用户许可协议”页面链接后面添加”?standalone=1″即可，也就是：
+http://www.google.com/chrome/eula.html?standalone=1
+对于特定版本的Chrome来说，按以下地址：
+http://dl.google.com/chr">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -107,7 +86,7 @@
   })();
 </script>
 
-  <title> Shuffle Algorthim | Jason Wang's Notes </title>
+  <title> 如何下载离线版Windows Chrome安装文件 | Jason Wang's Notes </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="en">
@@ -232,7 +211,7 @@
             
             
               
-                Shuffle Algorthim
+                如何下载离线版Windows Chrome安装文件
               
             
           </h1>
@@ -241,8 +220,8 @@
         <div class="post-meta">
           <span class="post-time">
             Posted on
-            <time itemprop="dateCreated" datetime="2016-03-05T21:22:50+08:00" content="2016-03-05">
-              2016-03-05
+            <time itemprop="dateCreated" datetime="2016-03-13T19:36:54+08:00" content="2016-03-13">
+              2016-03-13
             </time>
           </span>
 
@@ -265,356 +244,14 @@
       
 
       
-        <span itemprop="articleBody"><html>
-
-<head>
-  <meta charset="utf-8">
-  <title>Shuffle Algorithm</title>
-  <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
-  <script type="text/x-mathjax-config">
-    MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
-  </script>
-  <script type="text/javascript" async src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML">
-  </script>
-
-  <style>
-    /* remove class of theme */
-    /*.one-column .main-inner {
-      width: 960px; 
-    }
-    .main-inner {
-      width: 960px; 
-    }*/
-    
-    div.shuffle-algorithm {
-      background: #fcfcfa;
-      color: #333;
-      font-family: "Microsoft YaHei", Helvetica, sans-serif;
-      margin: 1em auto 4em auto;
-      position: relative;
-      width: 960px;
-    }
-    
-    .shuffle-algorithm header,
-    .shuffle-algorithm footer {
-      font-size: small;
-    }
-    
-    .shuffle-algorithm footer {
-      margin-top: 8em;
-    }
-    
-    .shuffle-algorithm p,
-    .shuffle-algorithm pre {
-      width: 720px;
-    }
-    
-    .shuffle-algorithm aside {
-      width: 200px;
-      position: absolute;
-      right: 0;
-      font-size: small;
-    }
-    
-    .shuffle-algorithm h1 {
-      font-size: 48px;
-      font-weight: 100;
-      margin-bottom: 1em;
-    }
-    
-    .shuffle-algorithm .lib-name {
-      color: firebrick;
-    }
-    
-    .shuffle-algorithm .chart {
-      width: 960px;
-      height: 80px;
-    }
-    
-    .shuffle-algorithm .naive-shuffle {
-      height: 160px;
-    }
-    
-    .shuffle-algorithm .play path {
-      stroke: #fff;
-      stroke-width: 6px;
-      fill: #fc0;
-    }
-    
-    .shuffle-algorithm .play:hover path {
-      fill: red;
-    }
-    
-    .shuffle-algorithm .play rect {
-      fill: none;
-      pointer-events: all;
-      cursor: pointer;
-    }
-  </style>
-</head>
-
-<body>
-  <div class="shuffle-algorithm">
-    <header>
-      <p>Febrary 28, 2016 / <a class="author" href="" rel="author">Jason Wang</a></p>
-      <h1>洗牌算法</h1>
-    </header>
-    <div>
-      <p>为了保证打牌时的公平性，洗牌后的牌堆应当是完全随机的。</p>
-      <p>从概率的角度来说，牌堆可以看成一个编号为 $ 1 $ 到 $ n $ 的数的序列，这个序列的排列组合数为 $ n! $。</p>
-
-      <svg class="chart unshuffled"/>
-      <aside>整齐的牌堆</aside>
-      <p>完全随机也就是说每一种排列组合出现的概率相等，概率为 $ \frac{1}{n!} $</p>
-
-
-      <h3>朴素洗牌算法</h3>
-      <p>所谓朴素，就是说每次从未取出的数中随机取出一个数，排成序列。</p>
-
-      <svg class="chart naive-shuffle"/>
-      <aside>点击开始洗牌</aside>
-
-      <p>JavaScript的代码如下：</p>
-      <pre>
-        <code class="javascript">
-function naiveShuffle(array) {
-  var shuffle = [];
-  var n = array.length;
-  var i;
-
-  while (n) {
-    // Pick a random element
-    i = Math.floor(Math.random() * n--);
-
-    // Add the element to new pack
-    // Re-order the left elements
-    shuffle.push(array.splice(i, 1));
-  }
-
-  return shuffle;
-}
-        </code>
-      </pre>
-
-      <p>取第一个数时，从 $ n $ 个数中随机取一个数（有 $ n $ 种可能）；取第二个数时，从剩下的 $ n - 1 $ 个数中随机取一个数（有 $n - 1$ 种可能）；如此重复 $n$ 次，则可得到一个序列。</p>
-      <p>此序列的概率为 $ \frac{1}{n!} $ ， 与完全随机的概率一致。</p>
-      <p>分析一下此算法的性能</p>
-      <p>空间: $ O(n) $, 需要一个额外的大小为 $ n $ 的空间存储结果</p>
-      <p>时间: $ O(n^{2}) $, while循环的复杂度为 $ O(n) $ , 循环内整理牌堆的复杂度也为 $ O(n) $。</p>
-
-
-      <h3>Fisher-Yates算法</h3>
-      <p>接下来介绍一种更为有效的算法。</p>
-      <svg class="chart fisher-yates-shuffle"/>
-      <pre>
-        <code class="javascript">
-function fisherYatesShuffle(array) {
-  var n = array.length;
-  var i;
-
-  while (n) {
-    // Pick a random element
-    i = Math.floor(Math.random() * n--);
-
-    // Swap the random element with element in position n.
-    t = array[n];
-    array[n] = array[i];
-    array[i] = t;
-  }
-
-  return array;
-}
-        </code>
-      </pre>
-      <p>从第 $ 1 $ 到 $ n $ 个数中随机选取一个数，和第 $ n $ 个数交换，每次将 $ n $ 的值减 $ 1 $ ，如此重复 $ n $ 次，则可得到一个序列。</p>
-      <p>此序列的概率同样为 $ \frac{1}{n!} $ 。</p>
-      <p>同样分析一下此算法的性能</p>
-      <p>空间: $ O(0) $, 因为将当前位置的数存放在与之交换的数的位置上，所以不需要额外的空间。</p>
-      <p>时间: $ O(n) $, while循环的复杂度为 $ O(n) $ , 循环内操作的复杂度为 $ O(1) $。</p>
-    </div>
-    <footer>
-      <p>本文主要参考了Mike Bostock的 <a href="https://bost.ocks.org/mike/shuffle/" target="_blank" rel="external">"Fisher–Yates Shuffle"</a></p>
-      <p><span class="lib-name">可视化</span>使用了<a href="https://d3js.org/" target="_blank" rel="external">D3.js</a></p>
-      <p><span class="lib-name">语法高亮</span>使用了<a href="https://www.highlightjs.org/" target="_blank" rel="external">highlightjs</a></p>
-      <p><span class="lib-name">数学公式引擎</span>使用了<a href="https://www.mathjax.org/" target="_blank" rel="external">MathJax</a></p>
-    </footer>
-  </div>
-
-  <script>
-    var n = 200;
-
-    var margin = {
-      top: 10,
-      right: 0,
-      bottom: 10,
-      left: 0
-    };
-
-    var width = 960;
-    var height = 80;
-
-    var areaWidth = width - margin.left - margin.right;
-    var areaHeight = height - margin.top - margin.bottom;
-
-    var barOffset = areaWidth / n;
-    var barWidth = 2;
-    var barHeight = areaHeight;
-    var minBarHeight = 10;
-
-    function x(d) {
-      return d * barOffset;
-    }
-
-    /**
-     * Create a chart of bars to demonstrate algorithm
-     * @param options.update - callback of update d3 chart
-     * @param options.y - Y offset of chart
-     */
-    function createChart(options) {
-
-      var update = options.update;
-      var y = options.y || 0;
-
-
-      var chart = d3.select(options.chart)
-        .append('g')
-        .attr('transform', 'translate(' + margin.left + ',' + margin.top + ')');
-
-      var bar = chart.selectAll('rect')
-        .data(d3.range(n))
-        .enter().append('rect')
-        .attr('x', 0)
-        .attr('y', function(d, i) {
-          return (1 - i / n) * (barHeight - minBarHeight);
-        })
-        .attr('width', barWidth)
-        .attr('height', function(d, i) {
-          return minBarHeight + i / n * (barHeight - minBarHeight);
-        })
-        .style('fill', function(d, i) {
-          var h = 420 - i / n * 60;
-          h = h >= 360 ? h - 360 : h;
-          return d3.hsl(h, 1, 0.5);
-        })
-        .style('stroke', '#000')
-        .style('stroke-width', 0);
-
-      reset(chart);
-
-      if (options.play) {
-        var play = chart.append('g')
-          .attr("class", "play")
-          .on("click", start);
-
-        play.append("path")
-          .attr("d", "M-30,-30L30,0L-30,30Z")
-          .attr("transform", "translate(" + areaWidth / 2 + "," + (y + areaHeight / 2) + ")scale(.4)");
-
-        play.append("rect")
-          .attr("width", areaWidth)
-          .attr("height", areaHeight);
-      }
-      
-      return chart;
-
-      function start() {
-        play.style("display", "none");
-        var m = n;
-        if (bar.shuffled) {
-          reset(chart);
-          bar.shuffled = false;
-        }
-        bar = chart.selectAll('rect');
-        var interval = setInterval(function() {
-          m = update(bar, m, y);
-          if (m == 0) {
-            setTimeout(function() {
-              play.style("display", null);
-            }, 1000);
-            bar.shuffled = true;
-            clearInterval(interval);
-          }
-        }, 100);
-      }
-
-      function reset(chart) {
-        chart.selectAll("rect")
-          .attr("transform", function(d, i) {
-            return "translate(" + x(i) + "," + y + ")";
-          });
-      }
-    }
-
-    // unshuffled
-    createChart({
-      chart: '.unshuffled'
-    });
-
-    // naive-shuffle
-    createChart({
-      y: height,
-      chart: '.naive-shuffle',
-      play: true,
-      update: function(bar, m, y) {
-        var i = Math.floor(Math.random() * m);
-        var a = bar[0].splice(i, 1)[0];
-
-        d3.select(a)
-          .style('stroke-width', '2px')
-          .transition()
-          .duration(1000)
-          .style('stroke-width', '0')
-          .attr("transform", "translate(" + x(n - m) + "," + 0 + ")");
-
-        bar.attr("transform", function(d, i) {
-          return "translate(" + x(i) + "," + y + ")";
-        });
-        return --m;
-      }
-    });
-
-    // Fisher–Yates Shuffle
-    createChart({
-      chart: '.fisher-yates-shuffle',
-      play: true,
-
-      update: function(bar, m) {
-        var i = Math.floor(Math.random() * m);
-        m--;
-        var a = bar[0][i];
-        var b = bar[0][m];
-
-        //        console.log('i: ' + i + ', m: ' + m);
-
-        bar[0][i] = b;
-        bar[0][m] = a;
-
-        d3.select(b)
-          .transition()
-          .duration(1000)
-          .style('stroke-width', '0')
-          .attr("transform", "translate(" + x(i) + "," + 0 + ")");
-
-        d3.select(a) // in position m
-          .style('stroke-width', '2px')
-          .transition()
-          .duration(1000)
-          .style('stroke-width', '0')
-          .attr("transform", "translate(" + x(m) + "," + 0 + ")")
-
-        return m;
-      }
-    });
-  </script>
-</body>
-
-<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.2.0/styles/default.min.css">
-<script src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.2.0/highlight.min.js"></script>
-<script>
-  hljs.initHighlightingOnLoad();
-</script>
-
-</html></span>
+        <span itemprop="articleBody"><h1 id="如何下载离线版Windows-Chrome安装文件"><a href="#如何下载离线版Windows-Chrome安装文件" class="headerlink" title="如何下载离线版Windows Chrome安装文件"></a>如何下载离线版Windows Chrome安装文件</h1><p><strong>方法如下：</strong></p>
+<p>对于Stable Chrome来说，只需要在Chrome的“最终用户许可协议”页面链接后面添加<strong>”?standalone=1″</strong>即可，也就是：</p>
+<p><a href="http://www.google.com/chrome/eula.html?standalone=1" target="_blank" rel="external">http://www.google.com/chrome/eula.html?standalone=1</a></p>
+<p>对于特定版本的Chrome来说，按以下地址：</p>
+<p><a href="http://dl.google.com/chrome/install/{version" target="_blank" rel="external">http://dl.google.com/chrome/install/{version</a> number}/chrome_installer.exe</p>
+<p>其中的 <strong>version number</strong> 代表你要下载的Chrome版本号的后面两个数字，比如4.0.223.11的离线包下载地址就是</p>
+<p><a href="http://dl.google.com/chrome/install/223.11/chrome_installer.exe" target="_blank" rel="external">http://dl.google.com/chrome/install/223.11/chrome_installer.exe</a></p>
+</span>
       
     </div>
 
@@ -622,9 +259,7 @@ function fisherYatesShuffle(array) {
       
         <div class="post-tags">
           
-            <a href="/tags/algorithm/" rel="tag">#algorithm</a>
-          
-            <a href="/tags/visualization/" rel="tag">#visualization</a>
+            <a href="/tags/chrome/" rel="tag">#chrome</a>
           
         </div>
       
@@ -633,17 +268,13 @@ function fisherYatesShuffle(array) {
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/03/05/hello-world/" rel="next" title="Hello Hexo">
-                <i class="fa fa-chevron-left"></i> Hello Hexo
+              <a href="/2016/03/13/design-pattern/" rel="next" title="设计模式">
+                <i class="fa fa-chevron-left"></i> 设计模式
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/03/12/create-github-page-with-hexo/" rel="prev" title="在Github上利用Hexo创建博客">
-                在Github上利用Hexo创建博客 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -750,7 +381,7 @@ function fisherYatesShuffle(array) {
           <div class="post-toc">
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">洗牌算法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.0.1.</span> <span class="nav-text">朴素洗牌算法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.0.2.</span> <span class="nav-text">Fisher-Yates算法</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#如何下载离线版Windows-Chrome安装文件"><span class="nav-number">1.</span> <span class="nav-text">如何下载离线版Windows Chrome安装文件</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>
