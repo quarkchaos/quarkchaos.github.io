@@ -43,40 +43,25 @@
   <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.2" />
 
 
-<meta name="description" content="Configure PPTP VPN in Ubuntu安装pptpd$ sudo apt-get install pptpd
-配置编辑pptpd.conf
+<meta name="description" content="Configure PPTP VPN in Ubuntu&amp;#x5B89;&amp;#x88C5;pptpd$ sudo apt-get install pptpd
+&amp;#x914D;&amp;#x7F6E;&amp;#x7F16;&amp;#x8F91;pptpd.conf
 $ sudo vi /etc/pptpd.conf
-修改如下两行：
-localip xxx.xxx.xxx.xxx
-remoteip 192.168.1.100-200
-
-localip: Ubuntu主机的IP
-remoteip: 分配给C">
+&amp;#x4FEE;&amp;#x6539;&amp;#x5982;&amp;#x4E0B;&amp;#x4E24;&amp;#x884C;&amp;#xFF">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Ubuntu下配置PPTP VPN">
 <meta property="og:url" content="https://quarkchaos.github.com/2016/03/12/configure-PPTP-VPN-in-Ubuntu/index.html">
 <meta property="og:site_name" content="Jason Wang's Notes">
-<meta property="og:description" content="Configure PPTP VPN in Ubuntu安装pptpd$ sudo apt-get install pptpd
-配置编辑pptpd.conf
+<meta property="og:description" content="Configure PPTP VPN in Ubuntu&amp;#x5B89;&amp;#x88C5;pptpd$ sudo apt-get install pptpd
+&amp;#x914D;&amp;#x7F6E;&amp;#x7F16;&amp;#x8F91;pptpd.conf
 $ sudo vi /etc/pptpd.conf
-修改如下两行：
-localip xxx.xxx.xxx.xxx
-remoteip 192.168.1.100-200
-
-localip: Ubuntu主机的IP
-remoteip: 分配给C">
+&amp;#x4FEE;&amp;#x6539;&amp;#x5982;&amp;#x4E0B;&amp;#x4E24;&amp;#x884C;&amp;#xFF">
 <meta property="og:updated_time" content="2016-03-12T08:03:36.996Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Ubuntu下配置PPTP VPN">
-<meta name="twitter:description" content="Configure PPTP VPN in Ubuntu安装pptpd$ sudo apt-get install pptpd
-配置编辑pptpd.conf
+<meta name="twitter:description" content="Configure PPTP VPN in Ubuntu&amp;#x5B89;&amp;#x88C5;pptpd$ sudo apt-get install pptpd
+&amp;#x914D;&amp;#x7F6E;&amp;#x7F16;&amp;#x8F91;pptpd.conf
 $ sudo vi /etc/pptpd.conf
-修改如下两行：
-localip xxx.xxx.xxx.xxx
-remoteip 192.168.1.100-200
-
-localip: Ubuntu主机的IP
-remoteip: 分配给C">
+&amp;#x4FEE;&amp;#x6539;&amp;#x5982;&amp;#x4E0B;&amp;#x4E24;&amp;#x884C;&amp;#xFF">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -256,48 +241,48 @@ remoteip: 分配给C">
       
 
       
-        <span itemprop="articleBody"><h1 id="Configure-PPTP-VPN-in-Ubuntu"><a href="#Configure-PPTP-VPN-in-Ubuntu" class="headerlink" title="Configure PPTP VPN in Ubuntu"></a>Configure PPTP VPN in Ubuntu</h1><h2 id="安装pptpd"><a href="#安装pptpd" class="headerlink" title="安装pptpd"></a>安装pptpd</h2><pre><code>$ sudo apt-get install pptpd
-</code></pre><h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><p><strong>编辑pptpd.conf</strong></p>
+        <span itemprop="articleBody"><h1 id="Configure-PPTP-VPN-in-Ubuntu"><a href="#Configure-PPTP-VPN-in-Ubuntu" class="headerlink" title="Configure PPTP VPN in Ubuntu"></a>Configure PPTP VPN in Ubuntu</h1><h2 id="&#x5B89;&#x88C5;pptpd"><a href="#&#x5B89;&#x88C5;pptpd" class="headerlink" title="&#x5B89;&#x88C5;pptpd"></a>&#x5B89;&#x88C5;pptpd</h2><pre><code>$ sudo apt-get install pptpd
+</code></pre><h2 id="&#x914D;&#x7F6E;"><a href="#&#x914D;&#x7F6E;" class="headerlink" title="&#x914D;&#x7F6E;"></a>&#x914D;&#x7F6E;</h2><p><strong>&#x7F16;&#x8F91;pptpd.conf</strong></p>
 <pre><code>$ sudo vi /etc/pptpd.conf
-</code></pre><p>修改如下两行：</p>
+</code></pre><p>&#x4FEE;&#x6539;&#x5982;&#x4E0B;&#x4E24;&#x884C;&#xFF1A;</p>
 <pre><code>localip xxx.xxx.xxx.xxx
 remoteip 192.168.1.100-200
 </code></pre><blockquote>
-<p>localip: Ubuntu主机的IP</p>
-<p>remoteip: 分配给Client的IP段</p>
+<p>localip: Ubuntu&#x4E3B;&#x673A;&#x7684;IP</p>
+<p>remoteip: &#x5206;&#x914D;&#x7ED9;Client&#x7684;IP&#x6BB5;</p>
 </blockquote>
-<p><strong>设置Windows Client的DNS</strong></p>
+<p><strong>&#x8BBE;&#x7F6E;Windows Client&#x7684;DNS</strong></p>
 <pre><code>$ sudo vi /etc/ppp/pptpd-options
-</code></pre><p>修改<code>ms-dns</code>，修改为google的dns：</p>
+</code></pre><p>&#x4FEE;&#x6539;<code>ms-dns</code>&#xFF0C;&#x4FEE;&#x6539;&#x4E3A;google&#x7684;dns&#xFF1A;</p>
 <pre><code>ms-dns 8.8.8.8
 ms-dns 8.8.4.4
-</code></pre><p><strong>设置账号</strong></p>
+</code></pre><p><strong>&#x8BBE;&#x7F6E;&#x8D26;&#x53F7;</strong></p>
 <pre><code>$ sudo vi /etc/ppp/chap-secrets
-</code></pre><p>添加一行，依次为：用户名，服务，密码，限制ip：</p>
+</code></pre><p>&#x6DFB;&#x52A0;&#x4E00;&#x884C;&#xFF0C;&#x4F9D;&#x6B21;&#x4E3A;&#xFF1A;&#x7528;&#x6237;&#x540D;&#xFF0C;&#x670D;&#x52A1;&#xFF0C;&#x5BC6;&#x7801;&#xFF0C;&#x9650;&#x5236;ip&#xFF1A;</p>
 <pre><code>&quot;user&quot; pptpd &quot;user&quot; *
-</code></pre><p>或</p>
+</code></pre><p>&#x6216;</p>
 <pre><code>username * password *
-</code></pre><p><strong>重启服务</strong></p>
+</code></pre><p><strong>&#x91CD;&#x542F;&#x670D;&#x52A1;</strong></p>
 <pre><code>$ sudo /etc/init.d/pptpd restart
-</code></pre><p>执行以上步骤后VPN即可连接上了，但是还无法上网。</p>
-<h2 id="设置IP转发"><a href="#设置IP转发" class="headerlink" title="设置IP转发"></a>设置IP转发</h2><p><strong>允许转发</strong></p>
+</code></pre><p>&#x6267;&#x884C;&#x4EE5;&#x4E0A;&#x6B65;&#x9AA4;&#x540E;VPN&#x5373;&#x53EF;&#x8FDE;&#x63A5;&#x4E0A;&#x4E86;&#xFF0C;&#x4F46;&#x662F;&#x8FD8;&#x65E0;&#x6CD5;&#x4E0A;&#x7F51;&#x3002;</p>
+<h2 id="&#x8BBE;&#x7F6E;IP&#x8F6C;&#x53D1;"><a href="#&#x8BBE;&#x7F6E;IP&#x8F6C;&#x53D1;" class="headerlink" title="&#x8BBE;&#x7F6E;IP&#x8F6C;&#x53D1;"></a>&#x8BBE;&#x7F6E;IP&#x8F6C;&#x53D1;</h2><p><strong>&#x5141;&#x8BB8;&#x8F6C;&#x53D1;</strong></p>
 <pre><code>$ sudo vi /etc/sysctl.conf
-</code></pre><p>去掉文件中这一行的注释：</p>
+</code></pre><p>&#x53BB;&#x6389;&#x6587;&#x4EF6;&#x4E2D;&#x8FD9;&#x4E00;&#x884C;&#x7684;&#x6CE8;&#x91CA;&#xFF1A;</p>
 <pre><code>net.ipv4.ip_forward=1
-</code></pre><p>使设置生效：</p>
+</code></pre><p>&#x4F7F;&#x8BBE;&#x7F6E;&#x751F;&#x6548;&#xFF1A;</p>
 <pre><code>$ sudo sysctl -p
-</code></pre><p><strong>设置<code>NAT</code></strong></p>
+</code></pre><p><strong>&#x8BBE;&#x7F6E;<code>NAT</code></strong></p>
 <pre><code>$ sudo iptables -t nat -A POSTROUTING -s 192.168.1.0/24 -o eth0 -j MASQUERADE
-</code></pre><p>设置MTU，防止包过大：</p>
+</code></pre><p>&#x8BBE;&#x7F6E;MTU&#xFF0C;&#x9632;&#x6B62;&#x5305;&#x8FC7;&#x5927;&#xFF1A;</p>
 <pre><code>$ sudo iptables -A FORWARD -s 192.168.1.0/24 -p tcp -m tcp --tcp-flags SYN,RST SYN -j TCPMSS --set-mss 1200
-</code></pre><p><strong>保存设置</strong></p>
+</code></pre><p><strong>&#x4FDD;&#x5B58;&#x8BBE;&#x7F6E;</strong></p>
 <pre><code>$ sudo iptables-save
-</code></pre><p>将输出保存到以下文件中</p>
+</code></pre><p>&#x5C06;&#x8F93;&#x51FA;&#x4FDD;&#x5B58;&#x5230;&#x4EE5;&#x4E0B;&#x6587;&#x4EF6;&#x4E2D;</p>
 <pre><code>$ sudo /etc/iptables-rules
-</code></pre><p><strong>自动加载规则</strong></p>
-<p>编辑网卡文件，加载网卡时自动加载规则</p>
+</code></pre><p><strong>&#x81EA;&#x52A8;&#x52A0;&#x8F7D;&#x89C4;&#x5219;</strong></p>
+<p>&#x7F16;&#x8F91;&#x7F51;&#x5361;&#x6587;&#x4EF6;&#xFF0C;&#x52A0;&#x8F7D;&#x7F51;&#x5361;&#x65F6;&#x81EA;&#x52A8;&#x52A0;&#x8F7D;&#x89C4;&#x5219;</p>
 <pre><code>$ sudo vi  /etc/network/interfaces
-</code></pre><p>添加一行：</p>
+</code></pre><p>&#x6DFB;&#x52A0;&#x4E00;&#x884C;&#xFF1A;</p>
 <pre><code>pre-up iptables-restore &lt; /etc/iptables-rules
 </code></pre><blockquote>
 <p>Fin</p>
@@ -396,7 +381,7 @@ ms-dns 8.8.4.4
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">9</span>
+              <span class="site-state-item-count">10</span>
               <span class="site-state-item-name">posts</span>
             </a>
           </div>
@@ -410,7 +395,7 @@ ms-dns 8.8.4.4
 
           <div class="site-state-item site-state-tags">
             <a href="/tags">
-              <span class="site-state-item-count">12</span>
+              <span class="site-state-item-count">14</span>
               <span class="site-state-item-name">tags</span>
               </a>
           </div>

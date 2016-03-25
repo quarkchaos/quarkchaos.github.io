@@ -200,6 +200,188 @@
             
             
               
+                <a class="post-title-link" href="/2016/03/25/restful-api/" itemprop="url">
+                  RESTful API Design Principles
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            Posted on
+            <time itemprop="dateCreated" datetime="2016-03-25T22:39:29+08:00" content="2016-03-25">
+              2016-03-25
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody">
+            
+              <h1 id="RESTful-API-&#x8BBE;&#x8BA1;&#x6307;&#x5357;"><a href="#RESTful-API-&#x8BBE;&#x8BA1;&#x6307;&#x5357;" class="headerlink" title="RESTful API &#x8BBE;&#x8BA1;&#x6307;&#x5357;"></a>RESTful API &#x8BBE;&#x8BA1;&#x6307;&#x5357;</h1><blockquote>
+<p>[&#x8F6C;&#x8F7D;] &#x539F;&#x6587;&#x5730;&#x5740;&#xFF1A;<a href="http://www.ruanyifeng.com/blog/2014/05/restful_api.html" target="_blank" rel="external">RESTful API &#x8BBE;&#x8BA1;&#x6307;&#x5357;</a></p>
+</blockquote>
+<p>&#x4F5C;&#x8005;&#xFF1A; &#x962E;&#x4E00;&#x5CF0;</p>
+<p>&#x65E5;&#x671F;&#xFF1A; 2014&#x5E74;5&#x6708;22&#x65E5;</p>
+<p>&#x7F51;&#x7EDC;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#xFF0C;&#x5206;&#x4E3A;&#x524D;&#x7AEF;&#x548C;&#x540E;&#x7AEF;&#x4E24;&#x4E2A;&#x90E8;&#x5206;&#x3002;&#x5F53;&#x524D;&#x7684;&#x53D1;&#x5C55;&#x8D8B;&#x52BF;&#xFF0C;&#x5C31;&#x662F;&#x524D;&#x7AEF;&#x8BBE;&#x5907;&#x5C42;&#x51FA;&#x4E0D;&#x7A77;&#xFF08;&#x624B;&#x673A;&#x3001;&#x5E73;&#x677F;&#x3001;&#x684C;&#x9762;&#x7535;&#x8111;&#x3001;&#x5176;&#x4ED6;&#x4E13;&#x7528;&#x8BBE;&#x5907;&#x2026;&#x2026;&#xFF09;&#x3002;</p>
+<p>&#x56E0;&#x6B64;&#xFF0C;&#x5FC5;&#x987B;&#x6709;&#x4E00;&#x79CD;&#x7EDF;&#x4E00;&#x7684;&#x673A;&#x5236;&#xFF0C;&#x65B9;&#x4FBF;&#x4E0D;&#x540C;&#x7684;&#x524D;&#x7AEF;&#x8BBE;&#x5907;&#x4E0E;&#x540E;&#x7AEF;&#x8FDB;&#x884C;&#x901A;&#x4FE1;&#x3002;&#x8FD9;&#x5BFC;&#x81F4;API&#x6784;&#x67B6;&#x7684;&#x6D41;&#x884C;&#xFF0C;&#x751A;&#x81F3;&#x51FA;&#x73B0;<a href="http://www.google.com.hk/search?q=API+first" target="_blank" rel="external">&#x201C;API First&#x201D;</a>&#x7684;&#x8BBE;&#x8BA1;&#x601D;&#x60F3;&#x3002;RESTful API&#x662F;&#x76EE;&#x524D;&#x6BD4;&#x8F83;&#x6210;&#x719F;&#x7684;&#x4E00;&#x5957;&#x4E92;&#x8054;&#x7F51;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x7684;API&#x8BBE;&#x8BA1;&#x7406;&#x8BBA;&#x3002;&#x6211;&#x4EE5;&#x524D;&#x5199;&#x8FC7;&#x4E00;&#x7BC7;<a href="http://www.ruanyifeng.com/blog/2011/09/restful.html" target="_blank" rel="external">&#x300A;&#x7406;&#x89E3;RESTful&#x67B6;&#x6784;&#x300B;</a>&#xFF0C;&#x63A2;&#x8BA8;&#x5982;&#x4F55;&#x7406;&#x89E3;&#x8FD9;&#x4E2A;&#x6982;&#x5FF5;&#x3002;</p>
+<p>&#x4ECA;&#x5929;&#xFF0C;&#x6211;&#x5C06;&#x4ECB;&#x7ECD;RESTful API&#x7684;&#x8BBE;&#x8BA1;&#x7EC6;&#x8282;&#xFF0C;&#x63A2;&#x8BA8;&#x5982;&#x4F55;&#x8BBE;&#x8BA1;&#x4E00;&#x5957;&#x5408;&#x7406;&#x3001;&#x597D;&#x7528;&#x7684;API&#x3002;&#x6211;&#x7684;&#x4E3B;&#x8981;&#x53C2;&#x8003;&#x4E86;&#x4E24;&#x7BC7;&#x6587;&#x7AE0;</p>
+<ol>
+<li><a href="http://codeplanet.io/principles-good-restful-api-design/" target="_blank" rel="external">http://codeplanet.io/principles-good-restful-api-design/</a></li>
+<li><a href="https://bourgeois.me/rest/&#x3002;" target="_blank" rel="external">https://bourgeois.me/rest/&#x3002;</a></li>
+</ol>
+<h2 id="&#x4E00;&#x3001;&#x534F;&#x8BAE;"><a href="#&#x4E00;&#x3001;&#x534F;&#x8BAE;" class="headerlink" title="&#x4E00;&#x3001;&#x534F;&#x8BAE;"></a>&#x4E00;&#x3001;&#x534F;&#x8BAE;</h2><p>API&#x4E0E;&#x7528;&#x6237;&#x7684;&#x901A;&#x4FE1;&#x534F;&#x8BAE;&#xFF0C;&#x603B;&#x662F;&#x4F7F;&#x7528;<a href="http://www.ruanyifeng.com/blog/2014/02/ssl_tls.html" target="_blank" rel="external">HTTPs&#x534F;&#x8BAE;</a>&#x3002;</p>
+<h2 id="&#x4E8C;&#x3001;&#x57DF;&#x540D;"><a href="#&#x4E8C;&#x3001;&#x57DF;&#x540D;" class="headerlink" title="&#x4E8C;&#x3001;&#x57DF;&#x540D;"></a>&#x4E8C;&#x3001;&#x57DF;&#x540D;</h2><p>&#x5E94;&#x8BE5;&#x5C3D;&#x91CF;&#x5C06;API&#x90E8;&#x7F72;&#x5728;&#x4E13;&#x7528;&#x57DF;&#x540D;&#x4E4B;&#x4E0B;&#x3002;</p>
+<pre><code>https://api.example.com
+</code></pre><p>&#x5982;&#x679C;&#x786E;&#x5B9A;API&#x5F88;&#x7B80;&#x5355;&#xFF0C;&#x4E0D;&#x4F1A;&#x6709;&#x8FDB;&#x4E00;&#x6B65;&#x6269;&#x5C55;&#xFF0C;&#x53EF;&#x4EE5;&#x8003;&#x8651;&#x653E;&#x5728;&#x4E3B;&#x57DF;&#x540D;&#x4E0B;&#x3002;</p>
+<pre><code>https://example.org/api/
+</code></pre><h2 id="&#x4E09;&#x3001;&#x7248;&#x672C;&#xFF08;Versioning&#xFF09;"><a href="#&#x4E09;&#x3001;&#x7248;&#x672C;&#xFF08;Versioning&#xFF09;" class="headerlink" title="&#x4E09;&#x3001;&#x7248;&#x672C;&#xFF08;Versioning&#xFF09;"></a>&#x4E09;&#x3001;&#x7248;&#x672C;&#xFF08;Versioning&#xFF09;</h2><p>&#x5E94;&#x8BE5;&#x5C06;API&#x7684;&#x7248;&#x672C;&#x53F7;&#x653E;&#x5165;URL&#x3002;</p>
+<pre><code>https://api.example.com/v1/
+</code></pre><p>&#x53E6;&#x4E00;&#x79CD;&#x505A;&#x6CD5;&#x662F;&#xFF0C;&#x5C06;&#x7248;&#x672C;&#x53F7;&#x653E;&#x5728;HTTP&#x5934;&#x4FE1;&#x606F;&#x4E2D;&#xFF0C;&#x4F46;&#x4E0D;&#x5982;&#x653E;&#x5165;URL&#x65B9;&#x4FBF;&#x548C;&#x76F4;&#x89C2;&#x3002;Github&#x91C7;&#x7528;&#x8FD9;&#x79CD;&#x505A;&#x6CD5;&#x3002;</p>
+<h2 id="&#x56DB;&#x3001;&#x8DEF;&#x5F84;&#xFF08;Endpoint&#xFF09;"><a href="#&#x56DB;&#x3001;&#x8DEF;&#x5F84;&#xFF08;Endpoint&#xFF09;" class="headerlink" title="&#x56DB;&#x3001;&#x8DEF;&#x5F84;&#xFF08;Endpoint&#xFF09;"></a>&#x56DB;&#x3001;&#x8DEF;&#x5F84;&#xFF08;Endpoint&#xFF09;</h2><p>&#x8DEF;&#x5F84;&#x53C8;&#x79F0;&#x201D;&#x7EC8;&#x70B9;&#x201D;&#xFF08;endpoint&#xFF09;&#xFF0C;&#x8868;&#x793A;API&#x7684;&#x5177;&#x4F53;&#x7F51;&#x5740;&#x3002;</p>
+<p>&#x5728;RESTful&#x67B6;&#x6784;&#x4E2D;&#xFF0C;&#x6BCF;&#x4E2A;&#x7F51;&#x5740;&#x4EE3;&#x8868;&#x4E00;&#x79CD;&#x8D44;&#x6E90;&#xFF08;resource&#xFF09;&#xFF0C;&#x6240;&#x4EE5;&#x7F51;&#x5740;&#x4E2D;&#x4E0D;&#x80FD;&#x6709;&#x52A8;&#x8BCD;&#xFF0C;&#x53EA;&#x80FD;&#x6709;&#x540D;&#x8BCD;&#xFF0C;&#x800C;&#x4E14;&#x6240;&#x7528;&#x7684;&#x540D;&#x8BCD;&#x5F80;&#x5F80;&#x4E0E;&#x6570;&#x636E;&#x5E93;&#x7684;&#x8868;&#x683C;&#x540D;&#x5BF9;&#x5E94;&#x3002;&#x4E00;&#x822C;&#x6765;&#x8BF4;&#xFF0C;&#x6570;&#x636E;&#x5E93;&#x4E2D;&#x7684;&#x8868;&#x90FD;&#x662F;&#x540C;&#x79CD;&#x8BB0;&#x5F55;&#x7684;&#x201D;&#x96C6;&#x5408;&#x201D;&#xFF08;collection&#xFF09;&#xFF0C;&#x6240;&#x4EE5;API&#x4E2D;&#x7684;&#x540D;&#x8BCD;&#x4E5F;&#x5E94;&#x8BE5;&#x4F7F;&#x7528;&#x590D;&#x6570;&#x3002;</p>
+<p>&#x4E3E;&#x4F8B;&#x6765;&#x8BF4;&#xFF0C;&#x6709;&#x4E00;&#x4E2A;API&#x63D0;&#x4F9B;&#x52A8;&#x7269;&#x56ED;&#xFF08;zoo&#xFF09;&#x7684;&#x4FE1;&#x606F;&#xFF0C;&#x8FD8;&#x5305;&#x62EC;&#x5404;&#x79CD;&#x52A8;&#x7269;&#x548C;&#x96C7;&#x5458;&#x7684;&#x4FE1;&#x606F;&#xFF0C;&#x5219;&#x5B83;&#x7684;&#x8DEF;&#x5F84;&#x5E94;&#x8BE5;&#x8BBE;&#x8BA1;&#x6210;&#x4E0B;&#x9762;&#x8FD9;&#x6837;&#x3002;</p>
+<pre><code>https://api.example.com/v1/zoos
+https://api.example.com/v1/animals
+https://api.example.com/v1/employees
+</code></pre><h2 id="&#x4E94;&#x3001;HTTP&#x52A8;&#x8BCD;"><a href="#&#x4E94;&#x3001;HTTP&#x52A8;&#x8BCD;" class="headerlink" title="&#x4E94;&#x3001;HTTP&#x52A8;&#x8BCD;"></a>&#x4E94;&#x3001;HTTP&#x52A8;&#x8BCD;</h2><p>&#x5BF9;&#x4E8E;&#x8D44;&#x6E90;&#x7684;&#x5177;&#x4F53;&#x64CD;&#x4F5C;&#x7C7B;&#x578B;&#xFF0C;&#x7531;HTTP&#x52A8;&#x8BCD;&#x8868;&#x793A;&#x3002;</p>
+<p>&#x5E38;&#x7528;&#x7684;HTTP&#x52A8;&#x8BCD;&#x6709;&#x4E0B;&#x9762;&#x4E94;&#x4E2A;&#xFF08;&#x62EC;&#x53F7;&#x91CC;&#x662F;&#x5BF9;&#x5E94;&#x7684;SQL&#x547D;&#x4EE4;&#xFF09;&#x3002;</p>
+<pre><code>GET&#xFF08;SELECT&#xFF09;&#xFF1A;&#x4ECE;&#x670D;&#x52A1;&#x5668;&#x53D6;&#x51FA;&#x8D44;&#x6E90;&#xFF08;&#x4E00;&#x9879;&#x6216;&#x591A;&#x9879;&#xFF09;&#x3002;
+POST&#xFF08;CREATE&#xFF09;&#xFF1A;&#x5728;&#x670D;&#x52A1;&#x5668;&#x65B0;&#x5EFA;&#x4E00;&#x4E2A;&#x8D44;&#x6E90;&#x3002;
+PUT&#xFF08;UPDATE&#xFF09;&#xFF1A;&#x5728;&#x670D;&#x52A1;&#x5668;&#x66F4;&#x65B0;&#x8D44;&#x6E90;&#xFF08;&#x5BA2;&#x6237;&#x7AEF;&#x63D0;&#x4F9B;&#x6539;&#x53D8;&#x540E;&#x7684;&#x5B8C;&#x6574;&#x8D44;&#x6E90;&#xFF09;&#x3002;
+PATCH&#xFF08;UPDATE&#xFF09;&#xFF1A;&#x5728;&#x670D;&#x52A1;&#x5668;&#x66F4;&#x65B0;&#x8D44;&#x6E90;&#xFF08;&#x5BA2;&#x6237;&#x7AEF;&#x63D0;&#x4F9B;&#x6539;&#x53D8;&#x7684;&#x5C5E;&#x6027;&#xFF09;&#x3002;
+DELETE&#xFF08;DELETE&#xFF09;&#xFF1A;&#x4ECE;&#x670D;&#x52A1;&#x5668;&#x5220;&#x9664;&#x8D44;&#x6E90;&#x3002;
+</code></pre><p>&#x8FD8;&#x6709;&#x4E24;&#x4E2A;&#x4E0D;&#x5E38;&#x7528;&#x7684;HTTP&#x52A8;&#x8BCD;&#x3002;</p>
+<pre><code>HEAD&#xFF1A;&#x83B7;&#x53D6;&#x8D44;&#x6E90;&#x7684;&#x5143;&#x6570;&#x636E;&#x3002;
+OPTIONS&#xFF1A;&#x83B7;&#x53D6;&#x4FE1;&#x606F;&#xFF0C;&#x5173;&#x4E8E;&#x8D44;&#x6E90;&#x7684;&#x54EA;&#x4E9B;&#x5C5E;&#x6027;&#x662F;&#x5BA2;&#x6237;&#x7AEF;&#x53EF;&#x4EE5;&#x6539;&#x53D8;&#x7684;&#x3002;
+</code></pre><p>&#x4E0B;&#x9762;&#x662F;&#x4E00;&#x4E9B;&#x4F8B;&#x5B50;&#x3002;</p>
+<pre><code>GET /zoos&#xFF1A;&#x5217;&#x51FA;&#x6240;&#x6709;&#x52A8;&#x7269;&#x56ED;
+POST /zoos&#xFF1A;&#x65B0;&#x5EFA;&#x4E00;&#x4E2A;&#x52A8;&#x7269;&#x56ED;
+GET /zoos/ID&#xFF1A;&#x83B7;&#x53D6;&#x67D0;&#x4E2A;&#x6307;&#x5B9A;&#x52A8;&#x7269;&#x56ED;&#x7684;&#x4FE1;&#x606F;
+PUT /zoos/ID&#xFF1A;&#x66F4;&#x65B0;&#x67D0;&#x4E2A;&#x6307;&#x5B9A;&#x52A8;&#x7269;&#x56ED;&#x7684;&#x4FE1;&#x606F;&#xFF08;&#x63D0;&#x4F9B;&#x8BE5;&#x52A8;&#x7269;&#x56ED;&#x7684;&#x5168;&#x90E8;&#x4FE1;&#x606F;&#xFF09;
+PATCH /zoos/ID&#xFF1A;&#x66F4;&#x65B0;&#x67D0;&#x4E2A;&#x6307;&#x5B9A;&#x52A8;&#x7269;&#x56ED;&#x7684;&#x4FE1;&#x606F;&#xFF08;&#x63D0;&#x4F9B;&#x8BE5;&#x52A8;&#x7269;&#x56ED;&#x7684;&#x90E8;&#x5206;&#x4FE1;&#x606F;&#xFF09;
+DELETE /zoos/ID&#xFF1A;&#x5220;&#x9664;&#x67D0;&#x4E2A;&#x52A8;&#x7269;&#x56ED;
+GET /zoos/ID/animals&#xFF1A;&#x5217;&#x51FA;&#x67D0;&#x4E2A;&#x6307;&#x5B9A;&#x52A8;&#x7269;&#x56ED;&#x7684;&#x6240;&#x6709;&#x52A8;&#x7269;
+DELETE /zoos/ID/animals/ID&#xFF1A;&#x5220;&#x9664;&#x67D0;&#x4E2A;&#x6307;&#x5B9A;&#x52A8;&#x7269;&#x56ED;&#x7684;&#x6307;&#x5B9A;&#x52A8;&#x7269;
+</code></pre><h2 id="&#x516D;&#x3001;&#x8FC7;&#x6EE4;&#x4FE1;&#x606F;&#xFF08;Filtering&#xFF09;"><a href="#&#x516D;&#x3001;&#x8FC7;&#x6EE4;&#x4FE1;&#x606F;&#xFF08;Filtering&#xFF09;" class="headerlink" title="&#x516D;&#x3001;&#x8FC7;&#x6EE4;&#x4FE1;&#x606F;&#xFF08;Filtering&#xFF09;"></a>&#x516D;&#x3001;&#x8FC7;&#x6EE4;&#x4FE1;&#x606F;&#xFF08;Filtering&#xFF09;</h2><p>&#x5982;&#x679C;&#x8BB0;&#x5F55;&#x6570;&#x91CF;&#x5F88;&#x591A;&#xFF0C;&#x670D;&#x52A1;&#x5668;&#x4E0D;&#x53EF;&#x80FD;&#x90FD;&#x5C06;&#x5B83;&#x4EEC;&#x8FD4;&#x56DE;&#x7ED9;&#x7528;&#x6237;&#x3002;API&#x5E94;&#x8BE5;&#x63D0;&#x4F9B;&#x53C2;&#x6570;&#xFF0C;&#x8FC7;&#x6EE4;&#x8FD4;&#x56DE;&#x7ED3;&#x679C;&#x3002;</p>
+<p>&#x4E0B;&#x9762;&#x662F;&#x4E00;&#x4E9B;&#x5E38;&#x89C1;&#x7684;&#x53C2;&#x6570;&#x3002;</p>
+<pre><code>?limit=10&#xFF1A;&#x6307;&#x5B9A;&#x8FD4;&#x56DE;&#x8BB0;&#x5F55;&#x7684;&#x6570;&#x91CF;
+?offset=10&#xFF1A;&#x6307;&#x5B9A;&#x8FD4;&#x56DE;&#x8BB0;&#x5F55;&#x7684;&#x5F00;&#x59CB;&#x4F4D;&#x7F6E;&#x3002;
+?page=2&amp;per_page=100&#xFF1A;&#x6307;&#x5B9A;&#x7B2C;&#x51E0;&#x9875;&#xFF0C;&#x4EE5;&#x53CA;&#x6BCF;&#x9875;&#x7684;&#x8BB0;&#x5F55;&#x6570;&#x3002;
+?sortby=name&amp;order=asc&#xFF1A;&#x6307;&#x5B9A;&#x8FD4;&#x56DE;&#x7ED3;&#x679C;&#x6309;&#x7167;&#x54EA;&#x4E2A;&#x5C5E;&#x6027;&#x6392;&#x5E8F;&#xFF0C;&#x4EE5;&#x53CA;&#x6392;&#x5E8F;&#x987A;&#x5E8F;&#x3002;
+?animal_type_id=1&#xFF1A;&#x6307;&#x5B9A;&#x7B5B;&#x9009;&#x6761;&#x4EF6;
+</code></pre><p>&#x53C2;&#x6570;&#x7684;&#x8BBE;&#x8BA1;&#x5141;&#x8BB8;&#x5B58;&#x5728;&#x5197;&#x4F59;&#xFF0C;&#x5373;&#x5141;&#x8BB8;API&#x8DEF;&#x5F84;&#x548C;URL&#x53C2;&#x6570;&#x5076;&#x5C14;&#x6709;&#x91CD;&#x590D;&#x3002;&#x6BD4;&#x5982;&#xFF0C;GET /zoo/ID/animals &#x4E0E; GET /animals?zoo_id=ID &#x7684;&#x542B;&#x4E49;&#x662F;&#x76F8;&#x540C;&#x7684;&#x3002;</p>
+<h2 id="&#x4E03;&#x3001;&#x72B6;&#x6001;&#x7801;&#xFF08;Status-Codes&#xFF09;"><a href="#&#x4E03;&#x3001;&#x72B6;&#x6001;&#x7801;&#xFF08;Status-Codes&#xFF09;" class="headerlink" title="&#x4E03;&#x3001;&#x72B6;&#x6001;&#x7801;&#xFF08;Status Codes&#xFF09;"></a>&#x4E03;&#x3001;&#x72B6;&#x6001;&#x7801;&#xFF08;Status Codes&#xFF09;</h2><p>&#x670D;&#x52A1;&#x5668;&#x5411;&#x7528;&#x6237;&#x8FD4;&#x56DE;&#x7684;&#x72B6;&#x6001;&#x7801;&#x548C;&#x63D0;&#x793A;&#x4FE1;&#x606F;&#xFF0C;&#x5E38;&#x89C1;&#x7684;&#x6709;&#x4EE5;&#x4E0B;&#x4E00;&#x4E9B;&#xFF08;&#x65B9;&#x62EC;&#x53F7;&#x4E2D;&#x662F;&#x8BE5;&#x72B6;&#x6001;&#x7801;&#x5BF9;&#x5E94;&#x7684;HTTP&#x52A8;&#x8BCD;&#xFF09;&#x3002;</p>
+<pre><code>200 OK - [GET]&#xFF1A;&#x670D;&#x52A1;&#x5668;&#x6210;&#x529F;&#x8FD4;&#x56DE;&#x7528;&#x6237;&#x8BF7;&#x6C42;&#x7684;&#x6570;&#x636E;&#xFF0C;&#x8BE5;&#x64CD;&#x4F5C;&#x662F;&#x5E42;&#x7B49;&#x7684;&#xFF08;Idempotent&#xFF09;&#x3002;
+201 CREATED - [POST/PUT/PATCH]&#xFF1A;&#x7528;&#x6237;&#x65B0;&#x5EFA;&#x6216;&#x4FEE;&#x6539;&#x6570;&#x636E;&#x6210;&#x529F;&#x3002;
+202 Accepted - [*]&#xFF1A;&#x8868;&#x793A;&#x4E00;&#x4E2A;&#x8BF7;&#x6C42;&#x5DF2;&#x7ECF;&#x8FDB;&#x5165;&#x540E;&#x53F0;&#x6392;&#x961F;&#xFF08;&#x5F02;&#x6B65;&#x4EFB;&#x52A1;&#xFF09;
+204 NO CONTENT - [DELETE]&#xFF1A;&#x7528;&#x6237;&#x5220;&#x9664;&#x6570;&#x636E;&#x6210;&#x529F;&#x3002;
+400 INVALID REQUEST - [POST/PUT/PATCH]&#xFF1A;&#x7528;&#x6237;&#x53D1;&#x51FA;&#x7684;&#x8BF7;&#x6C42;&#x6709;&#x9519;&#x8BEF;&#xFF0C;&#x670D;&#x52A1;&#x5668;&#x6CA1;&#x6709;&#x8FDB;&#x884C;&#x65B0;&#x5EFA;&#x6216;&#x4FEE;&#x6539;&#x6570;&#x636E;&#x7684;&#x64CD;&#x4F5C;&#xFF0C;&#x8BE5;&#x64CD;&#x4F5C;&#x662F;&#x5E42;&#x7B49;&#x7684;&#x3002;
+401 Unauthorized - [*]&#xFF1A;&#x8868;&#x793A;&#x7528;&#x6237;&#x6CA1;&#x6709;&#x6743;&#x9650;&#xFF08;&#x4EE4;&#x724C;&#x3001;&#x7528;&#x6237;&#x540D;&#x3001;&#x5BC6;&#x7801;&#x9519;&#x8BEF;&#xFF09;&#x3002;
+403 Forbidden - [*] &#x8868;&#x793A;&#x7528;&#x6237;&#x5F97;&#x5230;&#x6388;&#x6743;&#xFF08;&#x4E0E;401&#x9519;&#x8BEF;&#x76F8;&#x5BF9;&#xFF09;&#xFF0C;&#x4F46;&#x662F;&#x8BBF;&#x95EE;&#x662F;&#x88AB;&#x7981;&#x6B62;&#x7684;&#x3002;
+404 NOT FOUND - [*]&#xFF1A;&#x7528;&#x6237;&#x53D1;&#x51FA;&#x7684;&#x8BF7;&#x6C42;&#x9488;&#x5BF9;&#x7684;&#x662F;&#x4E0D;&#x5B58;&#x5728;&#x7684;&#x8BB0;&#x5F55;&#xFF0C;&#x670D;&#x52A1;&#x5668;&#x6CA1;&#x6709;&#x8FDB;&#x884C;&#x64CD;&#x4F5C;&#xFF0C;&#x8BE5;&#x64CD;&#x4F5C;&#x662F;&#x5E42;&#x7B49;&#x7684;&#x3002;
+406 Not Acceptable - [GET]&#xFF1A;&#x7528;&#x6237;&#x8BF7;&#x6C42;&#x7684;&#x683C;&#x5F0F;&#x4E0D;&#x53EF;&#x5F97;&#xFF08;&#x6BD4;&#x5982;&#x7528;&#x6237;&#x8BF7;&#x6C42;JSON&#x683C;&#x5F0F;&#xFF0C;&#x4F46;&#x662F;&#x53EA;&#x6709;XML&#x683C;&#x5F0F;&#xFF09;&#x3002;
+410 Gone -[GET]&#xFF1A;&#x7528;&#x6237;&#x8BF7;&#x6C42;&#x7684;&#x8D44;&#x6E90;&#x88AB;&#x6C38;&#x4E45;&#x5220;&#x9664;&#xFF0C;&#x4E14;&#x4E0D;&#x4F1A;&#x518D;&#x5F97;&#x5230;&#x7684;&#x3002;
+422 Unprocesable entity - [POST/PUT/PATCH] &#x5F53;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#x65F6;&#xFF0C;&#x53D1;&#x751F;&#x4E00;&#x4E2A;&#x9A8C;&#x8BC1;&#x9519;&#x8BEF;&#x3002;
+500 INTERNAL SERVER ERROR - [*]&#xFF1A;&#x670D;&#x52A1;&#x5668;&#x53D1;&#x751F;&#x9519;&#x8BEF;&#xFF0C;&#x7528;&#x6237;&#x5C06;&#x65E0;&#x6CD5;&#x5224;&#x65AD;&#x53D1;&#x51FA;&#x7684;&#x8BF7;&#x6C42;&#x662F;&#x5426;&#x6210;&#x529F;&#x3002;
+</code></pre><p>&#x72B6;&#x6001;&#x7801;&#x7684;&#x5B8C;&#x5168;&#x5217;&#x8868;&#x53C2;&#x89C1;<a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html" target="_blank" rel="external">&#x8FD9;&#x91CC;</a>&#x3002;</p>
+<h2 id="&#x516B;&#x3001;&#x9519;&#x8BEF;&#x5904;&#x7406;&#xFF08;Error-handling&#xFF09;"><a href="#&#x516B;&#x3001;&#x9519;&#x8BEF;&#x5904;&#x7406;&#xFF08;Error-handling&#xFF09;" class="headerlink" title="&#x516B;&#x3001;&#x9519;&#x8BEF;&#x5904;&#x7406;&#xFF08;Error handling&#xFF09;"></a>&#x516B;&#x3001;&#x9519;&#x8BEF;&#x5904;&#x7406;&#xFF08;Error handling&#xFF09;</h2><p>&#x5982;&#x679C;&#x72B6;&#x6001;&#x7801;&#x662F;4xx&#xFF0C;&#x5C31;&#x5E94;&#x8BE5;&#x5411;&#x7528;&#x6237;&#x8FD4;&#x56DE;&#x51FA;&#x9519;&#x4FE1;&#x606F;&#x3002;&#x4E00;&#x822C;&#x6765;&#x8BF4;&#xFF0C;&#x8FD4;&#x56DE;&#x7684;&#x4FE1;&#x606F;&#x4E2D;&#x5C06;error&#x4F5C;&#x4E3A;&#x952E;&#x540D;&#xFF0C;&#x51FA;&#x9519;&#x4FE1;&#x606F;&#x4F5C;&#x4E3A;&#x952E;&#x503C;&#x5373;&#x53EF;&#x3002;</p>
+<pre><code>{
+    error: &quot;Invalid API key&quot;
+}
+</code></pre><h2 id="&#x4E5D;&#x3001;&#x8FD4;&#x56DE;&#x7ED3;&#x679C;"><a href="#&#x4E5D;&#x3001;&#x8FD4;&#x56DE;&#x7ED3;&#x679C;" class="headerlink" title="&#x4E5D;&#x3001;&#x8FD4;&#x56DE;&#x7ED3;&#x679C;"></a>&#x4E5D;&#x3001;&#x8FD4;&#x56DE;&#x7ED3;&#x679C;</h2><p>&#x9488;&#x5BF9;&#x4E0D;&#x540C;&#x64CD;&#x4F5C;&#xFF0C;&#x670D;&#x52A1;&#x5668;&#x5411;&#x7528;&#x6237;&#x8FD4;&#x56DE;&#x7684;&#x7ED3;&#x679C;&#x5E94;&#x8BE5;&#x7B26;&#x5408;&#x4EE5;&#x4E0B;&#x89C4;&#x8303;&#x3002;</p>
+<pre><code>GET /collection&#xFF1A;&#x8FD4;&#x56DE;&#x8D44;&#x6E90;&#x5BF9;&#x8C61;&#x7684;&#x5217;&#x8868;&#xFF08;&#x6570;&#x7EC4;&#xFF09;
+GET /collection/resource&#xFF1A;&#x8FD4;&#x56DE;&#x5355;&#x4E2A;&#x8D44;&#x6E90;&#x5BF9;&#x8C61;
+POST /collection&#xFF1A;&#x8FD4;&#x56DE;&#x65B0;&#x751F;&#x6210;&#x7684;&#x8D44;&#x6E90;&#x5BF9;&#x8C61;
+PUT /collection/resource&#xFF1A;&#x8FD4;&#x56DE;&#x5B8C;&#x6574;&#x7684;&#x8D44;&#x6E90;&#x5BF9;&#x8C61;
+PATCH /collection/resource&#xFF1A;&#x8FD4;&#x56DE;&#x5B8C;&#x6574;&#x7684;&#x8D44;&#x6E90;&#x5BF9;&#x8C61;
+DELETE /collection/resource&#xFF1A;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x7A7A;&#x6587;&#x6863;
+</code></pre><h2 id="&#x5341;&#x3001;Hypermedia-API"><a href="#&#x5341;&#x3001;Hypermedia-API" class="headerlink" title="&#x5341;&#x3001;Hypermedia API"></a>&#x5341;&#x3001;Hypermedia API</h2><p>RESTful API&#x6700;&#x597D;&#x505A;&#x5230;Hypermedia&#xFF0C;&#x5373;&#x8FD4;&#x56DE;&#x7ED3;&#x679C;&#x4E2D;&#x63D0;&#x4F9B;&#x94FE;&#x63A5;&#xFF0C;&#x8FDE;&#x5411;&#x5176;&#x4ED6;API&#x65B9;&#x6CD5;&#xFF0C;&#x4F7F;&#x5F97;&#x7528;&#x6237;&#x4E0D;&#x67E5;&#x6587;&#x6863;&#xFF0C;&#x4E5F;&#x77E5;&#x9053;&#x4E0B;&#x4E00;&#x6B65;&#x5E94;&#x8BE5;&#x505A;&#x4EC0;&#x4E48;&#x3002;</p>
+<p>&#x6BD4;&#x5982;&#xFF0C;&#x5F53;&#x7528;&#x6237;&#x5411;api.example.com&#x7684;&#x6839;&#x76EE;&#x5F55;&#x53D1;&#x51FA;&#x8BF7;&#x6C42;&#xFF0C;&#x4F1A;&#x5F97;&#x5230;&#x8FD9;&#x6837;&#x4E00;&#x4E2A;&#x6587;&#x6863;&#x3002;</p>
+<pre><code>{
+  &quot;link&quot;: {
+    &quot;rel&quot;:   &quot;collection https://www.example.com/zoos&quot;,
+    &quot;href&quot;:  &quot;https://api.example.com/zoos&quot;,
+    &quot;title&quot;: &quot;List of zoos&quot;,
+    &quot;type&quot;:  &quot;application/vnd.yourformat+json&quot;
+  }
+}
+</code></pre><p>&#x4E0A;&#x9762;&#x4EE3;&#x7801;&#x8868;&#x793A;&#xFF0C;&#x6587;&#x6863;&#x4E2D;&#x6709;&#x4E00;&#x4E2A;link&#x5C5E;&#x6027;&#xFF0C;&#x7528;&#x6237;&#x8BFB;&#x53D6;&#x8FD9;&#x4E2A;&#x5C5E;&#x6027;&#x5C31;&#x77E5;&#x9053;&#x4E0B;&#x4E00;&#x6B65;&#x8BE5;&#x8C03;&#x7528;&#x4EC0;&#x4E48;API&#x4E86;&#x3002;rel&#x8868;&#x793A;&#x8FD9;&#x4E2A;API&#x4E0E;&#x5F53;&#x524D;&#x7F51;&#x5740;&#x7684;&#x5173;&#x7CFB;&#xFF08;collection&#x5173;&#x7CFB;&#xFF0C;&#x5E76;&#x7ED9;&#x51FA;&#x8BE5;collection&#x7684;&#x7F51;&#x5740;&#xFF09;&#xFF0C;href&#x8868;&#x793A;API&#x7684;&#x8DEF;&#x5F84;&#xFF0C;title&#x8868;&#x793A;API&#x7684;&#x6807;&#x9898;&#xFF0C;type&#x8868;&#x793A;&#x8FD4;&#x56DE;&#x7C7B;&#x578B;&#x3002;</p>
+<p>Hypermedia API&#x7684;&#x8BBE;&#x8BA1;&#x88AB;&#x79F0;&#x4E3A;<a href="http://en.wikipedia.org/wiki/HATEOAS" target="_blank" rel="external">HATEOAS</a>&#x3002;Github&#x7684;API&#x5C31;&#x662F;&#x8FD9;&#x79CD;&#x8BBE;&#x8BA1;&#xFF0C;&#x8BBF;&#x95EE;<a href="https://api.github.com/" target="_blank" rel="external">api.github.com</a>&#x4F1A;&#x5F97;&#x5230;&#x4E00;&#x4E2A;&#x6240;&#x6709;&#x53EF;&#x7528;API&#x7684;&#x7F51;&#x5740;&#x5217;&#x8868;&#x3002;</p>
+<pre><code>{
+  &quot;current_user_url&quot;: &quot;https://api.github.com/user&quot;,
+  &quot;authorizations_url&quot;: &quot;https://api.github.com/authorizations&quot;,
+  // ...
+}
+</code></pre><p>&#x4ECE;&#x4E0A;&#x9762;&#x53EF;&#x4EE5;&#x770B;&#x5230;&#xFF0C;&#x5982;&#x679C;&#x60F3;&#x83B7;&#x53D6;&#x5F53;&#x524D;&#x7528;&#x6237;&#x7684;&#x4FE1;&#x606F;&#xFF0C;&#x5E94;&#x8BE5;&#x53BB;&#x8BBF;&#x95EE;<a href="https://api.github.com/user" target="_blank" rel="external">api.github.com/user</a>&#xFF0C;&#x7136;&#x540E;&#x5C31;&#x5F97;&#x5230;&#x4E86;&#x4E0B;&#x9762;&#x7ED3;&#x679C;&#x3002;</p>
+<pre><code>{
+  &quot;message&quot;: &quot;Requires authentication&quot;,
+  &quot;documentation_url&quot;: &quot;https://developer.github.com/v3&quot;
+}
+</code></pre><p>&#x4E0A;&#x9762;&#x4EE3;&#x7801;&#x8868;&#x793A;&#xFF0C;&#x670D;&#x52A1;&#x5668;&#x7ED9;&#x51FA;&#x4E86;&#x63D0;&#x793A;&#x4FE1;&#x606F;&#xFF0C;&#x4EE5;&#x53CA;&#x6587;&#x6863;&#x7684;&#x7F51;&#x5740;&#x3002;</p>
+<h2 id="&#x5341;&#x4E00;&#x3001;&#x5176;&#x4ED6;"><a href="#&#x5341;&#x4E00;&#x3001;&#x5176;&#x4ED6;" class="headerlink" title="&#x5341;&#x4E00;&#x3001;&#x5176;&#x4ED6;"></a>&#x5341;&#x4E00;&#x3001;&#x5176;&#x4ED6;</h2><p>&#xFF08;1&#xFF09;API&#x7684;&#x8EAB;&#x4EFD;&#x8BA4;&#x8BC1;&#x5E94;&#x8BE5;&#x4F7F;&#x7528;OAuth 2.0&#x6846;&#x67B6;&#x3002;</p>
+<p>&#xFF08;2&#xFF09;&#x670D;&#x52A1;&#x5668;&#x8FD4;&#x56DE;&#x7684;&#x6570;&#x636E;&#x683C;&#x5F0F;&#xFF0C;&#x5E94;&#x8BE5;&#x5C3D;&#x91CF;&#x4F7F;&#x7528;JSON&#xFF0C;&#x907F;&#x514D;&#x4F7F;&#x7528;XML&#x3002;</p>
+<p>&#xFF08;&#x5B8C;&#xFF09;</p>
+<p>&#x6587;&#x6863;&#x4FE1;&#x606F;</p>
+<pre><code>&#x7248;&#x6743;&#x58F0;&#x660E;&#xFF1A;&#x81EA;&#x7531;&#x8F6C;&#x8F7D;-&#x975E;&#x5546;&#x7528;-&#x975E;&#x884D;&#x751F;-&#x4FDD;&#x6301;&#x7F72;&#x540D;&#xFF08;&#x521B;&#x610F;&#x5171;&#x4EAB;3.0&#x8BB8;&#x53EF;&#x8BC1;&#xFF09;
+&#x53D1;&#x8868;&#x65E5;&#x671F;&#xFF1A; 2014&#x5E74;5&#x6708;22&#x65E5;
+</code></pre>
+            
+          </span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
                 <a class="post-title-link" href="/2016/03/24/introduction-of-json/" itemprop="url">
                   Introduction of JSON
                 </a>
@@ -238,155 +420,155 @@
         
           <span itemprop="articleBody">
             
-              <h1 id="1-JSON-简介"><a href="#1-JSON-简介" class="headerlink" title="1 JSON 简介"></a>1 JSON 简介</h1><p>JSON：JavaScript 对象表示法（JavaScript Object Notation）。</p>
-<p>它基于ECMAScript的一个子集，采用完全独立于语言的文本格式。易于人阅读和编写，同时也易于机器解析和生成(一般用于提升网络传输速率)。<br>类似于 XML，但比 XML 更小、更快，更易解析。是一种理想的数据交换语言。</p>
-<h2 id="特点："><a href="#特点：" class="headerlink" title="特点："></a>特点：</h2><ul>
-<li>JSON 指的是 JavaScript 对象表示法（JavaScript Object Notation）</li>
-<li>JSON 是轻量级的文本数据交换格式</li>
-<li>JSON 独立于语言</li>
-<li>JSON 具有自我描述性，易理解</li>
+              <h1 id="1-JSON-&#x7B80;&#x4ECB;"><a href="#1-JSON-&#x7B80;&#x4ECB;" class="headerlink" title="1 JSON &#x7B80;&#x4ECB;"></a>1 JSON &#x7B80;&#x4ECB;</h1><p>JSON&#xFF1A;JavaScript &#x5BF9;&#x8C61;&#x8868;&#x793A;&#x6CD5;&#xFF08;JavaScript Object Notation&#xFF09;&#x3002;</p>
+<p>&#x5B83;&#x57FA;&#x4E8E;ECMAScript&#x7684;&#x4E00;&#x4E2A;&#x5B50;&#x96C6;&#xFF0C;&#x91C7;&#x7528;&#x5B8C;&#x5168;&#x72EC;&#x7ACB;&#x4E8E;&#x8BED;&#x8A00;&#x7684;&#x6587;&#x672C;&#x683C;&#x5F0F;&#x3002;&#x6613;&#x4E8E;&#x4EBA;&#x9605;&#x8BFB;&#x548C;&#x7F16;&#x5199;&#xFF0C;&#x540C;&#x65F6;&#x4E5F;&#x6613;&#x4E8E;&#x673A;&#x5668;&#x89E3;&#x6790;&#x548C;&#x751F;&#x6210;(&#x4E00;&#x822C;&#x7528;&#x4E8E;&#x63D0;&#x5347;&#x7F51;&#x7EDC;&#x4F20;&#x8F93;&#x901F;&#x7387;)&#x3002;<br>&#x7C7B;&#x4F3C;&#x4E8E; XML&#xFF0C;&#x4F46;&#x6BD4; XML &#x66F4;&#x5C0F;&#x3001;&#x66F4;&#x5FEB;&#xFF0C;&#x66F4;&#x6613;&#x89E3;&#x6790;&#x3002;&#x662F;&#x4E00;&#x79CD;&#x7406;&#x60F3;&#x7684;&#x6570;&#x636E;&#x4EA4;&#x6362;&#x8BED;&#x8A00;&#x3002;</p>
+<h2 id="&#x7279;&#x70B9;&#xFF1A;"><a href="#&#x7279;&#x70B9;&#xFF1A;" class="headerlink" title="&#x7279;&#x70B9;&#xFF1A;"></a>&#x7279;&#x70B9;&#xFF1A;</h2><ul>
+<li>JSON &#x6307;&#x7684;&#x662F; JavaScript &#x5BF9;&#x8C61;&#x8868;&#x793A;&#x6CD5;&#xFF08;JavaScript Object Notation&#xFF09;</li>
+<li>JSON &#x662F;&#x8F7B;&#x91CF;&#x7EA7;&#x7684;&#x6587;&#x672C;&#x6570;&#x636E;&#x4EA4;&#x6362;&#x683C;&#x5F0F;</li>
+<li>JSON &#x72EC;&#x7ACB;&#x4E8E;&#x8BED;&#x8A00;</li>
+<li>JSON &#x5177;&#x6709;&#x81EA;&#x6211;&#x63CF;&#x8FF0;&#x6027;&#xFF0C;&#x6613;&#x7406;&#x89E3;</li>
 </ul>
-<h2 id="Example"><a href="#Example" class="headerlink" title="Example:"></a>Example:</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  name: <span class="string">"World"</span></span><br><span class="line">  countries: [</span><br><span class="line">    &#123;</span><br><span class="line">      name: <span class="string">"United States"</span>,</span><br><span class="line">      capital: <span class="string">"Washington, D.C."</span></span><br><span class="line">    &#125;, &#123;</span><br><span class="line">      name: <span class="string">"United Kingdom"</span>,</span><br><span class="line">      capital: <span class="string">"London"</span></span><br><span class="line">    &#125;</span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h1 id="2-JSON-语法"><a href="#2-JSON-语法" class="headerlink" title="2 JSON 语法"></a>2 JSON 语法</h1><h2 id="JSON-语法规则"><a href="#JSON-语法规则" class="headerlink" title="JSON 语法规则"></a>JSON 语法规则</h2><p>JSON 语法是 JavaScript 对象表示语法的子集。</p>
+<h2 id="Example"><a href="#Example" class="headerlink" title="Example:"></a>Example:</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">{</span><br><span class="line">  name: <span class="string">&quot;World&quot;</span></span><br><span class="line">  countries: [</span><br><span class="line">    {</span><br><span class="line">      name: <span class="string">&quot;United States&quot;</span>,</span><br><span class="line">      capital: <span class="string">&quot;Washington, D.C.&quot;</span></span><br><span class="line">    }, {</span><br><span class="line">      name: <span class="string">&quot;United Kingdom&quot;</span>,</span><br><span class="line">      capital: <span class="string">&quot;London&quot;</span></span><br><span class="line">    }</span><br><span class="line">  ]</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+<h1 id="2-JSON-&#x8BED;&#x6CD5;"><a href="#2-JSON-&#x8BED;&#x6CD5;" class="headerlink" title="2 JSON &#x8BED;&#x6CD5;"></a>2 JSON &#x8BED;&#x6CD5;</h1><h2 id="JSON-&#x8BED;&#x6CD5;&#x89C4;&#x5219;"><a href="#JSON-&#x8BED;&#x6CD5;&#x89C4;&#x5219;" class="headerlink" title="JSON &#x8BED;&#x6CD5;&#x89C4;&#x5219;"></a>JSON &#x8BED;&#x6CD5;&#x89C4;&#x5219;</h2><p>JSON &#x8BED;&#x6CD5;&#x662F; JavaScript &#x5BF9;&#x8C61;&#x8868;&#x793A;&#x8BED;&#x6CD5;&#x7684;&#x5B50;&#x96C6;&#x3002;</p>
 <ul>
-<li><p>数据在键值对中</p>
+<li><p>&#x6570;&#x636E;&#x5728;&#x952E;&#x503C;&#x5BF9;&#x4E2D;</p>
 <blockquote>
-<p>“firstName”:”John”</p>
+<p>&#x201C;firstName&#x201D;:&#x201D;John&#x201D;</p>
 </blockquote>
 </li>
-<li><p>数据由逗号分隔</p>
+<li><p>&#x6570;&#x636E;&#x7531;&#x9017;&#x53F7;&#x5206;&#x9694;</p>
 <blockquote>
-<p>“firstName”:”John”, “lastName”:”Lock”</p>
+<p>&#x201C;firstName&#x201D;:&#x201D;John&#x201D;, &#x201C;lastName&#x201D;:&#x201D;Lock&#x201D;</p>
 </blockquote>
 </li>
-<li><p>花括号保存对象</p>
+<li><p>&#x82B1;&#x62EC;&#x53F7;&#x4FDD;&#x5B58;&#x5BF9;&#x8C61;</p>
 <blockquote>
-<p>{“firstName”:”John”}</p>
+<p>{&#x201C;firstName&#x201D;:&#x201D;John&#x201D;}</p>
 </blockquote>
 </li>
-<li><p>方括号保存数组</p>
+<li><p>&#x65B9;&#x62EC;&#x53F7;&#x4FDD;&#x5B58;&#x6570;&#x7EC4;</p>
 <blockquote>
-<p>[“id”:1}, {“id”:2}]</p>
+<p>[&#x201C;id&#x201D;:1}, {&#x201C;id&#x201D;:2}]</p>
 </blockquote>
 </li>
 </ul>
-<h2 id="JSON-名称-值对"><a href="#JSON-名称-值对" class="headerlink" title="JSON 名称/值对"></a>JSON 名称/值对</h2><p>JSON 数据的书写格式是：名称/值对。<br>名称/值对组合中的名称写在前面（在双引号中），值对写在后面(同样在双引号中)，中间用冒号隔开：</p>
+<h2 id="JSON-&#x540D;&#x79F0;-&#x503C;&#x5BF9;"><a href="#JSON-&#x540D;&#x79F0;-&#x503C;&#x5BF9;" class="headerlink" title="JSON &#x540D;&#x79F0;/&#x503C;&#x5BF9;"></a>JSON &#x540D;&#x79F0;/&#x503C;&#x5BF9;</h2><p>JSON &#x6570;&#x636E;&#x7684;&#x4E66;&#x5199;&#x683C;&#x5F0F;&#x662F;&#xFF1A;&#x540D;&#x79F0;/&#x503C;&#x5BF9;&#x3002;<br>&#x540D;&#x79F0;/&#x503C;&#x5BF9;&#x7EC4;&#x5408;&#x4E2D;&#x7684;&#x540D;&#x79F0;&#x5199;&#x5728;&#x524D;&#x9762;&#xFF08;&#x5728;&#x53CC;&#x5F15;&#x53F7;&#x4E2D;&#xFF09;&#xFF0C;&#x503C;&#x5BF9;&#x5199;&#x5728;&#x540E;&#x9762;(&#x540C;&#x6837;&#x5728;&#x53CC;&#x5F15;&#x53F7;&#x4E2D;)&#xFF0C;&#x4E2D;&#x95F4;&#x7528;&#x5192;&#x53F7;&#x9694;&#x5F00;&#xFF1A;</p>
 <pre><code>&quot;firstName&quot;:&quot;John&quot;
-</code></pre><p>等价于这条 JavaScript 语句：</p>
+</code></pre><p>&#x7B49;&#x4EF7;&#x4E8E;&#x8FD9;&#x6761; JavaScript &#x8BED;&#x53E5;&#xFF1A;</p>
 <pre><code>firstName = &quot;John&quot;;
-</code></pre><p><strong>JSON 值</strong></p>
-<p>JSON 值可以是：</p>
+</code></pre><p><strong>JSON &#x503C;</strong></p>
+<p>JSON &#x503C;&#x53EF;&#x4EE5;&#x662F;&#xFF1A;</p>
 <ul>
-<li><p>数字（整数或浮点数）</p>
+<li><p>&#x6570;&#x5B57;&#xFF08;&#x6574;&#x6570;&#x6216;&#x6D6E;&#x70B9;&#x6570;&#xFF09;</p>
 <blockquote>
 <p>height: 8848</p>
 </blockquote>
 </li>
-<li><p>字符串（在双引号中）</p>
+<li><p>&#x5B57;&#x7B26;&#x4E32;&#xFF08;&#x5728;&#x53CC;&#x5F15;&#x53F7;&#x4E2D;&#xFF09;</p>
 <blockquote>
-<p>firstName: “John”</p>
+<p>firstName: &#x201C;John&#x201D;</p>
 </blockquote>
 </li>
-<li><p>逻辑值（true 或 false）</p>
+<li><p>&#x903B;&#x8F91;&#x503C;&#xFF08;true &#x6216; false&#xFF09;</p>
 <blockquote>
 <p>is_installed: false</p>
 </blockquote>
 </li>
-<li><p>数组（在方括号中）</p>
+<li><p>&#x6570;&#x7EC4;&#xFF08;&#x5728;&#x65B9;&#x62EC;&#x53F7;&#x4E2D;&#xFF09;</p>
 </li>
-<li>对象（在花括号中）</li>
+<li>&#x5BF9;&#x8C61;&#xFF08;&#x5728;&#x82B1;&#x62EC;&#x53F7;&#x4E2D;&#xFF09;</li>
 <li>null<blockquote>
 <p>name: null</p>
 </blockquote>
 </li>
 </ul>
 <blockquote>
-<p>即除了以上几种形式的JS对象不是合法的JSON值，如<em>function</em>就不是合法的JSON值</p>
+<p>&#x5373;&#x9664;&#x4E86;&#x4EE5;&#x4E0A;&#x51E0;&#x79CD;&#x5F62;&#x5F0F;&#x7684;JS&#x5BF9;&#x8C61;&#x4E0D;&#x662F;&#x5408;&#x6CD5;&#x7684;JSON&#x503C;&#xFF0C;&#x5982;<em>function</em>&#x5C31;&#x4E0D;&#x662F;&#x5408;&#x6CD5;&#x7684;JSON&#x503C;</p>
 </blockquote>
-<h2 id="基础结构"><a href="#基础结构" class="headerlink" title="基础结构"></a>基础结构</h2><p>JSON结构有两种结构，简单说就是javascript中的对象和数组，所以这两种结构就是对象和数组两种结构，通过这两种结构可以表示各种复杂的结构。</p>
-<p>1、对象</p>
-<p>对象在js中表示为“{}”括起来的内容，数据结构为 {key：value,key：value,…}的键值对的结构。</p>
-<p>在面向对象的语言中，key为对象的属性，value为对应的属性值，所以很容易理解，取值方法为 对象 .key 获取属性值，这个属性值的类型可以是 数字、字符串、数组、对象几种。</p>
-<p>2、数组</p>
-<p>数组在js中是中括号“[]”括起来的内容，数据结构为 [“java”,”javascript”,”vb”,…]，取值方式和所有语言中一样，使用索引获取，字段值的类型可以是 数字、字符串、数组、对象几种。</p>
-<p>经过对象、数组2种结构就可以组合成复杂的数据结构了。</p>
-<h1 id="3-JSON-使用"><a href="#3-JSON-使用" class="headerlink" title="3 JSON 使用"></a>3 JSON 使用</h1><h2 id="3-1-在JavaScript中使用JSON"><a href="#3-1-在JavaScript中使用JSON" class="headerlink" title="3.1 在JavaScript中使用JSON"></a>3.1 在JavaScript中使用JSON</h2><p>在JavaScript中，处理JSON不需要任何特殊的API或工具包。</p>
-<h3 id="序列化与反序列化"><a href="#序列化与反序列化" class="headerlink" title="序列化与反序列化"></a>序列化与反序列化</h3><p>较新的浏览器中，可以通过 <em>JSON.stringify</em> 和 <em>JSON.parse</em> 来实现序列化和反序列化。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> world = &#123;</span><br><span class="line">  name: <span class="string">"World"</span>,</span><br><span class="line">  countries: [</span><br><span class="line">    &#123;</span><br><span class="line">      name: <span class="string">"United States"</span>,</span><br><span class="line">      capital: <span class="string">"Washington, D.C."</span></span><br><span class="line">    &#125;, &#123;</span><br><span class="line">      name: <span class="string">"United Kingdom"</span>,</span><br><span class="line">      capital: <span class="string">"London"</span></span><br><span class="line">    &#125;</span><br><span class="line">  ]</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Serialization</span></span><br><span class="line"><span class="keyword">var</span> str = <span class="built_in">JSON</span>.stringify(world);</span><br><span class="line"><span class="built_in">console</span>.log(str);</span><br><span class="line"></span><br><span class="line"><span class="comment">// Deserialization</span></span><br><span class="line"><span class="keyword">var</span> parsedWorld = <span class="built_in">JSON</span>.parse(str);</span><br></pre></td></tr></table></figure></p>
-<h3 id="访问JSON元素"><a href="#访问JSON元素" class="headerlink" title="访问JSON元素"></a>访问JSON元素</h3><p><strong>访问元素</strong></p>
-<p>通过 <em>.key</em> 访问对象属性<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(world.name);</span><br></pre></td></tr></table></figure></p>
-<p>通过 [index] 访问数组元素<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(world.countries[<span class="number">0</span>]);</span><br></pre></td></tr></table></figure></p>
-<p><strong>遍历元素</strong></p>
-<p>通过 <em>for-in</em> 来遍历 JSON 数据<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> key <span class="keyword">in</span> world) &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'key: '</span> + <span class="built_in">JSON</span>.stringify(world[key]));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h3 id="修改JSON元素"><a href="#修改JSON元素" class="headerlink" title="修改JSON元素"></a>修改JSON元素</h3><p><strong>增加元素</strong></p>
-<p>通过 <em>obj.key</em> 的方法增加属性<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">world.planet = <span class="string">"Earth"</span>;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">JSON</span>.stringify(world));</span><br></pre></td></tr></table></figure></p>
-<p>通过 <em>obj[index]</em> 的方法增加数组元素，（index不在已有数组索引范围内）<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">world.countries[<span class="number">2</span>] = &#123;</span><br><span class="line">  name: <span class="string">"Japan"</span>,</span><br><span class="line">  capital: <span class="string">"Tokyo"</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">JSON</span>.stringify(world));</span><br></pre></td></tr></table></figure></p>
-<p><strong>删除元素</strong></p>
-<p>通过 <em>delete obj.key</em> 的方式来删除属性:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">delete</span> world.planet;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">JSON</span>.stringify(world));</span><br></pre></td></tr></table></figure></p>
-<p>通过 <em>array.splice</em> 删除数组元素<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">world.countries.splice(<span class="number">2</span>, <span class="number">1</span>);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">JSON</span>.stringify(world));</span><br></pre></td></tr></table></figure></p>
-<p><strong>修改元素</strong></p>
-<p>在访问时直接赋新值即可完成修改</p>
-<h2 id="3-2-在-NET中使用JSON"><a href="#3-2-在-NET中使用JSON" class="headerlink" title="3.2 在.NET中使用JSON"></a>3.2 在.NET中使用JSON</h2><p>在.NET中有三种常用的JSON序列化的类，分别是</p>
+<h2 id="&#x57FA;&#x7840;&#x7ED3;&#x6784;"><a href="#&#x57FA;&#x7840;&#x7ED3;&#x6784;" class="headerlink" title="&#x57FA;&#x7840;&#x7ED3;&#x6784;"></a>&#x57FA;&#x7840;&#x7ED3;&#x6784;</h2><p>JSON&#x7ED3;&#x6784;&#x6709;&#x4E24;&#x79CD;&#x7ED3;&#x6784;&#xFF0C;&#x7B80;&#x5355;&#x8BF4;&#x5C31;&#x662F;javascript&#x4E2D;&#x7684;&#x5BF9;&#x8C61;&#x548C;&#x6570;&#x7EC4;&#xFF0C;&#x6240;&#x4EE5;&#x8FD9;&#x4E24;&#x79CD;&#x7ED3;&#x6784;&#x5C31;&#x662F;&#x5BF9;&#x8C61;&#x548C;&#x6570;&#x7EC4;&#x4E24;&#x79CD;&#x7ED3;&#x6784;&#xFF0C;&#x901A;&#x8FC7;&#x8FD9;&#x4E24;&#x79CD;&#x7ED3;&#x6784;&#x53EF;&#x4EE5;&#x8868;&#x793A;&#x5404;&#x79CD;&#x590D;&#x6742;&#x7684;&#x7ED3;&#x6784;&#x3002;</p>
+<p>1&#x3001;&#x5BF9;&#x8C61;</p>
+<p>&#x5BF9;&#x8C61;&#x5728;js&#x4E2D;&#x8868;&#x793A;&#x4E3A;&#x201C;{}&#x201D;&#x62EC;&#x8D77;&#x6765;&#x7684;&#x5185;&#x5BB9;&#xFF0C;&#x6570;&#x636E;&#x7ED3;&#x6784;&#x4E3A; {key&#xFF1A;value,key&#xFF1A;value,&#x2026;}&#x7684;&#x952E;&#x503C;&#x5BF9;&#x7684;&#x7ED3;&#x6784;&#x3002;</p>
+<p>&#x5728;&#x9762;&#x5411;&#x5BF9;&#x8C61;&#x7684;&#x8BED;&#x8A00;&#x4E2D;&#xFF0C;key&#x4E3A;&#x5BF9;&#x8C61;&#x7684;&#x5C5E;&#x6027;&#xFF0C;value&#x4E3A;&#x5BF9;&#x5E94;&#x7684;&#x5C5E;&#x6027;&#x503C;&#xFF0C;&#x6240;&#x4EE5;&#x5F88;&#x5BB9;&#x6613;&#x7406;&#x89E3;&#xFF0C;&#x53D6;&#x503C;&#x65B9;&#x6CD5;&#x4E3A; &#x5BF9;&#x8C61; .key &#x83B7;&#x53D6;&#x5C5E;&#x6027;&#x503C;&#xFF0C;&#x8FD9;&#x4E2A;&#x5C5E;&#x6027;&#x503C;&#x7684;&#x7C7B;&#x578B;&#x53EF;&#x4EE5;&#x662F; &#x6570;&#x5B57;&#x3001;&#x5B57;&#x7B26;&#x4E32;&#x3001;&#x6570;&#x7EC4;&#x3001;&#x5BF9;&#x8C61;&#x51E0;&#x79CD;&#x3002;</p>
+<p>2&#x3001;&#x6570;&#x7EC4;</p>
+<p>&#x6570;&#x7EC4;&#x5728;js&#x4E2D;&#x662F;&#x4E2D;&#x62EC;&#x53F7;&#x201C;[]&#x201D;&#x62EC;&#x8D77;&#x6765;&#x7684;&#x5185;&#x5BB9;&#xFF0C;&#x6570;&#x636E;&#x7ED3;&#x6784;&#x4E3A; [&#x201C;java&#x201D;,&#x201D;javascript&#x201D;,&#x201D;vb&#x201D;,&#x2026;]&#xFF0C;&#x53D6;&#x503C;&#x65B9;&#x5F0F;&#x548C;&#x6240;&#x6709;&#x8BED;&#x8A00;&#x4E2D;&#x4E00;&#x6837;&#xFF0C;&#x4F7F;&#x7528;&#x7D22;&#x5F15;&#x83B7;&#x53D6;&#xFF0C;&#x5B57;&#x6BB5;&#x503C;&#x7684;&#x7C7B;&#x578B;&#x53EF;&#x4EE5;&#x662F; &#x6570;&#x5B57;&#x3001;&#x5B57;&#x7B26;&#x4E32;&#x3001;&#x6570;&#x7EC4;&#x3001;&#x5BF9;&#x8C61;&#x51E0;&#x79CD;&#x3002;</p>
+<p>&#x7ECF;&#x8FC7;&#x5BF9;&#x8C61;&#x3001;&#x6570;&#x7EC4;2&#x79CD;&#x7ED3;&#x6784;&#x5C31;&#x53EF;&#x4EE5;&#x7EC4;&#x5408;&#x6210;&#x590D;&#x6742;&#x7684;&#x6570;&#x636E;&#x7ED3;&#x6784;&#x4E86;&#x3002;</p>
+<h1 id="3-JSON-&#x4F7F;&#x7528;"><a href="#3-JSON-&#x4F7F;&#x7528;" class="headerlink" title="3 JSON &#x4F7F;&#x7528;"></a>3 JSON &#x4F7F;&#x7528;</h1><h2 id="3-1-&#x5728;JavaScript&#x4E2D;&#x4F7F;&#x7528;JSON"><a href="#3-1-&#x5728;JavaScript&#x4E2D;&#x4F7F;&#x7528;JSON" class="headerlink" title="3.1 &#x5728;JavaScript&#x4E2D;&#x4F7F;&#x7528;JSON"></a>3.1 &#x5728;JavaScript&#x4E2D;&#x4F7F;&#x7528;JSON</h2><p>&#x5728;JavaScript&#x4E2D;&#xFF0C;&#x5904;&#x7406;JSON&#x4E0D;&#x9700;&#x8981;&#x4EFB;&#x4F55;&#x7279;&#x6B8A;&#x7684;API&#x6216;&#x5DE5;&#x5177;&#x5305;&#x3002;</p>
+<h3 id="&#x5E8F;&#x5217;&#x5316;&#x4E0E;&#x53CD;&#x5E8F;&#x5217;&#x5316;"><a href="#&#x5E8F;&#x5217;&#x5316;&#x4E0E;&#x53CD;&#x5E8F;&#x5217;&#x5316;" class="headerlink" title="&#x5E8F;&#x5217;&#x5316;&#x4E0E;&#x53CD;&#x5E8F;&#x5217;&#x5316;"></a>&#x5E8F;&#x5217;&#x5316;&#x4E0E;&#x53CD;&#x5E8F;&#x5217;&#x5316;</h3><p>&#x8F83;&#x65B0;&#x7684;&#x6D4F;&#x89C8;&#x5668;&#x4E2D;&#xFF0C;&#x53EF;&#x4EE5;&#x901A;&#x8FC7; <em>JSON.stringify</em> &#x548C; <em>JSON.parse</em> &#x6765;&#x5B9E;&#x73B0;&#x5E8F;&#x5217;&#x5316;&#x548C;&#x53CD;&#x5E8F;&#x5217;&#x5316;&#x3002;<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> world = {</span><br><span class="line">  name: <span class="string">&quot;World&quot;</span>,</span><br><span class="line">  countries: [</span><br><span class="line">    {</span><br><span class="line">      name: <span class="string">&quot;United States&quot;</span>,</span><br><span class="line">      capital: <span class="string">&quot;Washington, D.C.&quot;</span></span><br><span class="line">    }, {</span><br><span class="line">      name: <span class="string">&quot;United Kingdom&quot;</span>,</span><br><span class="line">      capital: <span class="string">&quot;London&quot;</span></span><br><span class="line">    }</span><br><span class="line">  ]</span><br><span class="line">};</span><br><span class="line"></span><br><span class="line"><span class="comment">// Serialization</span></span><br><span class="line"><span class="keyword">var</span> str = <span class="built_in">JSON</span>.stringify(world);</span><br><span class="line"><span class="built_in">console</span>.log(str);</span><br><span class="line"></span><br><span class="line"><span class="comment">// Deserialization</span></span><br><span class="line"><span class="keyword">var</span> parsedWorld = <span class="built_in">JSON</span>.parse(str);</span><br></pre></td></tr></table></figure></p>
+<h3 id="&#x8BBF;&#x95EE;JSON&#x5143;&#x7D20;"><a href="#&#x8BBF;&#x95EE;JSON&#x5143;&#x7D20;" class="headerlink" title="&#x8BBF;&#x95EE;JSON&#x5143;&#x7D20;"></a>&#x8BBF;&#x95EE;JSON&#x5143;&#x7D20;</h3><p><strong>&#x8BBF;&#x95EE;&#x5143;&#x7D20;</strong></p>
+<p>&#x901A;&#x8FC7; <em>.key</em> &#x8BBF;&#x95EE;&#x5BF9;&#x8C61;&#x5C5E;&#x6027;<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(world.name);</span><br></pre></td></tr></table></figure></p>
+<p>&#x901A;&#x8FC7; [index] &#x8BBF;&#x95EE;&#x6570;&#x7EC4;&#x5143;&#x7D20;<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(world.countries[<span class="number">0</span>]);</span><br></pre></td></tr></table></figure></p>
+<p><strong>&#x904D;&#x5386;&#x5143;&#x7D20;</strong></p>
+<p>&#x901A;&#x8FC7; <em>for-in</em> &#x6765;&#x904D;&#x5386; JSON &#x6570;&#x636E;<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> key <span class="keyword">in</span> world) {</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">&apos;key: &apos;</span> + <span class="built_in">JSON</span>.stringify(world[key]));</span><br><span class="line">}</span><br></pre></td></tr></table></figure></p>
+<h3 id="&#x4FEE;&#x6539;JSON&#x5143;&#x7D20;"><a href="#&#x4FEE;&#x6539;JSON&#x5143;&#x7D20;" class="headerlink" title="&#x4FEE;&#x6539;JSON&#x5143;&#x7D20;"></a>&#x4FEE;&#x6539;JSON&#x5143;&#x7D20;</h3><p><strong>&#x589E;&#x52A0;&#x5143;&#x7D20;</strong></p>
+<p>&#x901A;&#x8FC7; <em>obj.key</em> &#x7684;&#x65B9;&#x6CD5;&#x589E;&#x52A0;&#x5C5E;&#x6027;<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">world.planet = <span class="string">&quot;Earth&quot;</span>;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">JSON</span>.stringify(world));</span><br></pre></td></tr></table></figure></p>
+<p>&#x901A;&#x8FC7; <em>obj[index]</em> &#x7684;&#x65B9;&#x6CD5;&#x589E;&#x52A0;&#x6570;&#x7EC4;&#x5143;&#x7D20;&#xFF0C;&#xFF08;index&#x4E0D;&#x5728;&#x5DF2;&#x6709;&#x6570;&#x7EC4;&#x7D22;&#x5F15;&#x8303;&#x56F4;&#x5185;&#xFF09;<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">world.countries[<span class="number">2</span>] = {</span><br><span class="line">  name: <span class="string">&quot;Japan&quot;</span>,</span><br><span class="line">  capital: <span class="string">&quot;Tokyo&quot;</span></span><br><span class="line">};</span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">JSON</span>.stringify(world));</span><br></pre></td></tr></table></figure></p>
+<p><strong>&#x5220;&#x9664;&#x5143;&#x7D20;</strong></p>
+<p>&#x901A;&#x8FC7; <em>delete obj.key</em> &#x7684;&#x65B9;&#x5F0F;&#x6765;&#x5220;&#x9664;&#x5C5E;&#x6027;:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">delete</span> world.planet;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">JSON</span>.stringify(world));</span><br></pre></td></tr></table></figure></p>
+<p>&#x901A;&#x8FC7; <em>array.splice</em> &#x5220;&#x9664;&#x6570;&#x7EC4;&#x5143;&#x7D20;<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">world.countries.splice(<span class="number">2</span>, <span class="number">1</span>);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">JSON</span>.stringify(world));</span><br></pre></td></tr></table></figure></p>
+<p><strong>&#x4FEE;&#x6539;&#x5143;&#x7D20;</strong></p>
+<p>&#x5728;&#x8BBF;&#x95EE;&#x65F6;&#x76F4;&#x63A5;&#x8D4B;&#x65B0;&#x503C;&#x5373;&#x53EF;&#x5B8C;&#x6210;&#x4FEE;&#x6539;</p>
+<h2 id="3-2-&#x5728;-NET&#x4E2D;&#x4F7F;&#x7528;JSON"><a href="#3-2-&#x5728;-NET&#x4E2D;&#x4F7F;&#x7528;JSON" class="headerlink" title="3.2 &#x5728;.NET&#x4E2D;&#x4F7F;&#x7528;JSON"></a>3.2 &#x5728;.NET&#x4E2D;&#x4F7F;&#x7528;JSON</h2><p>&#x5728;.NET&#x4E2D;&#x6709;&#x4E09;&#x79CD;&#x5E38;&#x7528;&#x7684;JSON&#x5E8F;&#x5217;&#x5316;&#x7684;&#x7C7B;&#xFF0C;&#x5206;&#x522B;&#x662F;</p>
 <ul>
-<li>System.Web.Script.Serialization.JavaScriptSerializer类</li>
-<li>System.Runtime.Serialization.Json.DataContractJsonSerializer类</li>
-<li>Newtonsoft.Json.JsonConvert类</li>
+<li>System.Web.Script.Serialization.JavaScriptSerializer&#x7C7B;</li>
+<li>System.Runtime.Serialization.Json.DataContractJsonSerializer&#x7C7B;</li>
+<li>Newtonsoft.Json.JsonConvert&#x7C7B;</li>
 </ul>
-<h3 id="定义JSON数据格式类"><a href="#定义JSON数据格式类" class="headerlink" title="定义JSON数据格式类"></a>定义JSON数据格式类</h3><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line">[DataContract]</span><br><span class="line"><span class="keyword">class</span> <span class="title">Country</span></span><br><span class="line">&#123;</span><br><span class="line">    [DataMember] </span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">string</span> Name &#123; <span class="keyword">get</span>; <span class="keyword">set</span>; &#125;</span><br><span class="line">    [DataMember]</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">string</span> Captital &#123; <span class="keyword">get</span>; <span class="keyword">set</span>; &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Country</span>(<span class="params"></span>)</span><br><span class="line">    </span>&#123;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Country</span> (<span class="params"><span class="keyword">string</span> name, <span class="keyword">string</span> capital</span>)</span><br><span class="line">    </span>&#123;</span><br><span class="line">        Name = name;</span><br><span class="line">        Captital = capital;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">[DataContract]</span><br><span class="line"><span class="keyword">class</span> <span class="title">World</span></span><br><span class="line">&#123;</span><br><span class="line">    [DataMember]</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">string</span> Name &#123; <span class="keyword">get</span>; <span class="keyword">set</span>; &#125;</span><br><span class="line">    [DataMember]</span><br><span class="line">    <span class="keyword">public</span> List&lt;Country&gt; Countries &#123;<span class="keyword">get</span>; <span class="keyword">set</span>; &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">World</span>(<span class="params"></span>)</span><br><span class="line">    </span>&#123;</span><br><span class="line">        Name = <span class="string">"World"</span>;</span><br><span class="line">        Countries = <span class="keyword">new</span> List&lt;Country&gt;();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">Main</span>(<span class="params"><span class="keyword">string</span>[] args</span>)</span><br><span class="line"></span>&#123;</span><br><span class="line">    World world = <span class="keyword">new</span> World();</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Add elements</span></span><br><span class="line">    world.Countries.Add(<span class="keyword">new</span> Country(<span class="string">"United States"</span>, <span class="string">"Washington, D.C."</span>));</span><br><span class="line">    world.Countries.Add(<span class="keyword">new</span> Country(<span class="string">"United Kingdom"</span>, <span class="string">"London"</span>));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="使用System-Web-Script-Serialization-JavaScriptSerializer"><a href="#使用System-Web-Script-Serialization-JavaScriptSerializer" class="headerlink" title="使用System.Web.Script.Serialization.JavaScriptSerializer"></a>使用System.Web.Script.Serialization.JavaScriptSerializer</h3><blockquote>
-<p>JavaScriptSerializer是.NET自带的处理JSON的类，JavaScriptSerializer类在System.Web.Extensions.dll中，需要添加引用System.Web.Extensions.dll</p>
+<h3 id="&#x5B9A;&#x4E49;JSON&#x6570;&#x636E;&#x683C;&#x5F0F;&#x7C7B;"><a href="#&#x5B9A;&#x4E49;JSON&#x6570;&#x636E;&#x683C;&#x5F0F;&#x7C7B;" class="headerlink" title="&#x5B9A;&#x4E49;JSON&#x6570;&#x636E;&#x683C;&#x5F0F;&#x7C7B;"></a>&#x5B9A;&#x4E49;JSON&#x6570;&#x636E;&#x683C;&#x5F0F;&#x7C7B;</h3><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line">[DataContract]</span><br><span class="line"><span class="keyword">class</span> <span class="title">Country</span></span><br><span class="line">{</span><br><span class="line">    [DataMember] </span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">string</span> Name { <span class="keyword">get</span>; <span class="keyword">set</span>; }</span><br><span class="line">    [DataMember]</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">string</span> Captital { <span class="keyword">get</span>; <span class="keyword">set</span>; }</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Country</span>(<span class="params"></span>)</span><br><span class="line">    </span>{</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Country</span> (<span class="params"><span class="keyword">string</span> name, <span class="keyword">string</span> capital</span>)</span><br><span class="line">    </span>{</span><br><span class="line">        Name = name;</span><br><span class="line">        Captital = capital;</span><br><span class="line">    }</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line">[DataContract]</span><br><span class="line"><span class="keyword">class</span> <span class="title">World</span></span><br><span class="line">{</span><br><span class="line">    [DataMember]</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">string</span> Name { <span class="keyword">get</span>; <span class="keyword">set</span>; }</span><br><span class="line">    [DataMember]</span><br><span class="line">    <span class="keyword">public</span> List&lt;Country&gt; Countries {<span class="keyword">get</span>; <span class="keyword">set</span>; }</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">World</span>(<span class="params"></span>)</span><br><span class="line">    </span>{</span><br><span class="line">        Name = <span class="string">&quot;World&quot;</span>;</span><br><span class="line">        Countries = <span class="keyword">new</span> List&lt;Country&gt;();</span><br><span class="line">    }</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">Main</span>(<span class="params"><span class="keyword">string</span>[] args</span>)</span><br><span class="line"></span>{</span><br><span class="line">    World world = <span class="keyword">new</span> World();</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Add elements</span></span><br><span class="line">    world.Countries.Add(<span class="keyword">new</span> Country(<span class="string">&quot;United States&quot;</span>, <span class="string">&quot;Washington, D.C.&quot;</span>));</span><br><span class="line">    world.Countries.Add(<span class="keyword">new</span> Country(<span class="string">&quot;United Kingdom&quot;</span>, <span class="string">&quot;London&quot;</span>));</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+<h3 id="&#x4F7F;&#x7528;System-Web-Script-Serialization-JavaScriptSerializer"><a href="#&#x4F7F;&#x7528;System-Web-Script-Serialization-JavaScriptSerializer" class="headerlink" title="&#x4F7F;&#x7528;System.Web.Script.Serialization.JavaScriptSerializer"></a>&#x4F7F;&#x7528;System.Web.Script.Serialization.JavaScriptSerializer</h3><blockquote>
+<p>JavaScriptSerializer&#x662F;.NET&#x81EA;&#x5E26;&#x7684;&#x5904;&#x7406;JSON&#x7684;&#x7C7B;&#xFF0C;JavaScriptSerializer&#x7C7B;&#x5728;System.Web.Extensions.dll&#x4E2D;&#xFF0C;&#x9700;&#x8981;&#x6DFB;&#x52A0;&#x5F15;&#x7528;System.Web.Extensions.dll</p>
 </blockquote>
-<p>示例如下：<br><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">using</span> System.Web.Script.Serialization;</span><br><span class="line"><span class="keyword">using</span> System.Collections.Generic;</span><br><span class="line"><span class="keyword">using</span> System;</span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span> <span class="title">json</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">class</span> <span class="title">Program</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">UseJavaScriptSerializer</span>(<span class="params">World world</span>)</span><br><span class="line">        </span>&#123;</span><br><span class="line">            <span class="comment">// JavaScriptSerializer类在System.Web.Extensions.dll中，需要添加引用System.Web.Extensions.dll</span></span><br><span class="line">            JavaScriptSerializer serializer = <span class="keyword">new</span> JavaScriptSerializer();</span><br><span class="line"></span><br><span class="line">            <span class="comment">//JSON 序列化  </span></span><br><span class="line">            <span class="keyword">string</span> str = serializer.Serialize(world);</span><br><span class="line">            Console.WriteLine(<span class="string">"JavaScriptSerializer: after Serialization: &#123;0&#125;, length: &#123;1&#125;"</span>, str, str.Length);</span><br><span class="line"></span><br><span class="line">            <span class="comment">//JSON 反序列化  </span></span><br><span class="line">            World _world = serializer.Deserialize&lt;World&gt;(str);</span><br><span class="line">            Console.WriteLine(<span class="string">"JavaScriptSerializer: after Deserialization: Name: &#123;0&#125;, Countries Count: &#123;1&#125;"</span>, _world.Name, _world.Countries.Count);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>执行后输出：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">JavaScriptSerializer: after Serialization: &#123;<span class="string">"Name"</span>:<span class="string">"World"</span>,<span class="string">"Countries"</span>:[&#123;<span class="string">"Name"</span>:<span class="string">"United States"</span>,<span class="string">"Captital"</span>:<span class="string">"Washington, D.C."</span>&#125;,&#123;<span class="string">"Name"</span>:<span class="string">"United Kingdom"</span>,<span class="string">"Captita</span><br><span class="line">l"</span>:<span class="string">"London"</span>&#125;]&#125;, length: 131</span><br><span class="line">JavaScriptSerializer: after Deserialization: Name: World, Countries Count: 2</span><br></pre></td></tr></table></figure></p>
+<p>&#x793A;&#x4F8B;&#x5982;&#x4E0B;&#xFF1A;<br><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">using</span> System.Web.Script.Serialization;</span><br><span class="line"><span class="keyword">using</span> System.Collections.Generic;</span><br><span class="line"><span class="keyword">using</span> System;</span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span> <span class="title">json</span></span><br><span class="line">{</span><br><span class="line">    <span class="keyword">class</span> <span class="title">Program</span></span><br><span class="line">    {</span><br><span class="line">        <span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">UseJavaScriptSerializer</span>(<span class="params">World world</span>)</span><br><span class="line">        </span>{</span><br><span class="line">            <span class="comment">// JavaScriptSerializer&#x7C7B;&#x5728;System.Web.Extensions.dll&#x4E2D;&#xFF0C;&#x9700;&#x8981;&#x6DFB;&#x52A0;&#x5F15;&#x7528;System.Web.Extensions.dll</span></span><br><span class="line">            JavaScriptSerializer serializer = <span class="keyword">new</span> JavaScriptSerializer();</span><br><span class="line"></span><br><span class="line">            <span class="comment">//JSON &#x5E8F;&#x5217;&#x5316;  </span></span><br><span class="line">            <span class="keyword">string</span> str = serializer.Serialize(world);</span><br><span class="line">            Console.WriteLine(<span class="string">&quot;JavaScriptSerializer: after Serialization: {0}, length: {1}&quot;</span>, str, str.Length);</span><br><span class="line"></span><br><span class="line">            <span class="comment">//JSON &#x53CD;&#x5E8F;&#x5217;&#x5316;  </span></span><br><span class="line">            World _world = serializer.Deserialize&lt;World&gt;(str);</span><br><span class="line">            Console.WriteLine(<span class="string">&quot;JavaScriptSerializer: after Deserialization: Name: {0}, Countries Count: {1}&quot;</span>, _world.Name, _world.Countries.Count);</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></table></figure></p>
+<p>&#x6267;&#x884C;&#x540E;&#x8F93;&#x51FA;&#xFF1A;<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">JavaScriptSerializer: after Serialization: {<span class="string">&quot;Name&quot;</span>:<span class="string">&quot;World&quot;</span>,<span class="string">&quot;Countries&quot;</span>:[{<span class="string">&quot;Name&quot;</span>:<span class="string">&quot;United States&quot;</span>,<span class="string">&quot;Captital&quot;</span>:<span class="string">&quot;Washington, D.C.&quot;</span>},{<span class="string">&quot;Name&quot;</span>:<span class="string">&quot;United Kingdom&quot;</span>,<span class="string">&quot;Captita</span><br><span class="line">l&quot;</span>:<span class="string">&quot;London&quot;</span>}]}, length: 131</span><br><span class="line">JavaScriptSerializer: after Deserialization: Name: World, Countries Count: 2</span><br></pre></td></tr></table></figure></p>
 <blockquote>
-<p>注意：</p>
-<p>如果不想序列化某个字段，可以在字段前面加[JsonIgnore]标记。</p>
+<p>&#x6CE8;&#x610F;&#xFF1A;</p>
+<p>&#x5982;&#x679C;&#x4E0D;&#x60F3;&#x5E8F;&#x5217;&#x5316;&#x67D0;&#x4E2A;&#x5B57;&#x6BB5;&#xFF0C;&#x53EF;&#x4EE5;&#x5728;&#x5B57;&#x6BB5;&#x524D;&#x9762;&#x52A0;[JsonIgnore]&#x6807;&#x8BB0;&#x3002;</p>
 </blockquote>
-<h3 id="使用Newtonsoft-Json-JsonConvert"><a href="#使用Newtonsoft-Json-JsonConvert" class="headerlink" title="使用Newtonsoft.Json.JsonConvert"></a>使用Newtonsoft.Json.JsonConvert</h3><p>Newtonsoft.Json.JsonConvert类是非微软提供的一个JSON序列化和反序列的开源免费的类库（下载网址是：<a href="https://github.com/JamesNK/Newtonsoft.Json/releases" target="_blank" rel="external">https://github.com/JamesNK/Newtonsoft.Json/releases</a>），它提供了更灵活的序列化和反序列化控制。并且如果你的开发环境使用的是.NET Framework3.5及以后版本的话，你就可以使用Linq to JSON，只解析出关心的那部分即可，非常方便。 </p>
+<h3 id="&#x4F7F;&#x7528;Newtonsoft-Json-JsonConvert"><a href="#&#x4F7F;&#x7528;Newtonsoft-Json-JsonConvert" class="headerlink" title="&#x4F7F;&#x7528;Newtonsoft.Json.JsonConvert"></a>&#x4F7F;&#x7528;Newtonsoft.Json.JsonConvert</h3><p>Newtonsoft.Json.JsonConvert&#x7C7B;&#x662F;&#x975E;&#x5FAE;&#x8F6F;&#x63D0;&#x4F9B;&#x7684;&#x4E00;&#x4E2A;JSON&#x5E8F;&#x5217;&#x5316;&#x548C;&#x53CD;&#x5E8F;&#x5217;&#x7684;&#x5F00;&#x6E90;&#x514D;&#x8D39;&#x7684;&#x7C7B;&#x5E93;&#xFF08;&#x4E0B;&#x8F7D;&#x7F51;&#x5740;&#x662F;&#xFF1A;<a href="https://github.com/JamesNK/Newtonsoft.Json/releases" target="_blank" rel="external">https://github.com/JamesNK/Newtonsoft.Json/releases</a>&#xFF09;&#xFF0C;&#x5B83;&#x63D0;&#x4F9B;&#x4E86;&#x66F4;&#x7075;&#x6D3B;&#x7684;&#x5E8F;&#x5217;&#x5316;&#x548C;&#x53CD;&#x5E8F;&#x5217;&#x5316;&#x63A7;&#x5236;&#x3002;&#x5E76;&#x4E14;&#x5982;&#x679C;&#x4F60;&#x7684;&#x5F00;&#x53D1;&#x73AF;&#x5883;&#x4F7F;&#x7528;&#x7684;&#x662F;.NET Framework3.5&#x53CA;&#x4EE5;&#x540E;&#x7248;&#x672C;&#x7684;&#x8BDD;&#xFF0C;&#x4F60;&#x5C31;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;Linq to JSON&#xFF0C;&#x53EA;&#x89E3;&#x6790;&#x51FA;&#x5173;&#x5FC3;&#x7684;&#x90A3;&#x90E8;&#x5206;&#x5373;&#x53EF;&#xFF0C;&#x975E;&#x5E38;&#x65B9;&#x4FBF;&#x3002; </p>
 <blockquote>
-<p>需要下载并添加引用Newtonsoft.Json.dll； </p>
+<p>&#x9700;&#x8981;&#x4E0B;&#x8F7D;&#x5E76;&#x6DFB;&#x52A0;&#x5F15;&#x7528;Newtonsoft.Json.dll&#xFF1B; </p>
 </blockquote>
-<p>示例如下：<br><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//JSON 序列化  </span></span><br><span class="line"><span class="keyword">string</span> str = JsonConvert.SerializeObject(world);</span><br><span class="line">Console.WriteLine(<span class="string">"SerializeObject: after Serialization: &#123;0&#125;, length: &#123;1&#125;"</span>, str, str.Length);</span><br><span class="line"></span><br><span class="line"><span class="comment">//JSON 反序列化  </span></span><br><span class="line">World _world = JsonConvert.DeserializeObject&lt;World&gt;(str);</span><br><span class="line">Console.WriteLine(<span class="string">"JavaScriptSerializer: after Deserialization: Name: &#123;0&#125;, Countries Count: &#123;1&#125;"</span>, _world.Name, _world.Countries.Count);</span><br></pre></td></tr></table></figure></p>
+<p>&#x793A;&#x4F8B;&#x5982;&#x4E0B;&#xFF1A;<br><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//JSON &#x5E8F;&#x5217;&#x5316;  </span></span><br><span class="line"><span class="keyword">string</span> str = JsonConvert.SerializeObject(world);</span><br><span class="line">Console.WriteLine(<span class="string">&quot;SerializeObject: after Serialization: {0}, length: {1}&quot;</span>, str, str.Length);</span><br><span class="line"></span><br><span class="line"><span class="comment">//JSON &#x53CD;&#x5E8F;&#x5217;&#x5316;  </span></span><br><span class="line">World _world = JsonConvert.DeserializeObject&lt;World&gt;(str);</span><br><span class="line">Console.WriteLine(<span class="string">&quot;JavaScriptSerializer: after Deserialization: Name: {0}, Countries Count: {1}&quot;</span>, _world.Name, _world.Countries.Count);</span><br></pre></td></tr></table></figure></p>
 <blockquote>
-<p>注意:</p>
-<p>如果需要序列化实体</p>
-<p>1、类名必须添加[DataContract]标记；</p>
-<p>2、类属性添加[DataMember]标记；</p>
-<p>如果有不需要序列化的字段，可以给该字段添加[JsonIgnore]标记 </p>
+<p>&#x6CE8;&#x610F;:</p>
+<p>&#x5982;&#x679C;&#x9700;&#x8981;&#x5E8F;&#x5217;&#x5316;&#x5B9E;&#x4F53;</p>
+<p>1&#x3001;&#x7C7B;&#x540D;&#x5FC5;&#x987B;&#x6DFB;&#x52A0;[DataContract]&#x6807;&#x8BB0;&#xFF1B;</p>
+<p>2&#x3001;&#x7C7B;&#x5C5E;&#x6027;&#x6DFB;&#x52A0;[DataMember]&#x6807;&#x8BB0;&#xFF1B;</p>
+<p>&#x5982;&#x679C;&#x6709;&#x4E0D;&#x9700;&#x8981;&#x5E8F;&#x5217;&#x5316;&#x7684;&#x5B57;&#x6BB5;&#xFF0C;&#x53EF;&#x4EE5;&#x7ED9;&#x8BE5;&#x5B57;&#x6BB5;&#x6DFB;&#x52A0;[JsonIgnore]&#x6807;&#x8BB0; </p>
 </blockquote>
-<h3 id="性能对比"><a href="#性能对比" class="headerlink" title="性能对比"></a>性能对比</h3><p><img src="http://download.codeplex.com/Download?ProjectName=json&amp;DownloadId=669163" alt="image"></p>
-<h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><p>对JSON数据的操作（如增加、删除、更新）其实就是对C#类的操作。</p>
-<h1 id="4-JSON-小结"><a href="#4-JSON-小结" class="headerlink" title="4 JSON 小结"></a>4 JSON 小结</h1><h2 id="JSON文件"><a href="#JSON文件" class="headerlink" title="JSON文件"></a>JSON文件</h2><ul>
-<li>通常JSON 文件的文件类型设置为 “.json” ，用于区分其它格式的文本文件。</li>
-<li>JSON 文本的 MIME 类型是 “application/json”</li>
+<h3 id="&#x6027;&#x80FD;&#x5BF9;&#x6BD4;"><a href="#&#x6027;&#x80FD;&#x5BF9;&#x6BD4;" class="headerlink" title="&#x6027;&#x80FD;&#x5BF9;&#x6BD4;"></a>&#x6027;&#x80FD;&#x5BF9;&#x6BD4;</h3><p><img src="http://download.codeplex.com/Download?ProjectName=json&amp;DownloadId=669163" alt="image"></p>
+<h3 id="&#x5176;&#x4ED6;"><a href="#&#x5176;&#x4ED6;" class="headerlink" title="&#x5176;&#x4ED6;"></a>&#x5176;&#x4ED6;</h3><p>&#x5BF9;JSON&#x6570;&#x636E;&#x7684;&#x64CD;&#x4F5C;&#xFF08;&#x5982;&#x589E;&#x52A0;&#x3001;&#x5220;&#x9664;&#x3001;&#x66F4;&#x65B0;&#xFF09;&#x5176;&#x5B9E;&#x5C31;&#x662F;&#x5BF9;C#&#x7C7B;&#x7684;&#x64CD;&#x4F5C;&#x3002;</p>
+<h1 id="4-JSON-&#x5C0F;&#x7ED3;"><a href="#4-JSON-&#x5C0F;&#x7ED3;" class="headerlink" title="4 JSON &#x5C0F;&#x7ED3;"></a>4 JSON &#x5C0F;&#x7ED3;</h1><h2 id="JSON&#x6587;&#x4EF6;"><a href="#JSON&#x6587;&#x4EF6;" class="headerlink" title="JSON&#x6587;&#x4EF6;"></a>JSON&#x6587;&#x4EF6;</h2><ul>
+<li>&#x901A;&#x5E38;JSON &#x6587;&#x4EF6;&#x7684;&#x6587;&#x4EF6;&#x7C7B;&#x578B;&#x8BBE;&#x7F6E;&#x4E3A; &#x201C;.json&#x201D; &#xFF0C;&#x7528;&#x4E8E;&#x533A;&#x5206;&#x5176;&#x5B83;&#x683C;&#x5F0F;&#x7684;&#x6587;&#x672C;&#x6587;&#x4EF6;&#x3002;</li>
+<li>JSON &#x6587;&#x672C;&#x7684; MIME &#x7C7B;&#x578B;&#x662F; &#x201C;application/json&#x201D;</li>
 </ul>
-<h2 id="与-XML-比较"><a href="#与-XML-比较" class="headerlink" title="与 XML 比较"></a>与 XML 比较</h2><ul>
-<li><p>可读性</p>
+<h2 id="&#x4E0E;-XML-&#x6BD4;&#x8F83;"><a href="#&#x4E0E;-XML-&#x6BD4;&#x8F83;" class="headerlink" title="&#x4E0E; XML &#x6BD4;&#x8F83;"></a>&#x4E0E; XML &#x6BD4;&#x8F83;</h2><ul>
+<li><p>&#x53EF;&#x8BFB;&#x6027;</p>
 <blockquote>
-<p>JSON: 简易的语法， XML: 规范的标签形式</p>
-<p>不分胜负</p>
+<p>JSON: &#x7B80;&#x6613;&#x7684;&#x8BED;&#x6CD5;&#xFF0C; XML: &#x89C4;&#x8303;&#x7684;&#x6807;&#x7B7E;&#x5F62;&#x5F0F;</p>
+<p>&#x4E0D;&#x5206;&#x80DC;&#x8D1F;</p>
 </blockquote>
 </li>
-<li><p>可扩展性</p>
+<li><p>&#x53EF;&#x6269;&#x5C55;&#x6027;</p>
 <blockquote>
-<p>不分胜负</p>
+<p>&#x4E0D;&#x5206;&#x80DC;&#x8D1F;</p>
 </blockquote>
 </li>
-<li><p>编解码难度</p>
+<li><p>&#x7F16;&#x89E3;&#x7801;&#x96BE;&#x5EA6;</p>
 <blockquote>
-<p>在JS中，JSON具有优势</p>
+<p>&#x5728;JS&#x4E2D;&#xFF0C;JSON&#x5177;&#x6709;&#x4F18;&#x52BF;</p>
 </blockquote>
 </li>
-<li><p>数据效率</p>
+<li><p>&#x6570;&#x636E;&#x6548;&#x7387;</p>
 <blockquote>
-<p>JSON不需要有严格的闭合标签，有效数据量与总数据包比大大提升，从而减少同等数据流量的情况下，网络的传输压力</p>
+<p>JSON&#x4E0D;&#x9700;&#x8981;&#x6709;&#x4E25;&#x683C;&#x7684;&#x95ED;&#x5408;&#x6807;&#x7B7E;&#xFF0C;&#x6709;&#x6548;&#x6570;&#x636E;&#x91CF;&#x4E0E;&#x603B;&#x6570;&#x636E;&#x5305;&#x6BD4;&#x5927;&#x5927;&#x63D0;&#x5347;&#xFF0C;&#x4ECE;&#x800C;&#x51CF;&#x5C11;&#x540C;&#x7B49;&#x6570;&#x636E;&#x6D41;&#x91CF;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x7F51;&#x7EDC;&#x7684;&#x4F20;&#x8F93;&#x538B;&#x529B;</p>
 </blockquote>
 </li>
 </ul>
-<h2 id="相关链接"><a href="#相关链接" class="headerlink" title="相关链接"></a>相关链接</h2><p>在线JSON编辑器：<a href="http://www.atool.org/jsoneditor.php" target="_blank" rel="external">http://www.atool.org/jsoneditor.php</a></p>
+<h2 id="&#x76F8;&#x5173;&#x94FE;&#x63A5;"><a href="#&#x76F8;&#x5173;&#x94FE;&#x63A5;" class="headerlink" title="&#x76F8;&#x5173;&#x94FE;&#x63A5;"></a>&#x76F8;&#x5173;&#x94FE;&#x63A5;</h2><p>&#x5728;&#x7EBF;JSON&#x7F16;&#x8F91;&#x5668;&#xFF1A;<a href="http://www.atool.org/jsoneditor.php" target="_blank" rel="external">http://www.atool.org/jsoneditor.php</a></p>
 <h1 id="5-Reference"><a href="#5-Reference" class="headerlink" title="5 Reference"></a>5 Reference</h1><ol>
-<li>JSON_百度百科, <a href="http://baike.baidu.com/link?url=9Xh66e3k3V_8H0GXI2UreQ43jK5tX84PVIT1Bh6tgswhISJG6zzwNRhvryOkvFRp9pyXlJtSUyiId9DaDzHAyK" target="_blank" rel="external">http://baike.baidu.com/link?url=9Xh66e3k3V_8H0GXI2UreQ43jK5tX84PVIT1Bh6tgswhISJG6zzwNRhvryOkvFRp9pyXlJtSUyiId9DaDzHAyK</a></li>
-<li>W3School_JSON教程, <a href="http://www.w3school.com.cn/json/index.asp" target="_blank" rel="external">http://www.w3school.com.cn/json/index.asp</a></li>
-<li>在.NET使用JSON作为数据交换格式, fangaoxin, <a href="http://blog.csdn.net/fangaoxin/article/details/7618152" target="_blank" rel="external">http://blog.csdn.net/fangaoxin/article/details/7618152</a></li>
+<li>JSON_&#x767E;&#x5EA6;&#x767E;&#x79D1;, <a href="http://baike.baidu.com/link?url=9Xh66e3k3V_8H0GXI2UreQ43jK5tX84PVIT1Bh6tgswhISJG6zzwNRhvryOkvFRp9pyXlJtSUyiId9DaDzHAyK" target="_blank" rel="external">http://baike.baidu.com/link?url=9Xh66e3k3V_8H0GXI2UreQ43jK5tX84PVIT1Bh6tgswhISJG6zzwNRhvryOkvFRp9pyXlJtSUyiId9DaDzHAyK</a></li>
+<li>W3School_JSON&#x6559;&#x7A0B;, <a href="http://www.w3school.com.cn/json/index.asp" target="_blank" rel="external">http://www.w3school.com.cn/json/index.asp</a></li>
+<li>&#x5728;.NET&#x4F7F;&#x7528;JSON&#x4F5C;&#x4E3A;&#x6570;&#x636E;&#x4EA4;&#x6362;&#x683C;&#x5F0F;, fangaoxin, <a href="http://blog.csdn.net/fangaoxin/article/details/7618152" target="_blank" rel="external">http://blog.csdn.net/fangaoxin/article/details/7618152</a></li>
 </ol>
 
             
@@ -464,67 +646,67 @@
           <span itemprop="articleBody">
             
               <blockquote>
-<p>本文是 Tizen 系统的 gbs build 的用法的中英文对照版，主要内容为如何使用 gbs build 命令</p>
+<p>&#x672C;&#x6587;&#x662F; Tizen &#x7CFB;&#x7EDF;&#x7684; gbs build &#x7684;&#x7528;&#x6CD5;&#x7684;&#x4E2D;&#x82F1;&#x6587;&#x5BF9;&#x7167;&#x7248;&#xFF0C;&#x4E3B;&#x8981;&#x5185;&#x5BB9;&#x4E3A;&#x5982;&#x4F55;&#x4F7F;&#x7528; gbs build &#x547D;&#x4EE4;</p>
 <p><em>Reference: <a href="https://source.tizen.org/documentation/reference/git-build-system/usage/gbs-build" target="_blank" rel="external">https://source.tizen.org/documentation/reference/git-build-system/usage/gbs-build</a></em></p>
 </blockquote>
 <h1 id="gbs-build"><a href="#gbs-build" class="headerlink" title="gbs build"></a>gbs build</h1><p>PUBLISHED 19 Oct 2014</p>
-<p>By using ‘gbs build’, the developer can build the source code and generate rpm packages locally. For instructions on using the build subcommand, use this command: gbs build –help</p>
+<p>By using &#x2018;gbs build&#x2019;, the developer can build the source code and generate rpm packages locally. For instructions on using the build subcommand, use this command: gbs build &#x2013;help</p>
 <blockquote>
-<p>开发者可使用gbs build在本地编译源代码然后生成RPM包。使用命令 gbs build –help 可以获取关于子命令 build 的帮助指南</p>
+<p>&#x5F00;&#x53D1;&#x8005;&#x53EF;&#x4F7F;&#x7528;gbs build&#x5728;&#x672C;&#x5730;&#x7F16;&#x8BD1;&#x6E90;&#x4EE3;&#x7801;&#x7136;&#x540E;&#x751F;&#x6210;RPM&#x5305;&#x3002;&#x4F7F;&#x7528;&#x547D;&#x4EE4; gbs build &#x2013;help &#x53EF;&#x4EE5;&#x83B7;&#x53D6;&#x5173;&#x4E8E;&#x5B50;&#x547D;&#x4EE4; build &#x7684;&#x5E2E;&#x52A9;&#x6307;&#x5357;</p>
 </blockquote>
 <pre><code>$ gbs build -h
-</code></pre><h2 id="gbs-build-workflow-gbs-build-工作流程"><a href="#gbs-build-workflow-gbs-build-工作流程" class="headerlink" title="gbs build workflow (gbs build 工作流程)"></a>gbs build workflow (gbs build 工作流程)</h2><h3 id="Input-of-gbs-build-gbs-build的输入"><a href="#Input-of-gbs-build-gbs-build的输入" class="headerlink" title="Input of gbs build (gbs build的输入)"></a>Input of gbs build (gbs build的输入)</h3><p>Below is the input for gbs build:</p>
+</code></pre><h2 id="gbs-build-workflow-gbs-build-&#x5DE5;&#x4F5C;&#x6D41;&#x7A0B;"><a href="#gbs-build-workflow-gbs-build-&#x5DE5;&#x4F5C;&#x6D41;&#x7A0B;" class="headerlink" title="gbs build workflow (gbs build &#x5DE5;&#x4F5C;&#x6D41;&#x7A0B;)"></a>gbs build workflow (gbs build &#x5DE5;&#x4F5C;&#x6D41;&#x7A0B;)</h2><h3 id="Input-of-gbs-build-gbs-build&#x7684;&#x8F93;&#x5165;"><a href="#Input-of-gbs-build-gbs-build&#x7684;&#x8F93;&#x5165;" class="headerlink" title="Input of gbs build (gbs build&#x7684;&#x8F93;&#x5165;)"></a>Input of gbs build (gbs build&#x7684;&#x8F93;&#x5165;)</h3><p>Below is the input for gbs build:</p>
 <blockquote>
-<p>以下是 gbs build 所需输入：</p>
+<p>&#x4EE5;&#x4E0B;&#x662F; gbs build &#x6240;&#x9700;&#x8F93;&#x5165;&#xFF1A;</p>
 </blockquote>
 <ul>
 <li><p>git project(s) which contains rpm packaging files</p>
 <blockquote>
-<p>包含rpm packing文件的git项目</p>
+<p>&#x5305;&#x542B;rpm packing&#x6587;&#x4EF6;&#x7684;git&#x9879;&#x76EE;</p>
 </blockquote>
 </li>
 <li><p>binary rpm repositories (remote or local)</p>
 <blockquote>
-<p>二进制rpm包仓库</p>
+<p>&#x4E8C;&#x8FDB;&#x5236;rpm&#x5305;&#x4ED3;&#x5E93;</p>
 </blockquote>
 </li>
 <li><p>project build configurations (macros, flags, etc)</p>
 <blockquote>
-<p>项目编译配置，宏定义、标志位等</p>
+<p>&#x9879;&#x76EE;&#x7F16;&#x8BD1;&#x914D;&#x7F6E;&#xFF0C;&#x5B8F;&#x5B9A;&#x4E49;&#x3001;&#x6807;&#x5FD7;&#x4F4D;&#x7B49;</p>
 </blockquote>
 </li>
 </ul>
 <p>The binary rpm repositories contain all the binary rpm packages which are used to create the chroot environment and build packages, which can be remote, like tizen release or snapshot repositories, or local repository. Local repository supports two types:</p>
 <blockquote>
-<p>二进制rpm包仓库包含所有rpm包，这些rpm包可以用来创建chroot环境和编译软件包。包仓库可以是远程的或者是本地的，远程的如Tizen的发布或快照仓库，本地仓库支持两种类型，如下：</p>
+<p>&#x4E8C;&#x8FDB;&#x5236;rpm&#x5305;&#x4ED3;&#x5E93;&#x5305;&#x542B;&#x6240;&#x6709;rpm&#x5305;&#xFF0C;&#x8FD9;&#x4E9B;rpm&#x5305;&#x53EF;&#x4EE5;&#x7528;&#x6765;&#x521B;&#x5EFA;chroot&#x73AF;&#x5883;&#x548C;&#x7F16;&#x8BD1;&#x8F6F;&#x4EF6;&#x5305;&#x3002;&#x5305;&#x4ED3;&#x5E93;&#x53EF;&#x4EE5;&#x662F;&#x8FDC;&#x7A0B;&#x7684;&#x6216;&#x8005;&#x662F;&#x672C;&#x5730;&#x7684;&#xFF0C;&#x8FDC;&#x7A0B;&#x7684;&#x5982;Tizen&#x7684;&#x53D1;&#x5E03;&#x6216;&#x5FEB;&#x7167;&#x4ED3;&#x5E93;&#xFF0C;&#x672C;&#x5730;&#x4ED3;&#x5E93;&#x652F;&#x6301;&#x4E24;&#x79CD;&#x7C7B;&#x578B;&#xFF0C;&#x5982;&#x4E0B;&#xFF1A;</p>
 </blockquote>
 <ul>
 <li><p>A standard repository with repodata exists</p>
 <blockquote>
-<p>带repodata的标准仓库</p>
+<p>&#x5E26;repodata&#x7684;&#x6807;&#x51C6;&#x4ED3;&#x5E93;</p>
 </blockquote>
 </li>
 <li><p>A normal directory contains RPM packages. GBS will find all RPM packages under this directory.</p>
 <blockquote>
-<p>包含RPM包的普通目录，GBS可以在此目录下找到所有的RPM包</p>
+<p>&#x5305;&#x542B;RPM&#x5305;&#x7684;&#x666E;&#x901A;&#x76EE;&#x5F55;&#xFF0C;GBS&#x53EF;&#x4EE5;&#x5728;&#x6B64;&#x76EE;&#x5F55;&#x4E0B;&#x627E;&#x5230;&#x6240;&#x6709;&#x7684;RPM&#x5305;</p>
 </blockquote>
 </li>
 </ul>
 <p>Please refer to <a href="https://source.tizen.org/documentation/reference/git-build-system/configuration-file" target="_blank" rel="external">Configuration File</a> part to configure a repository.</p>
 <blockquote>
-<p>请参考<a href="https://source.tizen.org/documentation/reference/git-build-system/configuration-file" target="_blank" rel="external">配置文件</a>来配置一个软件包仓库</p>
+<p>&#x8BF7;&#x53C2;&#x8003;<a href="https://source.tizen.org/documentation/reference/git-build-system/configuration-file" target="_blank" rel="external">&#x914D;&#x7F6E;&#x6587;&#x4EF6;</a>&#x6765;&#x914D;&#x7F6E;&#x4E00;&#x4E2A;&#x8F6F;&#x4EF6;&#x5305;&#x4ED3;&#x5E93;</p>
 </blockquote>
-<h3 id="Build-workflow-编译流程"><a href="#Build-workflow-编译流程" class="headerlink" title="Build workflow (编译流程)"></a>Build workflow (编译流程)</h3><p>The input and output of gbs build are all repositories.</p>
+<h3 id="Build-workflow-&#x7F16;&#x8BD1;&#x6D41;&#x7A0B;"><a href="#Build-workflow-&#x7F16;&#x8BD1;&#x6D41;&#x7A0B;" class="headerlink" title="Build workflow (&#x7F16;&#x8BD1;&#x6D41;&#x7A0B;)"></a>Build workflow (&#x7F16;&#x8BD1;&#x6D41;&#x7A0B;)</h3><p>The input and output of gbs build are all repositories.</p>
 <blockquote>
-<p>gbs build的输入和输出都是仓库</p>
+<p>gbs build&#x7684;&#x8F93;&#x5165;&#x548C;&#x8F93;&#x51FA;&#x90FD;&#x662F;&#x4ED3;&#x5E93;</p>
 </blockquote>
-<p><strong>Note</strong>: All the rpm packages under the output repository (by default, ~/GBS-ROOT/local/repos/&lt;VERSION&gt;/) will be used when building packages. That is, all the packages under the output repository will be applied to the build environment, so make sure the output repository is clean if you don’t want this behavior.</p>
+<p><strong>Note</strong>: All the rpm packages under the output repository (by default, ~/GBS-ROOT/local/repos/&lt;VERSION&gt;/) will be used when building packages. That is, all the packages under the output repository will be applied to the build environment, so make sure the output repository is clean if you don&#x2019;t want this behavior.</p>
 <blockquote>
-<p>注意：输出仓库（默认为~/GBS-ROOT/local/repos/&lt;VERSION&gt;/）下所有的rpm包将会被用于编译，如果你不希望使用这些包，请清理掉输出仓库中的rpm包。</p>
+<p>&#x6CE8;&#x610F;&#xFF1A;&#x8F93;&#x51FA;&#x4ED3;&#x5E93;&#xFF08;&#x9ED8;&#x8BA4;&#x4E3A;~/GBS-ROOT/local/repos/&lt;VERSION&gt;/&#xFF09;&#x4E0B;&#x6240;&#x6709;&#x7684;rpm&#x5305;&#x5C06;&#x4F1A;&#x88AB;&#x7528;&#x4E8E;&#x7F16;&#x8BD1;&#xFF0C;&#x5982;&#x679C;&#x4F60;&#x4E0D;&#x5E0C;&#x671B;&#x4F7F;&#x7528;&#x8FD9;&#x4E9B;&#x5305;&#xFF0C;&#x8BF7;&#x6E05;&#x7406;&#x6389;&#x8F93;&#x51FA;&#x4ED3;&#x5E93;&#x4E2D;&#x7684;rpm&#x5305;&#x3002;</p>
 </blockquote>
-<p>Here’s the basic gbs build workflow</p>
+<p>Here&#x2019;s the basic gbs build workflow</p>
 <blockquote>
-<p>gbs build的基本流程</p>
+<p>gbs build&#x7684;&#x57FA;&#x672C;&#x6D41;&#x7A0B;</p>
 </blockquote>
 <pre><code> ____________________
 |                    |      ___________
@@ -540,34 +722,34 @@
 |in GBS conf         |----&gt;|___________|                  |
 |(Remote or Local)   |           ^                        |
 |____________________|           |________________________|
-</code></pre><p>From the above diagram, we can see the input and input are all repositories and the output repository located at ‘~/GBS-ROOT/locals/repos/‘ by default. You can change the repo path by using ‘–buildroot’ to specify a different build root.</p>
+</code></pre><p>From the above diagram, we can see the input and input are all repositories and the output repository located at &#x2018;~/GBS-ROOT/locals/repos/&#x2018; by default. You can change the repo path by using &#x2018;&#x2013;buildroot&#x2019; to specify a different build root.</p>
 <blockquote>
-<p>输出仓库默认为：<em>~/GBS-ROOT/local/repos</em>，可以通过 <strong>–buildroot</strong> 指定build root来改变仓库路径。</p>
+<p>&#x8F93;&#x51FA;&#x4ED3;&#x5E93;&#x9ED8;&#x8BA4;&#x4E3A;&#xFF1A;<em>~/GBS-ROOT/local/repos</em>&#xFF0C;&#x53EF;&#x4EE5;&#x901A;&#x8FC7; <strong>&#x2013;buildroot</strong> &#x6307;&#x5B9A;build root&#x6765;&#x6539;&#x53D8;&#x4ED3;&#x5E93;&#x8DEF;&#x5F84;&#x3002;</p>
 </blockquote>
-<p>Local repos in gbs build root (‘~/GBS-ROOT’ by default) will affect build results, so you must make sure that repos don’t contains old or unnecessary RPM packages. While running gbs build, you can specify ‘–clean-repos’ to clean up local repos, which gbs created, before building. We recommend that gbs users set different gbs build root directories for different profiles. There are several ways:</p>
+<p>Local repos in gbs build root (&#x2018;~/GBS-ROOT&#x2019; by default) will affect build results, so you must make sure that repos don&#x2019;t contains old or unnecessary RPM packages. While running gbs build, you can specify &#x2018;&#x2013;clean-repos&#x2019; to clean up local repos, which gbs created, before building. We recommend that gbs users set different gbs build root directories for different profiles. There are several ways:</p>
 <blockquote>
-<p>gbs build root下的本地仓库会影响编译结果，所以你必须要保证仓库里没有旧的软件包或者无关的软件包。在编译的时候可以用 –clean-repos 选项在实际编译前清理 gbs 创建的本地仓库。建议 gbs 使用者针对不同的场景设置不同的 build root 目录。可以使用以下方法：</p>
+<p>gbs build root&#x4E0B;&#x7684;&#x672C;&#x5730;&#x4ED3;&#x5E93;&#x4F1A;&#x5F71;&#x54CD;&#x7F16;&#x8BD1;&#x7ED3;&#x679C;&#xFF0C;&#x6240;&#x4EE5;&#x4F60;&#x5FC5;&#x987B;&#x8981;&#x4FDD;&#x8BC1;&#x4ED3;&#x5E93;&#x91CC;&#x6CA1;&#x6709;&#x65E7;&#x7684;&#x8F6F;&#x4EF6;&#x5305;&#x6216;&#x8005;&#x65E0;&#x5173;&#x7684;&#x8F6F;&#x4EF6;&#x5305;&#x3002;&#x5728;&#x7F16;&#x8BD1;&#x7684;&#x65F6;&#x5019;&#x53EF;&#x4EE5;&#x7528; &#x2013;clean-repos &#x9009;&#x9879;&#x5728;&#x5B9E;&#x9645;&#x7F16;&#x8BD1;&#x524D;&#x6E05;&#x7406; gbs &#x521B;&#x5EFA;&#x7684;&#x672C;&#x5730;&#x4ED3;&#x5E93;&#x3002;&#x5EFA;&#x8BAE; gbs &#x4F7F;&#x7528;&#x8005;&#x9488;&#x5BF9;&#x4E0D;&#x540C;&#x7684;&#x573A;&#x666F;&#x8BBE;&#x7F6E;&#x4E0D;&#x540C;&#x7684; build root &#x76EE;&#x5F55;&#x3002;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x4EE5;&#x4E0B;&#x65B9;&#x6CD5;&#xFF1A;</p>
 </blockquote>
 <ul>
 <li><p>By default, the GBS build will put all output files under ~/GBS-ROOT/.</p>
 <blockquote>
-<p>GBS build默认会把所有的输出文件都放在 <em>~/GBS-ROOT/</em> 里</p>
+<p>GBS build&#x9ED8;&#x8BA4;&#x4F1A;&#x628A;&#x6240;&#x6709;&#x7684;&#x8F93;&#x51FA;&#x6587;&#x4EF6;&#x90FD;&#x653E;&#x5728; <em>~/GBS-ROOT/</em> &#x91CC;</p>
 </blockquote>
 </li>
 <li><p>If the environment variable TIZEN_BUILD_ROOT exists, ${TIZEN_BUILD_ROOT} will be used as output top dir</p>
 <blockquote>
-<p>如果存在环境变量 TIZEN_BUILD_ROOT，其值 $(TIZEN_BUILD_ROOT) 将会作为 build root</p>
+<p>&#x5982;&#x679C;&#x5B58;&#x5728;&#x73AF;&#x5883;&#x53D8;&#x91CF; TIZEN_BUILD_ROOT&#xFF0C;&#x5176;&#x503C; $(TIZEN_BUILD_ROOT) &#x5C06;&#x4F1A;&#x4F5C;&#x4E3A; build root</p>
 </blockquote>
 </li>
 <li><p>If -B option is specified, then the specified directory is used, even if ${TIZEN_BUILD_ROOT} exists</p>
 <blockquote>
-<p>如果使用 -B 选项，那么就其参数将作为 build root ，即使环境变量 $(TIZEN_BUILD_ROOT) 存在</p>
+<p>&#x5982;&#x679C;&#x4F7F;&#x7528; -B &#x9009;&#x9879;&#xFF0C;&#x90A3;&#x4E48;&#x5C31;&#x5176;&#x53C2;&#x6570;&#x5C06;&#x4F5C;&#x4E3A; build root &#xFF0C;&#x5373;&#x4F7F;&#x73AF;&#x5883;&#x53D8;&#x91CF; $(TIZEN_BUILD_ROOT) &#x5B58;&#x5728;</p>
 </blockquote>
 </li>
 </ul>
-<h3 id="Output-of-gbs-build-gbs-build-输出"><a href="#Output-of-gbs-build-gbs-build-输出" class="headerlink" title="Output of gbs build (gbs build 输出)"></a>Output of gbs build (gbs build 输出)</h3><p>Structure of a GBS build root directory</p>
+<h3 id="Output-of-gbs-build-gbs-build-&#x8F93;&#x51FA;"><a href="#Output-of-gbs-build-gbs-build-&#x8F93;&#x51FA;" class="headerlink" title="Output of gbs build (gbs build &#x8F93;&#x51FA;)"></a>Output of gbs build (gbs build &#x8F93;&#x51FA;)</h3><p>Structure of a GBS build root directory</p>
 <blockquote>
-<p>GBS build root的目录结构</p>
+<p>GBS build root&#x7684;&#x76EE;&#x5F55;&#x7ED3;&#x6784;</p>
 </blockquote>
 <pre><code>gbs output top dir
 |-- local
@@ -588,83 +770,83 @@
 | |-- tizen
 | `-- tizen2.0
 `-- meta # meta data used by gbs
-</code></pre><h2 id="GBS-Build-Examples-Basic-Usage-GBS-Build示例，基本用法"><a href="#GBS-Build-Examples-Basic-Usage-GBS-Build示例，基本用法" class="headerlink" title="GBS Build Examples (Basic Usage) (GBS Build示例，基本用法)"></a>GBS Build Examples (Basic Usage) (GBS Build示例，基本用法)</h2><p>1 Build a single package.</p>
+</code></pre><h2 id="GBS-Build-Examples-Basic-Usage-GBS-Build&#x793A;&#x4F8B;&#xFF0C;&#x57FA;&#x672C;&#x7528;&#x6CD5;"><a href="#GBS-Build-Examples-Basic-Usage-GBS-Build&#x793A;&#x4F8B;&#xFF0C;&#x57FA;&#x672C;&#x7528;&#x6CD5;" class="headerlink" title="GBS Build Examples (Basic Usage) (GBS Build&#x793A;&#x4F8B;&#xFF0C;&#x57FA;&#x672C;&#x7528;&#x6CD5;)"></a>GBS Build Examples (Basic Usage) (GBS Build&#x793A;&#x4F8B;&#xFF0C;&#x57FA;&#x672C;&#x7528;&#x6CD5;)</h2><p>1 Build a single package.</p>
 <blockquote>
-<p>编译单个包</p>
+<p>&#x7F16;&#x8BD1;&#x5355;&#x4E2A;&#x5305;</p>
 </blockquote>
 <pre><code>$ cd package1
 $ gbs build -A i586
 </code></pre><p>2 Build a package for different architectures.</p>
 <blockquote>
-<p>为不同的架构编译包</p>
+<p>&#x4E3A;&#x4E0D;&#x540C;&#x7684;&#x67B6;&#x6784;&#x7F16;&#x8BD1;&#x5305;</p>
 </blockquote>
 <p><strong>Note</strong>: Supported architectures include: x86_64, i586, armv6l, armv7hl, armv7l, aarch64, mips, mipsel.</p>
 <blockquote>
-<p>注意：支持的架构有： x86_64, i586, armv6l, armv7hl, armv7l, aarch64, mips, mipsel.</p>
+<p>&#x6CE8;&#x610F;&#xFF1A;&#x652F;&#x6301;&#x7684;&#x67B6;&#x6784;&#x6709;&#xFF1A; x86_64, i586, armv6l, armv7hl, armv7l, aarch64, mips, mipsel.</p>
 </blockquote>
 <pre><code>$ gbs build -A armv7l #build package for armv7l
 $ gbs build -A i586 #build package for i586
 </code></pre><p>3 Make a clean build by deleting the old build root. This option must be specified if the repo has been changed, for example, changed to another release.</p>
 <blockquote>
-<p>删除旧的build root，全新编译。当软件包仓库有变化时，必须使用这个选项，比如改成使用另一个发行版的软件仓库时.</p>
+<p>&#x5220;&#x9664;&#x65E7;&#x7684;build root&#xFF0C;&#x5168;&#x65B0;&#x7F16;&#x8BD1;&#x3002;&#x5F53;&#x8F6F;&#x4EF6;&#x5305;&#x4ED3;&#x5E93;&#x6709;&#x53D8;&#x5316;&#x65F6;&#xFF0C;&#x5FC5;&#x987B;&#x4F7F;&#x7528;&#x8FD9;&#x4E2A;&#x9009;&#x9879;&#xFF0C;&#x6BD4;&#x5982;&#x6539;&#x6210;&#x4F7F;&#x7528;&#x53E6;&#x4E00;&#x4E2A;&#x53D1;&#x884C;&#x7248;&#x7684;&#x8F6F;&#x4EF6;&#x4ED3;&#x5E93;&#x65F6;.</p>
 </blockquote>
 <pre><code>$ gbs build -A armv7l --clean
 </code></pre><p>4 Build the package with a specific commit.</p>
 <blockquote>
-<p>为特定提交编译包</p>
+<p>&#x4E3A;&#x7279;&#x5B9A;&#x63D0;&#x4EA4;&#x7F16;&#x8BD1;&#x5305;</p>
 </blockquote>
 <pre><code>$ gbs build -A armv7l --commit=&lt;COMMIT_ID&gt;
-</code></pre><p>5 Use –overwrite to trigger a rebuild.</p>
+</code></pre><p>5 Use &#x2013;overwrite to trigger a rebuild.</p>
 <blockquote>
-<p>用–overwrite触发一次重新编译</p>
+<p>&#x7528;&#x2013;overwrite&#x89E6;&#x53D1;&#x4E00;&#x6B21;&#x91CD;&#x65B0;&#x7F16;&#x8BD1;</p>
 </blockquote>
-<p>If you have already built before, and want to rebuild, –overwrite should be specified, or the packages will be skipped.</p>
+<p>If you have already built before, and want to rebuild, &#x2013;overwrite should be specified, or the packages will be skipped.</p>
 <blockquote>
-<p>如果以前已经编译过，并且想重新编译，应该使用–overwrite，否则已经编过的包会被跳过</p>
+<p>&#x5982;&#x679C;&#x4EE5;&#x524D;&#x5DF2;&#x7ECF;&#x7F16;&#x8BD1;&#x8FC7;&#xFF0C;&#x5E76;&#x4E14;&#x60F3;&#x91CD;&#x65B0;&#x7F16;&#x8BD1;&#xFF0C;&#x5E94;&#x8BE5;&#x4F7F;&#x7528;&#x2013;overwrite&#xFF0C;&#x5426;&#x5219;&#x5DF2;&#x7ECF;&#x7F16;&#x8FC7;&#x7684;&#x5305;&#x4F1A;&#x88AB;&#x8DF3;&#x8FC7;</p>
 </blockquote>
 <pre><code>$ gbs build -A i586 --overwrite
-</code></pre><p>If you change the commit or specify –include-all option, it will always rebuild, so –overwrite is not needed.</p>
+</code></pre><p>If you change the commit or specify &#x2013;include-all option, it will always rebuild, so &#x2013;overwrite is not needed.</p>
 <blockquote>
-<p>如果有新提交或者带选项–include-all，则GBS总是会重新编译，此时滴必要使用–overwrite</p>
+<p>&#x5982;&#x679C;&#x6709;&#x65B0;&#x63D0;&#x4EA4;&#x6216;&#x8005;&#x5E26;&#x9009;&#x9879;&#x2013;include-all&#xFF0C;&#x5219;GBS&#x603B;&#x662F;&#x4F1A;&#x91CD;&#x65B0;&#x7F16;&#x8BD1;&#xFF0C;&#x6B64;&#x65F6;&#x6EF4;&#x5FC5;&#x8981;&#x4F7F;&#x7528;&#x2013;overwrite</p>
 </blockquote>
 <p>6 Output the debug info.</p>
 <blockquote>
-<p>输出调试信息</p>
+<p>&#x8F93;&#x51FA;&#x8C03;&#x8BD5;&#x4FE1;&#x606F;</p>
 </blockquote>
 <pre><code>$ gbs build -A i586 --debug
 </code></pre><p>7 Build against a local repository. You can config the local repo at .gbs.conf file or through the command line.</p>
 <pre><code>$ gbs build -R /path/to/repo/dir/ -A i586
-</code></pre><p>8 Use –noinit to build package in offline mode.</p>
+</code></pre><p>8 Use &#x2013;noinit to build package in offline mode.</p>
 <blockquote>
-<p>使用 –noinit 选项，在离线模式下编译</p>
+<p>&#x4F7F;&#x7528; &#x2013;noinit &#x9009;&#x9879;&#xFF0C;&#x5728;&#x79BB;&#x7EBF;&#x6A21;&#x5F0F;&#x4E0B;&#x7F16;&#x8BD1;</p>
 </blockquote>
-<p>–noinit option can only be used if build root is ready. With –noinit option, gbs will not connect the remote repo, and skip parsing &amp; checking repo and initialize build environment. rpmbuild will be used to build the package directly. Here’s an example:</p>
+<p>&#x2013;noinit option can only be used if build root is ready. With &#x2013;noinit option, gbs will not connect the remote repo, and skip parsing &amp; checking repo and initialize build environment. rpmbuild will be used to build the package directly. Here&#x2019;s an example:</p>
 <blockquote>
-<p>在build root准备好的情况下，可以使用选项 –noinit。使用 –noinit 选项时，gbs不会连接远程仓库并且会跳过解析/检查仓库和初始化编译环境，直接使用rpmbuild编译包. </p>
-<p><strong>重要</strong>：此选项可用于快速编译</p>
+<p>&#x5728;build root&#x51C6;&#x5907;&#x597D;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x9009;&#x9879; &#x2013;noinit&#x3002;&#x4F7F;&#x7528; &#x2013;noinit &#x9009;&#x9879;&#x65F6;&#xFF0C;gbs&#x4E0D;&#x4F1A;&#x8FDE;&#x63A5;&#x8FDC;&#x7A0B;&#x4ED3;&#x5E93;&#x5E76;&#x4E14;&#x4F1A;&#x8DF3;&#x8FC7;&#x89E3;&#x6790;/&#x68C0;&#x67E5;&#x4ED3;&#x5E93;&#x548C;&#x521D;&#x59CB;&#x5316;&#x7F16;&#x8BD1;&#x73AF;&#x5883;&#xFF0C;&#x76F4;&#x63A5;&#x4F7F;&#x7528;rpmbuild&#x7F16;&#x8BD1;&#x5305;. </p>
+<p><strong>&#x91CD;&#x8981;</strong>&#xFF1A;&#x6B64;&#x9009;&#x9879;&#x53EF;&#x7528;&#x4E8E;&#x5FEB;&#x901F;&#x7F16;&#x8BD1;</p>
 </blockquote>
 <pre><code>$ gbs build -A i586 # build first and create build environment
 $ gbs build -A i586 --noinit # use --noinit to start building directly
-</code></pre><p>9 Build with all uncommitted changes using –include-all.</p>
+</code></pre><p>9 Build with all uncommitted changes using &#x2013;include-all.</p>
 <blockquote>
-<p>使用 –include-all 选项编译所有的未提交的改动</p>
-<p><strong>重要</strong>，此选项为常用选项，当用户本地有修改又没有提交时，经常需要使用此选项用于测试新代码</p>
+<p>&#x4F7F;&#x7528; &#x2013;include-all &#x9009;&#x9879;&#x7F16;&#x8BD1;&#x6240;&#x6709;&#x7684;&#x672A;&#x63D0;&#x4EA4;&#x7684;&#x6539;&#x52A8;</p>
+<p><strong>&#x91CD;&#x8981;</strong>&#xFF0C;&#x6B64;&#x9009;&#x9879;&#x4E3A;&#x5E38;&#x7528;&#x9009;&#x9879;&#xFF0C;&#x5F53;&#x7528;&#x6237;&#x672C;&#x5730;&#x6709;&#x4FEE;&#x6539;&#x53C8;&#x6CA1;&#x6709;&#x63D0;&#x4EA4;&#x65F6;&#xFF0C;&#x7ECF;&#x5E38;&#x9700;&#x8981;&#x4F7F;&#x7528;&#x6B64;&#x9009;&#x9879;&#x7528;&#x4E8E;&#x6D4B;&#x8BD5;&#x65B0;&#x4EE3;&#x7801;</p>
 </blockquote>
 <p>For example, the git tree contains one modified file and two extra files:</p>
 <blockquote>
-<p>例如，git目录中包含一个改动的文件和二个新加的文件</p>
+<p>&#x4F8B;&#x5982;&#xFF0C;git&#x76EE;&#x5F55;&#x4E2D;&#x5305;&#x542B;&#x4E00;&#x4E2A;&#x6539;&#x52A8;&#x7684;&#x6587;&#x4EF6;&#x548C;&#x4E8C;&#x4E2A;&#x65B0;&#x52A0;&#x7684;&#x6587;&#x4EF6;</p>
 </blockquote>
 <pre><code>$ git status -s
 M ail.pc.in
 ?? base.repo
 ?? main.repo
-</code></pre><p><strong>Build without the –include-all option</strong></p>
+</code></pre><p><strong>Build without the &#x2013;include-all option</strong></p>
 <blockquote>
-<p>不用–include-all编译</p>
+<p>&#x4E0D;&#x7528;&#x2013;include-all&#x7F16;&#x8BD1;</p>
 </blockquote>
 <p>Builds committed files only. All the modified files, which are not committed nor added, will NOT be built:</p>
 <blockquote>
-<p>仅编译已提交的文件。所有未提交或未添加到版本控制的文件都不会被编译:</p>
+<p>&#x4EC5;&#x7F16;&#x8BD1;&#x5DF2;&#x63D0;&#x4EA4;&#x7684;&#x6587;&#x4EF6;&#x3002;&#x6240;&#x6709;&#x672A;&#x63D0;&#x4EA4;&#x6216;&#x672A;&#x6DFB;&#x52A0;&#x5230;&#x7248;&#x672C;&#x63A7;&#x5236;&#x7684;&#x6587;&#x4EF6;&#x90FD;&#x4E0D;&#x4F1A;&#x88AB;&#x7F16;&#x8BD1;:</p>
 </blockquote>
 <pre><code>$ gbs build -A i586
 warning: the following untracked files would NOT be included: base.repo main.repo
@@ -674,9 +856,9 @@ warning: you can specify &apos;--include-all&apos; option to include these uncom
 info: Binaries RPM packages can be found here:
 /home/test/GBS-ROOT/local/scratch.i586.0/home/abuild/rpmbuild/RPMS/
 info: Done
-</code></pre><p><strong>Build with the –include-all option builds all the files</strong></p>
+</code></pre><p><strong>Build with the &#x2013;include-all option builds all the files</strong></p>
 <blockquote>
-<p>使用–include-all来编译所有的文件</p>
+<p>&#x4F7F;&#x7528;&#x2013;include-all&#x6765;&#x7F16;&#x8BD1;&#x6240;&#x6709;&#x7684;&#x6587;&#x4EF6;</p>
 </blockquote>
 <pre><code>$ gbs build -A i586 --include-all
 info: the following untracked files would be included: base.repo main.repo
@@ -685,13 +867,13 @@ info: export tar ball and packaging files
 ...
 ...
 [build finished]
-</code></pre><p><strong>Use .gitignore to ignore specific files, when using the –include-all option.</strong></p>
+</code></pre><p><strong>Use .gitignore to ignore specific files, when using the &#x2013;include-all option.</strong></p>
 <blockquote>
-<p>当使用–incldue-all时可以用.gitignore来忽略特定的文件</p>
+<p>&#x5F53;&#x4F7F;&#x7528;&#x2013;incldue-all&#x65F6;&#x53EF;&#x4EE5;&#x7528;.gitignore&#x6765;&#x5FFD;&#x7565;&#x7279;&#x5B9A;&#x7684;&#x6587;&#x4EF6;</p>
 </blockquote>
 <p>If you want to ignore some files types, you can update your .gitignore. For example:</p>
 <blockquote>
-<p>如果要想忽略某类型文件可以修改.gitignore，例如：</p>
+<p>&#x5982;&#x679C;&#x8981;&#x60F3;&#x5FFD;&#x7565;&#x67D0;&#x7C7B;&#x578B;&#x6587;&#x4EF6;&#x53EF;&#x4EE5;&#x4FEE;&#x6539;.gitignore&#xFF0C;&#x4F8B;&#x5982;&#xFF1A;</p>
 </blockquote>
 <pre><code>$ cat .gitignore
 .*
@@ -699,77 +881,77 @@ info: export tar ball and packaging files
 *.pyc
 *.patch*
 </code></pre><h2 id="Incremental-build"><a href="#Incremental-build" class="headerlink" title="Incremental build"></a>Incremental build</h2><blockquote>
-<p>增量编译</p>
+<p>&#x589E;&#x91CF;&#x7F16;&#x8BD1;</p>
 </blockquote>
 <h3 id="Incremental-Concept"><a href="#Incremental-Concept" class="headerlink" title="Incremental Concept"></a>Incremental Concept</h3><blockquote>
-<p>增量的概念</p>
+<p>&#x589E;&#x91CF;&#x7684;&#x6982;&#x5FF5;</p>
 </blockquote>
-<p>Starting from gbs 0.10, the gbs build subcommand supports building incrementally, which can be enabled by specifying the ‘–incremental’ option.</p>
+<p>Starting from gbs 0.10, the gbs build subcommand supports building incrementally, which can be enabled by specifying the &#x2018;&#x2013;incremental&#x2019; option.</p>
 <blockquote>
-<p>从gbs 0.10开始，gbs build就支持增量式的编译，通过指定–incremental选项来启用。</p>
+<p>&#x4ECE;gbs 0.10&#x5F00;&#x59CB;&#xFF0C;gbs build&#x5C31;&#x652F;&#x6301;&#x589E;&#x91CF;&#x5F0F;&#x7684;&#x7F16;&#x8BD1;&#xFF0C;&#x901A;&#x8FC7;&#x6307;&#x5B9A;&#x2013;incremental&#x9009;&#x9879;&#x6765;&#x542F;&#x7528;&#x3002;</p>
 </blockquote>
 <p>This mode is designed for development and verification of single packages. It is not intended to replace the standard mode. Only one package can be built at a time using this mode.</p>
 <blockquote>
-<p>这种模式主要用来开发和验证单个软件包，不是用来替代标准的编译模式。在此模式下，一次只能编译一个包。</p>
+<p>&#x8FD9;&#x79CD;&#x6A21;&#x5F0F;&#x4E3B;&#x8981;&#x7528;&#x6765;&#x5F00;&#x53D1;&#x548C;&#x9A8C;&#x8BC1;&#x5355;&#x4E2A;&#x8F6F;&#x4EF6;&#x5305;&#xFF0C;&#x4E0D;&#x662F;&#x7528;&#x6765;&#x66FF;&#x4EE3;&#x6807;&#x51C6;&#x7684;&#x7F16;&#x8BD1;&#x6A21;&#x5F0F;&#x3002;&#x5728;&#x6B64;&#x6A21;&#x5F0F;&#x4E0B;&#xFF0C;&#x4E00;&#x6B21;&#x53EA;&#x80FD;&#x7F16;&#x8BD1;&#x4E00;&#x4E2A;&#x5305;&#x3002;</p>
 </blockquote>
 <p>This mode will set up the build environment in multiple steps, finishing by mounting the local Git tree of a package in the chroot build environment.</p>
 <blockquote>
-<p>这种模式分成多步来设置编译环境，把本地的软件包的Git目录绑定到chroot的编译目录后就完成了。</p>
+<p>&#x8FD9;&#x79CD;&#x6A21;&#x5F0F;&#x5206;&#x6210;&#x591A;&#x6B65;&#x6765;&#x8BBE;&#x7F6E;&#x7F16;&#x8BD1;&#x73AF;&#x5883;&#xFF0C;&#x628A;&#x672C;&#x5730;&#x7684;&#x8F6F;&#x4EF6;&#x5305;&#x7684;Git&#x76EE;&#x5F55;&#x7ED1;&#x5B9A;&#x5230;chroot&#x7684;&#x7F16;&#x8BD1;&#x76EE;&#x5F55;&#x540E;&#x5C31;&#x5B8C;&#x6210;&#x4E86;&#x3002;</p>
 </blockquote>
-<p>Note: Because gbs will mount your git tree to the build root, be very careful when you remove your build root. You need to make sure you’ve already umounted the source tree manually before you remove it.</p>
+<p>Note: Because gbs will mount your git tree to the build root, be very careful when you remove your build root. You need to make sure you&#x2019;ve already umounted the source tree manually before you remove it.</p>
 <blockquote>
-<p>注意：因为gbs会把git目录绑定到buid root，所以当要删除build root时要非常小心，删除前要确定已经手动地把源码解绑定。</p>
+<p>&#x6CE8;&#x610F;&#xFF1A;&#x56E0;&#x4E3A;gbs&#x4F1A;&#x628A;git&#x76EE;&#x5F55;&#x7ED1;&#x5B9A;&#x5230;buid root&#xFF0C;&#x6240;&#x4EE5;&#x5F53;&#x8981;&#x5220;&#x9664;build root&#x65F6;&#x8981;&#x975E;&#x5E38;&#x5C0F;&#x5FC3;&#xFF0C;&#x5220;&#x9664;&#x524D;&#x8981;&#x786E;&#x5B9A;&#x5DF2;&#x7ECF;&#x624B;&#x52A8;&#x5730;&#x628A;&#x6E90;&#x7801;&#x89E3;&#x7ED1;&#x5B9A;&#x3002;</p>
 </blockquote>
 <p>This has the following benefits:</p>
 <blockquote>
-<p>这种模式有以下优点：</p>
+<p>&#x8FD9;&#x79CD;&#x6A21;&#x5F0F;&#x6709;&#x4EE5;&#x4E0B;&#x4F18;&#x70B9;&#xFF1A;</p>
 </blockquote>
 <ul>
 <li><p>The build environment uses the latest source code and changes to source do not trigger a new build environment (in the chroot).</p>
 <blockquote>
-<p>编译环境可以使用最新的源代码，并且代码的改动不会修改编译环境</p>
+<p>&#x7F16;&#x8BD1;&#x73AF;&#x5883;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x6700;&#x65B0;&#x7684;&#x6E90;&#x4EE3;&#x7801;&#xFF0C;&#x5E76;&#x4E14;&#x4EE3;&#x7801;&#x7684;&#x6539;&#x52A8;&#x4E0D;&#x4F1A;&#x4FEE;&#x6539;&#x7F16;&#x8BD1;&#x73AF;&#x5883;</p>
 </blockquote>
 </li>
 <li><p>The Git source tree becomes the source of the builds. Any change made in the Git repository followed by invocation of the build script will build the changed sources</p>
 <blockquote>
-<p>git目录变成了编译的源目录，只要在git中的任何改动之后，调用编译命令，就可以编译改动过的源代码</p>
+<p>git&#x76EE;&#x5F55;&#x53D8;&#x6210;&#x4E86;&#x7F16;&#x8BD1;&#x7684;&#x6E90;&#x76EE;&#x5F55;&#xFF0C;&#x53EA;&#x8981;&#x5728;git&#x4E2D;&#x7684;&#x4EFB;&#x4F55;&#x6539;&#x52A8;&#x4E4B;&#x540E;&#xFF0C;&#x8C03;&#x7528;&#x7F16;&#x8BD1;&#x547D;&#x4EE4;&#xFF0C;&#x5C31;&#x53EF;&#x4EE5;&#x7F16;&#x8BD1;&#x6539;&#x52A8;&#x8FC7;&#x7684;&#x6E90;&#x4EE3;&#x7801;</p>
 </blockquote>
 </li>
 <li><p>If the build fails for some reason, the build script will continue from the spot where it has failed, once the code has been changed to fix the problem causing the failure.</p>
 <blockquote>
-<p>编译失败后，一旦导致编译失败的错误被修正，编译脚本会从先前失败的地方接着编译</p>
+<p>&#x7F16;&#x8BD1;&#x5931;&#x8D25;&#x540E;&#xFF0C;&#x4E00;&#x65E6;&#x5BFC;&#x81F4;&#x7F16;&#x8BD1;&#x5931;&#x8D25;&#x7684;&#x9519;&#x8BEF;&#x88AB;&#x4FEE;&#x6B63;&#xFF0C;&#x7F16;&#x8BD1;&#x811A;&#x672C;&#x4F1A;&#x4ECE;&#x5148;&#x524D;&#x5931;&#x8D25;&#x7684;&#x5730;&#x65B9;&#x63A5;&#x7740;&#x7F16;&#x8BD1;</p>
 </blockquote>
 </li>
 </ul>
 <p>This mode is, in many ways, similar to traditional code development, where changes are made to sources, followed by running make to test and compile the changes. However, it enables development using the build environment of the target, instead of the host OS.</p>
 <blockquote>
-<p>从不同的方面说，这种模式类似于传统的代码开发：修改代码然后运行make编译改动。不同的地方在于，增量编译使用编译环境而不是宿主机器的操作系统</p>
+<p>&#x4ECE;&#x4E0D;&#x540C;&#x7684;&#x65B9;&#x9762;&#x8BF4;&#xFF0C;&#x8FD9;&#x79CD;&#x6A21;&#x5F0F;&#x7C7B;&#x4F3C;&#x4E8E;&#x4F20;&#x7EDF;&#x7684;&#x4EE3;&#x7801;&#x5F00;&#x53D1;&#xFF1A;&#x4FEE;&#x6539;&#x4EE3;&#x7801;&#x7136;&#x540E;&#x8FD0;&#x884C;make&#x7F16;&#x8BD1;&#x6539;&#x52A8;&#x3002;&#x4E0D;&#x540C;&#x7684;&#x5730;&#x65B9;&#x5728;&#x4E8E;&#xFF0C;&#x589E;&#x91CF;&#x7F16;&#x8BD1;&#x4F7F;&#x7528;&#x7F16;&#x8BD1;&#x73AF;&#x5883;&#x800C;&#x4E0D;&#x662F;&#x5BBF;&#x4E3B;&#x673A;&#x5668;&#x7684;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;</p>
 </blockquote>
 <p>This method has some limitations, mostly related to packaging and how the sources are maintained. Among others, it depends on how the RPM spec file is composed:</p>
 <blockquote>
-<p>这种模式有一些限制，都是关于打包和代码的管理。尤其是依赖于RPM的spec文件</p>
+<p>&#x8FD9;&#x79CD;&#x6A21;&#x5F0F;&#x6709;&#x4E00;&#x4E9B;&#x9650;&#x5236;&#xFF0C;&#x90FD;&#x662F;&#x5173;&#x4E8E;&#x6253;&#x5305;&#x548C;&#x4EE3;&#x7801;&#x7684;&#x7BA1;&#x7406;&#x3002;&#x5C24;&#x5176;&#x662F;&#x4F9D;&#x8D56;&#x4E8E;RPM&#x7684;spec&#x6587;&#x4EF6;</p>
 </blockquote>
 <ul>
 <li><p>It does not support patches in the spec file. All source has to be maintained as part of the Git tree</p>
 <blockquote>
-<p>不支持spec文件中的patches，所有的源码必须是git目录的一部分</p>
+<p>&#x4E0D;&#x652F;&#x6301;spec&#x6587;&#x4EF6;&#x4E2D;&#x7684;patches&#xFF0C;&#x6240;&#x6709;&#x7684;&#x6E90;&#x7801;&#x5FC5;&#x987B;&#x662F;git&#x76EE;&#x5F55;&#x7684;&#x4E00;&#x90E8;&#x5206;</p>
 </blockquote>
 </li>
 <li><p>It requires a clean packaging workflow. Exotic workflows in the spec files might not work well, because this mode expects the following model:</p>
 <blockquote>
-<p>需要一个整洁的打包流程。spec文件中的极特殊的流程可能不会有效，因为这种模式预期以下模型：</p>
+<p>&#x9700;&#x8981;&#x4E00;&#x4E2A;&#x6574;&#x6D01;&#x7684;&#x6253;&#x5305;&#x6D41;&#x7A0B;&#x3002;spec&#x6587;&#x4EF6;&#x4E2D;&#x7684;&#x6781;&#x7279;&#x6B8A;&#x7684;&#x6D41;&#x7A0B;&#x53EF;&#x80FD;&#x4E0D;&#x4F1A;&#x6709;&#x6548;&#xFF0C;&#x56E0;&#x4E3A;&#x8FD9;&#x79CD;&#x6A21;&#x5F0F;&#x9884;&#x671F;&#x4EE5;&#x4E0B;&#x6A21;&#x578B;&#xFF1A;</p>
 </blockquote>
 <ol>
-<li>Code preparation (%prep) （代码准备）</li>
-<li>Code building (%build) （代码编译）</li>
-<li>Code installation (%install) （代码安装）</li>
+<li>Code preparation (%prep) &#xFF08;&#x4EE3;&#x7801;&#x51C6;&#x5907;&#xFF09;</li>
+<li>Code building (%build) &#xFF08;&#x4EE3;&#x7801;&#x7F16;&#x8BD1;&#xFF09;</li>
+<li>Code installation (%install) &#xFF08;&#x4EE3;&#x7801;&#x5B89;&#x88C5;&#xFF09;</li>
 </ol>
 </li>
 </ul>
 <ul>
-<li><p>Because we run the %build section every time, if the %build script has configuration scripts (auto-tools), binaries might be regenerated, causing a complete build every time. To avoid this, you are encouraged to use the following macros, which can be overridden using the –no-configure option:</p>
+<li><p>Because we run the %build section every time, if the %build script has configuration scripts (auto-tools), binaries might be regenerated, causing a complete build every time. To avoid this, you are encouraged to use the following macros, which can be overridden using the &#x2013;no-configure option:</p>
 <blockquote>
-<p>因为每次都运行编译部分，如果%build脚本有自动配置脚本，二进制文件会被重新生成，导致每次都完全编译。为了避免这样情况发生，推荐使用下面的宏，这些宏能够用–no-configure选项来覆盖</p>
+<p>&#x56E0;&#x4E3A;&#x6BCF;&#x6B21;&#x90FD;&#x8FD0;&#x884C;&#x7F16;&#x8BD1;&#x90E8;&#x5206;&#xFF0C;&#x5982;&#x679C;%build&#x811A;&#x672C;&#x6709;&#x81EA;&#x52A8;&#x914D;&#x7F6E;&#x811A;&#x672C;&#xFF0C;&#x4E8C;&#x8FDB;&#x5236;&#x6587;&#x4EF6;&#x4F1A;&#x88AB;&#x91CD;&#x65B0;&#x751F;&#x6210;&#xFF0C;&#x5BFC;&#x81F4;&#x6BCF;&#x6B21;&#x90FD;&#x5B8C;&#x5168;&#x7F16;&#x8BD1;&#x3002;&#x4E3A;&#x4E86;&#x907F;&#x514D;&#x8FD9;&#x6837;&#x60C5;&#x51B5;&#x53D1;&#x751F;&#xFF0C;&#x63A8;&#x8350;&#x4F7F;&#x7528;&#x4E0B;&#x9762;&#x7684;&#x5B8F;&#xFF0C;&#x8FD9;&#x4E9B;&#x5B8F;&#x80FD;&#x591F;&#x7528;&#x2013;no-configure&#x9009;&#x9879;&#x6765;&#x8986;&#x76D6;</p>
 </blockquote>
 <ol>
 <li>%configure: runs the configure script with pre-defined paths and options.</li>
@@ -778,7 +960,7 @@ info: export tar ball and packaging files
 </ol>
 </li>
 </ul>
-<h3 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h3><p>In this example, we use dlog source code. First, we need to build with –incremental, then just modify one source file, and trigger the incremental build again. We will see that only modified source code has been compiled during the incremental build.</p>
+<h3 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h3><p>In this example, we use dlog source code. First, we need to build with &#x2013;incremental, then just modify one source file, and trigger the incremental build again. We will see that only modified source code has been compiled during the incremental build.</p>
 <pre><code>$ cd dlog
 # first build:
 $ gbs build -A i586 --incremental
@@ -826,107 +1008,107 @@ info: finished incremental building dlog
 info: Local repo can be found here:
 /home/test/GBS-ROOT/local/repos/tizen/
 info: Done
-</code></pre><p>From the buildlog, we can see that only log.c has been re-compiled. That’s the incremental build behavior.</p>
-<p>–noinit option can be used together with –incremental to make a build more quickly, like:</p>
+</code></pre><p>From the buildlog, we can see that only log.c has been re-compiled. That&#x2019;s the incremental build behavior.</p>
+<p>&#x2013;noinit option can be used together with &#x2013;incremental to make a build more quickly, like:</p>
 <pre><code>$ gbs build --incremental --noinit
 </code></pre><h3 id="Limitations-of-Incremental-Build"><a href="#Limitations-of-Incremental-Build" class="headerlink" title="Limitations of Incremental Build"></a>Limitations of Incremental Build</h3><blockquote>
-<p>增量编译的限制</p>
+<p>&#x589E;&#x91CF;&#x7F16;&#x8BD1;&#x7684;&#x9650;&#x5236;</p>
 </blockquote>
-<p>Incremental build doesn’t support all packages. Here are some limitations:</p>
+<p>Incremental build doesn&#x2019;t support all packages. Here are some limitations:</p>
 <blockquote>
-<p>增量编译不支持所有的包。一些限制如下:</p>
+<p>&#x589E;&#x91CF;&#x7F16;&#x8BD1;&#x4E0D;&#x652F;&#x6301;&#x6240;&#x6709;&#x7684;&#x5305;&#x3002;&#x4E00;&#x4E9B;&#x9650;&#x5236;&#x5982;&#x4E0B;:</p>
 </blockquote>
 <ul>
-<li><p>Incremental build currently supports building only a single package. It doesn’t support building multiple packages in parallel</p>
+<li><p>Incremental build currently supports building only a single package. It doesn&#x2019;t support building multiple packages in parallel</p>
 <blockquote>
-<p>只支持单个包</p>
+<p>&#x53EA;&#x652F;&#x6301;&#x5355;&#x4E2A;&#x5305;</p>
 </blockquote>
 </li>
-<li><p>The tarball’s name in the spec file should be %{name}-%{version}.{tar.gz|tar.bz2|zip|…}, otherwise GBS can’t mount source code to build the root correctly</p>
+<li><p>The tarball&#x2019;s name in the spec file should be %{name}-%{version}.{tar.gz|tar.bz2|zip|&#x2026;}, otherwise GBS can&#x2019;t mount source code to build the root correctly</p>
 <blockquote>
-<p>spec文件中的压缩包名字必须是%{name}-%{version}.{tar.gz|tar.bz2|zip|…}，否则GBS无法正确把源码绑定到build root中</p>
+<p>spec&#x6587;&#x4EF6;&#x4E2D;&#x7684;&#x538B;&#x7F29;&#x5305;&#x540D;&#x5B57;&#x5FC5;&#x987B;&#x662F;%{name}-%{version}.{tar.gz|tar.bz2|zip|&#x2026;}&#xFF0C;&#x5426;&#x5219;GBS&#x65E0;&#x6CD5;&#x6B63;&#x786E;&#x628A;&#x6E90;&#x7801;&#x7ED1;&#x5B9A;&#x5230;build root&#x4E2D;</p>
 </blockquote>
 </li>
 <li><p>%prep section should only contains %setup macro to unpack tarball, and should not contains other source code related operations, such as unpack another source, apply patches, etc.</p>
 <blockquote>
-<p>%prep部分应该仅包含用于解圧压缩包的%setup宏，而不应该含有对源代码的其他操作，比如解压其他源码或打patch等都不允许</p>
+<p>%prep&#x90E8;&#x5206;&#x5E94;&#x8BE5;&#x4EC5;&#x5305;&#x542B;&#x7528;&#x4E8E;&#x89E3;&#x5727;&#x538B;&#x7F29;&#x5305;&#x7684;%setup&#x5B8F;&#xFF0C;&#x800C;&#x4E0D;&#x5E94;&#x8BE5;&#x542B;&#x6709;&#x5BF9;&#x6E90;&#x4EE3;&#x7801;&#x7684;&#x5176;&#x4ED6;&#x64CD;&#x4F5C;&#xFF0C;&#x6BD4;&#x5982;&#x89E3;&#x538B;&#x5176;&#x4ED6;&#x6E90;&#x7801;&#x6216;&#x6253;patch&#x7B49;&#x90FD;&#x4E0D;&#x5141;&#x8BB8;</p>
 </blockquote>
 </li>
 </ul>
-<h2 id="Multiple-packages-build-dependency-build-多包编译"><a href="#Multiple-packages-build-dependency-build-多包编译" class="headerlink" title="Multiple packages build (dependency build) (多包编译)"></a>Multiple packages build (dependency build) (多包编译)</h2><p>Multiple package build has been supported since gbs 0.10. If packages have dependencies on each other, gbs will build packages in the correct order calculated by dependency relationship. Previously built out RPMs will be used to build the following packages that depend on them, which is the dependency build.</p>
+<h2 id="Multiple-packages-build-dependency-build-&#x591A;&#x5305;&#x7F16;&#x8BD1;"><a href="#Multiple-packages-build-dependency-build-&#x591A;&#x5305;&#x7F16;&#x8BD1;" class="headerlink" title="Multiple packages build (dependency build) (&#x591A;&#x5305;&#x7F16;&#x8BD1;)"></a>Multiple packages build (dependency build) (&#x591A;&#x5305;&#x7F16;&#x8BD1;)</h2><p>Multiple package build has been supported since gbs 0.10. If packages have dependencies on each other, gbs will build packages in the correct order calculated by dependency relationship. Previously built out RPMs will be used to build the following packages that depend on them, which is the dependency build.</p>
 <blockquote>
-<p>从gbs 0.10开始就支持多包编译。如果包有相互的依赖，gbs会计算出它们之间的关系然后按正确的顺序来编译。作为依赖编译，先前编译出的RPM包会用来编译后面的有依赖需求的包</p>
+<p>&#x4ECE;gbs 0.10&#x5F00;&#x59CB;&#x5C31;&#x652F;&#x6301;&#x591A;&#x5305;&#x7F16;&#x8BD1;&#x3002;&#x5982;&#x679C;&#x5305;&#x6709;&#x76F8;&#x4E92;&#x7684;&#x4F9D;&#x8D56;&#xFF0C;gbs&#x4F1A;&#x8BA1;&#x7B97;&#x51FA;&#x5B83;&#x4EEC;&#x4E4B;&#x95F4;&#x7684;&#x5173;&#x7CFB;&#x7136;&#x540E;&#x6309;&#x6B63;&#x786E;&#x7684;&#x987A;&#x5E8F;&#x6765;&#x7F16;&#x8BD1;&#x3002;&#x4F5C;&#x4E3A;&#x4F9D;&#x8D56;&#x7F16;&#x8BD1;&#xFF0C;&#x5148;&#x524D;&#x7F16;&#x8BD1;&#x51FA;&#x7684;RPM&#x5305;&#x4F1A;&#x7528;&#x6765;&#x7F16;&#x8BD1;&#x540E;&#x9762;&#x7684;&#x6709;&#x4F9D;&#x8D56;&#x9700;&#x6C42;&#x7684;&#x5305;</p>
 </blockquote>
 <p>Examples:</p>
 <p>1 Build all packages under a specified package directory</p>
 <blockquote>
-<p>编译指定目录下的所有的包</p>
+<p>&#x7F16;&#x8BD1;&#x6307;&#x5B9A;&#x76EE;&#x5F55;&#x4E0B;&#x7684;&#x6240;&#x6709;&#x7684;&#x5305;</p>
 </blockquote>
 <pre><code>$ mkdir tizen-packages
 $ cp package1 package2 package3 ... tizen-packages/
 $ gbs build -A i586 tizen-packages # build all packages under tizen-packages
-</code></pre><p>2 Build multiple packages in parallel with –threads</p>
+</code></pre><p>2 Build multiple packages in parallel with &#x2013;threads</p>
 <blockquote>
-<p>使用–threads选项来并行编译多个包</p>
+<p>&#x4F7F;&#x7528;&#x2013;threads&#x9009;&#x9879;&#x6765;&#x5E76;&#x884C;&#x7F16;&#x8BD1;&#x591A;&#x4E2A;&#x5305;</p>
 </blockquote>
 <pre><code># current directory have multiple packages, --threads can be used to set the max build worker at the same time
 $ gbs build -A armv7l --threads=4
 </code></pre><p>3 Select a group of packages to be built</p>
 <blockquote>
-<p>选择编译一组包</p>
+<p>&#x9009;&#x62E9;&#x7F16;&#x8BD1;&#x4E00;&#x7EC4;&#x5305;</p>
 </blockquote>
-<p>The –binary-from-file option specifies a text file that contains a name list of RPM packages to be built. The format in the text file is one package per line.</p>
-<p>The –binary-list option specifies a list in which the package names are separated by comma.</p>
-<p>When the number of packages is small, thus the packages can be clearly presented in command line, it is recommended to use the –binary-list option for simplicity.</p>
+<p>The &#x2013;binary-from-file option specifies a text file that contains a name list of RPM packages to be built. The format in the text file is one package per line.</p>
+<p>The &#x2013;binary-list option specifies a list in which the package names are separated by comma.</p>
+<p>When the number of packages is small, thus the packages can be clearly presented in command line, it is recommended to use the &#x2013;binary-list option for simplicity.</p>
 <pre><code>$ gbs build -A i586 --binary-from-file=/path/to/packages.list
 $ gbs build -A i586 --binary-list=&lt;pkg1&gt;,&lt;pkg2&gt;
 </code></pre><p>4 Exclude certain packages.</p>
 <blockquote>
-<p>排除某些包</p>
+<p>&#x6392;&#x9664;&#x67D0;&#x4E9B;&#x5305;</p>
 </blockquote>
-<p>The –exclude option specifies a list in which the names of packages to be ignored are separated by comma. The –exclude-from-file option specifies a text file that contains a name list of packages to be ignored.</p>
+<p>The &#x2013;exclude option specifies a list in which the names of packages to be ignored are separated by comma. The &#x2013;exclude-from-file option specifies a text file that contains a name list of packages to be ignored.</p>
 <pre><code>$ gbs build -A i586 tizen-packages --exclude=&lt;pkg1&gt;
 $ gbs build -A i586 tizen-packages --exclude=&lt;pkg1&gt;,&lt;pkg2&gt;
 $ gbs build -A i586 tizen-packages --exclude-from-file=/path/to/packages.list
 </code></pre><p>5 Build packages based on dependencies.</p>
 <blockquote>
-<p>基于依赖来编译包</p>
+<p>&#x57FA;&#x4E8E;&#x4F9D;&#x8D56;&#x6765;&#x7F16;&#x8BD1;&#x5305;</p>
 </blockquote>
-<p>The –deps option enables GBS to build specific packages, together with all the related packages on which they depend.The –rdep option enables GBS to build specific packages, together with all the related packages that depend on them.</p>
-<p>The specific packages can be included by the –binary-from-file option or the –binary-list option, and be excluded by the –exclude option or the –exclude-from-file option.</p>
+<p>The &#x2013;deps option enables GBS to build specific packages, together with all the related packages on which they depend.The &#x2013;rdep option enables GBS to build specific packages, together with all the related packages that depend on them.</p>
+<p>The specific packages can be included by the &#x2013;binary-from-file option or the &#x2013;binary-list option, and be excluded by the &#x2013;exclude option or the &#x2013;exclude-from-file option.</p>
 <p>These two options are compatible. When added at the same time, besides the specific packages, GBS will build not only the related packages on which they depend, but also all the related packages that depend on them.</p>
 <pre><code>$ gbs build -A i586 --binary-list=&lt;pkg1&gt;,&lt;pkg2&gt; --deps
 $ gbs build -A i586 --binary-list=&lt;pkg1&gt;,&lt;pkg2&gt; --rdeps
 $ gbs build -A i586 --binary-list=&lt;pkg1&gt;,&lt;pkg2&gt; --deps --rdeps
-</code></pre><h2 id="Other-useful-options-其他有用的选项"><a href="#Other-useful-options-其他有用的选项" class="headerlink" title="Other useful options (其他有用的选项)"></a>Other useful options (其他有用的选项)</h2><h3 id="Install-extra-packages-to-build-root"><a href="#Install-extra-packages-to-build-root" class="headerlink" title="Install extra packages to build root"></a>Install extra packages to build root</h3><blockquote>
-<p>安装额外的包到build root中</p>
+</code></pre><h2 id="Other-useful-options-&#x5176;&#x4ED6;&#x6709;&#x7528;&#x7684;&#x9009;&#x9879;"><a href="#Other-useful-options-&#x5176;&#x4ED6;&#x6709;&#x7528;&#x7684;&#x9009;&#x9879;" class="headerlink" title="Other useful options (&#x5176;&#x4ED6;&#x6709;&#x7528;&#x7684;&#x9009;&#x9879;)"></a>Other useful options (&#x5176;&#x4ED6;&#x6709;&#x7528;&#x7684;&#x9009;&#x9879;)</h2><h3 id="Install-extra-packages-to-build-root"><a href="#Install-extra-packages-to-build-root" class="headerlink" title="Install extra packages to build root"></a>Install extra packages to build root</h3><blockquote>
+<p>&#x5B89;&#x88C5;&#x989D;&#x5916;&#x7684;&#x5305;&#x5230;build root&#x4E2D;</p>
 </blockquote>
-<p>–extra-packs=<pkgs list="" sep="" by="" comma=""> can be used to install extra packages:</pkgs></p>
+<p>&#x2013;extra-packs=<pkgs list="" sep="" by="" comma=""> can be used to install extra packages:</pkgs></p>
 <pre><code>$ gbs build --extra-packs=vim,zypper,gcc,gdb ...
 </code></pre><h3 id="Keep-all-packages-in-build-root"><a href="#Keep-all-packages-in-build-root" class="headerlink" title="Keep all packages in build root"></a>Keep all packages in build root</h3><blockquote>
-<p>保留所有build root中的包</p>
+<p>&#x4FDD;&#x7559;&#x6240;&#x6709;build root&#x4E2D;&#x7684;&#x5305;</p>
 </blockquote>
-<p>Generally, gbs build will remove unnecessary packages in build root. While transferring to build another package, you can use –keep-packs to keep all unnecessary packages, and just install missing build required packages. This option can be used to speed up build multiple packages.</p>
+<p>Generally, gbs build will remove unnecessary packages in build root. While transferring to build another package, you can use &#x2013;keep-packs to keep all unnecessary packages, and just install missing build required packages. This option can be used to speed up build multiple packages.</p>
 <blockquote>
-<p>通常情况下，gbs build会把build root中的不需要的包删除掉。当要编译另外的包时可以使用–keep-packs选项来保留不再需要的包而只安装缺失的依赖包。这个选项可以加速多个包的编译。</p>
-<p><strong>重要</strong>：重要选项，可以节省编译时间</p>
+<p>&#x901A;&#x5E38;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;gbs build&#x4F1A;&#x628A;build root&#x4E2D;&#x7684;&#x4E0D;&#x9700;&#x8981;&#x7684;&#x5305;&#x5220;&#x9664;&#x6389;&#x3002;&#x5F53;&#x8981;&#x7F16;&#x8BD1;&#x53E6;&#x5916;&#x7684;&#x5305;&#x65F6;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x2013;keep-packs&#x9009;&#x9879;&#x6765;&#x4FDD;&#x7559;&#x4E0D;&#x518D;&#x9700;&#x8981;&#x7684;&#x5305;&#x800C;&#x53EA;&#x5B89;&#x88C5;&#x7F3A;&#x5931;&#x7684;&#x4F9D;&#x8D56;&#x5305;&#x3002;&#x8FD9;&#x4E2A;&#x9009;&#x9879;&#x53EF;&#x4EE5;&#x52A0;&#x901F;&#x591A;&#x4E2A;&#x5305;&#x7684;&#x7F16;&#x8BD1;&#x3002;</p>
+<p><strong>&#x91CD;&#x8981;</strong>&#xFF1A;&#x91CD;&#x8981;&#x9009;&#x9879;&#xFF0C;&#x53EF;&#x4EE5;&#x8282;&#x7701;&#x7F16;&#x8BD1;&#x65F6;&#x95F4;</p>
 </blockquote>
 <pre><code>$ gbs build --keep-packs
-</code></pre><p>–keep-packs can be used to create one build root for building multiple packages. Once the build root is ready, you can use –noinit to build these packages quickly.</p>
+</code></pre><p>&#x2013;keep-packs can be used to create one build root for building multiple packages. Once the build root is ready, you can use &#x2013;noinit to build these packages quickly.</p>
 <blockquote>
-<p>–keep-packs选项可以用来为多个包创建一个build root。一旦build root准备好，就可以用 –noinit 选项来快速的编译这些包</p>
-<p><strong>重要</strong>：–keep-packs 配合 –noinit，可以节省编译时间</p>
+<p>&#x2013;keep-packs&#x9009;&#x9879;&#x53EF;&#x4EE5;&#x7528;&#x6765;&#x4E3A;&#x591A;&#x4E2A;&#x5305;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;build root&#x3002;&#x4E00;&#x65E6;build root&#x51C6;&#x5907;&#x597D;&#xFF0C;&#x5C31;&#x53EF;&#x4EE5;&#x7528; &#x2013;noinit &#x9009;&#x9879;&#x6765;&#x5FEB;&#x901F;&#x7684;&#x7F16;&#x8BD1;&#x8FD9;&#x4E9B;&#x5305;</p>
+<p><strong>&#x91CD;&#x8981;</strong>&#xFF1A;&#x2013;keep-packs &#x914D;&#x5408; &#x2013;noinit&#xFF0C;&#x53EF;&#x4EE5;&#x8282;&#x7701;&#x7F16;&#x8BD1;&#x65F6;&#x95F4;</p>
 </blockquote>
 <pre><code>$ gbs build pkg1/ --keep-packs -A i586
 $ gbs build pkg2/ --keep-packs -A i586
 $ gbs build pkg3/ --keep-packs -A i586
-</code></pre><p>Now, the build root (~/GBS-ROOT/local/scratch.i586.0) is ready for building pkg1, pkg2, and pkg3. You can use –noinit to build them offline, and don’t need waste time to check repo updates and build root.</p>
+</code></pre><p>Now, the build root (~/GBS-ROOT/local/scratch.i586.0) is ready for building pkg1, pkg2, and pkg3. You can use &#x2013;noinit to build them offline, and don&#x2019;t need waste time to check repo updates and build root.</p>
 <pre><code>$ gbs build pkg1 --noinit
 $ gbs build pkg2 --noinit
 $ gbs build pkg3 --noinit
-</code></pre><h2 id="Fetch-the-project-build-conf-and-customize-build-root-for-Advanced-Users-（高级用户，获取项目的编译配置和定制build-root）"><a href="#Fetch-the-project-build-conf-and-customize-build-root-for-Advanced-Users-（高级用户，获取项目的编译配置和定制build-root）" class="headerlink" title="Fetch the project build conf and customize build root (for Advanced Users) （高级用户，获取项目的编译配置和定制build root）"></a>Fetch the project build conf and customize build root (for Advanced Users) （高级用户，获取项目的编译配置和定制build root）</h2><p>Project build conf describes the project build configurations for the project, including pre-defined macros/packages/flags in the build environment. In Tizen releases, the build conf is released together with the released repo. You can find an example at: <a href="http://download.tizen.org/releases/daily/trunk/ivi/latest/builddata/xxx-build.conf" target="_blank" rel="external">http://download.tizen.org/releases/daily/trunk/ivi/latest/builddata/xxx-build.conf</a></p>
+</code></pre><h2 id="Fetch-the-project-build-conf-and-customize-build-root-for-Advanced-Users-&#xFF08;&#x9AD8;&#x7EA7;&#x7528;&#x6237;&#xFF0C;&#x83B7;&#x53D6;&#x9879;&#x76EE;&#x7684;&#x7F16;&#x8BD1;&#x914D;&#x7F6E;&#x548C;&#x5B9A;&#x5236;build-root&#xFF09;"><a href="#Fetch-the-project-build-conf-and-customize-build-root-for-Advanced-Users-&#xFF08;&#x9AD8;&#x7EA7;&#x7528;&#x6237;&#xFF0C;&#x83B7;&#x53D6;&#x9879;&#x76EE;&#x7684;&#x7F16;&#x8BD1;&#x914D;&#x7F6E;&#x548C;&#x5B9A;&#x5236;build-root&#xFF09;" class="headerlink" title="Fetch the project build conf and customize build root (for Advanced Users) &#xFF08;&#x9AD8;&#x7EA7;&#x7528;&#x6237;&#xFF0C;&#x83B7;&#x53D6;&#x9879;&#x76EE;&#x7684;&#x7F16;&#x8BD1;&#x914D;&#x7F6E;&#x548C;&#x5B9A;&#x5236;build root&#xFF09;"></a>Fetch the project build conf and customize build root (for Advanced Users) &#xFF08;&#x9AD8;&#x7EA7;&#x7528;&#x6237;&#xFF0C;&#x83B7;&#x53D6;&#x9879;&#x76EE;&#x7684;&#x7F16;&#x8BD1;&#x914D;&#x7F6E;&#x548C;&#x5B9A;&#x5236;build root&#xFF09;</h2><p>Project build conf describes the project build configurations for the project, including pre-defined macros/packages/flags in the build environment. In Tizen releases, the build conf is released together with the released repo. You can find an example at: <a href="http://download.tizen.org/releases/daily/trunk/ivi/latest/builddata/xxx-build.conf" target="_blank" rel="external">http://download.tizen.org/releases/daily/trunk/ivi/latest/builddata/xxx-build.conf</a></p>
 <pre><code>gbs build will fetch the build conf automatically
-</code></pre><p>Starting from gbs 0.7.1, by default, gbs will fetch the build conf from a remote repo, if you specify the remote Tizen repo, and then store it in your temp environment. Here’s the build log:</p>
+</code></pre><p>Starting from gbs 0.7.1, by default, gbs will fetch the build conf from a remote repo, if you specify the remote Tizen repo, and then store it in your temp environment. Here&#x2019;s the build log:</p>
 <pre><code>$ gbs build -A i586
 info: generate repositories ...
 info: build conf has been downloaded at:
@@ -1015,13 +1197,13 @@ $ gbs build -A i586 -D ~/tizen2.0.conf
         
           <span itemprop="articleBody">
             
-              <h1 id="node-gyp-设置-Proxy"><a href="#node-gyp-设置-Proxy" class="headerlink" title="node-gyp 设置 Proxy"></a>node-gyp 设置 Proxy</h1><p>node-gyp 提供 4 种方式通过Proxy连接</p>
-<p>1) 使用命令行参数 <code>–proxy=http://proxy_address:proxy_port</code></p>
-<p>2) 使用环境变量 <code>http_proxy</code></p>
-<p>3) 使用环境变量 <code>HTTP_PROXY</code></p>
-<p>4) 使用环境变量 <code>npm_config_proxy</code></p>
+              <h1 id="node-gyp-&#x8BBE;&#x7F6E;-Proxy"><a href="#node-gyp-&#x8BBE;&#x7F6E;-Proxy" class="headerlink" title="node-gyp &#x8BBE;&#x7F6E; Proxy"></a>node-gyp &#x8BBE;&#x7F6E; Proxy</h1><p>node-gyp &#x63D0;&#x4F9B; 4 &#x79CD;&#x65B9;&#x5F0F;&#x901A;&#x8FC7;Proxy&#x8FDE;&#x63A5;</p>
+<p>1) &#x4F7F;&#x7528;&#x547D;&#x4EE4;&#x884C;&#x53C2;&#x6570; <code>&#x2013;proxy=http://proxy_address:proxy_port</code></p>
+<p>2) &#x4F7F;&#x7528;&#x73AF;&#x5883;&#x53D8;&#x91CF; <code>http_proxy</code></p>
+<p>3) &#x4F7F;&#x7528;&#x73AF;&#x5883;&#x53D8;&#x91CF; <code>HTTP_PROXY</code></p>
+<p>4) &#x4F7F;&#x7528;&#x73AF;&#x5883;&#x53D8;&#x91CF; <code>npm_config_proxy</code></p>
 <blockquote>
-<p><strong>注意</strong>：Proxy的 <strong>http://</strong> 不能省略</p>
+<p><strong>&#x6CE8;&#x610F;</strong>&#xFF1A;Proxy&#x7684; <strong>http://</strong> &#x4E0D;&#x80FD;&#x7701;&#x7565;</p>
 </blockquote>
 
             
@@ -1098,12 +1280,12 @@ $ gbs build -A i586 -D ~/tizen2.0.conf
         
           <span itemprop="articleBody">
             
-              <h1 id="如何下载离线版Windows-Chrome安装文件"><a href="#如何下载离线版Windows-Chrome安装文件" class="headerlink" title="如何下载离线版Windows Chrome安装文件"></a>如何下载离线版Windows Chrome安装文件</h1><p><strong>方法如下：</strong></p>
-<p>对于Stable Chrome来说，只需要在Chrome的“最终用户许可协议”页面链接后面添加<strong>”?standalone=1″</strong>即可，也就是：</p>
+              <h1 id="&#x5982;&#x4F55;&#x4E0B;&#x8F7D;&#x79BB;&#x7EBF;&#x7248;Windows-Chrome&#x5B89;&#x88C5;&#x6587;&#x4EF6;"><a href="#&#x5982;&#x4F55;&#x4E0B;&#x8F7D;&#x79BB;&#x7EBF;&#x7248;Windows-Chrome&#x5B89;&#x88C5;&#x6587;&#x4EF6;" class="headerlink" title="&#x5982;&#x4F55;&#x4E0B;&#x8F7D;&#x79BB;&#x7EBF;&#x7248;Windows Chrome&#x5B89;&#x88C5;&#x6587;&#x4EF6;"></a>&#x5982;&#x4F55;&#x4E0B;&#x8F7D;&#x79BB;&#x7EBF;&#x7248;Windows Chrome&#x5B89;&#x88C5;&#x6587;&#x4EF6;</h1><p><strong>&#x65B9;&#x6CD5;&#x5982;&#x4E0B;&#xFF1A;</strong></p>
+<p>&#x5BF9;&#x4E8E;Stable Chrome&#x6765;&#x8BF4;&#xFF0C;&#x53EA;&#x9700;&#x8981;&#x5728;Chrome&#x7684;&#x201C;&#x6700;&#x7EC8;&#x7528;&#x6237;&#x8BB8;&#x53EF;&#x534F;&#x8BAE;&#x201D;&#x9875;&#x9762;&#x94FE;&#x63A5;&#x540E;&#x9762;&#x6DFB;&#x52A0;<strong>&#x201D;?standalone=1&#x2033;</strong>&#x5373;&#x53EF;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#xFF1A;</p>
 <p><a href="http://www.google.com/chrome/eula.html?standalone=1" target="_blank" rel="external">http://www.google.com/chrome/eula.html?standalone=1</a></p>
-<p>对于特定版本的Chrome来说，按以下地址：</p>
+<p>&#x5BF9;&#x4E8E;&#x7279;&#x5B9A;&#x7248;&#x672C;&#x7684;Chrome&#x6765;&#x8BF4;&#xFF0C;&#x6309;&#x4EE5;&#x4E0B;&#x5730;&#x5740;&#xFF1A;</p>
 <p><a href="http://dl.google.com/chrome/install/{version" target="_blank" rel="external">http://dl.google.com/chrome/install/{version</a> number}/chrome_installer.exe</p>
-<p>其中的 <strong>version number</strong> 代表你要下载的Chrome版本号的后面两个数字，比如4.0.223.11的离线包下载地址就是</p>
+<p>&#x5176;&#x4E2D;&#x7684; <strong>version number</strong> &#x4EE3;&#x8868;&#x4F60;&#x8981;&#x4E0B;&#x8F7D;&#x7684;Chrome&#x7248;&#x672C;&#x53F7;&#x7684;&#x540E;&#x9762;&#x4E24;&#x4E2A;&#x6570;&#x5B57;&#xFF0C;&#x6BD4;&#x5982;4.0.223.11&#x7684;&#x79BB;&#x7EBF;&#x5305;&#x4E0B;&#x8F7D;&#x5730;&#x5740;&#x5C31;&#x662F;</p>
 <p><a href="http://dl.google.com/chrome/install/223.11/chrome_installer.exe" target="_blank" rel="external">http://dl.google.com/chrome/install/223.11/chrome_installer.exe</a></p>
 
             
@@ -1180,18 +1362,18 @@ $ gbs build -A i586 -D ~/tizen2.0.conf
         
           <span itemprop="articleBody">
             
-              <h1 id="Design-Pattern"><a href="#Design-Pattern" class="headerlink" title="Design Pattern"></a>Design Pattern</h1><p>设计模式（Design pattern）是一套被反复使用、多数人知晓的、经过分类编目的、代码设计经验的总结。使用设计模式是为了可重用代码、让代码更容易被他人理解、保证代码可靠性。 毫无疑问，设计模式于己于他人于系统都是多赢的；设计模式使代码编制真正工程化；设计模式是软件工程的基石脉络，如同大厦的结构一样。</p>
-<h2 id="设计模式4要素"><a href="#设计模式4要素" class="headerlink" title="设计模式4要素"></a>设计模式4要素</h2><p><strong>1. 模式名称 (pattern name)</strong><br>用一两个词来描述模式的问题、解决方案和效果。</p>
-<p><strong>2. 问题(problem)</strong><br>描述了应当在何时使用模式</p>
-<p><strong>3. 解决方案(solution)</strong><br>描述了设计的组成部分</p>
-<p><strong>4. 效果(consequences)</strong><br>描述了应用模式的效果和使用模式应权衡的问题</p>
-<h2 id="设计模式类型"><a href="#设计模式类型" class="headerlink" title="设计模式类型"></a>设计模式类型</h2><p>设计模式分为三种类型，共23种。</p>
+              <h1 id="Design-Pattern"><a href="#Design-Pattern" class="headerlink" title="Design Pattern"></a>Design Pattern</h1><p>&#x8BBE;&#x8BA1;&#x6A21;&#x5F0F;&#xFF08;Design pattern&#xFF09;&#x662F;&#x4E00;&#x5957;&#x88AB;&#x53CD;&#x590D;&#x4F7F;&#x7528;&#x3001;&#x591A;&#x6570;&#x4EBA;&#x77E5;&#x6653;&#x7684;&#x3001;&#x7ECF;&#x8FC7;&#x5206;&#x7C7B;&#x7F16;&#x76EE;&#x7684;&#x3001;&#x4EE3;&#x7801;&#x8BBE;&#x8BA1;&#x7ECF;&#x9A8C;&#x7684;&#x603B;&#x7ED3;&#x3002;&#x4F7F;&#x7528;&#x8BBE;&#x8BA1;&#x6A21;&#x5F0F;&#x662F;&#x4E3A;&#x4E86;&#x53EF;&#x91CD;&#x7528;&#x4EE3;&#x7801;&#x3001;&#x8BA9;&#x4EE3;&#x7801;&#x66F4;&#x5BB9;&#x6613;&#x88AB;&#x4ED6;&#x4EBA;&#x7406;&#x89E3;&#x3001;&#x4FDD;&#x8BC1;&#x4EE3;&#x7801;&#x53EF;&#x9760;&#x6027;&#x3002; &#x6BEB;&#x65E0;&#x7591;&#x95EE;&#xFF0C;&#x8BBE;&#x8BA1;&#x6A21;&#x5F0F;&#x4E8E;&#x5DF1;&#x4E8E;&#x4ED6;&#x4EBA;&#x4E8E;&#x7CFB;&#x7EDF;&#x90FD;&#x662F;&#x591A;&#x8D62;&#x7684;&#xFF1B;&#x8BBE;&#x8BA1;&#x6A21;&#x5F0F;&#x4F7F;&#x4EE3;&#x7801;&#x7F16;&#x5236;&#x771F;&#x6B63;&#x5DE5;&#x7A0B;&#x5316;&#xFF1B;&#x8BBE;&#x8BA1;&#x6A21;&#x5F0F;&#x662F;&#x8F6F;&#x4EF6;&#x5DE5;&#x7A0B;&#x7684;&#x57FA;&#x77F3;&#x8109;&#x7EDC;&#xFF0C;&#x5982;&#x540C;&#x5927;&#x53A6;&#x7684;&#x7ED3;&#x6784;&#x4E00;&#x6837;&#x3002;</p>
+<h2 id="&#x8BBE;&#x8BA1;&#x6A21;&#x5F0F;4&#x8981;&#x7D20;"><a href="#&#x8BBE;&#x8BA1;&#x6A21;&#x5F0F;4&#x8981;&#x7D20;" class="headerlink" title="&#x8BBE;&#x8BA1;&#x6A21;&#x5F0F;4&#x8981;&#x7D20;"></a>&#x8BBE;&#x8BA1;&#x6A21;&#x5F0F;4&#x8981;&#x7D20;</h2><p><strong>1. &#x6A21;&#x5F0F;&#x540D;&#x79F0; (pattern name)</strong><br>&#x7528;&#x4E00;&#x4E24;&#x4E2A;&#x8BCD;&#x6765;&#x63CF;&#x8FF0;&#x6A21;&#x5F0F;&#x7684;&#x95EE;&#x9898;&#x3001;&#x89E3;&#x51B3;&#x65B9;&#x6848;&#x548C;&#x6548;&#x679C;&#x3002;</p>
+<p><strong>2. &#x95EE;&#x9898;(problem)</strong><br>&#x63CF;&#x8FF0;&#x4E86;&#x5E94;&#x5F53;&#x5728;&#x4F55;&#x65F6;&#x4F7F;&#x7528;&#x6A21;&#x5F0F;</p>
+<p><strong>3. &#x89E3;&#x51B3;&#x65B9;&#x6848;(solution)</strong><br>&#x63CF;&#x8FF0;&#x4E86;&#x8BBE;&#x8BA1;&#x7684;&#x7EC4;&#x6210;&#x90E8;&#x5206;</p>
+<p><strong>4. &#x6548;&#x679C;(consequences)</strong><br>&#x63CF;&#x8FF0;&#x4E86;&#x5E94;&#x7528;&#x6A21;&#x5F0F;&#x7684;&#x6548;&#x679C;&#x548C;&#x4F7F;&#x7528;&#x6A21;&#x5F0F;&#x5E94;&#x6743;&#x8861;&#x7684;&#x95EE;&#x9898;</p>
+<h2 id="&#x8BBE;&#x8BA1;&#x6A21;&#x5F0F;&#x7C7B;&#x578B;"><a href="#&#x8BBE;&#x8BA1;&#x6A21;&#x5F0F;&#x7C7B;&#x578B;" class="headerlink" title="&#x8BBE;&#x8BA1;&#x6A21;&#x5F0F;&#x7C7B;&#x578B;"></a>&#x8BBE;&#x8BA1;&#x6A21;&#x5F0F;&#x7C7B;&#x578B;</h2><p>&#x8BBE;&#x8BA1;&#x6A21;&#x5F0F;&#x5206;&#x4E3A;&#x4E09;&#x79CD;&#x7C7B;&#x578B;&#xFF0C;&#x5171;23&#x79CD;&#x3002;</p>
 <table>
 <thead>
 <tr>
-<th>创建型</th>
-<th>结构型</th>
-<th>行为型</th>
+<th>&#x521B;&#x5EFA;&#x578B;</th>
+<th>&#x7ED3;&#x6784;&#x578B;</th>
+<th>&#x884C;&#x4E3A;&#x578B;</th>
 </tr>
 </thead>
 <tbody>
@@ -1247,8 +1429,8 @@ $ gbs build -A i586 -D ~/tizen2.0.conf
 </tr>
 </tbody>
 </table>
-<p><strong>创建型模式与对象的创建有关；结构型模式处理类或对象的组合；行为型模式对类或对象怎样交互和怎样分配职责进行描述</strong></p>
-<h1 id="创建型模式"><a href="#创建型模式" class="headerlink" title="创建型模式"></a>创建型模式</h1><table>
+<p><strong>&#x521B;&#x5EFA;&#x578B;&#x6A21;&#x5F0F;&#x4E0E;&#x5BF9;&#x8C61;&#x7684;&#x521B;&#x5EFA;&#x6709;&#x5173;&#xFF1B;&#x7ED3;&#x6784;&#x578B;&#x6A21;&#x5F0F;&#x5904;&#x7406;&#x7C7B;&#x6216;&#x5BF9;&#x8C61;&#x7684;&#x7EC4;&#x5408;&#xFF1B;&#x884C;&#x4E3A;&#x578B;&#x6A21;&#x5F0F;&#x5BF9;&#x7C7B;&#x6216;&#x5BF9;&#x8C61;&#x600E;&#x6837;&#x4EA4;&#x4E92;&#x548C;&#x600E;&#x6837;&#x5206;&#x914D;&#x804C;&#x8D23;&#x8FDB;&#x884C;&#x63CF;&#x8FF0;</strong></p>
+<h1 id="&#x521B;&#x5EFA;&#x578B;&#x6A21;&#x5F0F;"><a href="#&#x521B;&#x5EFA;&#x578B;&#x6A21;&#x5F0F;" class="headerlink" title="&#x521B;&#x5EFA;&#x578B;&#x6A21;&#x5F0F;"></a>&#x521B;&#x5EFA;&#x578B;&#x6A21;&#x5F0F;</h1><table>
 <thead>
 <tr>
 <th>Pattern</th>
@@ -1257,28 +1439,28 @@ $ gbs build -A i586 -D ~/tizen2.0.conf
 </thead>
 <tbody>
 <tr>
-<td>Factory Method(工厂模式)</td>
-<td>定义一个用于创建对象的接口，让子类决定将哪一个类实例化。Factory Method使一个类的实例化延迟到其子类。</td>
+<td>Factory Method(&#x5DE5;&#x5382;&#x6A21;&#x5F0F;)</td>
+<td>&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#x7528;&#x4E8E;&#x521B;&#x5EFA;&#x5BF9;&#x8C61;&#x7684;&#x63A5;&#x53E3;&#xFF0C;&#x8BA9;&#x5B50;&#x7C7B;&#x51B3;&#x5B9A;&#x5C06;&#x54EA;&#x4E00;&#x4E2A;&#x7C7B;&#x5B9E;&#x4F8B;&#x5316;&#x3002;Factory Method&#x4F7F;&#x4E00;&#x4E2A;&#x7C7B;&#x7684;&#x5B9E;&#x4F8B;&#x5316;&#x5EF6;&#x8FDF;&#x5230;&#x5176;&#x5B50;&#x7C7B;&#x3002;</td>
 </tr>
 <tr>
-<td>Abstract Factory(抽象工厂模式)</td>
-<td>提供一个创建一系列相关或相互依赖对象的接口，而无需指定它们具体的类。</td>
+<td>Abstract Factory(&#x62BD;&#x8C61;&#x5DE5;&#x5382;&#x6A21;&#x5F0F;)</td>
+<td>&#x63D0;&#x4F9B;&#x4E00;&#x4E2A;&#x521B;&#x5EFA;&#x4E00;&#x7CFB;&#x5217;&#x76F8;&#x5173;&#x6216;&#x76F8;&#x4E92;&#x4F9D;&#x8D56;&#x5BF9;&#x8C61;&#x7684;&#x63A5;&#x53E3;&#xFF0C;&#x800C;&#x65E0;&#x9700;&#x6307;&#x5B9A;&#x5B83;&#x4EEC;&#x5177;&#x4F53;&#x7684;&#x7C7B;&#x3002;</td>
 </tr>
 <tr>
-<td>Singleton(单例模式)</td>
-<td>保证一个类仅有一个实例，并提供一个访问它的全局访问点。</td>
+<td>Singleton(&#x5355;&#x4F8B;&#x6A21;&#x5F0F;)</td>
+<td>&#x4FDD;&#x8BC1;&#x4E00;&#x4E2A;&#x7C7B;&#x4EC5;&#x6709;&#x4E00;&#x4E2A;&#x5B9E;&#x4F8B;&#xFF0C;&#x5E76;&#x63D0;&#x4F9B;&#x4E00;&#x4E2A;&#x8BBF;&#x95EE;&#x5B83;&#x7684;&#x5168;&#x5C40;&#x8BBF;&#x95EE;&#x70B9;&#x3002;</td>
 </tr>
 <tr>
-<td>Builder(建造者模式)</td>
-<td>将一个复杂对象的构建与它的表示分离，使得同样的构建过程可以创建不同的表示。</td>
+<td>Builder(&#x5EFA;&#x9020;&#x8005;&#x6A21;&#x5F0F;)</td>
+<td>&#x5C06;&#x4E00;&#x4E2A;&#x590D;&#x6742;&#x5BF9;&#x8C61;&#x7684;&#x6784;&#x5EFA;&#x4E0E;&#x5B83;&#x7684;&#x8868;&#x793A;&#x5206;&#x79BB;&#xFF0C;&#x4F7F;&#x5F97;&#x540C;&#x6837;&#x7684;&#x6784;&#x5EFA;&#x8FC7;&#x7A0B;&#x53EF;&#x4EE5;&#x521B;&#x5EFA;&#x4E0D;&#x540C;&#x7684;&#x8868;&#x793A;&#x3002;</td>
 </tr>
 <tr>
-<td>Prototype(原型模式)</td>
-<td>用原型实例指定创建对象的种类，并且通过拷贝这个原型来创建新的对象。</td>
+<td>Prototype(&#x539F;&#x578B;&#x6A21;&#x5F0F;)</td>
+<td>&#x7528;&#x539F;&#x578B;&#x5B9E;&#x4F8B;&#x6307;&#x5B9A;&#x521B;&#x5EFA;&#x5BF9;&#x8C61;&#x7684;&#x79CD;&#x7C7B;&#xFF0C;&#x5E76;&#x4E14;&#x901A;&#x8FC7;&#x62F7;&#x8D1D;&#x8FD9;&#x4E2A;&#x539F;&#x578B;&#x6765;&#x521B;&#x5EFA;&#x65B0;&#x7684;&#x5BF9;&#x8C61;&#x3002;</td>
 </tr>
 </tbody>
 </table>
-<h1 id="结构型模式"><a href="#结构型模式" class="headerlink" title="结构型模式"></a>结构型模式</h1><table>
+<h1 id="&#x7ED3;&#x6784;&#x578B;&#x6A21;&#x5F0F;"><a href="#&#x7ED3;&#x6784;&#x578B;&#x6A21;&#x5F0F;" class="headerlink" title="&#x7ED3;&#x6784;&#x578B;&#x6A21;&#x5F0F;"></a>&#x7ED3;&#x6784;&#x578B;&#x6A21;&#x5F0F;</h1><table>
 <thead>
 <tr>
 <th>Pattern</th>
@@ -1287,36 +1469,36 @@ $ gbs build -A i586 -D ~/tizen2.0.conf
 </thead>
 <tbody>
 <tr>
-<td>Bridge(桥接模式)</td>
-<td>将抽象部分与它的实现部分分离，使它们都可以独立地变化。</td>
+<td>Bridge(&#x6865;&#x63A5;&#x6A21;&#x5F0F;)</td>
+<td>&#x5C06;&#x62BD;&#x8C61;&#x90E8;&#x5206;&#x4E0E;&#x5B83;&#x7684;&#x5B9E;&#x73B0;&#x90E8;&#x5206;&#x5206;&#x79BB;&#xFF0C;&#x4F7F;&#x5B83;&#x4EEC;&#x90FD;&#x53EF;&#x4EE5;&#x72EC;&#x7ACB;&#x5730;&#x53D8;&#x5316;&#x3002;</td>
 </tr>
 <tr>
-<td>Adapter(适配器模式)</td>
-<td>将一个类的接口转换成客户希望的另外一个接口。Adapter模式使得原本由于接口不兼容而不能一起工作的那些类可以一起工作。</td>
+<td>Adapter(&#x9002;&#x914D;&#x5668;&#x6A21;&#x5F0F;)</td>
+<td>&#x5C06;&#x4E00;&#x4E2A;&#x7C7B;&#x7684;&#x63A5;&#x53E3;&#x8F6C;&#x6362;&#x6210;&#x5BA2;&#x6237;&#x5E0C;&#x671B;&#x7684;&#x53E6;&#x5916;&#x4E00;&#x4E2A;&#x63A5;&#x53E3;&#x3002;Adapter&#x6A21;&#x5F0F;&#x4F7F;&#x5F97;&#x539F;&#x672C;&#x7531;&#x4E8E;&#x63A5;&#x53E3;&#x4E0D;&#x517C;&#x5BB9;&#x800C;&#x4E0D;&#x80FD;&#x4E00;&#x8D77;&#x5DE5;&#x4F5C;&#x7684;&#x90A3;&#x4E9B;&#x7C7B;&#x53EF;&#x4EE5;&#x4E00;&#x8D77;&#x5DE5;&#x4F5C;&#x3002;</td>
 </tr>
 <tr>
-<td>Decorator(装饰器模式)</td>
-<td>动态地给一个对象添加一些额外的职责。就扩展功能而言， 它比生成子类方式更为灵活。</td>
+<td>Decorator(&#x88C5;&#x9970;&#x5668;&#x6A21;&#x5F0F;)</td>
+<td>&#x52A8;&#x6001;&#x5730;&#x7ED9;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#x6DFB;&#x52A0;&#x4E00;&#x4E9B;&#x989D;&#x5916;&#x7684;&#x804C;&#x8D23;&#x3002;&#x5C31;&#x6269;&#x5C55;&#x529F;&#x80FD;&#x800C;&#x8A00;&#xFF0C; &#x5B83;&#x6BD4;&#x751F;&#x6210;&#x5B50;&#x7C7B;&#x65B9;&#x5F0F;&#x66F4;&#x4E3A;&#x7075;&#x6D3B;&#x3002;</td>
 </tr>
 <tr>
-<td>Composite(组合模式)</td>
-<td>将对象组合成树形结构以表示“部分-整体”的层次结构。它使得客户对单个对象和复合对象的使用具有一致性。</td>
+<td>Composite(&#x7EC4;&#x5408;&#x6A21;&#x5F0F;)</td>
+<td>&#x5C06;&#x5BF9;&#x8C61;&#x7EC4;&#x5408;&#x6210;&#x6811;&#x5F62;&#x7ED3;&#x6784;&#x4EE5;&#x8868;&#x793A;&#x201C;&#x90E8;&#x5206;-&#x6574;&#x4F53;&#x201D;&#x7684;&#x5C42;&#x6B21;&#x7ED3;&#x6784;&#x3002;&#x5B83;&#x4F7F;&#x5F97;&#x5BA2;&#x6237;&#x5BF9;&#x5355;&#x4E2A;&#x5BF9;&#x8C61;&#x548C;&#x590D;&#x5408;&#x5BF9;&#x8C61;&#x7684;&#x4F7F;&#x7528;&#x5177;&#x6709;&#x4E00;&#x81F4;&#x6027;&#x3002;</td>
 </tr>
 <tr>
-<td>Flyweight(享元模式)</td>
-<td>运用共享技术有效地支持大量细粒度的对象。</td>
+<td>Flyweight(&#x4EAB;&#x5143;&#x6A21;&#x5F0F;)</td>
+<td>&#x8FD0;&#x7528;&#x5171;&#x4EAB;&#x6280;&#x672F;&#x6709;&#x6548;&#x5730;&#x652F;&#x6301;&#x5927;&#x91CF;&#x7EC6;&#x7C92;&#x5EA6;&#x7684;&#x5BF9;&#x8C61;&#x3002;</td>
 </tr>
 <tr>
-<td>Facade(外观模式)</td>
-<td>为子系统中的一组接口提供一个一致的界面，Facade模式定义了一个高层接口，这个接口使得这一子系统更加容易使用。</td>
+<td>Facade(&#x5916;&#x89C2;&#x6A21;&#x5F0F;)</td>
+<td>&#x4E3A;&#x5B50;&#x7CFB;&#x7EDF;&#x4E2D;&#x7684;&#x4E00;&#x7EC4;&#x63A5;&#x53E3;&#x63D0;&#x4F9B;&#x4E00;&#x4E2A;&#x4E00;&#x81F4;&#x7684;&#x754C;&#x9762;&#xFF0C;Facade&#x6A21;&#x5F0F;&#x5B9A;&#x4E49;&#x4E86;&#x4E00;&#x4E2A;&#x9AD8;&#x5C42;&#x63A5;&#x53E3;&#xFF0C;&#x8FD9;&#x4E2A;&#x63A5;&#x53E3;&#x4F7F;&#x5F97;&#x8FD9;&#x4E00;&#x5B50;&#x7CFB;&#x7EDF;&#x66F4;&#x52A0;&#x5BB9;&#x6613;&#x4F7F;&#x7528;&#x3002;</td>
 </tr>
 <tr>
-<td>Proxy(代理模式)</td>
-<td>为其他对象提供一个代理以控制对这个对象的访问。</td>
+<td>Proxy(&#x4EE3;&#x7406;&#x6A21;&#x5F0F;)</td>
+<td>&#x4E3A;&#x5176;&#x4ED6;&#x5BF9;&#x8C61;&#x63D0;&#x4F9B;&#x4E00;&#x4E2A;&#x4EE3;&#x7406;&#x4EE5;&#x63A7;&#x5236;&#x5BF9;&#x8FD9;&#x4E2A;&#x5BF9;&#x8C61;&#x7684;&#x8BBF;&#x95EE;&#x3002;</td>
 </tr>
 </tbody>
 </table>
-<h1 id="行为型模式"><a href="#行为型模式" class="headerlink" title="行为型模式"></a>行为型模式</h1><table>
+<h1 id="&#x884C;&#x4E3A;&#x578B;&#x6A21;&#x5F0F;"><a href="#&#x884C;&#x4E3A;&#x578B;&#x6A21;&#x5F0F;" class="headerlink" title="&#x884C;&#x4E3A;&#x578B;&#x6A21;&#x5F0F;"></a>&#x884C;&#x4E3A;&#x578B;&#x6A21;&#x5F0F;</h1><table>
 <thead>
 <tr>
 <th>Pattern</th>
@@ -1325,44 +1507,44 @@ $ gbs build -A i586 -D ~/tizen2.0.conf
 </thead>
 <tbody>
 <tr>
-<td>Template Method(模板方法模式)</td>
-<td>定义一个操作中的算法的骨架，而将一些步骤延迟到子类中。Template Method使得子类可以不改变一个算法的结构即可重定义该算法的某些特定步骤。</td>
+<td>Template Method(&#x6A21;&#x677F;&#x65B9;&#x6CD5;&#x6A21;&#x5F0F;)</td>
+<td>&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#x64CD;&#x4F5C;&#x4E2D;&#x7684;&#x7B97;&#x6CD5;&#x7684;&#x9AA8;&#x67B6;&#xFF0C;&#x800C;&#x5C06;&#x4E00;&#x4E9B;&#x6B65;&#x9AA4;&#x5EF6;&#x8FDF;&#x5230;&#x5B50;&#x7C7B;&#x4E2D;&#x3002;Template Method&#x4F7F;&#x5F97;&#x5B50;&#x7C7B;&#x53EF;&#x4EE5;&#x4E0D;&#x6539;&#x53D8;&#x4E00;&#x4E2A;&#x7B97;&#x6CD5;&#x7684;&#x7ED3;&#x6784;&#x5373;&#x53EF;&#x91CD;&#x5B9A;&#x4E49;&#x8BE5;&#x7B97;&#x6CD5;&#x7684;&#x67D0;&#x4E9B;&#x7279;&#x5B9A;&#x6B65;&#x9AA4;&#x3002;</td>
 </tr>
 <tr>
-<td>Strategy(策略模式)</td>
-<td>定义一系列的算法,把它们一个个封装起来, 并且使它们可相互替换。本模式使得算法的变化可独立于使用它的客户。</td>
+<td>Strategy(&#x7B56;&#x7565;&#x6A21;&#x5F0F;)</td>
+<td>&#x5B9A;&#x4E49;&#x4E00;&#x7CFB;&#x5217;&#x7684;&#x7B97;&#x6CD5;,&#x628A;&#x5B83;&#x4EEC;&#x4E00;&#x4E2A;&#x4E2A;&#x5C01;&#x88C5;&#x8D77;&#x6765;, &#x5E76;&#x4E14;&#x4F7F;&#x5B83;&#x4EEC;&#x53EF;&#x76F8;&#x4E92;&#x66FF;&#x6362;&#x3002;&#x672C;&#x6A21;&#x5F0F;&#x4F7F;&#x5F97;&#x7B97;&#x6CD5;&#x7684;&#x53D8;&#x5316;&#x53EF;&#x72EC;&#x7ACB;&#x4E8E;&#x4F7F;&#x7528;&#x5B83;&#x7684;&#x5BA2;&#x6237;&#x3002;</td>
 </tr>
 <tr>
-<td>Observer(观察者模式)</td>
-<td>定义对象间的一种一对多的依赖关系,以便当一个对象的状态发生改变时,所有依赖于它的对象都得到通知并自动刷新。</td>
+<td>Observer(&#x89C2;&#x5BDF;&#x8005;&#x6A21;&#x5F0F;)</td>
+<td>&#x5B9A;&#x4E49;&#x5BF9;&#x8C61;&#x95F4;&#x7684;&#x4E00;&#x79CD;&#x4E00;&#x5BF9;&#x591A;&#x7684;&#x4F9D;&#x8D56;&#x5173;&#x7CFB;,&#x4EE5;&#x4FBF;&#x5F53;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#x7684;&#x72B6;&#x6001;&#x53D1;&#x751F;&#x6539;&#x53D8;&#x65F6;,&#x6240;&#x6709;&#x4F9D;&#x8D56;&#x4E8E;&#x5B83;&#x7684;&#x5BF9;&#x8C61;&#x90FD;&#x5F97;&#x5230;&#x901A;&#x77E5;&#x5E76;&#x81EA;&#x52A8;&#x5237;&#x65B0;&#x3002;</td>
 </tr>
 <tr>
-<td>Memento(备忘录模式)</td>
-<td>在不破坏封装性的前提下，捕获一个对象的内部状态，并在该对象之外保存这个状态。这样以后就可将该对象恢复到保存的状态。</td>
+<td>Memento(&#x5907;&#x5FD8;&#x5F55;&#x6A21;&#x5F0F;)</td>
+<td>&#x5728;&#x4E0D;&#x7834;&#x574F;&#x5C01;&#x88C5;&#x6027;&#x7684;&#x524D;&#x63D0;&#x4E0B;&#xFF0C;&#x6355;&#x83B7;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#x7684;&#x5185;&#x90E8;&#x72B6;&#x6001;&#xFF0C;&#x5E76;&#x5728;&#x8BE5;&#x5BF9;&#x8C61;&#x4E4B;&#x5916;&#x4FDD;&#x5B58;&#x8FD9;&#x4E2A;&#x72B6;&#x6001;&#x3002;&#x8FD9;&#x6837;&#x4EE5;&#x540E;&#x5C31;&#x53EF;&#x5C06;&#x8BE5;&#x5BF9;&#x8C61;&#x6062;&#x590D;&#x5230;&#x4FDD;&#x5B58;&#x7684;&#x72B6;&#x6001;&#x3002;</td>
 </tr>
 <tr>
-<td>Mediator(中介模式)</td>
-<td>用一个中介对象来封装一系列的对象交互。中介者使各对象不需要显式地相互引用，从而使其耦合松散，而且可以独立地改变它们之间的交互。</td>
+<td>Mediator(&#x4E2D;&#x4ECB;&#x6A21;&#x5F0F;)</td>
+<td>&#x7528;&#x4E00;&#x4E2A;&#x4E2D;&#x4ECB;&#x5BF9;&#x8C61;&#x6765;&#x5C01;&#x88C5;&#x4E00;&#x7CFB;&#x5217;&#x7684;&#x5BF9;&#x8C61;&#x4EA4;&#x4E92;&#x3002;&#x4E2D;&#x4ECB;&#x8005;&#x4F7F;&#x5404;&#x5BF9;&#x8C61;&#x4E0D;&#x9700;&#x8981;&#x663E;&#x5F0F;&#x5730;&#x76F8;&#x4E92;&#x5F15;&#x7528;&#xFF0C;&#x4ECE;&#x800C;&#x4F7F;&#x5176;&#x8026;&#x5408;&#x677E;&#x6563;&#xFF0C;&#x800C;&#x4E14;&#x53EF;&#x4EE5;&#x72EC;&#x7ACB;&#x5730;&#x6539;&#x53D8;&#x5B83;&#x4EEC;&#x4E4B;&#x95F4;&#x7684;&#x4EA4;&#x4E92;&#x3002;</td>
 </tr>
 <tr>
-<td>Command(命令模式)</td>
-<td>将一个请求封装为一个对象，从而使你可用不同的请求对客户进行参数化；对请求排队或记录请求日志，以及支持可取消的操作。</td>
+<td>Command(&#x547D;&#x4EE4;&#x6A21;&#x5F0F;)</td>
+<td>&#x5C06;&#x4E00;&#x4E2A;&#x8BF7;&#x6C42;&#x5C01;&#x88C5;&#x4E3A;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#xFF0C;&#x4ECE;&#x800C;&#x4F7F;&#x4F60;&#x53EF;&#x7528;&#x4E0D;&#x540C;&#x7684;&#x8BF7;&#x6C42;&#x5BF9;&#x5BA2;&#x6237;&#x8FDB;&#x884C;&#x53C2;&#x6570;&#x5316;&#xFF1B;&#x5BF9;&#x8BF7;&#x6C42;&#x6392;&#x961F;&#x6216;&#x8BB0;&#x5F55;&#x8BF7;&#x6C42;&#x65E5;&#x5FD7;&#xFF0C;&#x4EE5;&#x53CA;&#x652F;&#x6301;&#x53EF;&#x53D6;&#x6D88;&#x7684;&#x64CD;&#x4F5C;&#x3002;</td>
 </tr>
 <tr>
-<td>Visitor(访问者模式)</td>
-<td>表示一个作用于某对象结构中的各元素的操作。它使你可以在不改变各元素的类的前提下定义作用于这些元素的新操作。</td>
+<td>Visitor(&#x8BBF;&#x95EE;&#x8005;&#x6A21;&#x5F0F;)</td>
+<td>&#x8868;&#x793A;&#x4E00;&#x4E2A;&#x4F5C;&#x7528;&#x4E8E;&#x67D0;&#x5BF9;&#x8C61;&#x7ED3;&#x6784;&#x4E2D;&#x7684;&#x5404;&#x5143;&#x7D20;&#x7684;&#x64CD;&#x4F5C;&#x3002;&#x5B83;&#x4F7F;&#x4F60;&#x53EF;&#x4EE5;&#x5728;&#x4E0D;&#x6539;&#x53D8;&#x5404;&#x5143;&#x7D20;&#x7684;&#x7C7B;&#x7684;&#x524D;&#x63D0;&#x4E0B;&#x5B9A;&#x4E49;&#x4F5C;&#x7528;&#x4E8E;&#x8FD9;&#x4E9B;&#x5143;&#x7D20;&#x7684;&#x65B0;&#x64CD;&#x4F5C;&#x3002;</td>
 </tr>
 <tr>
-<td>Chain of Responsibilty(职责链模式)</td>
-<td>为解除请求的发送者和接收者之间耦合，而使多个对象都有机会处理这个请求。将这些对象连成一条链，并沿着这条链传递该请求，直到有一个对象处理它。</td>
+<td>Chain of Responsibilty(&#x804C;&#x8D23;&#x94FE;&#x6A21;&#x5F0F;)</td>
+<td>&#x4E3A;&#x89E3;&#x9664;&#x8BF7;&#x6C42;&#x7684;&#x53D1;&#x9001;&#x8005;&#x548C;&#x63A5;&#x6536;&#x8005;&#x4E4B;&#x95F4;&#x8026;&#x5408;&#xFF0C;&#x800C;&#x4F7F;&#x591A;&#x4E2A;&#x5BF9;&#x8C61;&#x90FD;&#x6709;&#x673A;&#x4F1A;&#x5904;&#x7406;&#x8FD9;&#x4E2A;&#x8BF7;&#x6C42;&#x3002;&#x5C06;&#x8FD9;&#x4E9B;&#x5BF9;&#x8C61;&#x8FDE;&#x6210;&#x4E00;&#x6761;&#x94FE;&#xFF0C;&#x5E76;&#x6CBF;&#x7740;&#x8FD9;&#x6761;&#x94FE;&#x4F20;&#x9012;&#x8BE5;&#x8BF7;&#x6C42;&#xFF0C;&#x76F4;&#x5230;&#x6709;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#x5904;&#x7406;&#x5B83;&#x3002;</td>
 </tr>
 <tr>
-<td>Iterator(迭代器模式)</td>
-<td>提供一种方法顺序访问一个聚合对象中各个元素，而又不需暴露该对象的内部表示。</td>
+<td>Iterator(&#x8FED;&#x4EE3;&#x5668;&#x6A21;&#x5F0F;)</td>
+<td>&#x63D0;&#x4F9B;&#x4E00;&#x79CD;&#x65B9;&#x6CD5;&#x987A;&#x5E8F;&#x8BBF;&#x95EE;&#x4E00;&#x4E2A;&#x805A;&#x5408;&#x5BF9;&#x8C61;&#x4E2D;&#x5404;&#x4E2A;&#x5143;&#x7D20;&#xFF0C;&#x800C;&#x53C8;&#x4E0D;&#x9700;&#x66B4;&#x9732;&#x8BE5;&#x5BF9;&#x8C61;&#x7684;&#x5185;&#x90E8;&#x8868;&#x793A;&#x3002;</td>
 </tr>
 <tr>
-<td>Interpreter(解析器模式)</td>
-<td>给定一个语言, 定义它的文法的一种表示，并定义一个解释器, 该解释器使用该表示来解释语言中的句子。</td>
+<td>Interpreter(&#x89E3;&#x6790;&#x5668;&#x6A21;&#x5F0F;)</td>
+<td>&#x7ED9;&#x5B9A;&#x4E00;&#x4E2A;&#x8BED;&#x8A00;, &#x5B9A;&#x4E49;&#x5B83;&#x7684;&#x6587;&#x6CD5;&#x7684;&#x4E00;&#x79CD;&#x8868;&#x793A;&#xFF0C;&#x5E76;&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#x89E3;&#x91CA;&#x5668;, &#x8BE5;&#x89E3;&#x91CA;&#x5668;&#x4F7F;&#x7528;&#x8BE5;&#x8868;&#x793A;&#x6765;&#x89E3;&#x91CA;&#x8BED;&#x8A00;&#x4E2D;&#x7684;&#x53E5;&#x5B50;&#x3002;</td>
 </tr>
 </tbody>
 </table>
@@ -1441,48 +1623,48 @@ $ gbs build -A i586 -D ~/tizen2.0.conf
         
           <span itemprop="articleBody">
             
-              <h1 id="Configure-PPTP-VPN-in-Ubuntu"><a href="#Configure-PPTP-VPN-in-Ubuntu" class="headerlink" title="Configure PPTP VPN in Ubuntu"></a>Configure PPTP VPN in Ubuntu</h1><h2 id="安装pptpd"><a href="#安装pptpd" class="headerlink" title="安装pptpd"></a>安装pptpd</h2><pre><code>$ sudo apt-get install pptpd
-</code></pre><h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><p><strong>编辑pptpd.conf</strong></p>
+              <h1 id="Configure-PPTP-VPN-in-Ubuntu"><a href="#Configure-PPTP-VPN-in-Ubuntu" class="headerlink" title="Configure PPTP VPN in Ubuntu"></a>Configure PPTP VPN in Ubuntu</h1><h2 id="&#x5B89;&#x88C5;pptpd"><a href="#&#x5B89;&#x88C5;pptpd" class="headerlink" title="&#x5B89;&#x88C5;pptpd"></a>&#x5B89;&#x88C5;pptpd</h2><pre><code>$ sudo apt-get install pptpd
+</code></pre><h2 id="&#x914D;&#x7F6E;"><a href="#&#x914D;&#x7F6E;" class="headerlink" title="&#x914D;&#x7F6E;"></a>&#x914D;&#x7F6E;</h2><p><strong>&#x7F16;&#x8F91;pptpd.conf</strong></p>
 <pre><code>$ sudo vi /etc/pptpd.conf
-</code></pre><p>修改如下两行：</p>
+</code></pre><p>&#x4FEE;&#x6539;&#x5982;&#x4E0B;&#x4E24;&#x884C;&#xFF1A;</p>
 <pre><code>localip xxx.xxx.xxx.xxx
 remoteip 192.168.1.100-200
 </code></pre><blockquote>
-<p>localip: Ubuntu主机的IP</p>
-<p>remoteip: 分配给Client的IP段</p>
+<p>localip: Ubuntu&#x4E3B;&#x673A;&#x7684;IP</p>
+<p>remoteip: &#x5206;&#x914D;&#x7ED9;Client&#x7684;IP&#x6BB5;</p>
 </blockquote>
-<p><strong>设置Windows Client的DNS</strong></p>
+<p><strong>&#x8BBE;&#x7F6E;Windows Client&#x7684;DNS</strong></p>
 <pre><code>$ sudo vi /etc/ppp/pptpd-options
-</code></pre><p>修改<code>ms-dns</code>，修改为google的dns：</p>
+</code></pre><p>&#x4FEE;&#x6539;<code>ms-dns</code>&#xFF0C;&#x4FEE;&#x6539;&#x4E3A;google&#x7684;dns&#xFF1A;</p>
 <pre><code>ms-dns 8.8.8.8
 ms-dns 8.8.4.4
-</code></pre><p><strong>设置账号</strong></p>
+</code></pre><p><strong>&#x8BBE;&#x7F6E;&#x8D26;&#x53F7;</strong></p>
 <pre><code>$ sudo vi /etc/ppp/chap-secrets
-</code></pre><p>添加一行，依次为：用户名，服务，密码，限制ip：</p>
+</code></pre><p>&#x6DFB;&#x52A0;&#x4E00;&#x884C;&#xFF0C;&#x4F9D;&#x6B21;&#x4E3A;&#xFF1A;&#x7528;&#x6237;&#x540D;&#xFF0C;&#x670D;&#x52A1;&#xFF0C;&#x5BC6;&#x7801;&#xFF0C;&#x9650;&#x5236;ip&#xFF1A;</p>
 <pre><code>&quot;user&quot; pptpd &quot;user&quot; *
-</code></pre><p>或</p>
+</code></pre><p>&#x6216;</p>
 <pre><code>username * password *
-</code></pre><p><strong>重启服务</strong></p>
+</code></pre><p><strong>&#x91CD;&#x542F;&#x670D;&#x52A1;</strong></p>
 <pre><code>$ sudo /etc/init.d/pptpd restart
-</code></pre><p>执行以上步骤后VPN即可连接上了，但是还无法上网。</p>
-<h2 id="设置IP转发"><a href="#设置IP转发" class="headerlink" title="设置IP转发"></a>设置IP转发</h2><p><strong>允许转发</strong></p>
+</code></pre><p>&#x6267;&#x884C;&#x4EE5;&#x4E0A;&#x6B65;&#x9AA4;&#x540E;VPN&#x5373;&#x53EF;&#x8FDE;&#x63A5;&#x4E0A;&#x4E86;&#xFF0C;&#x4F46;&#x662F;&#x8FD8;&#x65E0;&#x6CD5;&#x4E0A;&#x7F51;&#x3002;</p>
+<h2 id="&#x8BBE;&#x7F6E;IP&#x8F6C;&#x53D1;"><a href="#&#x8BBE;&#x7F6E;IP&#x8F6C;&#x53D1;" class="headerlink" title="&#x8BBE;&#x7F6E;IP&#x8F6C;&#x53D1;"></a>&#x8BBE;&#x7F6E;IP&#x8F6C;&#x53D1;</h2><p><strong>&#x5141;&#x8BB8;&#x8F6C;&#x53D1;</strong></p>
 <pre><code>$ sudo vi /etc/sysctl.conf
-</code></pre><p>去掉文件中这一行的注释：</p>
+</code></pre><p>&#x53BB;&#x6389;&#x6587;&#x4EF6;&#x4E2D;&#x8FD9;&#x4E00;&#x884C;&#x7684;&#x6CE8;&#x91CA;&#xFF1A;</p>
 <pre><code>net.ipv4.ip_forward=1
-</code></pre><p>使设置生效：</p>
+</code></pre><p>&#x4F7F;&#x8BBE;&#x7F6E;&#x751F;&#x6548;&#xFF1A;</p>
 <pre><code>$ sudo sysctl -p
-</code></pre><p><strong>设置<code>NAT</code></strong></p>
+</code></pre><p><strong>&#x8BBE;&#x7F6E;<code>NAT</code></strong></p>
 <pre><code>$ sudo iptables -t nat -A POSTROUTING -s 192.168.1.0/24 -o eth0 -j MASQUERADE
-</code></pre><p>设置MTU，防止包过大：</p>
+</code></pre><p>&#x8BBE;&#x7F6E;MTU&#xFF0C;&#x9632;&#x6B62;&#x5305;&#x8FC7;&#x5927;&#xFF1A;</p>
 <pre><code>$ sudo iptables -A FORWARD -s 192.168.1.0/24 -p tcp -m tcp --tcp-flags SYN,RST SYN -j TCPMSS --set-mss 1200
-</code></pre><p><strong>保存设置</strong></p>
+</code></pre><p><strong>&#x4FDD;&#x5B58;&#x8BBE;&#x7F6E;</strong></p>
 <pre><code>$ sudo iptables-save
-</code></pre><p>将输出保存到以下文件中</p>
+</code></pre><p>&#x5C06;&#x8F93;&#x51FA;&#x4FDD;&#x5B58;&#x5230;&#x4EE5;&#x4E0B;&#x6587;&#x4EF6;&#x4E2D;</p>
 <pre><code>$ sudo /etc/iptables-rules
-</code></pre><p><strong>自动加载规则</strong></p>
-<p>编辑网卡文件，加载网卡时自动加载规则</p>
+</code></pre><p><strong>&#x81EA;&#x52A8;&#x52A0;&#x8F7D;&#x89C4;&#x5219;</strong></p>
+<p>&#x7F16;&#x8F91;&#x7F51;&#x5361;&#x6587;&#x4EF6;&#xFF0C;&#x52A0;&#x8F7D;&#x7F51;&#x5361;&#x65F6;&#x81EA;&#x52A8;&#x52A0;&#x8F7D;&#x89C4;&#x5219;</p>
 <pre><code>$ sudo vi  /etc/network/interfaces
-</code></pre><p>添加一行：</p>
+</code></pre><p>&#x6DFB;&#x52A0;&#x4E00;&#x884C;&#xFF1A;</p>
 <pre><code>pre-up iptables-restore &lt; /etc/iptables-rules
 </code></pre><blockquote>
 <p>Fin</p>
@@ -1562,50 +1744,50 @@ ms-dns 8.8.4.4
         
           <span itemprop="articleBody">
             
-              <h1 id="在Github上利用Hexo创建博客"><a href="#在Github上利用Hexo创建博客" class="headerlink" title="在Github上利用Hexo创建博客"></a>在Github上利用Hexo创建博客</h1><blockquote>
-<p><a href="https://hexo.io" title="https://hexo.io" target="_blank" rel="external">Hexo</a>是一款基于Nodejs的，快速、简单且功能强大的博客框架。支持多线程，支持markdown编写文章，可以方便的生成静态网页托管在github上。</p>
+              <h1 id="&#x5728;Github&#x4E0A;&#x5229;&#x7528;Hexo&#x521B;&#x5EFA;&#x535A;&#x5BA2;"><a href="#&#x5728;Github&#x4E0A;&#x5229;&#x7528;Hexo&#x521B;&#x5EFA;&#x535A;&#x5BA2;" class="headerlink" title="&#x5728;Github&#x4E0A;&#x5229;&#x7528;Hexo&#x521B;&#x5EFA;&#x535A;&#x5BA2;"></a>&#x5728;Github&#x4E0A;&#x5229;&#x7528;Hexo&#x521B;&#x5EFA;&#x535A;&#x5BA2;</h1><blockquote>
+<p><a href="https://hexo.io" title="https://hexo.io" target="_blank" rel="external">Hexo</a>&#x662F;&#x4E00;&#x6B3E;&#x57FA;&#x4E8E;Nodejs&#x7684;&#xFF0C;&#x5FEB;&#x901F;&#x3001;&#x7B80;&#x5355;&#x4E14;&#x529F;&#x80FD;&#x5F3A;&#x5927;&#x7684;&#x535A;&#x5BA2;&#x6846;&#x67B6;&#x3002;&#x652F;&#x6301;&#x591A;&#x7EBF;&#x7A0B;&#xFF0C;&#x652F;&#x6301;markdown&#x7F16;&#x5199;&#x6587;&#x7AE0;&#xFF0C;&#x53EF;&#x4EE5;&#x65B9;&#x4FBF;&#x7684;&#x751F;&#x6210;&#x9759;&#x6001;&#x7F51;&#x9875;&#x6258;&#x7BA1;&#x5728;github&#x4E0A;&#x3002;</p>
 </blockquote>
-<h2 id="Install-Hexo"><a href="#Install-Hexo" class="headerlink" title="Install Hexo"></a>Install Hexo</h2><p>步骤：</p>
-<p>1 安装 Git</p>
+<h2 id="Install-Hexo"><a href="#Install-Hexo" class="headerlink" title="Install Hexo"></a>Install Hexo</h2><p>&#x6B65;&#x9AA4;&#xFF1A;</p>
+<p>1 &#x5B89;&#x88C5; Git</p>
 <blockquote>
-<p>下载并安装 msysgit</p>
+<p>&#x4E0B;&#x8F7D;&#x5E76;&#x5B89;&#x88C5; msysgit</p>
 </blockquote>
-<p>2 安装 node.js 和 npm</p>
+<p>2 &#x5B89;&#x88C5; node.js &#x548C; npm</p>
 <blockquote>
-<p>下载并安装 nodejs</p>
+<p>&#x4E0B;&#x8F7D;&#x5E76;&#x5B89;&#x88C5; nodejs</p>
 </blockquote>
-<p>3 安装 Hexo</p>
+<p>3 &#x5B89;&#x88C5; Hexo</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-cli -g</span><br></pre></td></tr></table></figure>
-<p>4 创建Hexo文件夹</p>
+<p>4 &#x521B;&#x5EFA;Hexo&#x6587;&#x4EF6;&#x5939;</p>
 <blockquote>
-<p>创建一个文件夹用于编写本地博客，如（<code>E:\hexo</code>）。</p>
+<p>&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#x5939;&#x7528;&#x4E8E;&#x7F16;&#x5199;&#x672C;&#x5730;&#x535A;&#x5BA2;&#xFF0C;&#x5982;&#xFF08;<code>E:\hexo</code>&#xFF09;&#x3002;</p>
 </blockquote>
-<p>在此文件夹中输入以下命令进行初始化：</p>
+<p>&#x5728;&#x6B64;&#x6587;&#x4EF6;&#x5939;&#x4E2D;&#x8F93;&#x5165;&#x4EE5;&#x4E0B;&#x547D;&#x4EE4;&#x8FDB;&#x884C;&#x521D;&#x59CB;&#x5316;&#xFF1A;</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo init</span><br></pre></td></tr></table></figure>
-<p>5 安装依赖包</p>
+<p>5 &#x5B89;&#x88C5;&#x4F9D;&#x8D56;&#x5305;</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install</span><br></pre></td></tr></table></figure>
-<p>至此，我们就安装好Hexo了，并且可以开始撰写本地博客了。</p>
+<p>&#x81F3;&#x6B64;&#xFF0C;&#x6211;&#x4EEC;&#x5C31;&#x5B89;&#x88C5;&#x597D;Hexo&#x4E86;&#xFF0C;&#x5E76;&#x4E14;&#x53EF;&#x4EE5;&#x5F00;&#x59CB;&#x64B0;&#x5199;&#x672C;&#x5730;&#x535A;&#x5BA2;&#x4E86;&#x3002;</p>
 <h2 id="Using-Hexo"><a href="#Using-Hexo" class="headerlink" title="Using Hexo"></a>Using Hexo</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">Usage: hexo &lt;<span class="built_in">command</span>&gt;</span><br><span class="line"></span><br><span class="line">Commands:</span><br><span class="line">  clean     Removed generated files and cache.</span><br><span class="line">  config    Get or <span class="built_in">set</span> configurations.</span><br><span class="line">  deploy    Deploy your website.</span><br><span class="line">  generate  Generate static files.</span><br><span class="line">  <span class="built_in">help</span>      Get <span class="built_in">help</span> on a command.</span><br><span class="line">  init      Create a new Hexo folder.</span><br><span class="line">  list      List the information of the site</span><br><span class="line">  migrate   Migrate your site from other system to Hexo.</span><br><span class="line">  new       Create a new post.</span><br><span class="line">  publish   Moves a draft post from _drafts to _posts folder.</span><br><span class="line">  render    Render files with renderer plugins.</span><br><span class="line">  server    Start the server.</span><br><span class="line">  version   Display version information.</span><br></pre></td></tr></table></figure>
-<p><strong>常用命令：</strong></p>
-<p>创建一篇新的博客</p>
+<p><strong>&#x5E38;&#x7528;&#x547D;&#x4EE4;&#xFF1A;</strong></p>
+<p>&#x521B;&#x5EFA;&#x4E00;&#x7BC7;&#x65B0;&#x7684;&#x535A;&#x5BA2;</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo new</span><br><span class="line">or</span><br><span class="line">hexo n</span><br></pre></td></tr></table></figure>
-<p>生成静态博客文件</p>
+<p>&#x751F;&#x6210;&#x9759;&#x6001;&#x535A;&#x5BA2;&#x6587;&#x4EF6;</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo generate</span><br><span class="line">or</span><br><span class="line">hexo g</span><br></pre></td></tr></table></figure>
-<p>启动本地服务</p>
+<p>&#x542F;&#x52A8;&#x672C;&#x5730;&#x670D;&#x52A1;</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo server</span><br><span class="line">or</span><br><span class="line">hexo s</span><br></pre></td></tr></table></figure>
-<p>执行可以在浏览器中输入<a href="http://localhost:4000" title="localhost:4000" target="_blank" rel="external">localhost:4000</a> 预览博客。</p>
-<h2 id="Deploy"><a href="#Deploy" class="headerlink" title="Deploy"></a>Deploy</h2><p>部署之前先要配置一下Hexo。</p>
-<p>1 安装<strong>hexo-deployer-git</strong></p>
+<p>&#x6267;&#x884C;&#x53EF;&#x4EE5;&#x5728;&#x6D4F;&#x89C8;&#x5668;&#x4E2D;&#x8F93;&#x5165;<a href="http://localhost:4000" title="localhost:4000" target="_blank" rel="external">localhost:4000</a> &#x9884;&#x89C8;&#x535A;&#x5BA2;&#x3002;</p>
+<h2 id="Deploy"><a href="#Deploy" class="headerlink" title="Deploy"></a>Deploy</h2><p>&#x90E8;&#x7F72;&#x4E4B;&#x524D;&#x5148;&#x8981;&#x914D;&#x7F6E;&#x4E00;&#x4E0B;Hexo&#x3002;</p>
+<p>1 &#x5B89;&#x88C5;<strong>hexo-deployer-git</strong></p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
-<p>2 在目录 <code>E:\hexo</code> 下，编辑 <code>_config.yml</code>（将<strong>xyz</strong>换成你自己的github用户名）：</p>
+<p>2 &#x5728;&#x76EE;&#x5F55; <code>E:\hexo</code> &#x4E0B;&#xFF0C;&#x7F16;&#x8F91; <code>_config.yml</code>&#xFF08;&#x5C06;<strong>xyz</strong>&#x6362;&#x6210;&#x4F60;&#x81EA;&#x5DF1;&#x7684;github&#x7528;&#x6237;&#x540D;&#xFF09;&#xFF1A;</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  <span class="built_in">type</span>: git</span><br><span class="line">  repository: https://github.com/xyz/xyz.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
-<p>执行下列指令即可完成部署。</p>
+<p>&#x6267;&#x884C;&#x4E0B;&#x5217;&#x6307;&#x4EE4;&#x5373;&#x53EF;&#x5B8C;&#x6210;&#x90E8;&#x7F72;&#x3002;</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo generate</span><br><span class="line">hexo deploy</span><br></pre></td></tr></table></figure>
-<p>中途会提示输入GitHub账号和密码，正常输入即可。</p>
+<p>&#x4E2D;&#x9014;&#x4F1A;&#x63D0;&#x793A;&#x8F93;&#x5165;GitHub&#x8D26;&#x53F7;&#x548C;&#x5BC6;&#x7801;&#xFF0C;&#x6B63;&#x5E38;&#x8F93;&#x5165;&#x5373;&#x53EF;&#x3002;</p>
 <h2 id="Tips"><a href="#Tips" class="headerlink" title="Tips"></a>Tips</h2><ol>
-<li>每次修改本地文件后，需要执行 <code>hexo generate</code> 才能生成新的博客文件。</li>
-<li>所有hexo命令都要在 hexo 文件目录下执行。</li>
-<li>发布后GitHub会有一定的延时</li>
+<li>&#x6BCF;&#x6B21;&#x4FEE;&#x6539;&#x672C;&#x5730;&#x6587;&#x4EF6;&#x540E;&#xFF0C;&#x9700;&#x8981;&#x6267;&#x884C; <code>hexo generate</code> &#x624D;&#x80FD;&#x751F;&#x6210;&#x65B0;&#x7684;&#x535A;&#x5BA2;&#x6587;&#x4EF6;&#x3002;</li>
+<li>&#x6240;&#x6709;hexo&#x547D;&#x4EE4;&#x90FD;&#x8981;&#x5728; hexo &#x6587;&#x4EF6;&#x76EE;&#x5F55;&#x4E0B;&#x6267;&#x884C;&#x3002;</li>
+<li>&#x53D1;&#x5E03;&#x540E;GitHub&#x4F1A;&#x6709;&#x4E00;&#x5B9A;&#x7684;&#x5EF6;&#x65F6;</li>
 </ol>
 
             
@@ -1774,24 +1956,24 @@ ms-dns 8.8.4.4
   <div class="shuffle-algorithm">
     <header>
       <p>Febrary 28, 2016 / <a class="author" href="" rel="author">Jason Wang</a></p>
-      <h1>洗牌算法</h1>
+      <h1>&#x6D17;&#x724C;&#x7B97;&#x6CD5;</h1>
     </header>
     <div>
-      <p>为了保证打牌时的公平性，洗牌后的牌堆应当是完全随机的。</p>
-      <p>从概率的角度来说，牌堆可以看成一个编号为 $ 1 $ 到 $ n $ 的数的序列，这个序列的排列组合数为 $ n! $。</p>
+      <p>&#x4E3A;&#x4E86;&#x4FDD;&#x8BC1;&#x6253;&#x724C;&#x65F6;&#x7684;&#x516C;&#x5E73;&#x6027;&#xFF0C;&#x6D17;&#x724C;&#x540E;&#x7684;&#x724C;&#x5806;&#x5E94;&#x5F53;&#x662F;&#x5B8C;&#x5168;&#x968F;&#x673A;&#x7684;&#x3002;</p>
+      <p>&#x4ECE;&#x6982;&#x7387;&#x7684;&#x89D2;&#x5EA6;&#x6765;&#x8BF4;&#xFF0C;&#x724C;&#x5806;&#x53EF;&#x4EE5;&#x770B;&#x6210;&#x4E00;&#x4E2A;&#x7F16;&#x53F7;&#x4E3A; $ 1 $ &#x5230; $ n $ &#x7684;&#x6570;&#x7684;&#x5E8F;&#x5217;&#xFF0C;&#x8FD9;&#x4E2A;&#x5E8F;&#x5217;&#x7684;&#x6392;&#x5217;&#x7EC4;&#x5408;&#x6570;&#x4E3A; $ n! $&#x3002;</p>
 
-      <svg class="chart unshuffled"/>
-      <aside>整齐的牌堆</aside>
-      <p>完全随机也就是说每一种排列组合出现的概率相等，概率为 $ \frac{1}{n!} $</p>
+      <svg class="chart unshuffled">
+      <aside>&#x6574;&#x9F50;&#x7684;&#x724C;&#x5806;</aside>
+      <p>&#x5B8C;&#x5168;&#x968F;&#x673A;&#x4E5F;&#x5C31;&#x662F;&#x8BF4;&#x6BCF;&#x4E00;&#x79CD;&#x6392;&#x5217;&#x7EC4;&#x5408;&#x51FA;&#x73B0;&#x7684;&#x6982;&#x7387;&#x76F8;&#x7B49;&#xFF0C;&#x6982;&#x7387;&#x4E3A; $ \frac{1}{n!} $</p>
 
 
-      <h3>朴素洗牌算法</h3>
-      <p>所谓朴素，就是说每次从未取出的数中随机取出一个数，排成序列。</p>
+      <h3>&#x6734;&#x7D20;&#x6D17;&#x724C;&#x7B97;&#x6CD5;</h3>
+      <p>&#x6240;&#x8C13;&#x6734;&#x7D20;&#xFF0C;&#x5C31;&#x662F;&#x8BF4;&#x6BCF;&#x6B21;&#x4ECE;&#x672A;&#x53D6;&#x51FA;&#x7684;&#x6570;&#x4E2D;&#x968F;&#x673A;&#x53D6;&#x51FA;&#x4E00;&#x4E2A;&#x6570;&#xFF0C;&#x6392;&#x6210;&#x5E8F;&#x5217;&#x3002;</p>
 
-      <svg class="chart naive-shuffle"/>
-      <aside>点击开始洗牌</aside>
+      <svg class="chart naive-shuffle">
+      <aside>&#x70B9;&#x51FB;&#x5F00;&#x59CB;&#x6D17;&#x724C;</aside>
 
-      <p>JavaScript的代码如下：</p>
+      <p>JavaScript&#x7684;&#x4EE3;&#x7801;&#x5982;&#x4E0B;&#xFF1A;</p>
       <pre>
         <code class="javascript">
 function naiveShuffle(array) {
@@ -1813,16 +1995,16 @@ function naiveShuffle(array) {
         </code>
       </pre>
 
-      <p>取第一个数时，从 $ n $ 个数中随机取一个数（有 $ n $ 种可能）；取第二个数时，从剩下的 $ n - 1 $ 个数中随机取一个数（有 $n - 1$ 种可能）；如此重复 $n$ 次，则可得到一个序列。</p>
-      <p>此序列的概率为 $ \frac{1}{n!} $ ， 与完全随机的概率一致。</p>
-      <p>分析一下此算法的性能</p>
-      <p>空间: $ O(n) $, 需要一个额外的大小为 $ n $ 的空间存储结果</p>
-      <p>时间: $ O(n^{2}) $, while循环的复杂度为 $ O(n) $ , 循环内整理牌堆的复杂度也为 $ O(n) $。</p>
+      <p>&#x53D6;&#x7B2C;&#x4E00;&#x4E2A;&#x6570;&#x65F6;&#xFF0C;&#x4ECE; $ n $ &#x4E2A;&#x6570;&#x4E2D;&#x968F;&#x673A;&#x53D6;&#x4E00;&#x4E2A;&#x6570;&#xFF08;&#x6709; $ n $ &#x79CD;&#x53EF;&#x80FD;&#xFF09;&#xFF1B;&#x53D6;&#x7B2C;&#x4E8C;&#x4E2A;&#x6570;&#x65F6;&#xFF0C;&#x4ECE;&#x5269;&#x4E0B;&#x7684; $ n - 1 $ &#x4E2A;&#x6570;&#x4E2D;&#x968F;&#x673A;&#x53D6;&#x4E00;&#x4E2A;&#x6570;&#xFF08;&#x6709; $n - 1$ &#x79CD;&#x53EF;&#x80FD;&#xFF09;&#xFF1B;&#x5982;&#x6B64;&#x91CD;&#x590D; $n$ &#x6B21;&#xFF0C;&#x5219;&#x53EF;&#x5F97;&#x5230;&#x4E00;&#x4E2A;&#x5E8F;&#x5217;&#x3002;</p>
+      <p>&#x6B64;&#x5E8F;&#x5217;&#x7684;&#x6982;&#x7387;&#x4E3A; $ \frac{1}{n!} $ &#xFF0C; &#x4E0E;&#x5B8C;&#x5168;&#x968F;&#x673A;&#x7684;&#x6982;&#x7387;&#x4E00;&#x81F4;&#x3002;</p>
+      <p>&#x5206;&#x6790;&#x4E00;&#x4E0B;&#x6B64;&#x7B97;&#x6CD5;&#x7684;&#x6027;&#x80FD;</p>
+      <p>&#x7A7A;&#x95F4;: $ O(n) $, &#x9700;&#x8981;&#x4E00;&#x4E2A;&#x989D;&#x5916;&#x7684;&#x5927;&#x5C0F;&#x4E3A; $ n $ &#x7684;&#x7A7A;&#x95F4;&#x5B58;&#x50A8;&#x7ED3;&#x679C;</p>
+      <p>&#x65F6;&#x95F4;: $ O(n^{2}) $, while&#x5FAA;&#x73AF;&#x7684;&#x590D;&#x6742;&#x5EA6;&#x4E3A; $ O(n) $ , &#x5FAA;&#x73AF;&#x5185;&#x6574;&#x7406;&#x724C;&#x5806;&#x7684;&#x590D;&#x6742;&#x5EA6;&#x4E5F;&#x4E3A; $ O(n) $&#x3002;</p>
 
 
-      <h3>Fisher-Yates算法</h3>
-      <p>接下来介绍一种更为有效的算法。</p>
-      <svg class="chart fisher-yates-shuffle"/>
+      <h3>Fisher-Yates&#x7B97;&#x6CD5;</h3>
+      <p>&#x63A5;&#x4E0B;&#x6765;&#x4ECB;&#x7ECD;&#x4E00;&#x79CD;&#x66F4;&#x4E3A;&#x6709;&#x6548;&#x7684;&#x7B97;&#x6CD5;&#x3002;</p>
+      <svg class="chart fisher-yates-shuffle">
       <pre>
         <code class="javascript">
 function fisherYatesShuffle(array) {
@@ -1843,17 +2025,17 @@ function fisherYatesShuffle(array) {
 }
         </code>
       </pre>
-      <p>从第 $ 1 $ 到 $ n $ 个数中随机选取一个数，和第 $ n $ 个数交换，每次将 $ n $ 的值减 $ 1 $ ，如此重复 $ n $ 次，则可得到一个序列。</p>
-      <p>此序列的概率同样为 $ \frac{1}{n!} $ 。</p>
-      <p>同样分析一下此算法的性能</p>
-      <p>空间: $ O(0) $, 因为将当前位置的数存放在与之交换的数的位置上，所以不需要额外的空间。</p>
-      <p>时间: $ O(n) $, while循环的复杂度为 $ O(n) $ , 循环内操作的复杂度为 $ O(1) $。</p>
-    </div>
+      <p>&#x4ECE;&#x7B2C; $ 1 $ &#x5230; $ n $ &#x4E2A;&#x6570;&#x4E2D;&#x968F;&#x673A;&#x9009;&#x53D6;&#x4E00;&#x4E2A;&#x6570;&#xFF0C;&#x548C;&#x7B2C; $ n $ &#x4E2A;&#x6570;&#x4EA4;&#x6362;&#xFF0C;&#x6BCF;&#x6B21;&#x5C06; $ n $ &#x7684;&#x503C;&#x51CF; $ 1 $ &#xFF0C;&#x5982;&#x6B64;&#x91CD;&#x590D; $ n $ &#x6B21;&#xFF0C;&#x5219;&#x53EF;&#x5F97;&#x5230;&#x4E00;&#x4E2A;&#x5E8F;&#x5217;&#x3002;</p>
+      <p>&#x6B64;&#x5E8F;&#x5217;&#x7684;&#x6982;&#x7387;&#x540C;&#x6837;&#x4E3A; $ \frac{1}{n!} $ &#x3002;</p>
+      <p>&#x540C;&#x6837;&#x5206;&#x6790;&#x4E00;&#x4E0B;&#x6B64;&#x7B97;&#x6CD5;&#x7684;&#x6027;&#x80FD;</p>
+      <p>&#x7A7A;&#x95F4;: $ O(0) $, &#x56E0;&#x4E3A;&#x5C06;&#x5F53;&#x524D;&#x4F4D;&#x7F6E;&#x7684;&#x6570;&#x5B58;&#x653E;&#x5728;&#x4E0E;&#x4E4B;&#x4EA4;&#x6362;&#x7684;&#x6570;&#x7684;&#x4F4D;&#x7F6E;&#x4E0A;&#xFF0C;&#x6240;&#x4EE5;&#x4E0D;&#x9700;&#x8981;&#x989D;&#x5916;&#x7684;&#x7A7A;&#x95F4;&#x3002;</p>
+      <p>&#x65F6;&#x95F4;: $ O(n) $, while&#x5FAA;&#x73AF;&#x7684;&#x590D;&#x6742;&#x5EA6;&#x4E3A; $ O(n) $ , &#x5FAA;&#x73AF;&#x5185;&#x64CD;&#x4F5C;&#x7684;&#x590D;&#x6742;&#x5EA6;&#x4E3A; $ O(1) $&#x3002;</p>
+    </svg></svg></svg></div>
     <footer>
-      <p>本文主要参考了Mike Bostock的 <a href="https://bost.ocks.org/mike/shuffle/" target="_blank" rel="external">"Fisher–Yates Shuffle"</a></p>
-      <p><span class="lib-name">可视化</span>使用了<a href="https://d3js.org/" target="_blank" rel="external">D3.js</a></p>
-      <p><span class="lib-name">语法高亮</span>使用了<a href="https://www.highlightjs.org/" target="_blank" rel="external">highlightjs</a></p>
-      <p><span class="lib-name">数学公式引擎</span>使用了<a href="https://www.mathjax.org/" target="_blank" rel="external">MathJax</a></p>
+      <p>&#x672C;&#x6587;&#x4E3B;&#x8981;&#x53C2;&#x8003;&#x4E86;Mike Bostock&#x7684; <a href="https://bost.ocks.org/mike/shuffle/" target="_blank" rel="external">&quot;Fisher&#x2013;Yates Shuffle&quot;</a></p>
+      <p><span class="lib-name">&#x53EF;&#x89C6;&#x5316;</span>&#x4F7F;&#x7528;&#x4E86;<a href="https://d3js.org/" target="_blank" rel="external">D3.js</a></p>
+      <p><span class="lib-name">&#x8BED;&#x6CD5;&#x9AD8;&#x4EAE;</span>&#x4F7F;&#x7528;&#x4E86;<a href="https://www.highlightjs.org/" target="_blank" rel="external">highlightjs</a></p>
+      <p><span class="lib-name">&#x6570;&#x5B66;&#x516C;&#x5F0F;&#x5F15;&#x64CE;</span>&#x4F7F;&#x7528;&#x4E86;<a href="https://www.mathjax.org/" target="_blank" rel="external">MathJax</a></p>
     </footer>
   </div>
 
@@ -2107,7 +2289,7 @@ function fisherYatesShuffle(array) {
           <span itemprop="articleBody">
             
               <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
 <p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
 <h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
 <p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
@@ -2174,7 +2356,7 @@ function fisherYatesShuffle(array) {
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">9</span>
+              <span class="site-state-item-count">10</span>
               <span class="site-state-item-name">posts</span>
             </a>
           </div>
@@ -2188,7 +2370,7 @@ function fisherYatesShuffle(array) {
 
           <div class="site-state-item site-state-tags">
             <a href="/tags">
-              <span class="site-state-item-count">12</span>
+              <span class="site-state-item-count">14</span>
               <span class="site-state-item-name">tags</span>
               </a>
           </div>

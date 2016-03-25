@@ -43,28 +43,16 @@
   <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.2" />
 
 
-<meta name="description" content="本文是 Tizen 系统的 gbs build 的用法的中英文对照版，主要内容为如何使用 gbs build 命令
-Reference: https://source.tizen.org/documentation/reference/git-build-system/usage/gbs-build
-
-gbs buildPUBLISHED 19 Oct 2014
-By using ‘gbs bu">
+<meta name="description" content="&amp;#x672C;&amp;#x6587;&amp;#x662F; Tizen &amp;#x7CFB;&amp;#x7EDF;&amp;#x7684; gbs build &amp;#x7684;&amp;#x7528;&amp;#x6CD5;&amp;#x7684;&amp;#x4E2D;&amp;#x82F1;&amp;#x6587;&amp;#x5BF9;&amp;#x7167;&amp;#x7248;&amp;#xFF0C;&amp;#x4E3B;&amp;#x8981;&amp;#x5185;&amp;#x5BB9;&amp;#x4E3A;&amp;#x59">
 <meta property="og:type" content="article">
 <meta property="og:title" content="GBS Build">
 <meta property="og:url" content="https://quarkchaos.github.com/2016/03/22/gbs-build/index.html">
 <meta property="og:site_name" content="Jason Wang's Notes">
-<meta property="og:description" content="本文是 Tizen 系统的 gbs build 的用法的中英文对照版，主要内容为如何使用 gbs build 命令
-Reference: https://source.tizen.org/documentation/reference/git-build-system/usage/gbs-build
-
-gbs buildPUBLISHED 19 Oct 2014
-By using ‘gbs bu">
+<meta property="og:description" content="&amp;#x672C;&amp;#x6587;&amp;#x662F; Tizen &amp;#x7CFB;&amp;#x7EDF;&amp;#x7684; gbs build &amp;#x7684;&amp;#x7528;&amp;#x6CD5;&amp;#x7684;&amp;#x4E2D;&amp;#x82F1;&amp;#x6587;&amp;#x5BF9;&amp;#x7167;&amp;#x7248;&amp;#xFF0C;&amp;#x4E3B;&amp;#x8981;&amp;#x5185;&amp;#x5BB9;&amp;#x4E3A;&amp;#x59">
 <meta property="og:updated_time" content="2016-03-22T13:39:20.612Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="GBS Build">
-<meta name="twitter:description" content="本文是 Tizen 系统的 gbs build 的用法的中英文对照版，主要内容为如何使用 gbs build 命令
-Reference: https://source.tizen.org/documentation/reference/git-build-system/usage/gbs-build
-
-gbs buildPUBLISHED 19 Oct 2014
-By using ‘gbs bu">
+<meta name="twitter:description" content="&amp;#x672C;&amp;#x6587;&amp;#x662F; Tizen &amp;#x7CFB;&amp;#x7EDF;&amp;#x7684; gbs build &amp;#x7684;&amp;#x7528;&amp;#x6CD5;&amp;#x7684;&amp;#x4E2D;&amp;#x82F1;&amp;#x6587;&amp;#x5BF9;&amp;#x7167;&amp;#x7248;&amp;#xFF0C;&amp;#x4E3B;&amp;#x8981;&amp;#x5185;&amp;#x5BB9;&amp;#x4E3A;&amp;#x59">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -245,67 +233,67 @@ By using ‘gbs bu">
 
       
         <span itemprop="articleBody"><blockquote>
-<p>本文是 Tizen 系统的 gbs build 的用法的中英文对照版，主要内容为如何使用 gbs build 命令</p>
+<p>&#x672C;&#x6587;&#x662F; Tizen &#x7CFB;&#x7EDF;&#x7684; gbs build &#x7684;&#x7528;&#x6CD5;&#x7684;&#x4E2D;&#x82F1;&#x6587;&#x5BF9;&#x7167;&#x7248;&#xFF0C;&#x4E3B;&#x8981;&#x5185;&#x5BB9;&#x4E3A;&#x5982;&#x4F55;&#x4F7F;&#x7528; gbs build &#x547D;&#x4EE4;</p>
 <p><em>Reference: <a href="https://source.tizen.org/documentation/reference/git-build-system/usage/gbs-build" target="_blank" rel="external">https://source.tizen.org/documentation/reference/git-build-system/usage/gbs-build</a></em></p>
 </blockquote>
 <h1 id="gbs-build"><a href="#gbs-build" class="headerlink" title="gbs build"></a>gbs build</h1><p>PUBLISHED 19 Oct 2014</p>
-<p>By using ‘gbs build’, the developer can build the source code and generate rpm packages locally. For instructions on using the build subcommand, use this command: gbs build –help</p>
+<p>By using &#x2018;gbs build&#x2019;, the developer can build the source code and generate rpm packages locally. For instructions on using the build subcommand, use this command: gbs build &#x2013;help</p>
 <blockquote>
-<p>开发者可使用gbs build在本地编译源代码然后生成RPM包。使用命令 gbs build –help 可以获取关于子命令 build 的帮助指南</p>
+<p>&#x5F00;&#x53D1;&#x8005;&#x53EF;&#x4F7F;&#x7528;gbs build&#x5728;&#x672C;&#x5730;&#x7F16;&#x8BD1;&#x6E90;&#x4EE3;&#x7801;&#x7136;&#x540E;&#x751F;&#x6210;RPM&#x5305;&#x3002;&#x4F7F;&#x7528;&#x547D;&#x4EE4; gbs build &#x2013;help &#x53EF;&#x4EE5;&#x83B7;&#x53D6;&#x5173;&#x4E8E;&#x5B50;&#x547D;&#x4EE4; build &#x7684;&#x5E2E;&#x52A9;&#x6307;&#x5357;</p>
 </blockquote>
 <pre><code>$ gbs build -h
-</code></pre><h2 id="gbs-build-workflow-gbs-build-工作流程"><a href="#gbs-build-workflow-gbs-build-工作流程" class="headerlink" title="gbs build workflow (gbs build 工作流程)"></a>gbs build workflow (gbs build 工作流程)</h2><h3 id="Input-of-gbs-build-gbs-build的输入"><a href="#Input-of-gbs-build-gbs-build的输入" class="headerlink" title="Input of gbs build (gbs build的输入)"></a>Input of gbs build (gbs build的输入)</h3><p>Below is the input for gbs build:</p>
+</code></pre><h2 id="gbs-build-workflow-gbs-build-&#x5DE5;&#x4F5C;&#x6D41;&#x7A0B;"><a href="#gbs-build-workflow-gbs-build-&#x5DE5;&#x4F5C;&#x6D41;&#x7A0B;" class="headerlink" title="gbs build workflow (gbs build &#x5DE5;&#x4F5C;&#x6D41;&#x7A0B;)"></a>gbs build workflow (gbs build &#x5DE5;&#x4F5C;&#x6D41;&#x7A0B;)</h2><h3 id="Input-of-gbs-build-gbs-build&#x7684;&#x8F93;&#x5165;"><a href="#Input-of-gbs-build-gbs-build&#x7684;&#x8F93;&#x5165;" class="headerlink" title="Input of gbs build (gbs build&#x7684;&#x8F93;&#x5165;)"></a>Input of gbs build (gbs build&#x7684;&#x8F93;&#x5165;)</h3><p>Below is the input for gbs build:</p>
 <blockquote>
-<p>以下是 gbs build 所需输入：</p>
+<p>&#x4EE5;&#x4E0B;&#x662F; gbs build &#x6240;&#x9700;&#x8F93;&#x5165;&#xFF1A;</p>
 </blockquote>
 <ul>
 <li><p>git project(s) which contains rpm packaging files</p>
 <blockquote>
-<p>包含rpm packing文件的git项目</p>
+<p>&#x5305;&#x542B;rpm packing&#x6587;&#x4EF6;&#x7684;git&#x9879;&#x76EE;</p>
 </blockquote>
 </li>
 <li><p>binary rpm repositories (remote or local)</p>
 <blockquote>
-<p>二进制rpm包仓库</p>
+<p>&#x4E8C;&#x8FDB;&#x5236;rpm&#x5305;&#x4ED3;&#x5E93;</p>
 </blockquote>
 </li>
 <li><p>project build configurations (macros, flags, etc)</p>
 <blockquote>
-<p>项目编译配置，宏定义、标志位等</p>
+<p>&#x9879;&#x76EE;&#x7F16;&#x8BD1;&#x914D;&#x7F6E;&#xFF0C;&#x5B8F;&#x5B9A;&#x4E49;&#x3001;&#x6807;&#x5FD7;&#x4F4D;&#x7B49;</p>
 </blockquote>
 </li>
 </ul>
 <p>The binary rpm repositories contain all the binary rpm packages which are used to create the chroot environment and build packages, which can be remote, like tizen release or snapshot repositories, or local repository. Local repository supports two types:</p>
 <blockquote>
-<p>二进制rpm包仓库包含所有rpm包，这些rpm包可以用来创建chroot环境和编译软件包。包仓库可以是远程的或者是本地的，远程的如Tizen的发布或快照仓库，本地仓库支持两种类型，如下：</p>
+<p>&#x4E8C;&#x8FDB;&#x5236;rpm&#x5305;&#x4ED3;&#x5E93;&#x5305;&#x542B;&#x6240;&#x6709;rpm&#x5305;&#xFF0C;&#x8FD9;&#x4E9B;rpm&#x5305;&#x53EF;&#x4EE5;&#x7528;&#x6765;&#x521B;&#x5EFA;chroot&#x73AF;&#x5883;&#x548C;&#x7F16;&#x8BD1;&#x8F6F;&#x4EF6;&#x5305;&#x3002;&#x5305;&#x4ED3;&#x5E93;&#x53EF;&#x4EE5;&#x662F;&#x8FDC;&#x7A0B;&#x7684;&#x6216;&#x8005;&#x662F;&#x672C;&#x5730;&#x7684;&#xFF0C;&#x8FDC;&#x7A0B;&#x7684;&#x5982;Tizen&#x7684;&#x53D1;&#x5E03;&#x6216;&#x5FEB;&#x7167;&#x4ED3;&#x5E93;&#xFF0C;&#x672C;&#x5730;&#x4ED3;&#x5E93;&#x652F;&#x6301;&#x4E24;&#x79CD;&#x7C7B;&#x578B;&#xFF0C;&#x5982;&#x4E0B;&#xFF1A;</p>
 </blockquote>
 <ul>
 <li><p>A standard repository with repodata exists</p>
 <blockquote>
-<p>带repodata的标准仓库</p>
+<p>&#x5E26;repodata&#x7684;&#x6807;&#x51C6;&#x4ED3;&#x5E93;</p>
 </blockquote>
 </li>
 <li><p>A normal directory contains RPM packages. GBS will find all RPM packages under this directory.</p>
 <blockquote>
-<p>包含RPM包的普通目录，GBS可以在此目录下找到所有的RPM包</p>
+<p>&#x5305;&#x542B;RPM&#x5305;&#x7684;&#x666E;&#x901A;&#x76EE;&#x5F55;&#xFF0C;GBS&#x53EF;&#x4EE5;&#x5728;&#x6B64;&#x76EE;&#x5F55;&#x4E0B;&#x627E;&#x5230;&#x6240;&#x6709;&#x7684;RPM&#x5305;</p>
 </blockquote>
 </li>
 </ul>
 <p>Please refer to <a href="https://source.tizen.org/documentation/reference/git-build-system/configuration-file" target="_blank" rel="external">Configuration File</a> part to configure a repository.</p>
 <blockquote>
-<p>请参考<a href="https://source.tizen.org/documentation/reference/git-build-system/configuration-file" target="_blank" rel="external">配置文件</a>来配置一个软件包仓库</p>
+<p>&#x8BF7;&#x53C2;&#x8003;<a href="https://source.tizen.org/documentation/reference/git-build-system/configuration-file" target="_blank" rel="external">&#x914D;&#x7F6E;&#x6587;&#x4EF6;</a>&#x6765;&#x914D;&#x7F6E;&#x4E00;&#x4E2A;&#x8F6F;&#x4EF6;&#x5305;&#x4ED3;&#x5E93;</p>
 </blockquote>
-<h3 id="Build-workflow-编译流程"><a href="#Build-workflow-编译流程" class="headerlink" title="Build workflow (编译流程)"></a>Build workflow (编译流程)</h3><p>The input and output of gbs build are all repositories.</p>
+<h3 id="Build-workflow-&#x7F16;&#x8BD1;&#x6D41;&#x7A0B;"><a href="#Build-workflow-&#x7F16;&#x8BD1;&#x6D41;&#x7A0B;" class="headerlink" title="Build workflow (&#x7F16;&#x8BD1;&#x6D41;&#x7A0B;)"></a>Build workflow (&#x7F16;&#x8BD1;&#x6D41;&#x7A0B;)</h3><p>The input and output of gbs build are all repositories.</p>
 <blockquote>
-<p>gbs build的输入和输出都是仓库</p>
+<p>gbs build&#x7684;&#x8F93;&#x5165;&#x548C;&#x8F93;&#x51FA;&#x90FD;&#x662F;&#x4ED3;&#x5E93;</p>
 </blockquote>
-<p><strong>Note</strong>: All the rpm packages under the output repository (by default, ~/GBS-ROOT/local/repos/&lt;VERSION&gt;/) will be used when building packages. That is, all the packages under the output repository will be applied to the build environment, so make sure the output repository is clean if you don’t want this behavior.</p>
+<p><strong>Note</strong>: All the rpm packages under the output repository (by default, ~/GBS-ROOT/local/repos/&lt;VERSION&gt;/) will be used when building packages. That is, all the packages under the output repository will be applied to the build environment, so make sure the output repository is clean if you don&#x2019;t want this behavior.</p>
 <blockquote>
-<p>注意：输出仓库（默认为~/GBS-ROOT/local/repos/&lt;VERSION&gt;/）下所有的rpm包将会被用于编译，如果你不希望使用这些包，请清理掉输出仓库中的rpm包。</p>
+<p>&#x6CE8;&#x610F;&#xFF1A;&#x8F93;&#x51FA;&#x4ED3;&#x5E93;&#xFF08;&#x9ED8;&#x8BA4;&#x4E3A;~/GBS-ROOT/local/repos/&lt;VERSION&gt;/&#xFF09;&#x4E0B;&#x6240;&#x6709;&#x7684;rpm&#x5305;&#x5C06;&#x4F1A;&#x88AB;&#x7528;&#x4E8E;&#x7F16;&#x8BD1;&#xFF0C;&#x5982;&#x679C;&#x4F60;&#x4E0D;&#x5E0C;&#x671B;&#x4F7F;&#x7528;&#x8FD9;&#x4E9B;&#x5305;&#xFF0C;&#x8BF7;&#x6E05;&#x7406;&#x6389;&#x8F93;&#x51FA;&#x4ED3;&#x5E93;&#x4E2D;&#x7684;rpm&#x5305;&#x3002;</p>
 </blockquote>
-<p>Here’s the basic gbs build workflow</p>
+<p>Here&#x2019;s the basic gbs build workflow</p>
 <blockquote>
-<p>gbs build的基本流程</p>
+<p>gbs build&#x7684;&#x57FA;&#x672C;&#x6D41;&#x7A0B;</p>
 </blockquote>
 <pre><code> ____________________
 |                    |      ___________
@@ -321,34 +309,34 @@ By using ‘gbs bu">
 |in GBS conf         |----&gt;|___________|                  |
 |(Remote or Local)   |           ^                        |
 |____________________|           |________________________|
-</code></pre><p>From the above diagram, we can see the input and input are all repositories and the output repository located at ‘~/GBS-ROOT/locals/repos/‘ by default. You can change the repo path by using ‘–buildroot’ to specify a different build root.</p>
+</code></pre><p>From the above diagram, we can see the input and input are all repositories and the output repository located at &#x2018;~/GBS-ROOT/locals/repos/&#x2018; by default. You can change the repo path by using &#x2018;&#x2013;buildroot&#x2019; to specify a different build root.</p>
 <blockquote>
-<p>输出仓库默认为：<em>~/GBS-ROOT/local/repos</em>，可以通过 <strong>–buildroot</strong> 指定build root来改变仓库路径。</p>
+<p>&#x8F93;&#x51FA;&#x4ED3;&#x5E93;&#x9ED8;&#x8BA4;&#x4E3A;&#xFF1A;<em>~/GBS-ROOT/local/repos</em>&#xFF0C;&#x53EF;&#x4EE5;&#x901A;&#x8FC7; <strong>&#x2013;buildroot</strong> &#x6307;&#x5B9A;build root&#x6765;&#x6539;&#x53D8;&#x4ED3;&#x5E93;&#x8DEF;&#x5F84;&#x3002;</p>
 </blockquote>
-<p>Local repos in gbs build root (‘~/GBS-ROOT’ by default) will affect build results, so you must make sure that repos don’t contains old or unnecessary RPM packages. While running gbs build, you can specify ‘–clean-repos’ to clean up local repos, which gbs created, before building. We recommend that gbs users set different gbs build root directories for different profiles. There are several ways:</p>
+<p>Local repos in gbs build root (&#x2018;~/GBS-ROOT&#x2019; by default) will affect build results, so you must make sure that repos don&#x2019;t contains old or unnecessary RPM packages. While running gbs build, you can specify &#x2018;&#x2013;clean-repos&#x2019; to clean up local repos, which gbs created, before building. We recommend that gbs users set different gbs build root directories for different profiles. There are several ways:</p>
 <blockquote>
-<p>gbs build root下的本地仓库会影响编译结果，所以你必须要保证仓库里没有旧的软件包或者无关的软件包。在编译的时候可以用 –clean-repos 选项在实际编译前清理 gbs 创建的本地仓库。建议 gbs 使用者针对不同的场景设置不同的 build root 目录。可以使用以下方法：</p>
+<p>gbs build root&#x4E0B;&#x7684;&#x672C;&#x5730;&#x4ED3;&#x5E93;&#x4F1A;&#x5F71;&#x54CD;&#x7F16;&#x8BD1;&#x7ED3;&#x679C;&#xFF0C;&#x6240;&#x4EE5;&#x4F60;&#x5FC5;&#x987B;&#x8981;&#x4FDD;&#x8BC1;&#x4ED3;&#x5E93;&#x91CC;&#x6CA1;&#x6709;&#x65E7;&#x7684;&#x8F6F;&#x4EF6;&#x5305;&#x6216;&#x8005;&#x65E0;&#x5173;&#x7684;&#x8F6F;&#x4EF6;&#x5305;&#x3002;&#x5728;&#x7F16;&#x8BD1;&#x7684;&#x65F6;&#x5019;&#x53EF;&#x4EE5;&#x7528; &#x2013;clean-repos &#x9009;&#x9879;&#x5728;&#x5B9E;&#x9645;&#x7F16;&#x8BD1;&#x524D;&#x6E05;&#x7406; gbs &#x521B;&#x5EFA;&#x7684;&#x672C;&#x5730;&#x4ED3;&#x5E93;&#x3002;&#x5EFA;&#x8BAE; gbs &#x4F7F;&#x7528;&#x8005;&#x9488;&#x5BF9;&#x4E0D;&#x540C;&#x7684;&#x573A;&#x666F;&#x8BBE;&#x7F6E;&#x4E0D;&#x540C;&#x7684; build root &#x76EE;&#x5F55;&#x3002;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x4EE5;&#x4E0B;&#x65B9;&#x6CD5;&#xFF1A;</p>
 </blockquote>
 <ul>
 <li><p>By default, the GBS build will put all output files under ~/GBS-ROOT/.</p>
 <blockquote>
-<p>GBS build默认会把所有的输出文件都放在 <em>~/GBS-ROOT/</em> 里</p>
+<p>GBS build&#x9ED8;&#x8BA4;&#x4F1A;&#x628A;&#x6240;&#x6709;&#x7684;&#x8F93;&#x51FA;&#x6587;&#x4EF6;&#x90FD;&#x653E;&#x5728; <em>~/GBS-ROOT/</em> &#x91CC;</p>
 </blockquote>
 </li>
 <li><p>If the environment variable TIZEN_BUILD_ROOT exists, ${TIZEN_BUILD_ROOT} will be used as output top dir</p>
 <blockquote>
-<p>如果存在环境变量 TIZEN_BUILD_ROOT，其值 $(TIZEN_BUILD_ROOT) 将会作为 build root</p>
+<p>&#x5982;&#x679C;&#x5B58;&#x5728;&#x73AF;&#x5883;&#x53D8;&#x91CF; TIZEN_BUILD_ROOT&#xFF0C;&#x5176;&#x503C; $(TIZEN_BUILD_ROOT) &#x5C06;&#x4F1A;&#x4F5C;&#x4E3A; build root</p>
 </blockquote>
 </li>
 <li><p>If -B option is specified, then the specified directory is used, even if ${TIZEN_BUILD_ROOT} exists</p>
 <blockquote>
-<p>如果使用 -B 选项，那么就其参数将作为 build root ，即使环境变量 $(TIZEN_BUILD_ROOT) 存在</p>
+<p>&#x5982;&#x679C;&#x4F7F;&#x7528; -B &#x9009;&#x9879;&#xFF0C;&#x90A3;&#x4E48;&#x5C31;&#x5176;&#x53C2;&#x6570;&#x5C06;&#x4F5C;&#x4E3A; build root &#xFF0C;&#x5373;&#x4F7F;&#x73AF;&#x5883;&#x53D8;&#x91CF; $(TIZEN_BUILD_ROOT) &#x5B58;&#x5728;</p>
 </blockquote>
 </li>
 </ul>
-<h3 id="Output-of-gbs-build-gbs-build-输出"><a href="#Output-of-gbs-build-gbs-build-输出" class="headerlink" title="Output of gbs build (gbs build 输出)"></a>Output of gbs build (gbs build 输出)</h3><p>Structure of a GBS build root directory</p>
+<h3 id="Output-of-gbs-build-gbs-build-&#x8F93;&#x51FA;"><a href="#Output-of-gbs-build-gbs-build-&#x8F93;&#x51FA;" class="headerlink" title="Output of gbs build (gbs build &#x8F93;&#x51FA;)"></a>Output of gbs build (gbs build &#x8F93;&#x51FA;)</h3><p>Structure of a GBS build root directory</p>
 <blockquote>
-<p>GBS build root的目录结构</p>
+<p>GBS build root&#x7684;&#x76EE;&#x5F55;&#x7ED3;&#x6784;</p>
 </blockquote>
 <pre><code>gbs output top dir
 |-- local
@@ -369,83 +357,83 @@ By using ‘gbs bu">
 | |-- tizen
 | `-- tizen2.0
 `-- meta # meta data used by gbs
-</code></pre><h2 id="GBS-Build-Examples-Basic-Usage-GBS-Build示例，基本用法"><a href="#GBS-Build-Examples-Basic-Usage-GBS-Build示例，基本用法" class="headerlink" title="GBS Build Examples (Basic Usage) (GBS Build示例，基本用法)"></a>GBS Build Examples (Basic Usage) (GBS Build示例，基本用法)</h2><p>1 Build a single package.</p>
+</code></pre><h2 id="GBS-Build-Examples-Basic-Usage-GBS-Build&#x793A;&#x4F8B;&#xFF0C;&#x57FA;&#x672C;&#x7528;&#x6CD5;"><a href="#GBS-Build-Examples-Basic-Usage-GBS-Build&#x793A;&#x4F8B;&#xFF0C;&#x57FA;&#x672C;&#x7528;&#x6CD5;" class="headerlink" title="GBS Build Examples (Basic Usage) (GBS Build&#x793A;&#x4F8B;&#xFF0C;&#x57FA;&#x672C;&#x7528;&#x6CD5;)"></a>GBS Build Examples (Basic Usage) (GBS Build&#x793A;&#x4F8B;&#xFF0C;&#x57FA;&#x672C;&#x7528;&#x6CD5;)</h2><p>1 Build a single package.</p>
 <blockquote>
-<p>编译单个包</p>
+<p>&#x7F16;&#x8BD1;&#x5355;&#x4E2A;&#x5305;</p>
 </blockquote>
 <pre><code>$ cd package1
 $ gbs build -A i586
 </code></pre><p>2 Build a package for different architectures.</p>
 <blockquote>
-<p>为不同的架构编译包</p>
+<p>&#x4E3A;&#x4E0D;&#x540C;&#x7684;&#x67B6;&#x6784;&#x7F16;&#x8BD1;&#x5305;</p>
 </blockquote>
 <p><strong>Note</strong>: Supported architectures include: x86_64, i586, armv6l, armv7hl, armv7l, aarch64, mips, mipsel.</p>
 <blockquote>
-<p>注意：支持的架构有： x86_64, i586, armv6l, armv7hl, armv7l, aarch64, mips, mipsel.</p>
+<p>&#x6CE8;&#x610F;&#xFF1A;&#x652F;&#x6301;&#x7684;&#x67B6;&#x6784;&#x6709;&#xFF1A; x86_64, i586, armv6l, armv7hl, armv7l, aarch64, mips, mipsel.</p>
 </blockquote>
 <pre><code>$ gbs build -A armv7l #build package for armv7l
 $ gbs build -A i586 #build package for i586
 </code></pre><p>3 Make a clean build by deleting the old build root. This option must be specified if the repo has been changed, for example, changed to another release.</p>
 <blockquote>
-<p>删除旧的build root，全新编译。当软件包仓库有变化时，必须使用这个选项，比如改成使用另一个发行版的软件仓库时.</p>
+<p>&#x5220;&#x9664;&#x65E7;&#x7684;build root&#xFF0C;&#x5168;&#x65B0;&#x7F16;&#x8BD1;&#x3002;&#x5F53;&#x8F6F;&#x4EF6;&#x5305;&#x4ED3;&#x5E93;&#x6709;&#x53D8;&#x5316;&#x65F6;&#xFF0C;&#x5FC5;&#x987B;&#x4F7F;&#x7528;&#x8FD9;&#x4E2A;&#x9009;&#x9879;&#xFF0C;&#x6BD4;&#x5982;&#x6539;&#x6210;&#x4F7F;&#x7528;&#x53E6;&#x4E00;&#x4E2A;&#x53D1;&#x884C;&#x7248;&#x7684;&#x8F6F;&#x4EF6;&#x4ED3;&#x5E93;&#x65F6;.</p>
 </blockquote>
 <pre><code>$ gbs build -A armv7l --clean
 </code></pre><p>4 Build the package with a specific commit.</p>
 <blockquote>
-<p>为特定提交编译包</p>
+<p>&#x4E3A;&#x7279;&#x5B9A;&#x63D0;&#x4EA4;&#x7F16;&#x8BD1;&#x5305;</p>
 </blockquote>
 <pre><code>$ gbs build -A armv7l --commit=&lt;COMMIT_ID&gt;
-</code></pre><p>5 Use –overwrite to trigger a rebuild.</p>
+</code></pre><p>5 Use &#x2013;overwrite to trigger a rebuild.</p>
 <blockquote>
-<p>用–overwrite触发一次重新编译</p>
+<p>&#x7528;&#x2013;overwrite&#x89E6;&#x53D1;&#x4E00;&#x6B21;&#x91CD;&#x65B0;&#x7F16;&#x8BD1;</p>
 </blockquote>
-<p>If you have already built before, and want to rebuild, –overwrite should be specified, or the packages will be skipped.</p>
+<p>If you have already built before, and want to rebuild, &#x2013;overwrite should be specified, or the packages will be skipped.</p>
 <blockquote>
-<p>如果以前已经编译过，并且想重新编译，应该使用–overwrite，否则已经编过的包会被跳过</p>
+<p>&#x5982;&#x679C;&#x4EE5;&#x524D;&#x5DF2;&#x7ECF;&#x7F16;&#x8BD1;&#x8FC7;&#xFF0C;&#x5E76;&#x4E14;&#x60F3;&#x91CD;&#x65B0;&#x7F16;&#x8BD1;&#xFF0C;&#x5E94;&#x8BE5;&#x4F7F;&#x7528;&#x2013;overwrite&#xFF0C;&#x5426;&#x5219;&#x5DF2;&#x7ECF;&#x7F16;&#x8FC7;&#x7684;&#x5305;&#x4F1A;&#x88AB;&#x8DF3;&#x8FC7;</p>
 </blockquote>
 <pre><code>$ gbs build -A i586 --overwrite
-</code></pre><p>If you change the commit or specify –include-all option, it will always rebuild, so –overwrite is not needed.</p>
+</code></pre><p>If you change the commit or specify &#x2013;include-all option, it will always rebuild, so &#x2013;overwrite is not needed.</p>
 <blockquote>
-<p>如果有新提交或者带选项–include-all，则GBS总是会重新编译，此时滴必要使用–overwrite</p>
+<p>&#x5982;&#x679C;&#x6709;&#x65B0;&#x63D0;&#x4EA4;&#x6216;&#x8005;&#x5E26;&#x9009;&#x9879;&#x2013;include-all&#xFF0C;&#x5219;GBS&#x603B;&#x662F;&#x4F1A;&#x91CD;&#x65B0;&#x7F16;&#x8BD1;&#xFF0C;&#x6B64;&#x65F6;&#x6EF4;&#x5FC5;&#x8981;&#x4F7F;&#x7528;&#x2013;overwrite</p>
 </blockquote>
 <p>6 Output the debug info.</p>
 <blockquote>
-<p>输出调试信息</p>
+<p>&#x8F93;&#x51FA;&#x8C03;&#x8BD5;&#x4FE1;&#x606F;</p>
 </blockquote>
 <pre><code>$ gbs build -A i586 --debug
 </code></pre><p>7 Build against a local repository. You can config the local repo at .gbs.conf file or through the command line.</p>
 <pre><code>$ gbs build -R /path/to/repo/dir/ -A i586
-</code></pre><p>8 Use –noinit to build package in offline mode.</p>
+</code></pre><p>8 Use &#x2013;noinit to build package in offline mode.</p>
 <blockquote>
-<p>使用 –noinit 选项，在离线模式下编译</p>
+<p>&#x4F7F;&#x7528; &#x2013;noinit &#x9009;&#x9879;&#xFF0C;&#x5728;&#x79BB;&#x7EBF;&#x6A21;&#x5F0F;&#x4E0B;&#x7F16;&#x8BD1;</p>
 </blockquote>
-<p>–noinit option can only be used if build root is ready. With –noinit option, gbs will not connect the remote repo, and skip parsing &amp; checking repo and initialize build environment. rpmbuild will be used to build the package directly. Here’s an example:</p>
+<p>&#x2013;noinit option can only be used if build root is ready. With &#x2013;noinit option, gbs will not connect the remote repo, and skip parsing &amp; checking repo and initialize build environment. rpmbuild will be used to build the package directly. Here&#x2019;s an example:</p>
 <blockquote>
-<p>在build root准备好的情况下，可以使用选项 –noinit。使用 –noinit 选项时，gbs不会连接远程仓库并且会跳过解析/检查仓库和初始化编译环境，直接使用rpmbuild编译包. </p>
-<p><strong>重要</strong>：此选项可用于快速编译</p>
+<p>&#x5728;build root&#x51C6;&#x5907;&#x597D;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x9009;&#x9879; &#x2013;noinit&#x3002;&#x4F7F;&#x7528; &#x2013;noinit &#x9009;&#x9879;&#x65F6;&#xFF0C;gbs&#x4E0D;&#x4F1A;&#x8FDE;&#x63A5;&#x8FDC;&#x7A0B;&#x4ED3;&#x5E93;&#x5E76;&#x4E14;&#x4F1A;&#x8DF3;&#x8FC7;&#x89E3;&#x6790;/&#x68C0;&#x67E5;&#x4ED3;&#x5E93;&#x548C;&#x521D;&#x59CB;&#x5316;&#x7F16;&#x8BD1;&#x73AF;&#x5883;&#xFF0C;&#x76F4;&#x63A5;&#x4F7F;&#x7528;rpmbuild&#x7F16;&#x8BD1;&#x5305;. </p>
+<p><strong>&#x91CD;&#x8981;</strong>&#xFF1A;&#x6B64;&#x9009;&#x9879;&#x53EF;&#x7528;&#x4E8E;&#x5FEB;&#x901F;&#x7F16;&#x8BD1;</p>
 </blockquote>
 <pre><code>$ gbs build -A i586 # build first and create build environment
 $ gbs build -A i586 --noinit # use --noinit to start building directly
-</code></pre><p>9 Build with all uncommitted changes using –include-all.</p>
+</code></pre><p>9 Build with all uncommitted changes using &#x2013;include-all.</p>
 <blockquote>
-<p>使用 –include-all 选项编译所有的未提交的改动</p>
-<p><strong>重要</strong>，此选项为常用选项，当用户本地有修改又没有提交时，经常需要使用此选项用于测试新代码</p>
+<p>&#x4F7F;&#x7528; &#x2013;include-all &#x9009;&#x9879;&#x7F16;&#x8BD1;&#x6240;&#x6709;&#x7684;&#x672A;&#x63D0;&#x4EA4;&#x7684;&#x6539;&#x52A8;</p>
+<p><strong>&#x91CD;&#x8981;</strong>&#xFF0C;&#x6B64;&#x9009;&#x9879;&#x4E3A;&#x5E38;&#x7528;&#x9009;&#x9879;&#xFF0C;&#x5F53;&#x7528;&#x6237;&#x672C;&#x5730;&#x6709;&#x4FEE;&#x6539;&#x53C8;&#x6CA1;&#x6709;&#x63D0;&#x4EA4;&#x65F6;&#xFF0C;&#x7ECF;&#x5E38;&#x9700;&#x8981;&#x4F7F;&#x7528;&#x6B64;&#x9009;&#x9879;&#x7528;&#x4E8E;&#x6D4B;&#x8BD5;&#x65B0;&#x4EE3;&#x7801;</p>
 </blockquote>
 <p>For example, the git tree contains one modified file and two extra files:</p>
 <blockquote>
-<p>例如，git目录中包含一个改动的文件和二个新加的文件</p>
+<p>&#x4F8B;&#x5982;&#xFF0C;git&#x76EE;&#x5F55;&#x4E2D;&#x5305;&#x542B;&#x4E00;&#x4E2A;&#x6539;&#x52A8;&#x7684;&#x6587;&#x4EF6;&#x548C;&#x4E8C;&#x4E2A;&#x65B0;&#x52A0;&#x7684;&#x6587;&#x4EF6;</p>
 </blockquote>
 <pre><code>$ git status -s
 M ail.pc.in
 ?? base.repo
 ?? main.repo
-</code></pre><p><strong>Build without the –include-all option</strong></p>
+</code></pre><p><strong>Build without the &#x2013;include-all option</strong></p>
 <blockquote>
-<p>不用–include-all编译</p>
+<p>&#x4E0D;&#x7528;&#x2013;include-all&#x7F16;&#x8BD1;</p>
 </blockquote>
 <p>Builds committed files only. All the modified files, which are not committed nor added, will NOT be built:</p>
 <blockquote>
-<p>仅编译已提交的文件。所有未提交或未添加到版本控制的文件都不会被编译:</p>
+<p>&#x4EC5;&#x7F16;&#x8BD1;&#x5DF2;&#x63D0;&#x4EA4;&#x7684;&#x6587;&#x4EF6;&#x3002;&#x6240;&#x6709;&#x672A;&#x63D0;&#x4EA4;&#x6216;&#x672A;&#x6DFB;&#x52A0;&#x5230;&#x7248;&#x672C;&#x63A7;&#x5236;&#x7684;&#x6587;&#x4EF6;&#x90FD;&#x4E0D;&#x4F1A;&#x88AB;&#x7F16;&#x8BD1;:</p>
 </blockquote>
 <pre><code>$ gbs build -A i586
 warning: the following untracked files would NOT be included: base.repo main.repo
@@ -455,9 +443,9 @@ warning: you can specify &apos;--include-all&apos; option to include these uncom
 info: Binaries RPM packages can be found here:
 /home/test/GBS-ROOT/local/scratch.i586.0/home/abuild/rpmbuild/RPMS/
 info: Done
-</code></pre><p><strong>Build with the –include-all option builds all the files</strong></p>
+</code></pre><p><strong>Build with the &#x2013;include-all option builds all the files</strong></p>
 <blockquote>
-<p>使用–include-all来编译所有的文件</p>
+<p>&#x4F7F;&#x7528;&#x2013;include-all&#x6765;&#x7F16;&#x8BD1;&#x6240;&#x6709;&#x7684;&#x6587;&#x4EF6;</p>
 </blockquote>
 <pre><code>$ gbs build -A i586 --include-all
 info: the following untracked files would be included: base.repo main.repo
@@ -466,13 +454,13 @@ info: export tar ball and packaging files
 ...
 ...
 [build finished]
-</code></pre><p><strong>Use .gitignore to ignore specific files, when using the –include-all option.</strong></p>
+</code></pre><p><strong>Use .gitignore to ignore specific files, when using the &#x2013;include-all option.</strong></p>
 <blockquote>
-<p>当使用–incldue-all时可以用.gitignore来忽略特定的文件</p>
+<p>&#x5F53;&#x4F7F;&#x7528;&#x2013;incldue-all&#x65F6;&#x53EF;&#x4EE5;&#x7528;.gitignore&#x6765;&#x5FFD;&#x7565;&#x7279;&#x5B9A;&#x7684;&#x6587;&#x4EF6;</p>
 </blockquote>
 <p>If you want to ignore some files types, you can update your .gitignore. For example:</p>
 <blockquote>
-<p>如果要想忽略某类型文件可以修改.gitignore，例如：</p>
+<p>&#x5982;&#x679C;&#x8981;&#x60F3;&#x5FFD;&#x7565;&#x67D0;&#x7C7B;&#x578B;&#x6587;&#x4EF6;&#x53EF;&#x4EE5;&#x4FEE;&#x6539;.gitignore&#xFF0C;&#x4F8B;&#x5982;&#xFF1A;</p>
 </blockquote>
 <pre><code>$ cat .gitignore
 .*
@@ -480,77 +468,77 @@ info: export tar ball and packaging files
 *.pyc
 *.patch*
 </code></pre><h2 id="Incremental-build"><a href="#Incremental-build" class="headerlink" title="Incremental build"></a>Incremental build</h2><blockquote>
-<p>增量编译</p>
+<p>&#x589E;&#x91CF;&#x7F16;&#x8BD1;</p>
 </blockquote>
 <h3 id="Incremental-Concept"><a href="#Incremental-Concept" class="headerlink" title="Incremental Concept"></a>Incremental Concept</h3><blockquote>
-<p>增量的概念</p>
+<p>&#x589E;&#x91CF;&#x7684;&#x6982;&#x5FF5;</p>
 </blockquote>
-<p>Starting from gbs 0.10, the gbs build subcommand supports building incrementally, which can be enabled by specifying the ‘–incremental’ option.</p>
+<p>Starting from gbs 0.10, the gbs build subcommand supports building incrementally, which can be enabled by specifying the &#x2018;&#x2013;incremental&#x2019; option.</p>
 <blockquote>
-<p>从gbs 0.10开始，gbs build就支持增量式的编译，通过指定–incremental选项来启用。</p>
+<p>&#x4ECE;gbs 0.10&#x5F00;&#x59CB;&#xFF0C;gbs build&#x5C31;&#x652F;&#x6301;&#x589E;&#x91CF;&#x5F0F;&#x7684;&#x7F16;&#x8BD1;&#xFF0C;&#x901A;&#x8FC7;&#x6307;&#x5B9A;&#x2013;incremental&#x9009;&#x9879;&#x6765;&#x542F;&#x7528;&#x3002;</p>
 </blockquote>
 <p>This mode is designed for development and verification of single packages. It is not intended to replace the standard mode. Only one package can be built at a time using this mode.</p>
 <blockquote>
-<p>这种模式主要用来开发和验证单个软件包，不是用来替代标准的编译模式。在此模式下，一次只能编译一个包。</p>
+<p>&#x8FD9;&#x79CD;&#x6A21;&#x5F0F;&#x4E3B;&#x8981;&#x7528;&#x6765;&#x5F00;&#x53D1;&#x548C;&#x9A8C;&#x8BC1;&#x5355;&#x4E2A;&#x8F6F;&#x4EF6;&#x5305;&#xFF0C;&#x4E0D;&#x662F;&#x7528;&#x6765;&#x66FF;&#x4EE3;&#x6807;&#x51C6;&#x7684;&#x7F16;&#x8BD1;&#x6A21;&#x5F0F;&#x3002;&#x5728;&#x6B64;&#x6A21;&#x5F0F;&#x4E0B;&#xFF0C;&#x4E00;&#x6B21;&#x53EA;&#x80FD;&#x7F16;&#x8BD1;&#x4E00;&#x4E2A;&#x5305;&#x3002;</p>
 </blockquote>
 <p>This mode will set up the build environment in multiple steps, finishing by mounting the local Git tree of a package in the chroot build environment.</p>
 <blockquote>
-<p>这种模式分成多步来设置编译环境，把本地的软件包的Git目录绑定到chroot的编译目录后就完成了。</p>
+<p>&#x8FD9;&#x79CD;&#x6A21;&#x5F0F;&#x5206;&#x6210;&#x591A;&#x6B65;&#x6765;&#x8BBE;&#x7F6E;&#x7F16;&#x8BD1;&#x73AF;&#x5883;&#xFF0C;&#x628A;&#x672C;&#x5730;&#x7684;&#x8F6F;&#x4EF6;&#x5305;&#x7684;Git&#x76EE;&#x5F55;&#x7ED1;&#x5B9A;&#x5230;chroot&#x7684;&#x7F16;&#x8BD1;&#x76EE;&#x5F55;&#x540E;&#x5C31;&#x5B8C;&#x6210;&#x4E86;&#x3002;</p>
 </blockquote>
-<p>Note: Because gbs will mount your git tree to the build root, be very careful when you remove your build root. You need to make sure you’ve already umounted the source tree manually before you remove it.</p>
+<p>Note: Because gbs will mount your git tree to the build root, be very careful when you remove your build root. You need to make sure you&#x2019;ve already umounted the source tree manually before you remove it.</p>
 <blockquote>
-<p>注意：因为gbs会把git目录绑定到buid root，所以当要删除build root时要非常小心，删除前要确定已经手动地把源码解绑定。</p>
+<p>&#x6CE8;&#x610F;&#xFF1A;&#x56E0;&#x4E3A;gbs&#x4F1A;&#x628A;git&#x76EE;&#x5F55;&#x7ED1;&#x5B9A;&#x5230;buid root&#xFF0C;&#x6240;&#x4EE5;&#x5F53;&#x8981;&#x5220;&#x9664;build root&#x65F6;&#x8981;&#x975E;&#x5E38;&#x5C0F;&#x5FC3;&#xFF0C;&#x5220;&#x9664;&#x524D;&#x8981;&#x786E;&#x5B9A;&#x5DF2;&#x7ECF;&#x624B;&#x52A8;&#x5730;&#x628A;&#x6E90;&#x7801;&#x89E3;&#x7ED1;&#x5B9A;&#x3002;</p>
 </blockquote>
 <p>This has the following benefits:</p>
 <blockquote>
-<p>这种模式有以下优点：</p>
+<p>&#x8FD9;&#x79CD;&#x6A21;&#x5F0F;&#x6709;&#x4EE5;&#x4E0B;&#x4F18;&#x70B9;&#xFF1A;</p>
 </blockquote>
 <ul>
 <li><p>The build environment uses the latest source code and changes to source do not trigger a new build environment (in the chroot).</p>
 <blockquote>
-<p>编译环境可以使用最新的源代码，并且代码的改动不会修改编译环境</p>
+<p>&#x7F16;&#x8BD1;&#x73AF;&#x5883;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x6700;&#x65B0;&#x7684;&#x6E90;&#x4EE3;&#x7801;&#xFF0C;&#x5E76;&#x4E14;&#x4EE3;&#x7801;&#x7684;&#x6539;&#x52A8;&#x4E0D;&#x4F1A;&#x4FEE;&#x6539;&#x7F16;&#x8BD1;&#x73AF;&#x5883;</p>
 </blockquote>
 </li>
 <li><p>The Git source tree becomes the source of the builds. Any change made in the Git repository followed by invocation of the build script will build the changed sources</p>
 <blockquote>
-<p>git目录变成了编译的源目录，只要在git中的任何改动之后，调用编译命令，就可以编译改动过的源代码</p>
+<p>git&#x76EE;&#x5F55;&#x53D8;&#x6210;&#x4E86;&#x7F16;&#x8BD1;&#x7684;&#x6E90;&#x76EE;&#x5F55;&#xFF0C;&#x53EA;&#x8981;&#x5728;git&#x4E2D;&#x7684;&#x4EFB;&#x4F55;&#x6539;&#x52A8;&#x4E4B;&#x540E;&#xFF0C;&#x8C03;&#x7528;&#x7F16;&#x8BD1;&#x547D;&#x4EE4;&#xFF0C;&#x5C31;&#x53EF;&#x4EE5;&#x7F16;&#x8BD1;&#x6539;&#x52A8;&#x8FC7;&#x7684;&#x6E90;&#x4EE3;&#x7801;</p>
 </blockquote>
 </li>
 <li><p>If the build fails for some reason, the build script will continue from the spot where it has failed, once the code has been changed to fix the problem causing the failure.</p>
 <blockquote>
-<p>编译失败后，一旦导致编译失败的错误被修正，编译脚本会从先前失败的地方接着编译</p>
+<p>&#x7F16;&#x8BD1;&#x5931;&#x8D25;&#x540E;&#xFF0C;&#x4E00;&#x65E6;&#x5BFC;&#x81F4;&#x7F16;&#x8BD1;&#x5931;&#x8D25;&#x7684;&#x9519;&#x8BEF;&#x88AB;&#x4FEE;&#x6B63;&#xFF0C;&#x7F16;&#x8BD1;&#x811A;&#x672C;&#x4F1A;&#x4ECE;&#x5148;&#x524D;&#x5931;&#x8D25;&#x7684;&#x5730;&#x65B9;&#x63A5;&#x7740;&#x7F16;&#x8BD1;</p>
 </blockquote>
 </li>
 </ul>
 <p>This mode is, in many ways, similar to traditional code development, where changes are made to sources, followed by running make to test and compile the changes. However, it enables development using the build environment of the target, instead of the host OS.</p>
 <blockquote>
-<p>从不同的方面说，这种模式类似于传统的代码开发：修改代码然后运行make编译改动。不同的地方在于，增量编译使用编译环境而不是宿主机器的操作系统</p>
+<p>&#x4ECE;&#x4E0D;&#x540C;&#x7684;&#x65B9;&#x9762;&#x8BF4;&#xFF0C;&#x8FD9;&#x79CD;&#x6A21;&#x5F0F;&#x7C7B;&#x4F3C;&#x4E8E;&#x4F20;&#x7EDF;&#x7684;&#x4EE3;&#x7801;&#x5F00;&#x53D1;&#xFF1A;&#x4FEE;&#x6539;&#x4EE3;&#x7801;&#x7136;&#x540E;&#x8FD0;&#x884C;make&#x7F16;&#x8BD1;&#x6539;&#x52A8;&#x3002;&#x4E0D;&#x540C;&#x7684;&#x5730;&#x65B9;&#x5728;&#x4E8E;&#xFF0C;&#x589E;&#x91CF;&#x7F16;&#x8BD1;&#x4F7F;&#x7528;&#x7F16;&#x8BD1;&#x73AF;&#x5883;&#x800C;&#x4E0D;&#x662F;&#x5BBF;&#x4E3B;&#x673A;&#x5668;&#x7684;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;</p>
 </blockquote>
 <p>This method has some limitations, mostly related to packaging and how the sources are maintained. Among others, it depends on how the RPM spec file is composed:</p>
 <blockquote>
-<p>这种模式有一些限制，都是关于打包和代码的管理。尤其是依赖于RPM的spec文件</p>
+<p>&#x8FD9;&#x79CD;&#x6A21;&#x5F0F;&#x6709;&#x4E00;&#x4E9B;&#x9650;&#x5236;&#xFF0C;&#x90FD;&#x662F;&#x5173;&#x4E8E;&#x6253;&#x5305;&#x548C;&#x4EE3;&#x7801;&#x7684;&#x7BA1;&#x7406;&#x3002;&#x5C24;&#x5176;&#x662F;&#x4F9D;&#x8D56;&#x4E8E;RPM&#x7684;spec&#x6587;&#x4EF6;</p>
 </blockquote>
 <ul>
 <li><p>It does not support patches in the spec file. All source has to be maintained as part of the Git tree</p>
 <blockquote>
-<p>不支持spec文件中的patches，所有的源码必须是git目录的一部分</p>
+<p>&#x4E0D;&#x652F;&#x6301;spec&#x6587;&#x4EF6;&#x4E2D;&#x7684;patches&#xFF0C;&#x6240;&#x6709;&#x7684;&#x6E90;&#x7801;&#x5FC5;&#x987B;&#x662F;git&#x76EE;&#x5F55;&#x7684;&#x4E00;&#x90E8;&#x5206;</p>
 </blockquote>
 </li>
 <li><p>It requires a clean packaging workflow. Exotic workflows in the spec files might not work well, because this mode expects the following model:</p>
 <blockquote>
-<p>需要一个整洁的打包流程。spec文件中的极特殊的流程可能不会有效，因为这种模式预期以下模型：</p>
+<p>&#x9700;&#x8981;&#x4E00;&#x4E2A;&#x6574;&#x6D01;&#x7684;&#x6253;&#x5305;&#x6D41;&#x7A0B;&#x3002;spec&#x6587;&#x4EF6;&#x4E2D;&#x7684;&#x6781;&#x7279;&#x6B8A;&#x7684;&#x6D41;&#x7A0B;&#x53EF;&#x80FD;&#x4E0D;&#x4F1A;&#x6709;&#x6548;&#xFF0C;&#x56E0;&#x4E3A;&#x8FD9;&#x79CD;&#x6A21;&#x5F0F;&#x9884;&#x671F;&#x4EE5;&#x4E0B;&#x6A21;&#x578B;&#xFF1A;</p>
 </blockquote>
 <ol>
-<li>Code preparation (%prep) （代码准备）</li>
-<li>Code building (%build) （代码编译）</li>
-<li>Code installation (%install) （代码安装）</li>
+<li>Code preparation (%prep) &#xFF08;&#x4EE3;&#x7801;&#x51C6;&#x5907;&#xFF09;</li>
+<li>Code building (%build) &#xFF08;&#x4EE3;&#x7801;&#x7F16;&#x8BD1;&#xFF09;</li>
+<li>Code installation (%install) &#xFF08;&#x4EE3;&#x7801;&#x5B89;&#x88C5;&#xFF09;</li>
 </ol>
 </li>
 </ul>
 <ul>
-<li><p>Because we run the %build section every time, if the %build script has configuration scripts (auto-tools), binaries might be regenerated, causing a complete build every time. To avoid this, you are encouraged to use the following macros, which can be overridden using the –no-configure option:</p>
+<li><p>Because we run the %build section every time, if the %build script has configuration scripts (auto-tools), binaries might be regenerated, causing a complete build every time. To avoid this, you are encouraged to use the following macros, which can be overridden using the &#x2013;no-configure option:</p>
 <blockquote>
-<p>因为每次都运行编译部分，如果%build脚本有自动配置脚本，二进制文件会被重新生成，导致每次都完全编译。为了避免这样情况发生，推荐使用下面的宏，这些宏能够用–no-configure选项来覆盖</p>
+<p>&#x56E0;&#x4E3A;&#x6BCF;&#x6B21;&#x90FD;&#x8FD0;&#x884C;&#x7F16;&#x8BD1;&#x90E8;&#x5206;&#xFF0C;&#x5982;&#x679C;%build&#x811A;&#x672C;&#x6709;&#x81EA;&#x52A8;&#x914D;&#x7F6E;&#x811A;&#x672C;&#xFF0C;&#x4E8C;&#x8FDB;&#x5236;&#x6587;&#x4EF6;&#x4F1A;&#x88AB;&#x91CD;&#x65B0;&#x751F;&#x6210;&#xFF0C;&#x5BFC;&#x81F4;&#x6BCF;&#x6B21;&#x90FD;&#x5B8C;&#x5168;&#x7F16;&#x8BD1;&#x3002;&#x4E3A;&#x4E86;&#x907F;&#x514D;&#x8FD9;&#x6837;&#x60C5;&#x51B5;&#x53D1;&#x751F;&#xFF0C;&#x63A8;&#x8350;&#x4F7F;&#x7528;&#x4E0B;&#x9762;&#x7684;&#x5B8F;&#xFF0C;&#x8FD9;&#x4E9B;&#x5B8F;&#x80FD;&#x591F;&#x7528;&#x2013;no-configure&#x9009;&#x9879;&#x6765;&#x8986;&#x76D6;</p>
 </blockquote>
 <ol>
 <li>%configure: runs the configure script with pre-defined paths and options.</li>
@@ -559,7 +547,7 @@ info: export tar ball and packaging files
 </ol>
 </li>
 </ul>
-<h3 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h3><p>In this example, we use dlog source code. First, we need to build with –incremental, then just modify one source file, and trigger the incremental build again. We will see that only modified source code has been compiled during the incremental build.</p>
+<h3 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h3><p>In this example, we use dlog source code. First, we need to build with &#x2013;incremental, then just modify one source file, and trigger the incremental build again. We will see that only modified source code has been compiled during the incremental build.</p>
 <pre><code>$ cd dlog
 # first build:
 $ gbs build -A i586 --incremental
@@ -607,107 +595,107 @@ info: finished incremental building dlog
 info: Local repo can be found here:
 /home/test/GBS-ROOT/local/repos/tizen/
 info: Done
-</code></pre><p>From the buildlog, we can see that only log.c has been re-compiled. That’s the incremental build behavior.</p>
-<p>–noinit option can be used together with –incremental to make a build more quickly, like:</p>
+</code></pre><p>From the buildlog, we can see that only log.c has been re-compiled. That&#x2019;s the incremental build behavior.</p>
+<p>&#x2013;noinit option can be used together with &#x2013;incremental to make a build more quickly, like:</p>
 <pre><code>$ gbs build --incremental --noinit
 </code></pre><h3 id="Limitations-of-Incremental-Build"><a href="#Limitations-of-Incremental-Build" class="headerlink" title="Limitations of Incremental Build"></a>Limitations of Incremental Build</h3><blockquote>
-<p>增量编译的限制</p>
+<p>&#x589E;&#x91CF;&#x7F16;&#x8BD1;&#x7684;&#x9650;&#x5236;</p>
 </blockquote>
-<p>Incremental build doesn’t support all packages. Here are some limitations:</p>
+<p>Incremental build doesn&#x2019;t support all packages. Here are some limitations:</p>
 <blockquote>
-<p>增量编译不支持所有的包。一些限制如下:</p>
+<p>&#x589E;&#x91CF;&#x7F16;&#x8BD1;&#x4E0D;&#x652F;&#x6301;&#x6240;&#x6709;&#x7684;&#x5305;&#x3002;&#x4E00;&#x4E9B;&#x9650;&#x5236;&#x5982;&#x4E0B;:</p>
 </blockquote>
 <ul>
-<li><p>Incremental build currently supports building only a single package. It doesn’t support building multiple packages in parallel</p>
+<li><p>Incremental build currently supports building only a single package. It doesn&#x2019;t support building multiple packages in parallel</p>
 <blockquote>
-<p>只支持单个包</p>
+<p>&#x53EA;&#x652F;&#x6301;&#x5355;&#x4E2A;&#x5305;</p>
 </blockquote>
 </li>
-<li><p>The tarball’s name in the spec file should be %{name}-%{version}.{tar.gz|tar.bz2|zip|…}, otherwise GBS can’t mount source code to build the root correctly</p>
+<li><p>The tarball&#x2019;s name in the spec file should be %{name}-%{version}.{tar.gz|tar.bz2|zip|&#x2026;}, otherwise GBS can&#x2019;t mount source code to build the root correctly</p>
 <blockquote>
-<p>spec文件中的压缩包名字必须是%{name}-%{version}.{tar.gz|tar.bz2|zip|…}，否则GBS无法正确把源码绑定到build root中</p>
+<p>spec&#x6587;&#x4EF6;&#x4E2D;&#x7684;&#x538B;&#x7F29;&#x5305;&#x540D;&#x5B57;&#x5FC5;&#x987B;&#x662F;%{name}-%{version}.{tar.gz|tar.bz2|zip|&#x2026;}&#xFF0C;&#x5426;&#x5219;GBS&#x65E0;&#x6CD5;&#x6B63;&#x786E;&#x628A;&#x6E90;&#x7801;&#x7ED1;&#x5B9A;&#x5230;build root&#x4E2D;</p>
 </blockquote>
 </li>
 <li><p>%prep section should only contains %setup macro to unpack tarball, and should not contains other source code related operations, such as unpack another source, apply patches, etc.</p>
 <blockquote>
-<p>%prep部分应该仅包含用于解圧压缩包的%setup宏，而不应该含有对源代码的其他操作，比如解压其他源码或打patch等都不允许</p>
+<p>%prep&#x90E8;&#x5206;&#x5E94;&#x8BE5;&#x4EC5;&#x5305;&#x542B;&#x7528;&#x4E8E;&#x89E3;&#x5727;&#x538B;&#x7F29;&#x5305;&#x7684;%setup&#x5B8F;&#xFF0C;&#x800C;&#x4E0D;&#x5E94;&#x8BE5;&#x542B;&#x6709;&#x5BF9;&#x6E90;&#x4EE3;&#x7801;&#x7684;&#x5176;&#x4ED6;&#x64CD;&#x4F5C;&#xFF0C;&#x6BD4;&#x5982;&#x89E3;&#x538B;&#x5176;&#x4ED6;&#x6E90;&#x7801;&#x6216;&#x6253;patch&#x7B49;&#x90FD;&#x4E0D;&#x5141;&#x8BB8;</p>
 </blockquote>
 </li>
 </ul>
-<h2 id="Multiple-packages-build-dependency-build-多包编译"><a href="#Multiple-packages-build-dependency-build-多包编译" class="headerlink" title="Multiple packages build (dependency build) (多包编译)"></a>Multiple packages build (dependency build) (多包编译)</h2><p>Multiple package build has been supported since gbs 0.10. If packages have dependencies on each other, gbs will build packages in the correct order calculated by dependency relationship. Previously built out RPMs will be used to build the following packages that depend on them, which is the dependency build.</p>
+<h2 id="Multiple-packages-build-dependency-build-&#x591A;&#x5305;&#x7F16;&#x8BD1;"><a href="#Multiple-packages-build-dependency-build-&#x591A;&#x5305;&#x7F16;&#x8BD1;" class="headerlink" title="Multiple packages build (dependency build) (&#x591A;&#x5305;&#x7F16;&#x8BD1;)"></a>Multiple packages build (dependency build) (&#x591A;&#x5305;&#x7F16;&#x8BD1;)</h2><p>Multiple package build has been supported since gbs 0.10. If packages have dependencies on each other, gbs will build packages in the correct order calculated by dependency relationship. Previously built out RPMs will be used to build the following packages that depend on them, which is the dependency build.</p>
 <blockquote>
-<p>从gbs 0.10开始就支持多包编译。如果包有相互的依赖，gbs会计算出它们之间的关系然后按正确的顺序来编译。作为依赖编译，先前编译出的RPM包会用来编译后面的有依赖需求的包</p>
+<p>&#x4ECE;gbs 0.10&#x5F00;&#x59CB;&#x5C31;&#x652F;&#x6301;&#x591A;&#x5305;&#x7F16;&#x8BD1;&#x3002;&#x5982;&#x679C;&#x5305;&#x6709;&#x76F8;&#x4E92;&#x7684;&#x4F9D;&#x8D56;&#xFF0C;gbs&#x4F1A;&#x8BA1;&#x7B97;&#x51FA;&#x5B83;&#x4EEC;&#x4E4B;&#x95F4;&#x7684;&#x5173;&#x7CFB;&#x7136;&#x540E;&#x6309;&#x6B63;&#x786E;&#x7684;&#x987A;&#x5E8F;&#x6765;&#x7F16;&#x8BD1;&#x3002;&#x4F5C;&#x4E3A;&#x4F9D;&#x8D56;&#x7F16;&#x8BD1;&#xFF0C;&#x5148;&#x524D;&#x7F16;&#x8BD1;&#x51FA;&#x7684;RPM&#x5305;&#x4F1A;&#x7528;&#x6765;&#x7F16;&#x8BD1;&#x540E;&#x9762;&#x7684;&#x6709;&#x4F9D;&#x8D56;&#x9700;&#x6C42;&#x7684;&#x5305;</p>
 </blockquote>
 <p>Examples:</p>
 <p>1 Build all packages under a specified package directory</p>
 <blockquote>
-<p>编译指定目录下的所有的包</p>
+<p>&#x7F16;&#x8BD1;&#x6307;&#x5B9A;&#x76EE;&#x5F55;&#x4E0B;&#x7684;&#x6240;&#x6709;&#x7684;&#x5305;</p>
 </blockquote>
 <pre><code>$ mkdir tizen-packages
 $ cp package1 package2 package3 ... tizen-packages/
 $ gbs build -A i586 tizen-packages # build all packages under tizen-packages
-</code></pre><p>2 Build multiple packages in parallel with –threads</p>
+</code></pre><p>2 Build multiple packages in parallel with &#x2013;threads</p>
 <blockquote>
-<p>使用–threads选项来并行编译多个包</p>
+<p>&#x4F7F;&#x7528;&#x2013;threads&#x9009;&#x9879;&#x6765;&#x5E76;&#x884C;&#x7F16;&#x8BD1;&#x591A;&#x4E2A;&#x5305;</p>
 </blockquote>
 <pre><code># current directory have multiple packages, --threads can be used to set the max build worker at the same time
 $ gbs build -A armv7l --threads=4
 </code></pre><p>3 Select a group of packages to be built</p>
 <blockquote>
-<p>选择编译一组包</p>
+<p>&#x9009;&#x62E9;&#x7F16;&#x8BD1;&#x4E00;&#x7EC4;&#x5305;</p>
 </blockquote>
-<p>The –binary-from-file option specifies a text file that contains a name list of RPM packages to be built. The format in the text file is one package per line.</p>
-<p>The –binary-list option specifies a list in which the package names are separated by comma.</p>
-<p>When the number of packages is small, thus the packages can be clearly presented in command line, it is recommended to use the –binary-list option for simplicity.</p>
+<p>The &#x2013;binary-from-file option specifies a text file that contains a name list of RPM packages to be built. The format in the text file is one package per line.</p>
+<p>The &#x2013;binary-list option specifies a list in which the package names are separated by comma.</p>
+<p>When the number of packages is small, thus the packages can be clearly presented in command line, it is recommended to use the &#x2013;binary-list option for simplicity.</p>
 <pre><code>$ gbs build -A i586 --binary-from-file=/path/to/packages.list
 $ gbs build -A i586 --binary-list=&lt;pkg1&gt;,&lt;pkg2&gt;
 </code></pre><p>4 Exclude certain packages.</p>
 <blockquote>
-<p>排除某些包</p>
+<p>&#x6392;&#x9664;&#x67D0;&#x4E9B;&#x5305;</p>
 </blockquote>
-<p>The –exclude option specifies a list in which the names of packages to be ignored are separated by comma. The –exclude-from-file option specifies a text file that contains a name list of packages to be ignored.</p>
+<p>The &#x2013;exclude option specifies a list in which the names of packages to be ignored are separated by comma. The &#x2013;exclude-from-file option specifies a text file that contains a name list of packages to be ignored.</p>
 <pre><code>$ gbs build -A i586 tizen-packages --exclude=&lt;pkg1&gt;
 $ gbs build -A i586 tizen-packages --exclude=&lt;pkg1&gt;,&lt;pkg2&gt;
 $ gbs build -A i586 tizen-packages --exclude-from-file=/path/to/packages.list
 </code></pre><p>5 Build packages based on dependencies.</p>
 <blockquote>
-<p>基于依赖来编译包</p>
+<p>&#x57FA;&#x4E8E;&#x4F9D;&#x8D56;&#x6765;&#x7F16;&#x8BD1;&#x5305;</p>
 </blockquote>
-<p>The –deps option enables GBS to build specific packages, together with all the related packages on which they depend.The –rdep option enables GBS to build specific packages, together with all the related packages that depend on them.</p>
-<p>The specific packages can be included by the –binary-from-file option or the –binary-list option, and be excluded by the –exclude option or the –exclude-from-file option.</p>
+<p>The &#x2013;deps option enables GBS to build specific packages, together with all the related packages on which they depend.The &#x2013;rdep option enables GBS to build specific packages, together with all the related packages that depend on them.</p>
+<p>The specific packages can be included by the &#x2013;binary-from-file option or the &#x2013;binary-list option, and be excluded by the &#x2013;exclude option or the &#x2013;exclude-from-file option.</p>
 <p>These two options are compatible. When added at the same time, besides the specific packages, GBS will build not only the related packages on which they depend, but also all the related packages that depend on them.</p>
 <pre><code>$ gbs build -A i586 --binary-list=&lt;pkg1&gt;,&lt;pkg2&gt; --deps
 $ gbs build -A i586 --binary-list=&lt;pkg1&gt;,&lt;pkg2&gt; --rdeps
 $ gbs build -A i586 --binary-list=&lt;pkg1&gt;,&lt;pkg2&gt; --deps --rdeps
-</code></pre><h2 id="Other-useful-options-其他有用的选项"><a href="#Other-useful-options-其他有用的选项" class="headerlink" title="Other useful options (其他有用的选项)"></a>Other useful options (其他有用的选项)</h2><h3 id="Install-extra-packages-to-build-root"><a href="#Install-extra-packages-to-build-root" class="headerlink" title="Install extra packages to build root"></a>Install extra packages to build root</h3><blockquote>
-<p>安装额外的包到build root中</p>
+</code></pre><h2 id="Other-useful-options-&#x5176;&#x4ED6;&#x6709;&#x7528;&#x7684;&#x9009;&#x9879;"><a href="#Other-useful-options-&#x5176;&#x4ED6;&#x6709;&#x7528;&#x7684;&#x9009;&#x9879;" class="headerlink" title="Other useful options (&#x5176;&#x4ED6;&#x6709;&#x7528;&#x7684;&#x9009;&#x9879;)"></a>Other useful options (&#x5176;&#x4ED6;&#x6709;&#x7528;&#x7684;&#x9009;&#x9879;)</h2><h3 id="Install-extra-packages-to-build-root"><a href="#Install-extra-packages-to-build-root" class="headerlink" title="Install extra packages to build root"></a>Install extra packages to build root</h3><blockquote>
+<p>&#x5B89;&#x88C5;&#x989D;&#x5916;&#x7684;&#x5305;&#x5230;build root&#x4E2D;</p>
 </blockquote>
-<p>–extra-packs=<pkgs list="" sep="" by="" comma=""> can be used to install extra packages:</pkgs></p>
+<p>&#x2013;extra-packs=<pkgs list="" sep="" by="" comma=""> can be used to install extra packages:</pkgs></p>
 <pre><code>$ gbs build --extra-packs=vim,zypper,gcc,gdb ...
 </code></pre><h3 id="Keep-all-packages-in-build-root"><a href="#Keep-all-packages-in-build-root" class="headerlink" title="Keep all packages in build root"></a>Keep all packages in build root</h3><blockquote>
-<p>保留所有build root中的包</p>
+<p>&#x4FDD;&#x7559;&#x6240;&#x6709;build root&#x4E2D;&#x7684;&#x5305;</p>
 </blockquote>
-<p>Generally, gbs build will remove unnecessary packages in build root. While transferring to build another package, you can use –keep-packs to keep all unnecessary packages, and just install missing build required packages. This option can be used to speed up build multiple packages.</p>
+<p>Generally, gbs build will remove unnecessary packages in build root. While transferring to build another package, you can use &#x2013;keep-packs to keep all unnecessary packages, and just install missing build required packages. This option can be used to speed up build multiple packages.</p>
 <blockquote>
-<p>通常情况下，gbs build会把build root中的不需要的包删除掉。当要编译另外的包时可以使用–keep-packs选项来保留不再需要的包而只安装缺失的依赖包。这个选项可以加速多个包的编译。</p>
-<p><strong>重要</strong>：重要选项，可以节省编译时间</p>
+<p>&#x901A;&#x5E38;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;gbs build&#x4F1A;&#x628A;build root&#x4E2D;&#x7684;&#x4E0D;&#x9700;&#x8981;&#x7684;&#x5305;&#x5220;&#x9664;&#x6389;&#x3002;&#x5F53;&#x8981;&#x7F16;&#x8BD1;&#x53E6;&#x5916;&#x7684;&#x5305;&#x65F6;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x2013;keep-packs&#x9009;&#x9879;&#x6765;&#x4FDD;&#x7559;&#x4E0D;&#x518D;&#x9700;&#x8981;&#x7684;&#x5305;&#x800C;&#x53EA;&#x5B89;&#x88C5;&#x7F3A;&#x5931;&#x7684;&#x4F9D;&#x8D56;&#x5305;&#x3002;&#x8FD9;&#x4E2A;&#x9009;&#x9879;&#x53EF;&#x4EE5;&#x52A0;&#x901F;&#x591A;&#x4E2A;&#x5305;&#x7684;&#x7F16;&#x8BD1;&#x3002;</p>
+<p><strong>&#x91CD;&#x8981;</strong>&#xFF1A;&#x91CD;&#x8981;&#x9009;&#x9879;&#xFF0C;&#x53EF;&#x4EE5;&#x8282;&#x7701;&#x7F16;&#x8BD1;&#x65F6;&#x95F4;</p>
 </blockquote>
 <pre><code>$ gbs build --keep-packs
-</code></pre><p>–keep-packs can be used to create one build root for building multiple packages. Once the build root is ready, you can use –noinit to build these packages quickly.</p>
+</code></pre><p>&#x2013;keep-packs can be used to create one build root for building multiple packages. Once the build root is ready, you can use &#x2013;noinit to build these packages quickly.</p>
 <blockquote>
-<p>–keep-packs选项可以用来为多个包创建一个build root。一旦build root准备好，就可以用 –noinit 选项来快速的编译这些包</p>
-<p><strong>重要</strong>：–keep-packs 配合 –noinit，可以节省编译时间</p>
+<p>&#x2013;keep-packs&#x9009;&#x9879;&#x53EF;&#x4EE5;&#x7528;&#x6765;&#x4E3A;&#x591A;&#x4E2A;&#x5305;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;build root&#x3002;&#x4E00;&#x65E6;build root&#x51C6;&#x5907;&#x597D;&#xFF0C;&#x5C31;&#x53EF;&#x4EE5;&#x7528; &#x2013;noinit &#x9009;&#x9879;&#x6765;&#x5FEB;&#x901F;&#x7684;&#x7F16;&#x8BD1;&#x8FD9;&#x4E9B;&#x5305;</p>
+<p><strong>&#x91CD;&#x8981;</strong>&#xFF1A;&#x2013;keep-packs &#x914D;&#x5408; &#x2013;noinit&#xFF0C;&#x53EF;&#x4EE5;&#x8282;&#x7701;&#x7F16;&#x8BD1;&#x65F6;&#x95F4;</p>
 </blockquote>
 <pre><code>$ gbs build pkg1/ --keep-packs -A i586
 $ gbs build pkg2/ --keep-packs -A i586
 $ gbs build pkg3/ --keep-packs -A i586
-</code></pre><p>Now, the build root (~/GBS-ROOT/local/scratch.i586.0) is ready for building pkg1, pkg2, and pkg3. You can use –noinit to build them offline, and don’t need waste time to check repo updates and build root.</p>
+</code></pre><p>Now, the build root (~/GBS-ROOT/local/scratch.i586.0) is ready for building pkg1, pkg2, and pkg3. You can use &#x2013;noinit to build them offline, and don&#x2019;t need waste time to check repo updates and build root.</p>
 <pre><code>$ gbs build pkg1 --noinit
 $ gbs build pkg2 --noinit
 $ gbs build pkg3 --noinit
-</code></pre><h2 id="Fetch-the-project-build-conf-and-customize-build-root-for-Advanced-Users-（高级用户，获取项目的编译配置和定制build-root）"><a href="#Fetch-the-project-build-conf-and-customize-build-root-for-Advanced-Users-（高级用户，获取项目的编译配置和定制build-root）" class="headerlink" title="Fetch the project build conf and customize build root (for Advanced Users) （高级用户，获取项目的编译配置和定制build root）"></a>Fetch the project build conf and customize build root (for Advanced Users) （高级用户，获取项目的编译配置和定制build root）</h2><p>Project build conf describes the project build configurations for the project, including pre-defined macros/packages/flags in the build environment. In Tizen releases, the build conf is released together with the released repo. You can find an example at: <a href="http://download.tizen.org/releases/daily/trunk/ivi/latest/builddata/xxx-build.conf" target="_blank" rel="external">http://download.tizen.org/releases/daily/trunk/ivi/latest/builddata/xxx-build.conf</a></p>
+</code></pre><h2 id="Fetch-the-project-build-conf-and-customize-build-root-for-Advanced-Users-&#xFF08;&#x9AD8;&#x7EA7;&#x7528;&#x6237;&#xFF0C;&#x83B7;&#x53D6;&#x9879;&#x76EE;&#x7684;&#x7F16;&#x8BD1;&#x914D;&#x7F6E;&#x548C;&#x5B9A;&#x5236;build-root&#xFF09;"><a href="#Fetch-the-project-build-conf-and-customize-build-root-for-Advanced-Users-&#xFF08;&#x9AD8;&#x7EA7;&#x7528;&#x6237;&#xFF0C;&#x83B7;&#x53D6;&#x9879;&#x76EE;&#x7684;&#x7F16;&#x8BD1;&#x914D;&#x7F6E;&#x548C;&#x5B9A;&#x5236;build-root&#xFF09;" class="headerlink" title="Fetch the project build conf and customize build root (for Advanced Users) &#xFF08;&#x9AD8;&#x7EA7;&#x7528;&#x6237;&#xFF0C;&#x83B7;&#x53D6;&#x9879;&#x76EE;&#x7684;&#x7F16;&#x8BD1;&#x914D;&#x7F6E;&#x548C;&#x5B9A;&#x5236;build root&#xFF09;"></a>Fetch the project build conf and customize build root (for Advanced Users) &#xFF08;&#x9AD8;&#x7EA7;&#x7528;&#x6237;&#xFF0C;&#x83B7;&#x53D6;&#x9879;&#x76EE;&#x7684;&#x7F16;&#x8BD1;&#x914D;&#x7F6E;&#x548C;&#x5B9A;&#x5236;build root&#xFF09;</h2><p>Project build conf describes the project build configurations for the project, including pre-defined macros/packages/flags in the build environment. In Tizen releases, the build conf is released together with the released repo. You can find an example at: <a href="http://download.tizen.org/releases/daily/trunk/ivi/latest/builddata/xxx-build.conf" target="_blank" rel="external">http://download.tizen.org/releases/daily/trunk/ivi/latest/builddata/xxx-build.conf</a></p>
 <pre><code>gbs build will fetch the build conf automatically
-</code></pre><p>Starting from gbs 0.7.1, by default, gbs will fetch the build conf from a remote repo, if you specify the remote Tizen repo, and then store it in your temp environment. Here’s the build log:</p>
+</code></pre><p>Starting from gbs 0.7.1, by default, gbs will fetch the build conf from a remote repo, if you specify the remote Tizen repo, and then store it in your temp environment. Here&#x2019;s the build log:</p>
 <pre><code>$ gbs build -A i586
 info: generate repositories ...
 info: build conf has been downloaded at:
@@ -815,7 +803,7 @@ $ gbs build -A i586 -D ~/tizen2.0.conf
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">9</span>
+              <span class="site-state-item-count">10</span>
               <span class="site-state-item-name">posts</span>
             </a>
           </div>
@@ -829,7 +817,7 @@ $ gbs build -A i586 -D ~/tizen2.0.conf
 
           <div class="site-state-item site-state-tags">
             <a href="/tags">
-              <span class="site-state-item-count">12</span>
+              <span class="site-state-item-count">14</span>
               <span class="site-state-item-name">tags</span>
               </a>
           </div>
