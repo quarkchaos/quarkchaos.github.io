@@ -200,6 +200,430 @@
             
             
               
+                <a class="post-title-link" href="/2016/03/05/shuffle-algorithm/" itemprop="url">
+                  Shuffle Algorithm
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            Posted on
+            <time itemprop="dateCreated" datetime="2016-03-05T21:22:50+08:00" content="2016-03-05">
+              2016-03-05
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody">
+            
+              <html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Shuffle Algorithm</title>
+  <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+  </script>
+  <script type="text/javascript" async src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML">
+  </script>
+
+  <style>
+    /* remove class of theme */
+    /*.one-column .main-inner {
+      width: 960px; 
+    }
+    .main-inner {
+      width: 960px; 
+    }*/
+    
+    div.shuffle-algorithm {
+      background: #fcfcfa;
+      color: #333;
+      font-family: "Microsoft YaHei", Helvetica, sans-serif;
+      margin: 1em auto 4em auto;
+      position: relative;
+      width: 960px;
+    }
+    
+    .shuffle-algorithm header,
+    .shuffle-algorithm footer {
+      font-size: small;
+    }
+    
+    .shuffle-algorithm footer {
+      margin-top: 8em;
+    }
+    
+    .shuffle-algorithm p,
+    .shuffle-algorithm pre {
+      width: 720px;
+    }
+    
+    .shuffle-algorithm aside {
+      width: 200px;
+      position: absolute;
+      right: 0;
+      font-size: small;
+    }
+    
+    .shuffle-algorithm h1 {
+      font-size: 48px;
+      font-weight: 100;
+      margin-bottom: 1em;
+    }
+    
+    .shuffle-algorithm .lib-name {
+      color: firebrick;
+    }
+    
+    .shuffle-algorithm .chart {
+      width: 960px;
+      height: 80px;
+    }
+    
+    .shuffle-algorithm .naive-shuffle {
+      height: 160px;
+    }
+    
+    .shuffle-algorithm .play path {
+      stroke: #fff;
+      stroke-width: 6px;
+      fill: #fc0;
+    }
+    
+    .shuffle-algorithm .play:hover path {
+      fill: red;
+    }
+    
+    .shuffle-algorithm .play rect {
+      fill: none;
+      pointer-events: all;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="shuffle-algorithm">
+    <header>
+      <p>Febrary 28, 2016 / <a class="author" href="" rel="author">Jason Wang</a></p>
+      <h1>&#x6D17;&#x724C;&#x7B97;&#x6CD5;</h1>
+    </header>
+    <div>
+      <p>&#x4E3A;&#x4E86;&#x4FDD;&#x8BC1;&#x6253;&#x724C;&#x65F6;&#x7684;&#x516C;&#x5E73;&#x6027;&#xFF0C;&#x6D17;&#x724C;&#x540E;&#x7684;&#x724C;&#x5806;&#x5E94;&#x5F53;&#x662F;&#x5B8C;&#x5168;&#x968F;&#x673A;&#x7684;&#x3002;</p>
+      <p>&#x4ECE;&#x6982;&#x7387;&#x7684;&#x89D2;&#x5EA6;&#x6765;&#x8BF4;&#xFF0C;&#x724C;&#x5806;&#x53EF;&#x4EE5;&#x770B;&#x6210;&#x4E00;&#x4E2A;&#x7F16;&#x53F7;&#x4E3A; $ 1 $ &#x5230; $ n $ &#x7684;&#x6570;&#x7684;&#x5E8F;&#x5217;&#xFF0C;&#x8FD9;&#x4E2A;&#x5E8F;&#x5217;&#x7684;&#x6392;&#x5217;&#x7EC4;&#x5408;&#x6570;&#x4E3A; $ n! $&#x3002;</p>
+
+      <svg class="chart unshuffled">
+      <aside>&#x6574;&#x9F50;&#x7684;&#x724C;&#x5806;</aside>
+      <p>&#x5B8C;&#x5168;&#x968F;&#x673A;&#x4E5F;&#x5C31;&#x662F;&#x8BF4;&#x6BCF;&#x4E00;&#x79CD;&#x6392;&#x5217;&#x7EC4;&#x5408;&#x51FA;&#x73B0;&#x7684;&#x6982;&#x7387;&#x76F8;&#x7B49;&#xFF0C;&#x6982;&#x7387;&#x4E3A; $ \frac{1}{n!} $</p>
+
+
+      <h3>&#x6734;&#x7D20;&#x6D17;&#x724C;&#x7B97;&#x6CD5;</h3>
+      <p>&#x6240;&#x8C13;&#x6734;&#x7D20;&#xFF0C;&#x5C31;&#x662F;&#x8BF4;&#x6BCF;&#x6B21;&#x4ECE;&#x672A;&#x53D6;&#x51FA;&#x7684;&#x6570;&#x4E2D;&#x968F;&#x673A;&#x53D6;&#x51FA;&#x4E00;&#x4E2A;&#x6570;&#xFF0C;&#x6392;&#x6210;&#x5E8F;&#x5217;&#x3002;</p>
+
+      <svg class="chart naive-shuffle">
+      <aside>&#x70B9;&#x51FB;&#x5F00;&#x59CB;&#x6D17;&#x724C;</aside>
+
+      <p>JavaScript&#x7684;&#x4EE3;&#x7801;&#x5982;&#x4E0B;&#xFF1A;</p>
+      <pre>
+        <code class="javascript">
+function naiveShuffle(array) {
+  var shuffle = [];
+  var n = array.length;
+  var i;
+
+  while (n) {
+    // Pick a random element
+    i = Math.floor(Math.random() * n--);
+
+    // Add the element to new pack
+    // Re-order the left elements
+    shuffle.push(array.splice(i, 1));
+  }
+
+  return shuffle;
+}
+        </code>
+      </pre>
+
+      <p>&#x53D6;&#x7B2C;&#x4E00;&#x4E2A;&#x6570;&#x65F6;&#xFF0C;&#x4ECE; $ n $ &#x4E2A;&#x6570;&#x4E2D;&#x968F;&#x673A;&#x53D6;&#x4E00;&#x4E2A;&#x6570;&#xFF08;&#x6709; $ n $ &#x79CD;&#x53EF;&#x80FD;&#xFF09;&#xFF1B;&#x53D6;&#x7B2C;&#x4E8C;&#x4E2A;&#x6570;&#x65F6;&#xFF0C;&#x4ECE;&#x5269;&#x4E0B;&#x7684; $ n - 1 $ &#x4E2A;&#x6570;&#x4E2D;&#x968F;&#x673A;&#x53D6;&#x4E00;&#x4E2A;&#x6570;&#xFF08;&#x6709; $n - 1$ &#x79CD;&#x53EF;&#x80FD;&#xFF09;&#xFF1B;&#x5982;&#x6B64;&#x91CD;&#x590D; $n$ &#x6B21;&#xFF0C;&#x5219;&#x53EF;&#x5F97;&#x5230;&#x4E00;&#x4E2A;&#x5E8F;&#x5217;&#x3002;</p>
+      <p>&#x6B64;&#x5E8F;&#x5217;&#x7684;&#x6982;&#x7387;&#x4E3A; $ \frac{1}{n!} $ &#xFF0C; &#x4E0E;&#x5B8C;&#x5168;&#x968F;&#x673A;&#x7684;&#x6982;&#x7387;&#x4E00;&#x81F4;&#x3002;</p>
+      <p>&#x5206;&#x6790;&#x4E00;&#x4E0B;&#x6B64;&#x7B97;&#x6CD5;&#x7684;&#x6027;&#x80FD;</p>
+      <p>&#x7A7A;&#x95F4;: $ O(n) $, &#x9700;&#x8981;&#x4E00;&#x4E2A;&#x989D;&#x5916;&#x7684;&#x5927;&#x5C0F;&#x4E3A; $ n $ &#x7684;&#x7A7A;&#x95F4;&#x5B58;&#x50A8;&#x7ED3;&#x679C;</p>
+      <p>&#x65F6;&#x95F4;: $ O(n^{2}) $, while&#x5FAA;&#x73AF;&#x7684;&#x590D;&#x6742;&#x5EA6;&#x4E3A; $ O(n) $ , &#x5FAA;&#x73AF;&#x5185;&#x6574;&#x7406;&#x724C;&#x5806;&#x7684;&#x590D;&#x6742;&#x5EA6;&#x4E5F;&#x4E3A; $ O(n) $&#x3002;</p>
+
+
+      <h3>Fisher-Yates&#x7B97;&#x6CD5;</h3>
+      <p>&#x63A5;&#x4E0B;&#x6765;&#x4ECB;&#x7ECD;&#x4E00;&#x79CD;&#x66F4;&#x4E3A;&#x6709;&#x6548;&#x7684;&#x7B97;&#x6CD5;&#x3002;</p>
+      <svg class="chart fisher-yates-shuffle">
+      <pre>
+        <code class="javascript">
+function fisherYatesShuffle(array) {
+  var n = array.length;
+  var i;
+
+  while (n) {
+    // Pick a random element
+    i = Math.floor(Math.random() * n--);
+
+    // Swap the random element with element in position n.
+    t = array[n];
+    array[n] = array[i];
+    array[i] = t;
+  }
+
+  return array;
+}
+        </code>
+      </pre>
+      <p>&#x4ECE;&#x7B2C; $ 1 $ &#x5230; $ n $ &#x4E2A;&#x6570;&#x4E2D;&#x968F;&#x673A;&#x9009;&#x53D6;&#x4E00;&#x4E2A;&#x6570;&#xFF0C;&#x548C;&#x7B2C; $ n $ &#x4E2A;&#x6570;&#x4EA4;&#x6362;&#xFF0C;&#x6BCF;&#x6B21;&#x5C06; $ n $ &#x7684;&#x503C;&#x51CF; $ 1 $ &#xFF0C;&#x5982;&#x6B64;&#x91CD;&#x590D; $ n $ &#x6B21;&#xFF0C;&#x5219;&#x53EF;&#x5F97;&#x5230;&#x4E00;&#x4E2A;&#x5E8F;&#x5217;&#x3002;</p>
+      <p>&#x6B64;&#x5E8F;&#x5217;&#x7684;&#x6982;&#x7387;&#x540C;&#x6837;&#x4E3A; $ \frac{1}{n!} $ &#x3002;</p>
+      <p>&#x540C;&#x6837;&#x5206;&#x6790;&#x4E00;&#x4E0B;&#x6B64;&#x7B97;&#x6CD5;&#x7684;&#x6027;&#x80FD;</p>
+      <p>&#x7A7A;&#x95F4;: $ O(0) $, &#x56E0;&#x4E3A;&#x5C06;&#x5F53;&#x524D;&#x4F4D;&#x7F6E;&#x7684;&#x6570;&#x5B58;&#x653E;&#x5728;&#x4E0E;&#x4E4B;&#x4EA4;&#x6362;&#x7684;&#x6570;&#x7684;&#x4F4D;&#x7F6E;&#x4E0A;&#xFF0C;&#x6240;&#x4EE5;&#x4E0D;&#x9700;&#x8981;&#x989D;&#x5916;&#x7684;&#x7A7A;&#x95F4;&#x3002;</p>
+      <p>&#x65F6;&#x95F4;: $ O(n) $, while&#x5FAA;&#x73AF;&#x7684;&#x590D;&#x6742;&#x5EA6;&#x4E3A; $ O(n) $ , &#x5FAA;&#x73AF;&#x5185;&#x64CD;&#x4F5C;&#x7684;&#x590D;&#x6742;&#x5EA6;&#x4E3A; $ O(1) $&#x3002;</p>
+    </svg></svg></svg></div>
+    <footer>
+      <p>&#x672C;&#x6587;&#x4E3B;&#x8981;&#x53C2;&#x8003;&#x4E86;Mike Bostock&#x7684; <a href="https://bost.ocks.org/mike/shuffle/" target="_blank" rel="external">&quot;Fisher&#x2013;Yates Shuffle&quot;</a></p>
+      <p><span class="lib-name">&#x53EF;&#x89C6;&#x5316;</span>&#x4F7F;&#x7528;&#x4E86;<a href="https://d3js.org/" target="_blank" rel="external">D3.js</a></p>
+      <p><span class="lib-name">&#x8BED;&#x6CD5;&#x9AD8;&#x4EAE;</span>&#x4F7F;&#x7528;&#x4E86;<a href="https://www.highlightjs.org/" target="_blank" rel="external">highlightjs</a></p>
+      <p><span class="lib-name">&#x6570;&#x5B66;&#x516C;&#x5F0F;&#x5F15;&#x64CE;</span>&#x4F7F;&#x7528;&#x4E86;<a href="https://www.mathjax.org/" target="_blank" rel="external">MathJax</a></p>
+    </footer>
+  </div>
+
+  <script>
+    var n = 200;
+
+    var margin = {
+      top: 10,
+      right: 0,
+      bottom: 10,
+      left: 0
+    };
+
+    var width = 960;
+    var height = 80;
+
+    var areaWidth = width - margin.left - margin.right;
+    var areaHeight = height - margin.top - margin.bottom;
+
+    var barOffset = areaWidth / n;
+    var barWidth = 2;
+    var barHeight = areaHeight;
+    var minBarHeight = 10;
+
+    function x(d) {
+      return d * barOffset;
+    }
+
+    /**
+     * Create a chart of bars to demonstrate algorithm
+     * @param options.update - callback of update d3 chart
+     * @param options.y - Y offset of chart
+     */
+    function createChart(options) {
+
+      var update = options.update;
+      var y = options.y || 0;
+
+
+      var chart = d3.select(options.chart)
+        .append('g')
+        .attr('transform', 'translate(' + margin.left + ',' + margin.top + ')');
+
+      var bar = chart.selectAll('rect')
+        .data(d3.range(n))
+        .enter().append('rect')
+        .attr('x', 0)
+        .attr('y', function(d, i) {
+          return (1 - i / n) * (barHeight - minBarHeight);
+        })
+        .attr('width', barWidth)
+        .attr('height', function(d, i) {
+          return minBarHeight + i / n * (barHeight - minBarHeight);
+        })
+        .style('fill', function(d, i) {
+          var h = 420 - i / n * 60;
+          h = h >= 360 ? h - 360 : h;
+          return d3.hsl(h, 1, 0.5);
+        })
+        .style('stroke', '#000')
+        .style('stroke-width', 0);
+
+      reset(chart);
+
+      if (options.play) {
+        var play = chart.append('g')
+          .attr("class", "play")
+          .on("click", start);
+
+        play.append("path")
+          .attr("d", "M-30,-30L30,0L-30,30Z")
+          .attr("transform", "translate(" + areaWidth / 2 + "," + (y + areaHeight / 2) + ")scale(.4)");
+
+        play.append("rect")
+          .attr("width", areaWidth)
+          .attr("height", areaHeight);
+      }
+      
+      return chart;
+
+      function start() {
+        play.style("display", "none");
+        var m = n;
+        if (bar.shuffled) {
+          reset(chart);
+          bar.shuffled = false;
+        }
+        bar = chart.selectAll('rect');
+        var interval = setInterval(function() {
+          m = update(bar, m, y);
+          if (m == 0) {
+            setTimeout(function() {
+              play.style("display", null);
+            }, 1000);
+            bar.shuffled = true;
+            clearInterval(interval);
+          }
+        }, 100);
+      }
+
+      function reset(chart) {
+        chart.selectAll("rect")
+          .attr("transform", function(d, i) {
+            return "translate(" + x(i) + "," + y + ")";
+          });
+      }
+    }
+
+    // unshuffled
+    createChart({
+      chart: '.unshuffled'
+    });
+
+    // naive-shuffle
+    createChart({
+      y: height,
+      chart: '.naive-shuffle',
+      play: true,
+      update: function(bar, m, y) {
+        var i = Math.floor(Math.random() * m);
+        var a = bar[0].splice(i, 1)[0];
+
+        d3.select(a)
+          .style('stroke-width', '2px')
+          .transition()
+          .duration(1000)
+          .style('stroke-width', '0')
+          .attr("transform", "translate(" + x(n - m) + "," + 0 + ")");
+
+        bar.attr("transform", function(d, i) {
+          return "translate(" + x(i) + "," + y + ")";
+        });
+        return --m;
+      }
+    });
+
+    // Fisher–Yates Shuffle
+    createChart({
+      chart: '.fisher-yates-shuffle',
+      play: true,
+
+      update: function(bar, m) {
+        var i = Math.floor(Math.random() * m);
+        m--;
+        var a = bar[0][i];
+        var b = bar[0][m];
+
+        //        console.log('i: ' + i + ', m: ' + m);
+
+        bar[0][i] = b;
+        bar[0][m] = a;
+
+        d3.select(b)
+          .transition()
+          .duration(1000)
+          .style('stroke-width', '0')
+          .attr("transform", "translate(" + x(i) + "," + 0 + ")");
+
+        d3.select(a) // in position m
+          .style('stroke-width', '2px')
+          .transition()
+          .duration(1000)
+          .style('stroke-width', '0')
+          .attr("transform", "translate(" + x(m) + "," + 0 + ")")
+
+        return m;
+      }
+    });
+  </script>
+</body>
+
+<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.2.0/styles/default.min.css">
+<script src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.2.0/highlight.min.js"></script>
+<script>
+  hljs.initHighlightingOnLoad();
+</script>
+
+</html>
+            
+          </span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
                 <a class="post-title-link" href="/2016/03/05/hello-world/" itemprop="url">
                   Hello Hexo
                 </a>
@@ -310,7 +734,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">11</span>
+              <span class="site-state-item-count">12</span>
               <span class="site-state-item-name">posts</span>
             </a>
           </div>
@@ -324,7 +748,7 @@
 
           <div class="site-state-item site-state-tags">
             <a href="/tags">
-              <span class="site-state-item-count">16</span>
+              <span class="site-state-item-count">17</span>
               <span class="site-state-item-name">tags</span>
               </a>
           </div>
