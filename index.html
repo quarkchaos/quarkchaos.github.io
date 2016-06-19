@@ -315,7 +315,15 @@ Windows -- C:\Documents and Settings\{your-username}\.m2\
   &lt;name&gt;Human Readable Name for this Mirror.&lt;/name&gt;
   &lt;url&gt;http://uk.maven.org/maven2/&lt;/url&gt;
 &lt;/mirror&gt;
-</code></pre>
+</code></pre><h2 id="4-&#x5B89;&#x88C5;&#x672C;&#x5730;-jar-&#x5305;"><a href="#4-&#x5B89;&#x88C5;&#x672C;&#x5730;-jar-&#x5305;" class="headerlink" title="4 &#x5B89;&#x88C5;&#x672C;&#x5730; jar &#x5305;"></a>4 &#x5B89;&#x88C5;&#x672C;&#x5730; jar &#x5305;</h2><p>&#x5982;&#x679C;&#x5DF2;&#x7ECF;&#x4E0B;&#x8F7D;&#x597D;&#x7684; jar &#x5305;&#xFF0C;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x5982;&#x4E0B;&#x547D;&#x4EE4;&#x5B89;&#x88C5;&#x5230; Maven &#x7684;&#x672C;&#x5730;&#x4ED3;&#x5E93;
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mvn install:install-file -DgroupId=&lt;groupId&gt; -DartifactId=&lt;artifactId&gt; -Dversion=&lt;version&gt; -Dpackaging=jar -Dfile=/path/to/jar/file</span><br></pre></td></tr></table></figure></p>
+<p>&#x53C2;&#x6570;&#x8BF4;&#x660E;&#xFF1A;</p>
+<p>-DgroupId=<groupid>       &#x5305;&#x7684; group Id</groupid></p>
+<p>-DartifactId=<artifactid> &#x5305;&#x7684; artifact Id</artifactid></p>
+<p>-Dversion=<version>       &#x5305;&#x7684;&#x7248;&#x672C;&#x53F7;</version></p>
+<p>&#x4F8B;&#x5982;&#xFF0C;&#x5B89;&#x88C5;&#x5DF2;&#x4E0B;&#x8F7D;&#x597D;&#x7684; myBatis &#x5305;&#xFF1A;
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mvn install:install-file -DgroupId=org.mybatis -DartifactId=mybatis -Dversion=3.4.0 -Dpackaging=jar -Dfile=mybatis-3.4.0.jar</span><br></pre></td></tr></table></figure></p>
+
             
           </span>
         
