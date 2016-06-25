@@ -1,11 +1,16 @@
 <!doctype html>
-<html class="theme-next use-motion ">
-<head>
+
+
+
   
 
-<meta charset="UTF-8"/>
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
 
 
 <meta http-equiv="Cache-Control" content="no-transform" />
@@ -18,85 +23,127 @@
 
 
 
-  <link rel="stylesheet" type="text/css" href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5"/>
+
 
 
 
   
-    <link href='//fonts.googleapis.com/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
   
 
 
-<link rel="stylesheet" type="text/css" href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" />
-
-<link rel="stylesheet" type="text/css" href="/css/main.css?v=0.4.5.2"/>
 
 
 
 
-  <meta name="keywords" content="Hexo,next" />
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
 
 
 
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.2" />
 
 
-<meta name="description">
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="Play Fun">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Jason Wang's Notes">
+<meta property="og:title" content="Jason Wang's Playground">
 <meta property="og:url" content="https://quarkchaos.github.com/index.html">
-<meta property="og:site_name" content="Jason Wang's Notes">
-<meta property="og:description">
+<meta property="og:site_name" content="Jason Wang's Playground">
+<meta property="og:description" content="Play Fun">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Jason Wang's Notes">
-<meta name="twitter:description">
+<meta name="twitter:title" content="Jason Wang's Playground">
+<meta name="twitter:description" content="Play Fun">
+
 
 
 <script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
   var CONFIG = {
-    scheme: '',
-    sidebar: 'always'
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: 'Author'
+    }
   };
 </script>
 
-
-
-<script>
-  var _hmt = _hmt || [];
-  (function() {
-    var hm = document.createElement("script");
-    hm.src = "//hm.baidu.com/hm.js?ea2c42d3a5f14cd212a7a74fe032f86d";
-    var s = document.getElementsByTagName("script")[0]; 
-    s.parentNode.insertBefore(hm, s);
-  })();
-</script>
-
-  <title> Jason Wang's Notes </title>
+  <title> Jason Wang's Playground </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="en">
 
-  <!--[if lte IE 8]>
-  <div style=' clear: both; height: 59px; padding:0 0 0 15px; position: relative;margin:0 auto;'>
-    <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
-      <img src="http://7u2nvr.com1.z0.glb.clouddn.com/picouterie.jpg" border="0" height="42" width="820"
-           alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today or use other browser ,like chrome firefox safari."
-           style='margin-left:auto;margin-right:auto;display: block;'/>
-    </a>
-  </div>
-<![endif]-->
   
 
 
 
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?ea2c42d3a5f14cd212a7a74fe032f86d";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
 
 
 
-  <div class="container one-column 
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left 
    page-home 
-">
+ ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -106,7 +153,7 @@
   <div class="custom-logo-site-title">
     <a href="/"  class="brand" rel="start">
       <span class="logo-line-before"><i></i></span>
-      <span class="site-title">Jason Wang's Notes</span>
+      <span class="site-title">Jason Wang's Playground</span>
       <span class="logo-line-after"><i></i></span>
     </a>
   </div>
@@ -125,13 +172,13 @@
   
 
   
-    <ul id="menu" class="menu ">
+    <ul id="menu" class="menu">
       
         
         <li class="menu-item menu-item-home">
           <a href="/" rel="section">
             
-              <i class="menu-item-icon fa fa-home"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
             Home
           </a>
@@ -141,7 +188,7 @@
         <li class="menu-item menu-item-archives">
           <a href="/archives" rel="section">
             
-              <i class="menu-item-icon fa fa-archive"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
             Archives
           </a>
@@ -151,7 +198,7 @@
         <li class="menu-item menu-item-tags">
           <a href="/tags" rel="section">
             
-              <i class="menu-item-icon fa fa-tags"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
             
             Tags
           </a>
@@ -161,14 +208,13 @@
         <li class="menu-item menu-item-commonweal">
           <a href="/404.html" rel="section">
             
-              <i class="menu-item-icon fa fa-heartbeat"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />
             
             公益404
           </a>
         </li>
       
 
-      
       
     </ul>
   
@@ -181,11 +227,17 @@
 
     <main id="main" class="main">
       <div class="main-inner">
-        <div id="content" class="content"> 
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
   <section id="posts" class="posts-expand">
     
       
 
+  
+  
+
+  
   
   
 
@@ -200,6 +252,139 @@
             
             
               
+                
+                <a class="post-title-link" href="/2016/06/25/dive-into-java-2-jvm-runtime-data-area/" itemprop="url">
+                  Dive into java (2) -- JVM Runtime Data Area
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2016-06-25T20:01:23+08:00" content="2016-06-25">
+              2016-06-25
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="&#x6982;&#x8FF0;"><a href="#&#x6982;&#x8FF0;" class="headerlink" title="&#x6982;&#x8FF0;"></a>&#x6982;&#x8FF0;</h1><p>&#x4E0D;&#x540C;&#x4E8E; C/C++ &#x7A0B;&#x5E8F;&#xFF0C;JVM &#x62E5;&#x6709;&#x81EA;&#x52A8;&#x5185;&#x5B58;&#x7BA1;&#x7406;&#x673A;&#x5236;&#xFF0C;&#x4F7F;&#x5F97;&#x5F00;&#x53D1;&#x4EBA;&#x5458;&#x4E0D;&#x9700;&#x8981;&#x624B;&#x52A8;&#x5730;&#x91CA;&#x653E;&#x5185;&#x5B58;&#x3002;&#x4F46;&#x662F;&#x5BF9;&#x5F00;&#x53D1;&#x4EBA;&#x5458;&#x6765;&#x8BF4;&#xFF0C;&#x8FD8;&#x662F;&#x5E94;&#x5F53;&#x4E86;&#x89E3; JVM &#x662F;&#x5982;&#x4F55;&#x4F7F;&#x7528;&#x5185;&#x5B58;&#x7684;&#x3002;</p>
+<p>JVM &#x6267;&#x884C; Java &#x7A0B;&#x5E8F;&#x65F6;&#xFF0C;&#x4F1A;&#x6839;&#x636E; Java &#x865A;&#x62DF;&#x673A;&#x89C4;&#x8303;&#xFF0C;&#x5C06;&#x5B83;&#x6240;&#x7BA1;&#x7406;&#x7684;&#x5185;&#x5B58;&#x5206;&#x4E3A;&#x51E0;&#x4E2A;&#x533A;&#x57DF;&#xFF0C;&#x6BCF;&#x4E2A;&#x533A;&#x57DF;&#x6709;&#x5404;&#x81EA;&#x7684;&#x7528;&#x9014;&#x548C;&#x529F;&#x80FD;&#x3002;&#x8FD9;&#x4E9B;&#x533A;&#x57DF;&#x88AB;&#x79F0;&#x4E3A;&#x8FD0;&#x884C;&#x65F6;&#x6570;&#x636E;&#x533A;&#x57DF;&#xFF08;Runtime Data Area&#xFF09;&#x3002;&#x5176;&#x6846;&#x56FE;&#x5982;&#x4E0B;&#xFF1A;</p>
+<p><img src="/2016/06/25/dive-into-java-2-jvm-runtime-data-area/runtime-data-area.png" alt=""></p>
+<center>&#x56FE;&#xFF1A;JVM Runtime Data Area</center>
+
+<h1 id="&#x7A0B;&#x5E8F;&#x8BA1;&#x6570;&#x5668;&#xFF08;Program-Counter-Register&#xFF09;"><a href="#&#x7A0B;&#x5E8F;&#x8BA1;&#x6570;&#x5668;&#xFF08;Program-Counter-Register&#xFF09;" class="headerlink" title="&#x7A0B;&#x5E8F;&#x8BA1;&#x6570;&#x5668;&#xFF08;Program Counter Register&#xFF09;"></a>&#x7A0B;&#x5E8F;&#x8BA1;&#x6570;&#x5668;&#xFF08;Program Counter Register&#xFF09;</h1><p>&#x7A0B;&#x5E8F;&#x8BA1;&#x6570;&#x5668;&#x7528;&#x4E8E;&#x5B58;&#x50A8;&#x6BCF;&#x4E2A;&#x7EBF;&#x7A0B;&#x6267;&#x884C;&#x7684; JVM &#x5B57;&#x8282;&#x6307;&#x4EE4;&#x7684;&#x4F4D;&#x7F6E;&#x3002;&#x5176;&#x5DE5;&#x4F5C;&#x65B9;&#x5F0F;&#x7C7B;&#x4F3C;&#x4E8E;&#x771F;&#x5B9E; CPU &#x4E2D;&#x7684; PC &#x5BC4;&#x5B58;&#x5668;&#x3002;&#x8BFB;&#x53D6;&#x5F53;&#x524D;&#x6307;&#x4EE4;&#x3001;&#x5206;&#x652F;&#x3001;&#x8DF3;&#x8F6C;&#x7B49;&#x90FD;&#x4F9D;&#x8D56;&#x4E8E;&#x7A0B;&#x5E8F;&#x8BA1;&#x6570;&#x5668;&#x5B8C;&#x6210;&#x3002;</p>
+<p>&#x6BCF;&#x4E00;&#x4E2A;&#x7EBF;&#x7A0B;&#x90FD;&#x6709;&#x72EC;&#x7ACB;&#x7684;&#x7A0B;&#x5E8F;&#x8BA1;&#x6570;&#x5668;&#xFF0C;&#x5F7C;&#x6B64;&#x4E92;&#x4E0D;&#x5E72;&#x6270;&#x3002;&#x56E0;&#x6B64;&#xFF0C;&#x6B64;&#x6570;&#x636E;&#x533A;&#x57DF;&#x662F;&#x201C;&#x7EBF;&#x7A0B;&#x79C1;&#x6709;&#x201D;&#x7684;&#x3002;</p>
+<p>&#x53E6;&#x5916;&#xFF0C;&#x5F53;&#x8FD0;&#x884C; Native &#x65B9;&#x6CD5;&#x65F6;&#xFF0C;&#x5219;&#x6B64;&#x6570;&#x636E;&#x533A;&#x57DF;&#x4E2D;&#x4E0D;&#x5B58;&#x50A8;&#x4FE1;&#x606F;&#x3002;</p>
+<h1 id="JVM-&#x6808;&#xFF08;JVM-Stack&#xFF09;"><a href="#JVM-&#x6808;&#xFF08;JVM-Stack&#xFF09;" class="headerlink" title="JVM &#x6808;&#xFF08;JVM Stack&#xFF09;"></a>JVM &#x6808;&#xFF08;JVM Stack&#xFF09;</h1><p><img src="/2016/06/25/dive-into-java-2-jvm-runtime-data-area/stack-and-heap.png" alt=""></p>
+<center>&#x56FE;&#xFF1A;JVM &#x6808;&#x548C;&#x5806;&#x793A;&#x610F;&#x56FE;</center>
+
+<p>JVM &#x6808;&#x4E2D;&#x7528;&#x4E8E;&#x5B58;&#x653E;&#x5F53;&#x524D;&#x7EBF;&#x7A0B;&#x4E2D;&#x7684;&#x4E00;&#x4E9B;&#x6570;&#x636E;&#xFF1A;</p>
+<p><strong>1) &#x5C40;&#x90E8;&#x53D8;&#x91CF;&#xFF08;&#x57FA;&#x672C;&#x7C7B;&#x578B;&#xFF09;</strong></p>
+<p>Java &#x4E2D;&#x5B9A;&#x4E49;&#x7684;&#x516B;&#x79CD;&#x57FA;&#x672C;&#x7C7B;&#x578B;&#xFF1A;boolean&#x3001;char&#x3001;byte&#x3001;short&#x3001;int&#x3001;long&#x3001;float&#x3001;double&#x3002;</p>
+<p>&#x9664;&#x4E86; double &#x578B;&#x6570;&#x636E;&#x5360;&#x7528;&#x4E24;&#x4E2A; Slot&#xFF08;&#x5C40;&#x90E8;&#x53D8;&#x91CF;&#x7A7A;&#x95F4;&#xFF09;&#x5916;&#xFF0C;&#x5176;&#x5B83;&#x6570;&#x636E;&#x5728;&#x6808;&#x4E2D;&#x5360;&#x7528;&#x4E00;&#x4E2A; Slot&#x3002;</p>
+<p><strong>2) &#x5BF9;&#x8C61;&#x5F15;&#x7528;</strong></p>
+<p>&#x5BF9;&#x8C61;&#x7684;&#x5728;&#x5806;&#x4E2D;&#x7684;&#x5730;&#x5740;&#x6216;&#x8005;&#x53EF;&#x4EE5;&#x5F97;&#x5230;&#x5BF9;&#x8C61;&#x7684;&#x53E5;&#x67C4;&#x3002;</p>
+<p><strong>3) returnAddress&#x7C7B;&#x578B;</strong></p>
+<p>&#x6307;&#x5411;&#x4E00;&#x6761;&#x5B57;&#x8282;&#x7801;&#x6307;&#x4EE4;&#x7684;&#x5730;&#x5740;&#x3002;</p>
+<p><strong>4) &#x6808;&#x5E27;&#xFF08;Stack Frame&#xFF09;</strong></p>
+<p>&#x6808;&#x5E27;&#xFF0C;&#x7528;&#x4E8E;&#x5B58;&#x50A8;&#x5C40;&#x90E8;&#x53D8;&#x91CF;&#x8868;&#x3001;&#x64CD;&#x4F5C;&#x6570;&#x6808;&#x3001;&#x52A8;&#x6001;&#x94FE;&#x63A5;&#x3001;&#x65B9;&#x6CD5;&#x51FA;&#x53E3;&#x7B49;&#x4FE1;&#x606F;&#x3002;&#x4E00;&#x4E2A;&#x65B9;&#x6CD5;&#x4ECE;&#x8C03;&#x7528;&#x5230;&#x6267;&#x884C;&#x5B8C;&#x6210;&#x7684;&#x8FC7;&#x7A0B;&#xFF0C;&#x5BF9;&#x5E94;&#x4E8E;&#x4E00;&#x4E2A;&#x6808;&#x5E27;&#x5728; JVM &#x6808;&#x4E2D;&#x5165;&#x6808;&#x5230;&#x6808;&#x7684;&#x8FC7;&#x7A0B;&#x3002;&#x65B9;&#x6CD5;&#x8C03;&#x7528;&#x65F6;&#xFF0C;&#x6808;&#x5E27;&#x5165;&#x6808;&#xFF1B;&#x65B9;&#x6CD5;&#x8FD4;&#x56DE;&#x65F6;&#xFF0C;&#x6808;&#x5E27;&#x51FA;&#x6808;&#x3002;</p>
+<p>&#x4E0E;&#x7A0B;&#x5E8F;&#x8BA1;&#x6570;&#x5668;&#x7C7B;&#x4F3C;&#xFF0C;JVM &#x6808;&#x4E5F;&#x662F;&#x7EBF;&#x7A0B;&#x79C1;&#x6709;&#x7684;&#xFF0C;&#x6BCF;&#x4E2A;&#x7EBF;&#x7A0B;&#x521B;&#x5EFA;&#x7684;&#x540C;&#x65F6;&#x90FD;&#x4F1A;&#x521B;&#x5EFA;&#x5404;&#x81EA;&#x7684; JVM &#x6808;&#x3002;</p>
+<p>&#x6B64;&#x6570;&#x636E;&#x533A;&#x57DF;&#x4E0A;&#x5B9A;&#x4E49;&#x4E86;&#x4E24;&#x79CD; Error&#xFF1A;StackOverflowError &#x548C; OutOfMemoryError&#x3002;&#x5982;&#x679C;&#x7EBF;&#x7A0B;&#x8BF7;&#x6C42;&#x7684;&#x6808;&#x6DF1;&#x5EA6;&#x8D85;&#x8FC7; JVM &#x6240;&#x5141;&#x8BB8;&#x7684;&#x6700;&#x5927;&#x6DF1;&#x5EA6;&#xFF0C;&#x5C06;&#x629B;&#x51FA; StackOverflowError&#xFF1B;&#x5F53; JVM &#x6808;&#x9700;&#x8981;&#x6269;&#x5C55;&#xFF0C;&#x4F46;&#x65E0;&#x6CD5;&#x7533;&#x8BF7;&#x5230;&#x8DB3;&#x591F;&#x7684;&#x5185;&#x5B58;&#x65F6;&#xFF0C;&#x5C06;&#x629B;&#x51FA; OutOfMemoryError&#x3002;</p>
+<h1 id="&#x5806;&#xFF08;Heap&#xFF09;"><a href="#&#x5806;&#xFF08;Heap&#xFF09;" class="headerlink" title="&#x5806;&#xFF08;Heap&#xFF09;"></a>&#x5806;&#xFF08;Heap&#xFF09;</h1><p>&#x5806;&#x662F; JVM &#x7528;&#x6765;&#x5B58;&#x50A8;&#x5BF9;&#x8C61;&#x5B9E;&#x4F8B;&#x4EE5;&#x53CA;&#x6570;&#x7EC4;&#x503C;&#x7684;&#x533A;&#x57DF;&#xFF0C;&#x5728;&#x865A;&#x62DF;&#x673A;&#x542F;&#x52A8;&#x65F6;&#x521B;&#x5EFA;&#xFF0C;&#x4E00;&#x822C;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x5806;&#x662F; JVM &#x6240;&#x7BA1;&#x7406;&#x7684;&#x6700;&#x5927;&#x7684;&#x4E00;&#x5757;&#x5185;&#x5B58;&#x533A;&#x57DF;&#x3002;</p>
+<p>Java &#x4E2D;&#x6240;&#x6709;&#x901A;&#x8FC7; new &#x521B;&#x5EFA;&#x7684;&#x5BF9;&#x8C61;&#x7684;&#x5185;&#x5B58;&#x90FD;&#x5728;&#x5806;&#x4E2D;&#x5206;&#x914D;&#xFF0C;&#x5806;&#x662F; JVM &#x4E2D;&#x6240;&#x6709;&#x7EBF;&#x7A0B;&#x5171;&#x4EAB;&#x7684;&#xFF0C;&#x56E0;&#x6B64;&#x5728;&#x5176;&#x4E0A;&#x8FDB;&#x884C;&#x5BF9;&#x8C61;&#x5185;&#x5B58;&#x7684;&#x5206;&#x914D;&#x5747;&#x9700;&#x8981;&#x8FDB;&#x884C;&#x52A0;&#x9501;&#xFF0C;&#x8FD9;&#x4E5F;&#x5BFC;&#x81F4;&#x4E86; new &#x5BF9;&#x8C61;&#x7684;&#x5F00;&#x9500;&#x662F;&#x6BD4;&#x8F83;&#x5927;&#x7684;&#x3002;</p>
+<p>&#x5806;&#x662F; GC &#x5DE5;&#x4F5C;&#x7684;&#x4E3B;&#x8981;&#x533A;&#x57DF;&#x3002;</p>
+<p>Heap&#x4E2D;&#x7684;&#x5BF9;&#x8C61;&#x7684;&#x5185;&#x5B58;&#x9700;&#x8981;&#x7B49;&#x5F85;GC&#x8FDB;&#x884C;&#x56DE;&#x6536;&#x3002;&#x7531;&#x4E8E; GC &#x57FA;&#x672C;&#x90FD;&#x91C7;&#x7528;&#x5206;&#x4EE3;&#x6536;&#x96C6;&#x7B97;&#x6CD5;&#xFF0C;&#x6240;&#x4EE5;&#x5806;&#x4E2D;&#x8FD8;&#x53EF;&#x4EE5;&#x7EC6;&#x5206;&#x4E3A;&#xFF1A;&#x65B0;&#x751F;&#x4EE3;&#xFF08;Young&#xFF09;&#x548C;&#x8001;&#x5E74;&#x4EE3;&#xFF08;Tenured&#xFF09;&#x3002;&#x8FD8;&#x53EF;&#x4EE5;&#x7EC6;&#x5206;&#x4E3A;&#xFF1A;Eden, From, To &#x7A7A;&#x95F4;&#x3002;</p>
+<p>Sun Hotspot JVM &#x4E2D;&#xFF0C;&#x4E3A;&#x4E86;&#x63D0;&#x5347;&#x5BF9;&#x8C61;&#x5185;&#x5B58;&#x5206;&#x914D;&#x7684;&#x6548;&#x7387;&#xFF0C;&#x5BF9;&#x4E8E;&#x6240;&#x521B;&#x5EFA;&#x7684;&#x7EBF;&#x7A0B;&#x90FD;&#x4F1A;&#x5206;&#x914D;&#x4E00;&#x5757;&#x72EC;&#x7ACB;&#x7684;&#x7A7A;&#x95F4; TLAB&#xFF08;Thread Local Allocation Buffer&#xFF09;&#xFF0C;&#x5176;&#x5927;&#x5C0F;&#x7531; JVM &#x6839;&#x636E;&#x8FD0;&#x884C;&#x7684;&#x60C5;&#x51B5;&#x8BA1;&#x7B97;&#x800C;&#x5F97;&#xFF0C;&#x5728; TLAB &#x4E0A;&#x5206;&#x914D;&#x5BF9;&#x8C61;&#x65F6;&#x4E0D;&#x9700;&#x8981;&#x52A0;&#x9501;&#xFF0C;&#x56E0;&#x6B64; JVM &#x5728;&#x7ED9;&#x7EBF;&#x7A0B;&#x7684;&#x5BF9;&#x8C61;&#x5206;&#x914D;&#x5185;&#x5B58;&#x65F6;&#x4F1A;&#x5C3D;&#x91CF;&#x7684;&#x5728; TLAB &#x4E0A;&#x5206;&#x914D;&#xFF0C;&#x5728;&#x8FD9;&#x79CD;&#x60C5;&#x51B5;&#x4E0B; JVM &#x4E2D;&#x5206;&#x914D;&#x5BF9;&#x8C61;&#x5185;&#x5B58;&#x7684;&#x6027;&#x80FD;&#x6BD4;&#x8F83;&#x9AD8;&#xFF0C;&#x4F46;&#x5982;&#x679C;&#x5BF9;&#x8C61;&#x8FC7;&#x5927;&#x7684;&#x8BDD;&#x5219;&#x4ECD;&#x7136;&#x662F;&#x76F4;&#x63A5;&#x4F7F;&#x7528;&#x5806;&#x7A7A;&#x95F4;&#x5206;&#x914D;&#x3002;</p>
+<p>&#x5F53;&#x5806;&#x65E0;&#x6CD5;&#x83B7;&#x53D6;&#x8DB3;&#x591F;&#x7684;&#x5185;&#x5B58;&#x65F6;&#xFF0C;&#x4F1A;&#x629B;&#x51FA; OutOfMemoryError&#x3002;&#x5BF9;&#x4E8E; Hotspot JVM&#xFF0C;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x53C2;&#x6570; <em>-Xms</em> <em>-Xmx</em> &#x8C03;&#x6574;&#x5806;&#x7684;&#x5927;&#x5C0F;&#x3002;</p>
+<h1 id="&#x65B9;&#x6CD5;&#x533A;&#xFF08;Method-Area&#xFF09;"><a href="#&#x65B9;&#x6CD5;&#x533A;&#xFF08;Method-Area&#xFF09;" class="headerlink" title="&#x65B9;&#x6CD5;&#x533A;&#xFF08;Method Area&#xFF09;"></a>&#x65B9;&#x6CD5;&#x533A;&#xFF08;Method Area&#xFF09;</h1><p>&#x65B9;&#x6CD5;&#x533A;&#x7528;&#x4E8E;&#x5B58;&#x653E;&#x5DF2;&#x88AB;&#x865A;&#x62DF;&#x673A;&#x6240;&#x52A0;&#x8F7D;&#x7684;&#x7C7B;&#x7684;&#x4FE1;&#x606F;&#xFF08;&#x540D;&#x79F0;&#x3001;&#x4FEE;&#x9970;&#x7B26;&#x7B49;&#xFF09;&#x3001;&#x7C7B;&#x4E2D;&#x7684;&#x9759;&#x6001;&#x53D8;&#x91CF;&#x3001;&#x7C7B;&#x4E2D;&#x5B9A;&#x4E49;&#x4E3A; final &#x7C7B;&#x578B;&#x7684;&#x5E38;&#x91CF;&#x3001;&#x7C7B;&#x4E2D;&#x7684; Field &#x4FE1;&#x606F;&#x3001;&#x7C7B;&#x4E2D;&#x7684;&#x65B9;&#x6CD5;&#x4FE1;&#x606F;&#x3002;&#x5F53;&#x5F00;&#x53D1;&#x4EBA;&#x5458;&#x5728;&#x7A0B;&#x5E8F;&#x4E2D;&#x901A;&#x8FC7; Class &#x5BF9;&#x8C61;&#x4E2D;&#x7684; getName&#x3001;isInterface &#x7B49;&#x65B9;&#x6CD5;&#x6765;&#x83B7;&#x53D6;&#x4FE1;&#x606F;&#x65F6;&#xFF0C;&#x8FD9;&#x4E9B;&#x6570;&#x636E;&#x90FD;&#x6765;&#x81EA;&#x4E8E;&#x65B9;&#x6CD5;&#x533A;&#x3002;</p>
+<p>&#x540C;&#x65F6;&#x65B9;&#x6CD5;&#x533A;&#x57DF;&#x4E5F;&#x662F;&#x5168;&#x5C40;&#x5171;&#x4EAB;&#x7684;&#xFF0C;&#x5728;&#x4E00;&#x5B9A;&#x7684;&#x6761;&#x4EF6;&#x4E0B;&#x5B83;&#x4E5F;&#x4F1A;&#x88AB; GC &#xFF0C;&#x5F53;&#x65B9;&#x6CD5;&#x533A;&#x57DF;&#x9700;&#x8981;&#x4F7F;&#x7528;&#x7684;&#x5185;&#x5B58;&#x8D85;&#x8FC7;&#x5176;&#x5141;&#x8BB8;&#x7684;&#x5927;&#x5C0F;&#x65F6;&#xFF0C;&#x4F1A;&#x629B;&#x51FA; OutOfMemoryError&#x3002;&#x5BF9;&#x4E8E; Hotspot JVM&#xFF0C;&#x53EF;&#x4EE5;&#x901A;&#x8FC7; <em>-XX:MaxPermSize</em> &#x8C03;&#x6574;&#x65B9;&#x6CD5;&#x533A;&#x5927;&#x5C0F;&#x7684;&#x4E0A;&#x9650;&#x3002;</p>
+<h1 id="&#x8FD0;&#x884C;&#x65F6;&#x5E38;&#x91CF;&#x6C60;&#xFF08;Runtime-Constant-Pool&#xFF09;"><a href="#&#x8FD0;&#x884C;&#x65F6;&#x5E38;&#x91CF;&#x6C60;&#xFF08;Runtime-Constant-Pool&#xFF09;" class="headerlink" title="&#x8FD0;&#x884C;&#x65F6;&#x5E38;&#x91CF;&#x6C60;&#xFF08;Runtime Constant Pool&#xFF09;"></a>&#x8FD0;&#x884C;&#x65F6;&#x5E38;&#x91CF;&#x6C60;&#xFF08;Runtime Constant Pool&#xFF09;</h1><p>&#x5B58;&#x653E;&#x7684;&#x4E3A;&#x7C7B;&#x4E2D;&#x7684;&#x56FA;&#x5B9A;&#x7684;&#x5E38;&#x91CF;&#x4FE1;&#x606F;&#x3001;&#x65B9;&#x6CD5;&#x548C; Field &#x7684;&#x5F15;&#x7528;&#x4FE1;&#x606F;&#x7B49;&#xFF0C;&#x5176;&#x7A7A;&#x95F4;&#x4ECE;&#x65B9;&#x6CD5;&#x533A;&#x57DF;&#x4E2D;&#x5206;&#x914D;&#x3002;</p>
+<h1 id="&#x672C;&#x5730;&#x65B9;&#x6CD5;&#x6808;&#xFF08;Native-Method-Stacks&#xFF09;"><a href="#&#x672C;&#x5730;&#x65B9;&#x6CD5;&#x6808;&#xFF08;Native-Method-Stacks&#xFF09;" class="headerlink" title="&#x672C;&#x5730;&#x65B9;&#x6CD5;&#x6808;&#xFF08;Native Method Stacks&#xFF09;"></a>&#x672C;&#x5730;&#x65B9;&#x6CD5;&#x6808;&#xFF08;Native Method Stacks&#xFF09;</h1><p>JVM &#x91C7;&#x7528;&#x672C;&#x5730;&#x65B9;&#x6CD5;&#x6808;&#x6765;&#x652F;&#x6301; Native &#x65B9;&#x6CD5;&#x7684;&#x6267;&#x884C;&#xFF0C;&#x6B64;&#x533A;&#x57DF;&#x7528;&#x4E8E;&#x5B58;&#x50A8;&#x6BCF;&#x4E2A; Native &#x65B9;&#x6CD5;&#x8C03;&#x7528;&#x7684;&#x72B6;&#x6001;&#x3002;&#x5176;&#x4E0E; JVM &#x6808;&#x7684;&#x529F;&#x80FD;&#x7C7B;&#x4F3C;&#xFF0C;&#x540C;&#x6837;&#x7684;&#xFF0C;&#x4E5F;&#x4F1A;&#x629B;&#x51FA; StackOverflowError &#x548C; OutOfMemoryError&#x3002;</p>
+<h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><ol>
+<li><p>Jvm&#x5DE5;&#x4F5C;&#x539F;&#x7406;&#x5B66;&#x4E60;&#x7B14;&#x8BB0; - OPEN &#x5F00;&#x53D1;&#x7ECF;&#x9A8C;&#x5E93;. <a href="http://www.open-open.com/lib/view/open1408453806147.html" target="_blank" rel="external">http://www.open-open.com/lib/view/open1408453806147.html</a></p>
+</li>
+<li><p>&#x8212;&#x306E;&#x968F;&#x60F3;&#x65E5;&#x8BB0; &#xBB; &#x6D45;&#x6790;Java&#x865A;&#x62DF;&#x673A;&#x7ED3;&#x6784;&#x4E0E;&#x673A;&#x5236;. <a href="http://blog.hesey.net/2011/04/introduction-to-java-virtual-machine.html" target="_blank" rel="external">http://blog.hesey.net/2011/04/introduction-to-java-virtual-machine.html</a></p>
+</li>
+</ol>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/06/23/dive-into-java-1-jvm-introduction/" itemprop="url">
                   Dive into java (1) -- JVM introduction
                 </a>
@@ -210,7 +395,10 @@
 
         <div class="post-meta">
           <span class="post-time">
-            Posted on
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
             <time itemprop="dateCreated" datetime="2016-06-23T22:04:22+08:00" content="2016-06-23">
               2016-06-23
             </time>
@@ -224,21 +412,24 @@
 
           
 
+          
+          
+
+          
         </div>
       </header>
     
 
 
-    <div class="post-body">
+    <div class="post-body" itemprop="articleBody">
 
       
       
 
       
         
-          <span itemprop="articleBody">
-            
-              <p>June 23, 2016 / Jason Wang</p>
+          
+            <p>June 23, 2016 / Jason Wang</p>
 <h1 id="JVM-&#x7B80;&#x4ECB;"><a href="#JVM-&#x7B80;&#x4ECB;" class="headerlink" title="JVM &#x7B80;&#x4ECB;"></a>JVM &#x7B80;&#x4ECB;</h1><h2 id="JVM-&#x7B80;&#x4ECB;-1"><a href="#JVM-&#x7B80;&#x4ECB;-1" class="headerlink" title="JVM &#x7B80;&#x4ECB;"></a>JVM &#x7B80;&#x4ECB;</h2><p>JVM &#x662F; Java Virtual Machine&#xFF08;Java&#x865A;&#x62DF;&#x673A;&#xFF09;&#x7684;&#x7F29;&#x5199;&#xFF0C;JVM &#x662F;&#x4E00;&#x79CD;&#x7528;&#x4E8E;&#x8BA1;&#x7B97;&#x8BBE;&#x5907;&#x7684;&#x89C4;&#x8303;&#xFF0C;&#x5B83;&#x662F;&#x4E00;&#x4E2A;&#x865A;&#x6784;&#x51FA;&#x6765;&#x7684;&#x8BA1;&#x7B97;&#x673A;&#xFF0C;&#x662F;&#x901A;&#x8FC7;&#x5728;&#x5B9E;&#x9645;&#x7684;&#x8BA1;&#x7B97;&#x673A;&#x4E0A;&#x4EFF;&#x771F;&#x6A21;&#x62DF;&#x5404;&#x79CD;&#x8BA1;&#x7B97;&#x673A;&#x529F;&#x80FD;&#x6765;&#x5B9E;&#x73B0;&#x7684;&#x3002;</p>
 <p>Java &#x8BED;&#x8A00;&#x7684;&#x4E00;&#x4E2A;&#x975E;&#x5E38;&#x91CD;&#x8981;&#x7684;&#x7279;&#x70B9;&#x5C31;&#x662F;&#x4E0E;&#x5E73;&#x53F0;&#x7684;&#x65E0;&#x5173;&#x6027;&#x3002;&#x800C;&#x4F7F;&#x7528; Java &#x865A;&#x62DF;&#x673A;&#x662F;&#x5B9E;&#x73B0;&#x8FD9;&#x4E00;&#x7279;&#x70B9;&#x7684;&#x5173;&#x952E;&#x3002;&#x4E00;&#x822C;&#x7684;&#x9AD8;&#x7EA7;&#x8BED;&#x8A00;&#x5982;&#x679C;&#x8981;&#x5728;&#x4E0D;&#x540C;&#x7684;&#x5E73;&#x53F0;&#x4E0A;&#x8FD0;&#x884C;&#xFF0C;&#x81F3;&#x5C11;&#x9700;&#x8981;&#x7F16;&#x8BD1;&#x6210;&#x4E0D;&#x540C;&#x7684;&#x76EE;&#x6807;&#x4EE3;&#x7801;&#x3002;&#x800C;&#x5F15;&#x5165;Java&#x8BED;&#x8A00;&#x865A;&#x62DF;&#x673A;&#x540E;&#xFF0C; Java &#x8BED;&#x8A00;&#x5728;&#x4E0D;&#x540C;&#x5E73;&#x53F0;&#x4E0A;&#x8FD0;&#x884C;&#x65F6;&#x4E0D;&#x9700;&#x8981;&#x91CD;&#x65B0;&#x7F16;&#x8BD1;&#x3002; Java &#x8BED;&#x8A00;&#x4F7F;&#x7528; Java &#x865A;&#x62DF;&#x673A;&#x5C4F;&#x853D;&#x4E86;&#x4E0E;&#x5177;&#x4F53;&#x5E73;&#x53F0;&#x76F8;&#x5173;&#x7684;&#x4FE1;&#x606F;&#xFF0C;&#x4F7F;&#x5F97; Java &#x8BED;&#x8A00;&#x7F16;&#x8BD1;&#x7A0B;&#x5E8F;&#x53EA;&#x9700;&#x751F;&#x6210;&#x5728; Java &#x865A;&#x62DF;&#x673A;&#x4E0A;&#x8FD0;&#x884C;&#x7684;&#x76EE;&#x6807;&#x4EE3;&#x7801;&#xFF08;&#x5B57;&#x8282;&#x7801;&#xFF09;&#xFF0C;&#x5C31;&#x53EF;&#x4EE5;&#x5728;&#x591A;&#x79CD;&#x5E73;&#x53F0;&#x4E0A;&#x4E0D;&#x52A0;&#x4FEE;&#x6539;&#x5730;&#x8FD0;&#x884C;&#x3002; Java &#x865A;&#x62DF;&#x673A;&#x5728;&#x6267;&#x884C;&#x5B57;&#x8282;&#x7801;&#x65F6;&#xFF0C;&#x628A;&#x5B57;&#x8282;&#x7801;&#x89E3;&#x91CA;&#x6210;&#x5177;&#x4F53;&#x5E73;&#x53F0;&#x4E0A;&#x7684;&#x673A;&#x5668;&#x6307;&#x4EE4;&#x6267;&#x884C;&#x3002;&#x8FD9;&#x5C31;&#x662F; Java &#x7A0B;&#x5E8F;&#x80FD;&#x591F;&#x201C;&#x4E00;&#x6B21;&#x7F16;&#x8BD1;&#xFF0C;&#x5230;&#x5904;&#x8FD0;&#x884C;&#x201D;&#x7684;&#x539F;&#x56E0;&#x3002;</p>
 <h2 id="JVM-&#x89C4;&#x683C;"><a href="#JVM-&#x89C4;&#x683C;" class="headerlink" title="JVM &#x89C4;&#x683C;"></a>JVM &#x89C4;&#x683C;</h2><p>JVM &#x7684;&#x8BBE;&#x8BA1;&#x76EE;&#x6807;&#x662F;&#x63D0;&#x4F9B;&#x4E00;&#x4E2A;&#x57FA;&#x4E8E;&#x62BD;&#x8C61;&#x89C4;&#x683C;&#x63CF;&#x8FF0;&#x7684;&#x8BA1;&#x7B97;&#x673A;&#x6A21;&#x578B;&#xFF0C;&#x4E3A;&#x89E3;&#x91CA;&#x7A0B;&#x5E8F;&#x5F00;&#x53D1;&#x4EBA;&#x5458;&#x63D0;&#x4F9B;&#x5F88;&#x597D;&#x7684;&#x7075;&#x6D3B;&#x6027;&#xFF0C;&#x540C;&#x65F6;&#x4E5F;&#x786E;&#x4FDD; Java &#x4EE3;&#x7801;&#x53EF;&#x5728;&#x7B26;&#x5408;&#x8BE5;&#x89C4;&#x8303;&#x7684;&#x4EFB;&#x4F55;&#x7CFB;&#x7EDF;&#x4E0A;&#x8FD0;&#x884C;&#x3002;JVM &#x5BF9;&#x5176;&#x5B9E;&#x73B0;&#x7684;&#x67D0;&#x4E9B;&#x65B9;&#x9762;&#x7ED9;&#x51FA;&#x4E86;&#x5177;&#x4F53;&#x7684;&#x5B9A;&#x4E49;&#xFF0C;&#x7279;&#x522B;&#x662F;&#x5BF9; Java &#x53EF;&#x6267;&#x884C;&#x4EE3;&#x7801;&#xFF0C;&#x5373;&#x5B57;&#x8282;&#x7801;&#xFF08;Bytecode&#xFF09;&#x7684;&#x683C;&#x5F0F;&#x7ED9;&#x51FA;&#x4E86;&#x660E;&#x786E;&#x7684;&#x89C4;&#x683C;&#x3002;&#x8FD9;&#x4E00;&#x89C4;&#x683C;&#x5305;&#x62EC;&#x64CD;&#x4F5C;&#x7801;&#x548C;&#x64CD;&#x4F5C;&#x6570;&#x7684;&#x8BED;&#x6CD5;&#x548C;&#x6570;&#x503C;&#x3001;&#x6807;&#x8BC6;&#x7B26;&#x7684;&#x6570;&#x503C;&#x8868;&#x793A;&#x65B9;&#x5F0F;&#x3001;&#x4EE5;&#x53CA; Java &#x7C7B;&#x6587;&#x4EF6;&#x4E2D;&#x7684; Java &#x5BF9;&#x8C61;&#x3001;&#x5E38;&#x91CF;&#x7F13;&#x51B2;&#x6C60;&#x5728; JVM &#x7684;&#x5B58;&#x50A8;&#x6620;&#x8C61;&#x3002;&#x8FD9;&#x4E9B;&#x5B9A;&#x4E49;&#x4E3A; JVM &#x89E3;&#x91CA;&#x5668;&#x5F00;&#x53D1;&#x4EBA;&#x5458;&#x63D0;&#x4F9B;&#x4E86;&#x6240;&#x9700;&#x7684;&#x4FE1;&#x606F;&#x548C;&#x5F00;&#x53D1;&#x73AF;&#x5883;&#x3002;Java &#x7684;&#x8BBE;&#x8BA1;&#x8005;&#x5E0C;&#x671B;&#x7ED9;&#x5F00;&#x53D1;&#x4EBA;&#x5458;&#x4EE5;&#x968F;&#x5FC3;&#x6240;&#x6B32;&#x4F7F;&#x7528; Java &#x7684;&#x81EA;&#x7531;&#x3002;</p>
@@ -343,9 +534,16 @@ f&#x3001;JVM&#x542F;&#x52A8;&#x65F6;&#x88AB;&#x6807;&#x8BB0;&#x4E3A;&#x542F;&#x5
 </li>
 </ol>
 
-            
-          </span>
+          
         
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
       
     </div>
 
@@ -368,6 +566,10 @@ f&#x3001;JVM&#x542F;&#x52A8;&#x65F6;&#x88AB;&#x6807;&#x8BB0;&#x4E3A;&#x542F;&#x5
   
   
 
+  
+  
+  
+
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
 
     
@@ -379,6 +581,7 @@ f&#x3001;JVM&#x542F;&#x52A8;&#x65F6;&#x88AB;&#x6807;&#x8BB0;&#x4E3A;&#x542F;&#x5
             
             
               
+                
                 <a class="post-title-link" href="/2016/05/29/configure-maven/" itemprop="url">
                   Configure Maven
                 </a>
@@ -389,7 +592,10 @@ f&#x3001;JVM&#x542F;&#x52A8;&#x65F6;&#x88AB;&#x6807;&#x8BB0;&#x4E3A;&#x542F;&#x5
 
         <div class="post-meta">
           <span class="post-time">
-            Posted on
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
             <time itemprop="dateCreated" datetime="2016-05-29T22:16:48+08:00" content="2016-05-29">
               2016-05-29
             </time>
@@ -403,21 +609,24 @@ f&#x3001;JVM&#x542F;&#x52A8;&#x65F6;&#x88AB;&#x6807;&#x8BB0;&#x4E3A;&#x542F;&#x5
 
           
 
+          
+          
+
+          
         </div>
       </header>
     
 
 
-    <div class="post-body">
+    <div class="post-body" itemprop="articleBody">
 
       
       
 
       
         
-          <span itemprop="articleBody">
-            
-              <p>May 29, 2016 / Jason Wang</p>
+          
+            <p>May 29, 2016 / Jason Wang</p>
 <h1 id="&#x914D;&#x7F6E;-Maven"><a href="#&#x914D;&#x7F6E;-Maven" class="headerlink" title="&#x914D;&#x7F6E; Maven"></a>&#x914D;&#x7F6E; Maven</h1><h2 id="1-Maven-&#x914D;&#x7F6E;&#x6587;&#x4EF6;"><a href="#1-Maven-&#x914D;&#x7F6E;&#x6587;&#x4EF6;" class="headerlink" title="1 Maven &#x914D;&#x7F6E;&#x6587;&#x4EF6;"></a>1 Maven &#x914D;&#x7F6E;&#x6587;&#x4EF6;</h2><p>&#x9ED8;&#x8BA4;&#x60C5;&#x51B5;&#x4E0B;, Maven &#x7684;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x4E3A;&#x914D;&#x7F6E;&#x76EE;&#x5F55;&#x4E0B;&#x7684; <strong>settings.xml</strong> &#x6587;&#x4EF6;&#x3002;</p>
 <pre><code>Linux -&#x2013; /etc/maven2/settings.xml
 Windows &#x2013;- {maven}\conf\settings.xml
@@ -503,9 +712,16 @@ Windows -- C:\Documents and Settings\{your-username}\.m2\
 <p>&#x4F8B;&#x5982;&#xFF0C;&#x5B89;&#x88C5;&#x5DF2;&#x4E0B;&#x8F7D;&#x597D;&#x7684; myBatis &#x5305;&#xFF1A;
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mvn install:install-file -DgroupId=org.mybatis -DartifactId=mybatis -Dversion=3.4.0 -Dpackaging=jar -Dfile=mybatis-3.4.0.jar</span><br></pre></td></tr></table></figure></p>
 
-            
-          </span>
+          
         
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
       
     </div>
 
@@ -528,6 +744,10 @@ Windows -- C:\Documents and Settings\{your-username}\.m2\
   
   
 
+  
+  
+  
+
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
 
     
@@ -539,6 +759,7 @@ Windows -- C:\Documents and Settings\{your-username}\.m2\
             
             
               
+                
                 <a class="post-title-link" href="/2016/03/26/programmer-competency-matrix/" itemprop="url">
                   Programmer Competency Matrix
                 </a>
@@ -549,7 +770,10 @@ Windows -- C:\Documents and Settings\{your-username}\.m2\
 
         <div class="post-meta">
           <span class="post-time">
-            Posted on
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
             <time itemprop="dateCreated" datetime="2016-03-26T10:43:25+08:00" content="2016-03-26">
               2016-03-26
             </time>
@@ -563,21 +787,24 @@ Windows -- C:\Documents and Settings\{your-username}\.m2\
 
           
 
+          
+          
+
+          
         </div>
       </header>
     
 
 
-    <div class="post-body">
+    <div class="post-body" itemprop="articleBody">
 
       
       
 
       
         
-          <span itemprop="articleBody">
-            
-              <p>March 26, 2016 / Jason Wang</p>
+          
+            <p>March 26, 2016 / Jason Wang</p>
 <blockquote>
 <p>&#x6B64;&#x6587;&#x7FFB;&#x8BD1;&#x81EA; Sijin Joseph&#x7684;<a href="http://sijinjoseph.com/programmer-competency-matrix/" target="_blank" rel="external">&#x201C;Programmer Competency Matrix&#x201D;</a></p>
 </blockquote>
@@ -1051,9 +1278,16 @@ Windows -- C:\Documents and Settings\{your-username}\.m2\
 
 <h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference:"></a>Reference:</h2><p>[1]. [&#x8BD1;&#x6587;]&#x7A0B;&#x5E8F;&#x5458;&#x80FD;&#x529B;&#x77E9;&#x9635; Programmer, <a href="http://blog.sina.com.cn/s/blog_53c05cad0100ha6m.html" target="_blank" rel="external">http://blog.sina.com.cn/s/blog_53c05cad0100ha6m.html</a></p>
 
-            
-          </span>
+          
         
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
       
     </div>
 
@@ -1076,6 +1310,10 @@ Windows -- C:\Documents and Settings\{your-username}\.m2\
   
   
 
+  
+  
+  
+
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
 
     
@@ -1087,6 +1325,7 @@ Windows -- C:\Documents and Settings\{your-username}\.m2\
             
             
               
+                
                 <a class="post-title-link" href="/2016/03/25/restful-api/" itemprop="url">
                   RESTful API Design Principles
                 </a>
@@ -1097,7 +1336,10 @@ Windows -- C:\Documents and Settings\{your-username}\.m2\
 
         <div class="post-meta">
           <span class="post-time">
-            Posted on
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
             <time itemprop="dateCreated" datetime="2016-03-25T22:39:29+08:00" content="2016-03-25">
               2016-03-25
             </time>
@@ -1111,21 +1353,24 @@ Windows -- C:\Documents and Settings\{your-username}\.m2\
 
           
 
+          
+          
+
+          
         </div>
       </header>
     
 
 
-    <div class="post-body">
+    <div class="post-body" itemprop="articleBody">
 
       
       
 
       
         
-          <span itemprop="articleBody">
-            
-              <h1 id="RESTful-API-&#x8BBE;&#x8BA1;&#x6307;&#x5357;"><a href="#RESTful-API-&#x8BBE;&#x8BA1;&#x6307;&#x5357;" class="headerlink" title="RESTful API &#x8BBE;&#x8BA1;&#x6307;&#x5357;"></a>RESTful API &#x8BBE;&#x8BA1;&#x6307;&#x5357;</h1><blockquote>
+          
+            <h1 id="RESTful-API-&#x8BBE;&#x8BA1;&#x6307;&#x5357;"><a href="#RESTful-API-&#x8BBE;&#x8BA1;&#x6307;&#x5357;" class="headerlink" title="RESTful API &#x8BBE;&#x8BA1;&#x6307;&#x5357;"></a>RESTful API &#x8BBE;&#x8BA1;&#x6307;&#x5357;</h1><blockquote>
 <p>[&#x8F6C;&#x8F7D;] &#x539F;&#x6587;&#x5730;&#x5740;&#xFF1A;<a href="http://www.ruanyifeng.com/blog/2014/05/restful_api.html" target="_blank" rel="external">RESTful API &#x8BBE;&#x8BA1;&#x6307;&#x5357;</a></p>
 </blockquote>
 <p>&#x4F5C;&#x8005;&#xFF1A; &#x962E;&#x4E00;&#x5CF0;</p>
@@ -1233,9 +1478,16 @@ DELETE /collection/resource&#xFF1A;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x7A7A;&#x65
 <pre><code>&#x7248;&#x6743;&#x58F0;&#x660E;&#xFF1A;&#x81EA;&#x7531;&#x8F6C;&#x8F7D;-&#x975E;&#x5546;&#x7528;-&#x975E;&#x884D;&#x751F;-&#x4FDD;&#x6301;&#x7F72;&#x540D;&#xFF08;&#x521B;&#x610F;&#x5171;&#x4EAB;3.0&#x8BB8;&#x53EF;&#x8BC1;&#xFF09;
 &#x53D1;&#x8868;&#x65E5;&#x671F;&#xFF1A; 2014&#x5E74;5&#x6708;22&#x65E5;
 </code></pre>
-            
-          </span>
+          
         
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
       
     </div>
 
@@ -1258,6 +1510,10 @@ DELETE /collection/resource&#xFF1A;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x7A7A;&#x65
   
   
 
+  
+  
+  
+
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
 
     
@@ -1269,6 +1525,7 @@ DELETE /collection/resource&#xFF1A;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x7A7A;&#x65
             
             
               
+                
                 <a class="post-title-link" href="/2016/03/24/introduction-of-json/" itemprop="url">
                   Introduction of JSON
                 </a>
@@ -1279,7 +1536,10 @@ DELETE /collection/resource&#xFF1A;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x7A7A;&#x65
 
         <div class="post-meta">
           <span class="post-time">
-            Posted on
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
             <time itemprop="dateCreated" datetime="2016-03-24T20:32:32+08:00" content="2016-03-24">
               2016-03-24
             </time>
@@ -1293,21 +1553,24 @@ DELETE /collection/resource&#xFF1A;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x7A7A;&#x65
 
           
 
+          
+          
+
+          
         </div>
       </header>
     
 
 
-    <div class="post-body">
+    <div class="post-body" itemprop="articleBody">
 
       
       
 
       
         
-          <span itemprop="articleBody">
-            
-              <h1 id="1-JSON-&#x7B80;&#x4ECB;"><a href="#1-JSON-&#x7B80;&#x4ECB;" class="headerlink" title="1 JSON &#x7B80;&#x4ECB;"></a>1 JSON &#x7B80;&#x4ECB;</h1><p>JSON&#xFF1A;JavaScript &#x5BF9;&#x8C61;&#x8868;&#x793A;&#x6CD5;&#xFF08;JavaScript Object Notation&#xFF09;&#x3002;</p>
+          
+            <h1 id="1-JSON-&#x7B80;&#x4ECB;"><a href="#1-JSON-&#x7B80;&#x4ECB;" class="headerlink" title="1 JSON &#x7B80;&#x4ECB;"></a>1 JSON &#x7B80;&#x4ECB;</h1><p>JSON&#xFF1A;JavaScript &#x5BF9;&#x8C61;&#x8868;&#x793A;&#x6CD5;&#xFF08;JavaScript Object Notation&#xFF09;&#x3002;</p>
 <p>&#x5B83;&#x57FA;&#x4E8E;ECMAScript&#x7684;&#x4E00;&#x4E2A;&#x5B50;&#x96C6;&#xFF0C;&#x91C7;&#x7528;&#x5B8C;&#x5168;&#x72EC;&#x7ACB;&#x4E8E;&#x8BED;&#x8A00;&#x7684;&#x6587;&#x672C;&#x683C;&#x5F0F;&#x3002;&#x6613;&#x4E8E;&#x4EBA;&#x9605;&#x8BFB;&#x548C;&#x7F16;&#x5199;&#xFF0C;&#x540C;&#x65F6;&#x4E5F;&#x6613;&#x4E8E;&#x673A;&#x5668;&#x89E3;&#x6790;&#x548C;&#x751F;&#x6210;(&#x4E00;&#x822C;&#x7528;&#x4E8E;&#x63D0;&#x5347;&#x7F51;&#x7EDC;&#x4F20;&#x8F93;&#x901F;&#x7387;)&#x3002;
 &#x7C7B;&#x4F3C;&#x4E8E; XML&#xFF0C;&#x4F46;&#x6BD4; XML &#x66F4;&#x5C0F;&#x3001;&#x66F4;&#x5FEB;&#xFF0C;&#x66F4;&#x6613;&#x89E3;&#x6790;&#x3002;&#x662F;&#x4E00;&#x79CD;&#x7406;&#x60F3;&#x7684;&#x6570;&#x636E;&#x4EA4;&#x6362;&#x8BED;&#x8A00;&#x3002;</p>
 <h2 id="&#x7279;&#x70B9;&#xFF1A;"><a href="#&#x7279;&#x70B9;&#xFF1A;" class="headerlink" title="&#x7279;&#x70B9;&#xFF1A;"></a>&#x7279;&#x70B9;&#xFF1A;</h2><ul>
@@ -1471,9 +1734,16 @@ DELETE /collection/resource&#xFF1A;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x7A7A;&#x65
 <li>&#x5728;.NET&#x4F7F;&#x7528;JSON&#x4F5C;&#x4E3A;&#x6570;&#x636E;&#x4EA4;&#x6362;&#x683C;&#x5F0F;, fangaoxin, <a href="http://blog.csdn.net/fangaoxin/article/details/7618152" target="_blank" rel="external">http://blog.csdn.net/fangaoxin/article/details/7618152</a></li>
 </ol>
 
-            
-          </span>
+          
         
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
       
     </div>
 
@@ -1496,6 +1766,10 @@ DELETE /collection/resource&#xFF1A;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x7A7A;&#x65
   
   
 
+  
+  
+  
+
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
 
     
@@ -1507,6 +1781,7 @@ DELETE /collection/resource&#xFF1A;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x7A7A;&#x65
             
             
               
+                
                 <a class="post-title-link" href="/2016/03/22/gbs-build/" itemprop="url">
                   GBS Build
                 </a>
@@ -1517,7 +1792,10 @@ DELETE /collection/resource&#xFF1A;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x7A7A;&#x65
 
         <div class="post-meta">
           <span class="post-time">
-            Posted on
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
             <time itemprop="dateCreated" datetime="2016-03-22T21:21:47+08:00" content="2016-03-22">
               2016-03-22
             </time>
@@ -1531,21 +1809,24 @@ DELETE /collection/resource&#xFF1A;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x7A7A;&#x65
 
           
 
+          
+          
+
+          
         </div>
       </header>
     
 
 
-    <div class="post-body">
+    <div class="post-body" itemprop="articleBody">
 
       
       
 
       
         
-          <span itemprop="articleBody">
-            
-              <blockquote>
+          
+            <blockquote>
 <p>&#x672C;&#x6587;&#x662F; Tizen &#x7CFB;&#x7EDF;&#x7684; gbs build &#x7684;&#x7528;&#x6CD5;&#x7684;&#x4E2D;&#x82F1;&#x6587;&#x5BF9;&#x7167;&#x7248;&#xFF0C;&#x4E3B;&#x8981;&#x5185;&#x5BB9;&#x4E3A;&#x5982;&#x4F55;&#x4F7F;&#x7528; gbs build &#x547D;&#x4EE4;</p>
 <p><em>Reference: <a href="https://source.tizen.org/documentation/reference/git-build-system/usage/gbs-build" target="_blank" rel="external">https://source.tizen.org/documentation/reference/git-build-system/usage/gbs-build</a></em></p>
 </blockquote>
@@ -2023,9 +2304,16 @@ $ gbs build -A i586 -D ~/tizen2.0.conf
 </code></pre><p>If you need to customize the build config, refer to: <a href="http://en.opensuse.org/openSUSE:Build_Service_prjconf" target="_blank" rel="external">http://en.opensuse.org/openSUSE:Build_Service_prjconf</a></p>
 <p><em>Reference: <a href="https://source.tizen.org/documentation/reference/git-build-system/usage/gbs-build" target="_blank" rel="external">https://source.tizen.org/documentation/reference/git-build-system/usage/gbs-build</a></em></p>
 
-            
-          </span>
+          
         
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
       
     </div>
 
@@ -2048,6 +2336,10 @@ $ gbs build -A i586 -D ~/tizen2.0.conf
   
   
 
+  
+  
+  
+
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
 
     
@@ -2059,6 +2351,7 @@ $ gbs build -A i586 -D ~/tizen2.0.conf
             
             
               
+                
                 <a class="post-title-link" href="/2016/03/13/setup-proxy-for-node-gyp/" itemprop="url">
                   node-gyp 设置 Proxy
                 </a>
@@ -2069,7 +2362,10 @@ $ gbs build -A i586 -D ~/tizen2.0.conf
 
         <div class="post-meta">
           <span class="post-time">
-            Posted on
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
             <time itemprop="dateCreated" datetime="2016-03-13T20:24:54+08:00" content="2016-03-13">
               2016-03-13
             </time>
@@ -2083,21 +2379,24 @@ $ gbs build -A i586 -D ~/tizen2.0.conf
 
           
 
+          
+          
+
+          
         </div>
       </header>
     
 
 
-    <div class="post-body">
+    <div class="post-body" itemprop="articleBody">
 
       
       
 
       
         
-          <span itemprop="articleBody">
-            
-              <h1 id="node-gyp-&#x8BBE;&#x7F6E;-Proxy"><a href="#node-gyp-&#x8BBE;&#x7F6E;-Proxy" class="headerlink" title="node-gyp &#x8BBE;&#x7F6E; Proxy"></a>node-gyp &#x8BBE;&#x7F6E; Proxy</h1><p>node-gyp &#x63D0;&#x4F9B; 4 &#x79CD;&#x65B9;&#x5F0F;&#x901A;&#x8FC7;Proxy&#x8FDE;&#x63A5;</p>
+          
+            <h1 id="node-gyp-&#x8BBE;&#x7F6E;-Proxy"><a href="#node-gyp-&#x8BBE;&#x7F6E;-Proxy" class="headerlink" title="node-gyp &#x8BBE;&#x7F6E; Proxy"></a>node-gyp &#x8BBE;&#x7F6E; Proxy</h1><p>node-gyp &#x63D0;&#x4F9B; 4 &#x79CD;&#x65B9;&#x5F0F;&#x901A;&#x8FC7;Proxy&#x8FDE;&#x63A5;</p>
 <p>1) &#x4F7F;&#x7528;&#x547D;&#x4EE4;&#x884C;&#x53C2;&#x6570; <code>&#x2013;proxy=http://proxy_address:proxy_port</code></p>
 <p>2) &#x4F7F;&#x7528;&#x73AF;&#x5883;&#x53D8;&#x91CF; <code>http_proxy</code></p>
 <p>3) &#x4F7F;&#x7528;&#x73AF;&#x5883;&#x53D8;&#x91CF; <code>HTTP_PROXY</code></p>
@@ -2106,9 +2405,16 @@ $ gbs build -A i586 -D ~/tizen2.0.conf
 <p><strong>&#x6CE8;&#x610F;</strong>&#xFF1A;Proxy&#x7684; <strong>http://</strong> &#x4E0D;&#x80FD;&#x7701;&#x7565;</p>
 </blockquote>
 
-            
-          </span>
+          
         
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
       
     </div>
 
@@ -2131,6 +2437,10 @@ $ gbs build -A i586 -D ~/tizen2.0.conf
   
   
 
+  
+  
+  
+
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
 
     
@@ -2142,6 +2452,7 @@ $ gbs build -A i586 -D ~/tizen2.0.conf
             
             
               
+                
                 <a class="post-title-link" href="/2016/03/13/how-to-download-chrome-installation-package/" itemprop="url">
                   如何下载离线版Windows Chrome安装文件
                 </a>
@@ -2152,7 +2463,10 @@ $ gbs build -A i586 -D ~/tizen2.0.conf
 
         <div class="post-meta">
           <span class="post-time">
-            Posted on
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
             <time itemprop="dateCreated" datetime="2016-03-13T19:36:54+08:00" content="2016-03-13">
               2016-03-13
             </time>
@@ -2166,21 +2480,24 @@ $ gbs build -A i586 -D ~/tizen2.0.conf
 
           
 
+          
+          
+
+          
         </div>
       </header>
     
 
 
-    <div class="post-body">
+    <div class="post-body" itemprop="articleBody">
 
       
       
 
       
         
-          <span itemprop="articleBody">
-            
-              <h1 id="&#x5982;&#x4F55;&#x4E0B;&#x8F7D;&#x79BB;&#x7EBF;&#x7248;Windows-Chrome&#x5B89;&#x88C5;&#x6587;&#x4EF6;"><a href="#&#x5982;&#x4F55;&#x4E0B;&#x8F7D;&#x79BB;&#x7EBF;&#x7248;Windows-Chrome&#x5B89;&#x88C5;&#x6587;&#x4EF6;" class="headerlink" title="&#x5982;&#x4F55;&#x4E0B;&#x8F7D;&#x79BB;&#x7EBF;&#x7248;Windows Chrome&#x5B89;&#x88C5;&#x6587;&#x4EF6;"></a>&#x5982;&#x4F55;&#x4E0B;&#x8F7D;&#x79BB;&#x7EBF;&#x7248;Windows Chrome&#x5B89;&#x88C5;&#x6587;&#x4EF6;</h1><p><strong>&#x65B9;&#x6CD5;&#x5982;&#x4E0B;&#xFF1A;</strong></p>
+          
+            <h1 id="&#x5982;&#x4F55;&#x4E0B;&#x8F7D;&#x79BB;&#x7EBF;&#x7248;Windows-Chrome&#x5B89;&#x88C5;&#x6587;&#x4EF6;"><a href="#&#x5982;&#x4F55;&#x4E0B;&#x8F7D;&#x79BB;&#x7EBF;&#x7248;Windows-Chrome&#x5B89;&#x88C5;&#x6587;&#x4EF6;" class="headerlink" title="&#x5982;&#x4F55;&#x4E0B;&#x8F7D;&#x79BB;&#x7EBF;&#x7248;Windows Chrome&#x5B89;&#x88C5;&#x6587;&#x4EF6;"></a>&#x5982;&#x4F55;&#x4E0B;&#x8F7D;&#x79BB;&#x7EBF;&#x7248;Windows Chrome&#x5B89;&#x88C5;&#x6587;&#x4EF6;</h1><p><strong>&#x65B9;&#x6CD5;&#x5982;&#x4E0B;&#xFF1A;</strong></p>
 <p>&#x5BF9;&#x4E8E;Stable Chrome&#x6765;&#x8BF4;&#xFF0C;&#x53EA;&#x9700;&#x8981;&#x5728;Chrome&#x7684;&#x201C;&#x6700;&#x7EC8;&#x7528;&#x6237;&#x8BB8;&#x53EF;&#x534F;&#x8BAE;&#x201D;&#x9875;&#x9762;&#x94FE;&#x63A5;&#x540E;&#x9762;&#x6DFB;&#x52A0;<strong>&#x201D;?standalone=1&#x2033;</strong>&#x5373;&#x53EF;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#xFF1A;</p>
 <p><a href="http://www.google.com/chrome/eula.html?standalone=1" target="_blank" rel="external">http://www.google.com/chrome/eula.html?standalone=1</a></p>
 <p>&#x5BF9;&#x4E8E;&#x7279;&#x5B9A;&#x7248;&#x672C;&#x7684;Chrome&#x6765;&#x8BF4;&#xFF0C;&#x6309;&#x4EE5;&#x4E0B;&#x5730;&#x5740;&#xFF1A;</p>
@@ -2188,9 +2505,16 @@ $ gbs build -A i586 -D ~/tizen2.0.conf
 <p>&#x5176;&#x4E2D;&#x7684; <strong>version number</strong> &#x4EE3;&#x8868;&#x4F60;&#x8981;&#x4E0B;&#x8F7D;&#x7684;Chrome&#x7248;&#x672C;&#x53F7;&#x7684;&#x540E;&#x9762;&#x4E24;&#x4E2A;&#x6570;&#x5B57;&#xFF0C;&#x6BD4;&#x5982;4.0.223.11&#x7684;&#x79BB;&#x7EBF;&#x5305;&#x4E0B;&#x8F7D;&#x5730;&#x5740;&#x5C31;&#x662F;</p>
 <p><a href="http://dl.google.com/chrome/install/223.11/chrome_installer.exe" target="_blank" rel="external">http://dl.google.com/chrome/install/223.11/chrome_installer.exe</a></p>
 
-            
-          </span>
+          
         
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
       
     </div>
 
@@ -2213,6 +2537,10 @@ $ gbs build -A i586 -D ~/tizen2.0.conf
   
   
 
+  
+  
+  
+
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
 
     
@@ -2224,6 +2552,7 @@ $ gbs build -A i586 -D ~/tizen2.0.conf
             
             
               
+                
                 <a class="post-title-link" href="/2016/03/13/design-pattern/" itemprop="url">
                   设计模式
                 </a>
@@ -2234,7 +2563,10 @@ $ gbs build -A i586 -D ~/tizen2.0.conf
 
         <div class="post-meta">
           <span class="post-time">
-            Posted on
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
             <time itemprop="dateCreated" datetime="2016-03-13T19:33:39+08:00" content="2016-03-13">
               2016-03-13
             </time>
@@ -2248,21 +2580,24 @@ $ gbs build -A i586 -D ~/tizen2.0.conf
 
           
 
+          
+          
+
+          
         </div>
       </header>
     
 
 
-    <div class="post-body">
+    <div class="post-body" itemprop="articleBody">
 
       
       
 
       
         
-          <span itemprop="articleBody">
-            
-              <p>March 13, 2016 / Jason Wang</p>
+          
+            <p>March 13, 2016 / Jason Wang</p>
 <h1 id="Design-Pattern"><a href="#Design-Pattern" class="headerlink" title="Design Pattern"></a>Design Pattern</h1><p>&#x8BBE;&#x8BA1;&#x6A21;&#x5F0F;&#xFF08;Design pattern&#xFF09;&#x662F;&#x4E00;&#x5957;&#x88AB;&#x53CD;&#x590D;&#x4F7F;&#x7528;&#x3001;&#x591A;&#x6570;&#x4EBA;&#x77E5;&#x6653;&#x7684;&#x3001;&#x7ECF;&#x8FC7;&#x5206;&#x7C7B;&#x7F16;&#x76EE;&#x7684;&#x3001;&#x4EE3;&#x7801;&#x8BBE;&#x8BA1;&#x7ECF;&#x9A8C;&#x7684;&#x603B;&#x7ED3;&#x3002;&#x4F7F;&#x7528;&#x8BBE;&#x8BA1;&#x6A21;&#x5F0F;&#x662F;&#x4E3A;&#x4E86;&#x53EF;&#x91CD;&#x7528;&#x4EE3;&#x7801;&#x3001;&#x8BA9;&#x4EE3;&#x7801;&#x66F4;&#x5BB9;&#x6613;&#x88AB;&#x4ED6;&#x4EBA;&#x7406;&#x89E3;&#x3001;&#x4FDD;&#x8BC1;&#x4EE3;&#x7801;&#x53EF;&#x9760;&#x6027;&#x3002; &#x6BEB;&#x65E0;&#x7591;&#x95EE;&#xFF0C;&#x8BBE;&#x8BA1;&#x6A21;&#x5F0F;&#x4E8E;&#x5DF1;&#x4E8E;&#x4ED6;&#x4EBA;&#x4E8E;&#x7CFB;&#x7EDF;&#x90FD;&#x662F;&#x591A;&#x8D62;&#x7684;&#xFF1B;&#x8BBE;&#x8BA1;&#x6A21;&#x5F0F;&#x4F7F;&#x4EE3;&#x7801;&#x7F16;&#x5236;&#x771F;&#x6B63;&#x5DE5;&#x7A0B;&#x5316;&#xFF1B;&#x8BBE;&#x8BA1;&#x6A21;&#x5F0F;&#x662F;&#x8F6F;&#x4EF6;&#x5DE5;&#x7A0B;&#x7684;&#x57FA;&#x77F3;&#x8109;&#x7EDC;&#xFF0C;&#x5982;&#x540C;&#x5927;&#x53A6;&#x7684;&#x7ED3;&#x6784;&#x4E00;&#x6837;&#x3002;</p>
 <h2 id="&#x8BBE;&#x8BA1;&#x6A21;&#x5F0F;4&#x8981;&#x7D20;"><a href="#&#x8BBE;&#x8BA1;&#x6A21;&#x5F0F;4&#x8981;&#x7D20;" class="headerlink" title="&#x8BBE;&#x8BA1;&#x6A21;&#x5F0F;4&#x8981;&#x7D20;"></a>&#x8BBE;&#x8BA1;&#x6A21;&#x5F0F;4&#x8981;&#x7D20;</h2><p><strong>1. &#x6A21;&#x5F0F;&#x540D;&#x79F0; (pattern name)</strong>
 &#x7528;&#x4E00;&#x4E24;&#x4E2A;&#x8BCD;&#x6765;&#x63CF;&#x8FF0;&#x6A21;&#x5F0F;&#x7684;&#x95EE;&#x9898;&#x3001;&#x89E3;&#x51B3;&#x65B9;&#x6848;&#x548C;&#x6548;&#x679C;&#x3002;</p>
@@ -2454,130 +2789,16 @@ $ gbs build -A i586 -D ~/tizen2.0.conf
 </tbody>
 </table>
 
-            
-          </span>
+          
         
       
     </div>
 
-    <footer class="post-footer">
+    <div>
       
+    </div>
 
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                <a class="post-title-link" href="/2016/03/12/configure-PPTP-VPN-in-Ubuntu/" itemprop="url">
-                  Ubuntu下配置PPTP VPN
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            Posted on
-            <time itemprop="dateCreated" datetime="2016-03-12T15:22:29+08:00" content="2016-03-12">
-              2016-03-12
-            </time>
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <span itemprop="articleBody">
-            
-              <h1 id="Configure-PPTP-VPN-in-Ubuntu"><a href="#Configure-PPTP-VPN-in-Ubuntu" class="headerlink" title="Configure PPTP VPN in Ubuntu"></a>Configure PPTP VPN in Ubuntu</h1><h2 id="&#x5B89;&#x88C5;pptpd"><a href="#&#x5B89;&#x88C5;pptpd" class="headerlink" title="&#x5B89;&#x88C5;pptpd"></a>&#x5B89;&#x88C5;pptpd</h2><pre><code>$ sudo apt-get install pptpd
-</code></pre><h2 id="&#x914D;&#x7F6E;"><a href="#&#x914D;&#x7F6E;" class="headerlink" title="&#x914D;&#x7F6E;"></a>&#x914D;&#x7F6E;</h2><p><strong>&#x7F16;&#x8F91;pptpd.conf</strong></p>
-<pre><code>$ sudo vi /etc/pptpd.conf
-</code></pre><p>&#x4FEE;&#x6539;&#x5982;&#x4E0B;&#x4E24;&#x884C;&#xFF1A;</p>
-<pre><code>localip xxx.xxx.xxx.xxx
-remoteip 192.168.1.100-200
-</code></pre><blockquote>
-<p>localip: Ubuntu&#x4E3B;&#x673A;&#x7684;IP</p>
-<p>remoteip: &#x5206;&#x914D;&#x7ED9;Client&#x7684;IP&#x6BB5;</p>
-</blockquote>
-<p><strong>&#x8BBE;&#x7F6E;Windows Client&#x7684;DNS</strong></p>
-<pre><code>$ sudo vi /etc/ppp/pptpd-options
-</code></pre><p>&#x4FEE;&#x6539;<code>ms-dns</code>&#xFF0C;&#x4FEE;&#x6539;&#x4E3A;google&#x7684;dns&#xFF1A;</p>
-<pre><code>ms-dns 8.8.8.8
-ms-dns 8.8.4.4
-</code></pre><p><strong>&#x8BBE;&#x7F6E;&#x8D26;&#x53F7;</strong></p>
-<pre><code>$ sudo vi /etc/ppp/chap-secrets
-</code></pre><p>&#x6DFB;&#x52A0;&#x4E00;&#x884C;&#xFF0C;&#x4F9D;&#x6B21;&#x4E3A;&#xFF1A;&#x7528;&#x6237;&#x540D;&#xFF0C;&#x670D;&#x52A1;&#xFF0C;&#x5BC6;&#x7801;&#xFF0C;&#x9650;&#x5236;ip&#xFF1A;</p>
-<pre><code>&quot;user&quot; pptpd &quot;user&quot; *
-</code></pre><p>&#x6216;</p>
-<pre><code>username * password *
-</code></pre><p><strong>&#x91CD;&#x542F;&#x670D;&#x52A1;</strong></p>
-<pre><code>$ sudo /etc/init.d/pptpd restart
-</code></pre><p>&#x6267;&#x884C;&#x4EE5;&#x4E0A;&#x6B65;&#x9AA4;&#x540E;VPN&#x5373;&#x53EF;&#x8FDE;&#x63A5;&#x4E0A;&#x4E86;&#xFF0C;&#x4F46;&#x662F;&#x8FD8;&#x65E0;&#x6CD5;&#x4E0A;&#x7F51;&#x3002;</p>
-<h2 id="&#x8BBE;&#x7F6E;IP&#x8F6C;&#x53D1;"><a href="#&#x8BBE;&#x7F6E;IP&#x8F6C;&#x53D1;" class="headerlink" title="&#x8BBE;&#x7F6E;IP&#x8F6C;&#x53D1;"></a>&#x8BBE;&#x7F6E;IP&#x8F6C;&#x53D1;</h2><p><strong>&#x5141;&#x8BB8;&#x8F6C;&#x53D1;</strong></p>
-<pre><code>$ sudo vi /etc/sysctl.conf
-</code></pre><p>&#x53BB;&#x6389;&#x6587;&#x4EF6;&#x4E2D;&#x8FD9;&#x4E00;&#x884C;&#x7684;&#x6CE8;&#x91CA;&#xFF1A;</p>
-<pre><code>net.ipv4.ip_forward=1
-</code></pre><p>&#x4F7F;&#x8BBE;&#x7F6E;&#x751F;&#x6548;&#xFF1A;</p>
-<pre><code>$ sudo sysctl -p
-</code></pre><p><strong>&#x8BBE;&#x7F6E;<code>NAT</code></strong></p>
-<pre><code>$ sudo iptables -t nat -A POSTROUTING -s 192.168.1.0/24 -o eth0 -j MASQUERADE
-</code></pre><p>&#x8BBE;&#x7F6E;MTU&#xFF0C;&#x9632;&#x6B62;&#x5305;&#x8FC7;&#x5927;&#xFF1A;</p>
-<pre><code>$ sudo iptables -A FORWARD -s 192.168.1.0/24 -p tcp -m tcp --tcp-flags SYN,RST SYN -j TCPMSS --set-mss 1200
-</code></pre><p><strong>&#x4FDD;&#x5B58;&#x8BBE;&#x7F6E;</strong></p>
-<pre><code>$ sudo iptables-save
-</code></pre><p>&#x5C06;&#x8F93;&#x51FA;&#x4FDD;&#x5B58;&#x5230;&#x4EE5;&#x4E0B;&#x6587;&#x4EF6;&#x4E2D;</p>
-<pre><code>$ sudo /etc/iptables-rules
-</code></pre><p><strong>&#x81EA;&#x52A8;&#x52A0;&#x8F7D;&#x89C4;&#x5219;</strong></p>
-<p>&#x7F16;&#x8F91;&#x7F51;&#x5361;&#x6587;&#x4EF6;&#xFF0C;&#x52A0;&#x8F7D;&#x7F51;&#x5361;&#x65F6;&#x81EA;&#x52A8;&#x52A0;&#x8F7D;&#x89C4;&#x5219;</p>
-<pre><code>$ sudo vi  /etc/network/interfaces
-</code></pre><p>&#x6DFB;&#x52A0;&#x4E00;&#x884C;&#xFF1A;</p>
-<pre><code>pre-up iptables-restore &lt; /etc/iptables-rules
-</code></pre><blockquote>
-<p>Fin</p>
-</blockquote>
-
-            
-          </span>
-        
+    <div>
       
     </div>
 
@@ -2603,15 +2824,16 @@ ms-dns 8.8.4.4
   </nav>
 
 
- </div>
 
-        
+          </div>
+          
 
-        
-      </div>
 
-      
+          
+
+        </div>
         
+          
   
   <div class="sidebar-toggle">
     <div class="sidebar-toggle-line-wrap">
@@ -2630,31 +2852,30 @@ ms-dns 8.8.4.4
 
       <section class="site-overview sidebar-panel  sidebar-panel-active ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <img class="site-author-image" src="/images/default_avatar.jpg" alt="Jason Wang" itemprop="image"/>
+          <img class="site-author-image" itemprop="image"
+               src="/uploads/avatar.jpg"
+               alt="Jason Wang" />
           <p class="site-author-name" itemprop="name">Jason Wang</p>
+          <p class="site-description motion-element" itemprop="description">Play Fun</p>
         </div>
-        <p class="site-description motion-element" itemprop="description"></p>
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">13</span>
+              <span class="site-state-item-count">14</span>
               <span class="site-state-item-name">posts</span>
             </a>
           </div>
 
-          <div class="site-state-item site-state-categories">
-            
-              <span class="site-state-item-count">0</span>
-              <span class="site-state-item-name">categories</span>
-              
-          </div>
+          
 
-          <div class="site-state-item site-state-tags">
-            <a href="/tags">
-              <span class="site-state-item-count">20</span>
-              <span class="site-state-item-name">tags</span>
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">19</span>
+                <span class="site-state-item-name">tags</span>
               </a>
-          </div>
+            </div>
+          
 
         </nav>
 
@@ -2667,9 +2888,8 @@ ms-dns 8.8.4.4
         
         
 
-        <div class="links-of-author motion-element">
-          
-        </div>
+        
+        
 
       </section>
 
@@ -2679,16 +2899,18 @@ ms-dns 8.8.4.4
   </aside>
 
 
-      
+        
+      </div>
     </main>
 
     <footer id="footer" class="footer">
-      <div class="footer-inner"> <div class="copyright" >
+      <div class="footer-inner">
+        <div class="copyright" >
   
   &copy; 
   <span itemprop="copyrightYear">2016</span>
   <span class="with-love">
-    <i class="icon-next-heart fa fa-heart"></i>
+    <i class="fa fa-heart"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">Jason Wang</span>
 </div>
@@ -2700,78 +2922,103 @@ ms-dns 8.8.4.4
 <div class="theme-info">
   Theme -
   <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-    NexT
+    NexT.Pisces
   </a>
 </div>
 
+        
 
- </div>
+        
+      </div>
     </footer>
 
-    <div class="back-to-top"></div>
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
   </div>
 
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
   <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
 
   
-  
-  
-    
-    
-
-  
-
-
-  
-  
-  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
-  <script type="text/javascript" src="/js/fancy-box.js?v=0.4.5.2"></script>
-
-
-  <script type="text/javascript" src="/js/helpers.js?v=0.4.5.2"></script>
-  
-
-  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
-  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
-
-  <script type="text/javascript" src="/js/motion_global.js?v=0.4.5.2" id="motion.global"></script>
-
-
-
-
-  <script type="text/javascript" src="/js/nav-toggle.js?v=0.4.5.2"></script>
   <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
 
   
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
 
-  <script type="text/javascript">
-    $(document).ready(function () {
-      if (CONFIG.sidebar === 'always') {
-        displaySidebar();
-      }
-      if (isMobile()) {
-        FastClick.attach(document.body);
-      }
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
 
-      motionIntegrator.bootstrap();
-    });
-  </script>
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
 
   
   
 
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.1"></script>
+
+
+
+  
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+  
   
   
 
   
-  <script type="text/javascript" src="/js/lazyload.js"></script>
-  <script type="text/javascript">
-    $(function () {
-      $("#posts").find('img').lazyload({
-        placeholder: "/images/loading.gif",
-        effect: "fadeIn"
-      });
-    });
-  </script>
+
+  
+
 </body>
 </html>
