@@ -1,0 +1,740 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="java,hashmap," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="&amp;#x6982;&amp;#x8FF0;&amp;#x672C;&amp;#x6587;&amp;#x7FFB;&amp;#x8BD1;&amp;#x81EA; JDK 1.8 HashMap &amp;#x7684;&amp;#x6587;&amp;#x6863;&amp;#x3002;
+&amp;#x672F;&amp;#x8BED;
+
+
+&amp;#x82F1;&amp;#x6587;
+&amp;#x4E2D;&amp;#x6587;
+
+
+
+
+Hash
+&amp;#x54C8;&amp;#x5E0C;
+
+
+Key
+&amp;#x952E;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java Hashmap">
+<meta property="og:url" content="https://quarkchaos.github.com/2016/07/17/java-hashmap/index.html">
+<meta property="og:site_name" content="Jason Wang's Playground">
+<meta property="og:description" content="&amp;#x6982;&amp;#x8FF0;&amp;#x672C;&amp;#x6587;&amp;#x7FFB;&amp;#x8BD1;&amp;#x81EA; JDK 1.8 HashMap &amp;#x7684;&amp;#x6587;&amp;#x6863;&amp;#x3002;
+&amp;#x672F;&amp;#x8BED;
+
+
+&amp;#x82F1;&amp;#x6587;
+&amp;#x4E2D;&amp;#x6587;
+
+
+
+
+Hash
+&amp;#x54C8;&amp;#x5E0C;
+
+
+Key
+&amp;#x952E;">
+<meta property="og:updated_time" content="2016-07-17T07:38:56.303Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Java Hashmap">
+<meta name="twitter:description" content="&amp;#x6982;&amp;#x8FF0;&amp;#x672C;&amp;#x6587;&amp;#x7FFB;&amp;#x8BD1;&amp;#x81EA; JDK 1.8 HashMap &amp;#x7684;&amp;#x6587;&amp;#x6863;&amp;#x3002;
+&amp;#x672F;&amp;#x8BED;
+
+
+&amp;#x82F1;&amp;#x6587;
+&amp;#x4E2D;&amp;#x6587;
+
+
+
+
+Hash
+&amp;#x54C8;&amp;#x5E0C;
+
+
+Key
+&amp;#x952E;">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: 'Author'
+    }
+  };
+</script>
+
+  <title> Java Hashmap | Jason Wang's Playground </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?ea2c42d3a5f14cd212a7a74fe032f86d";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Jason Wang's Playground</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/404.html" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />
+            
+            公益404
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Java Hashmap
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2016-07-17T15:24:10+08:00" content="2016-07-17">
+              2016-07-17
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="&#x6982;&#x8FF0;"><a href="#&#x6982;&#x8FF0;" class="headerlink" title="&#x6982;&#x8FF0;"></a>&#x6982;&#x8FF0;</h1><p>&#x672C;&#x6587;&#x7FFB;&#x8BD1;&#x81EA; JDK 1.8 HashMap &#x7684;&#x6587;&#x6863;&#x3002;</p>
+<h2 id="&#x672F;&#x8BED;"><a href="#&#x672F;&#x8BED;" class="headerlink" title="&#x672F;&#x8BED;"></a>&#x672F;&#x8BED;</h2><table>
+<thead>
+<tr>
+<th>&#x82F1;&#x6587;</th>
+<th>&#x4E2D;&#x6587;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Hash</td>
+<td>&#x54C8;&#x5E0C;</td>
+</tr>
+<tr>
+<td>Key</td>
+<td>&#x952E;</td>
+</tr>
+<tr>
+<td>Value</td>
+<td>&#x503C;</td>
+</tr>
+<tr>
+<td>Bucket</td>
+<td>&#x6876;</td>
+</tr>
+<tr>
+<td>Capacity</td>
+<td>&#x5BB9;&#x91CF;</td>
+</tr>
+<tr>
+<td>Load Factor</td>
+<td>&#x8D1F;&#x8F7D;&#x56E0;&#x5B50;</td>
+</tr>
+<tr>
+<td>Iteration</td>
+<td>&#x8FED;&#x4EE3;</td>
+</tr>
+<tr>
+<td>Initial Capacity</td>
+<td>&#x521D;&#x59CB;&#x5BB9;&#x91CF;</td>
+</tr>
+<tr>
+<td>Rehashing</td>
+<td>&#x91CD;&#x54C8;&#x5E0C;</td>
+</tr>
+</tbody>
+</table>
+<h1 id="HashMap"><a href="#HashMap" class="headerlink" title="HashMap"></a>HashMap</h1><blockquote>
+<p>HashMap &#x7684;&#x8BF4;&#x660E;</p>
+</blockquote>
+<p><strong>java.util</strong></p>
+<p>public class <strong>HashMap</strong><k, v=""></k,></p>
+<p>extends java.util.AbstractMap<k, v=""></k,></p>
+<p>implements java.util.Map<k, v="">, java.lang.Cloneable, java.io.Serializable</k,></p>
+<p>&#x57FA;&#x4E8E;&#x54C8;&#x5E0C;&#x8868;&#x7684; <code>Map</code> &#x63A5;&#x53E3;&#x5B9E;&#x73B0;&#x3002;&#x672C;&#x5B9E;&#x73B0;&#x63D0;&#x4F9B;&#x4E86;&#x6240;&#x6709;&#x53EF;&#x9009;&#x7684; map &#x64CD;&#x4F5C;&#xFF0C;&#x5141;&#x8BB8; <code>null</code> &#x503C;&#x548C; <code>null</code> &#x952E;&#x3002;&#xFF08;<code>HashMap</code> &#x7C7B;&#x5927;&#x81F4;&#x76F8;&#x5F53;&#x4E8E; <code>Hashtable</code>&#xFF0C;&#x9664;&#x4E86;&#x5B83;&#x662F;&#x975E;&#x540C;&#x6B65;&#x7684;&#x5E76;&#x4E14;&#x5141;&#x8BB8; null)&#x3002;&#x8FD9;&#x4E2A;&#x7C7B;&#x4E0D;&#x4FDD;&#x8BC1; map &#x7684;&#x987A;&#x5E8F;&#xFF0C;&#x7279;&#x522B;&#x7684;&#xFF0C;&#x5B83;&#x4E5F;&#x4E0D;&#x4FDD;&#x8BC1;&#x8BE5;&#x987A;&#x5E8F;&#x968F;&#x7740;&#x65F6;&#x95F4;&#x4FDD;&#x6301;&#x4E0D;&#x53D8;&#x3002;</p>
+<p>&#x5047;&#x8BBE;&#x54C8;&#x5E0C;&#x51FD;&#x6570;&#x80FD;&#x4F7F;&#x5143;&#x7D20;&#x6B63;&#x786E;&#x5730;&#x5206;&#x6563;&#x5728;&#x6876;&#x4E2D;&#xFF0C;&#x672C;&#x5B9E;&#x73B0;&#x5C06;&#x63D0;&#x4F9B;&#x5E38;&#x91CF;&#x65F6;&#x95F4;&#x6027;&#x80FD;&#x7684;&#x57FA;&#x672C;&#x64CD;&#x4F5C;&#xFF08;<code>get</code> &#x548C; <code>put</code>&#xFF09;&#x3002;&#x8FED;&#x4EE3;&#x96C6;&#x5408;&#x65F6;&#x6240;&#x9700;&#x7684;&#x65F6;&#x95F4;&#x4E0E;&#x54C8;&#x5E0C;&#x8868;&#x7684;&#x201C;&#x5BB9;&#x91CF;&#x201D;&#xFF08;&#x6876;&#x7684;&#x6570;&#x91CF;&#xFF09;&#x52A0;&#x4E0A;&#x54C8;&#x5E0C;&#x8868;&#x7684;&#x5927;&#x5C0F;&#xFF08;&#x952E;-&#x503C;&#x5BF9;&#x6570;&#x91CF;&#xFF09;&#x6210;&#x6BD4;&#x4F8B;&#x3002;&#x56E0;&#x6B64;&#x975E;&#x5E38;&#x91CD;&#x8981;&#x7684;&#x4E00;&#x70B9;&#x662F;&#xFF0C;&#x5982;&#x679C;&#x8FED;&#x4EE3;&#x7684;&#x6027;&#x80FD;&#x975E;&#x5E38;&#x91CD;&#x8981;&#xFF0C;&#x90A3;&#x4E48;&#x521D;&#x59CB;&#x5BB9;&#x91CF;&#x4E0D;&#x5E94;&#x8BBE;&#x5F97;&#x592A;&#x9AD8;&#xFF08;&#x6216;&#x8D1F;&#x8F7D;&#x56E0;&#x5B50;&#x592A;&#x4F4E;&#xFF09;&#x3002;</p>
+<p>&#x4E00;&#x4E2A; <code>HashMap</code> &#x5B9E;&#x4F8B;&#x6709;&#x4E24;&#x4E2A;&#x53C2;&#x6570;&#x5F71;&#x54CD;&#x5176;&#x6027;&#x80FD;&#xFF1A;<em>&#x521D;&#x59CB;&#x5BB9;&#x91CF;</em>&#x548C;<em>&#x8D1F;&#x8F7D;&#x56E0;&#x5B50;</em>&#x3002;<em>&#x5BB9;&#x91CF;</em>&#x6307;&#x7684;&#x662F;&#x54C8;&#x5E0C;&#x8868;&#x4E2D;&#x6876;&#x7684;&#x6570;&#x91CF;&#xFF0C;&#x521D;&#x59CB;&#x5BB9;&#x91CF;&#x4E5F;&#x5C31;&#x662F;&#x521B;&#x5EFA;&#x54C8;&#x5E0C;&#x8868;&#x65F6;&#x7684;&#x5BB9;&#x91CF;&#x3002;<em>&#x8D1F;&#x8377;&#x56E0;&#x5B50;</em>&#x662F;&#x7528;&#x6765;&#x8861;&#x91CF;&#x54C8;&#x5E0C;&#x8868;&#x5BB9;&#x91CF;&#x81EA;&#x52A8;&#x589E;&#x957F;&#x4E4B;&#x524D;&#x5141;&#x8BB8;&#x8868;&#x4E2D;&#x6570;&#x636E;&#x6709;&#x591A;&#x6EE1;&#x3002;&#x5F53;&#x54C8;&#x5E0C;&#x8868;&#x4E2D;&#x7684; <code>Entry</code> &#x7684;&#x6570;&#x91CF;&#x8D85;&#x8FC7;&#x8D1F;&#x8F7D;&#x56E0;&#x5B50;&#x4E0E;&#x5F53;&#x524D;&#x5BB9;&#x91CF;&#x7684;&#x4E58;&#x79EF;&#x65F6;,&#x54C8;&#x5E0C;&#x8868;&#x5C06;&#x4F1A;&#x88AB;<em>&#x91CD;&#x54C8;&#x5E0C;</em>&#xFF08;&#x4E5F;&#x5C31;&#x662F;&#x5185;&#x90E8;&#x6570;&#x636E;&#x7ED3;&#x6784;&#x4F1A;&#x88AB;&#x91CD;&#x5EFA;&#xFF09;&#xFF0C;&#x4EE5;&#x4F7F;&#x54C8;&#x5E0C;&#x8868;&#x6709;&#x5927;&#x7EA6;&#x4E24;&#x500D;&#x6570;&#x91CF;&#x7684;&#x6876;&#x3002;</p>
+<p>&#x4F5C;&#x4E3A;&#x4E00;&#x822C;&#x89C4;&#x5219;&#xFF0C;&#x9ED8;&#x8BA4;&#x7684;&#x8D1F;&#x8F7D;&#x56E0;&#x5B50;&#xFF08;.75&#xFF09;&#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x4E2A;&#x826F;&#x597D;&#x7684;&#x65F6;&#x95F4;&#x548C;&#x7A7A;&#x95F4;&#x6210;&#x672C;&#x4E4B;&#x95F4;&#x7684;&#x6743;&#x8861;&#x3002;&#x66F4;&#x9AD8;&#x7684;&#x503C;&#x4F1A;&#x51CF;&#x5C11;&#x7684;&#x7A7A;&#x95F4;&#x5F00;&#x9500;&#xFF0C;&#x4F46;&#x4F1A;&#x589E;&#x52A0;&#x67E5;&#x627E;&#x6210;&#x672C;&#xFF08;&#x5F71;&#x54CD;&#x5927;&#x591A;&#x6570; <code>HashMap</code> &#x7C7B;&#x7684;&#x64CD;&#x4F5C;&#xFF0C;&#x5305;&#x62EC; <code>get</code> &#x548C; <code>put</code>&#xFF09;&#x3002;&#x8BBE;&#x7F6E;&#x521D;&#x59CB;&#x5BB9;&#x91CF;&#x65F6;&#xFF0C;&#x5E94;&#x5F53;&#x8003;&#x8651; map &#x4E2D;&#x9884;&#x671F;&#x7684; <code>Entry</code> &#x6570;&#x91CF;&#x548C;&#x8D1F;&#x8F7D;&#x56E0;&#x5B50;&#x3002;&#x5982;&#x679C;&#x521D;&#x59CB;&#x5BB9;&#x91CF;&#x5927;&#x4E8E;&#x6700;&#x5927;&#x7684; <code>Entry</code> &#x6570;&#x91CF;&#x9664;&#x4EE5;&#x8D1F;&#x8F7D;&#x56E0;&#x5B50;&#xFF0C;&#x5C06;&#x4E0D;&#x4F1A;&#x53D1;&#x751F;&#x91CD;&#x54C8;&#x5E0C;&#x3002;</p>
+<p>&#x5982;&#x679C;&#x9700;&#x8981;&#x5C06;&#x975E;&#x5E38;&#x591A;&#x7684;&#x952E;&#x503C;&#x5BF9;&#x5B58;&#x50A8;&#x5728; <code>HashMap</code> &#x5B9E;&#x4F8B;&#x4E2D;&#xFF0C;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x8DB3;&#x591F;&#x5927;&#x5BB9;&#x91CF;&#x7684;&#x54C8;&#x5E0C;&#x8868;&#x5C06;&#x4F1A;&#x4F7F;&#x5B58;&#x50A8;&#x8FC7;&#x7A0B;&#x6548;&#x7387;&#x66F4;&#x9AD8;&#xFF0C;&#x76F8;&#x6BD4;&#x4E8E;&#x6269;&#x5927;&#x54C8;&#x5E0C;&#x8868;&#x65F6;&#x81EA;&#x52A8;&#x6267;&#x884C;&#x7684;&#x91CD;&#x54C8;&#x5E0C;&#x3002;&#x9700;&#x8981;&#x6CE8;&#x610F;&#x7684;&#x662F;&#x4F7F;&#x7528;&#x8BB8;&#x591A;&#x76F8;&#x540C; <code>hashCode()</code> &#x7ED3;&#x679C;&#x7684;&#x952E;&#x5FC5;&#x7136;&#x4F1A;&#x51CF;&#x7F13;&#x54C8;&#x5E0C;&#x8868;&#x7684;&#x6027;&#x80FD;&#x3002;&#x4E3A;&#x4E86;&#x51CF;&#x5C0F;&#x5F71;&#x54CD;&#xFF0C;&#x5F53;&#x952E;&#x662F; <code>Comparable</code> &#x65F6;&#xFF0C;&#x672C;&#x7C7B;&#x5C06;&#x5BF9;&#x952E;&#x4F7F;&#x7528;&#x6BD4;&#x8F83;&#x987A;&#x5E8F;&#x4EE5;&#x5E2E;&#x52A9;&#x51CF;&#x5C11;&#x9ED8;&#x8BA4;&#x987A;&#x5E8F;&#x9020;&#x6210;&#x7684;&#x4E0D;&#x826F;&#x5F71;&#x54CD;&#x3002;</p>
+<p><strong>&#x6CE8;&#x610F;&#xFF0C;&#x672C;&#x5B9E;&#x73B0;&#x662F;&#x975E;&#x540C;&#x6B65;&#x7684;&#x3002;</strong>&#x5982;&#x679C;&#x591A;&#x4E2A;&#x7EBF;&#x7A0B;&#x5E76;&#x53D1;&#x8BBF;&#x95EE;&#x4E00;&#x4E2A;&#x54C8;&#x5E0C;&#x8868;&#xFF0C;&#x5E76;&#x4E14;&#x81F3;&#x5C11;&#x6709;&#x4E00;&#x4E2A;&#x7EBF;&#x7A0B;&#x6539;&#x53D8; map &#x7ED3;&#x6784;&#xFF0C;&#x5219;<em>&#x5FC5;&#x987B;</em>&#x5728;&#x5916;&#x90E8;&#x7A0B;&#x5E8F;&#x4E2D;&#x5B9E;&#x73B0;&#x540C;&#x6B65;&#x3002;&#xFF08;&#x7ED3;&#x6784;&#x6539;&#x52A8;&#x662F;&#x6307;&#x589E;&#x52A0;&#x6216;&#x5220;&#x9664;&#x4E00;&#x4E2A;&#x6216;&#x591A;&#x4E2A;&#x6620;&#x5C04;&#xFF1B;&#x4EC5;&#x4EC5;&#x6539;&#x53D8;&#x8868;&#x4E2D;&#x5DF2;&#x6709;&#x7684;&#x952E;&#x5BF9;&#x5E94;&#x7684;&#x503C;&#x5E76;&#x4E0D;&#x7B97;&#x7ED3;&#x6784;&#x6539;&#x52A8;&#x3002;&#xFF09;&#x8FD9;&#x901A;&#x5E38;&#x662F;&#x7531;&#x67D0;&#x4E2A;&#x5305;&#x542B;&#x4E86; map &#x7684;&#x5BF9;&#x8C61;&#x7684;&#x540C;&#x6B65;&#x6765;&#x5B9E;&#x73B0;&#x7684;&#x3002;</p>
+<p>&#x5982;&#x679C;&#x4E0D;&#x5B58;&#x5728;&#x8FD9;&#x6837;&#x7684;&#x5BF9;&#x8C61;&#xFF0C;&#x5E94;&#x5F53;&#x4F7F;&#x7528; <code>Collections.synchronizedMap</code> &#x65B9;&#x6CD5; &#x201C;&#x5C01;&#x88C5;&#x201D; map&#x3002;&#x6700;&#x597D;&#x662F;&#x5728;&#x521B;&#x5EFA;&#x65F6;&#x5B8C;&#x6210;&#xFF0C;&#x4EE5;&#x907F;&#x514D;&#x5BF9; map &#x975E;&#x540C;&#x6B65;&#x7684;&#x8BBF;&#x95EE;&#xFF1A;</p>
+<pre><code>Map m = Collections.synchronizedMap(new HashMap(...));
+</code></pre><p>&#x672C;&#x7C7B;&#x6240;&#x6709;&#x7684;&#x201C;&#x96C6;&#x5408;&#x89C6;&#x56FE;&#x65B9;&#x6CD5;&#x201D;&#x8FD4;&#x56DE;&#x7684;&#x8FED;&#x4EE3;&#x5668;&#x90FD;&#x662F; &#x201C;fail-fast&#x201D; &#x7684;&#x3002;&#x8FED;&#x4EE3;&#x5668;&#x521B;&#x5EFA;&#x540E;&#xFF0C;&#x5982;&#x679C; map &#x53D1;&#x751F;&#x4E86;&#x7ED3;&#x6784;&#x6539;&#x52A8;&#xFF08;&#x9664;&#x4E86;&#x8FED;&#x4EE3;&#x5668;&#x81EA;&#x5DF1;&#x7684; <code>remove</code> &#x65B9;&#x6CD5;&#x7684;&#x5176;&#x4ED6;&#x4EFB;&#x4F55;&#x65B9;&#x5F0F;&#xFF09;&#xFF0C;&#x8FED;&#x4EE3;&#x5668;&#x5C06;&#x629B;&#x51FA; <code>ConcurrentModificationException</code> &#x5F02;&#x5E38;&#x3002;&#x56E0;&#x6B64;&#xFF0C;&#x9762;&#x5BF9;&#x5E76;&#x53D1;&#x4FEE;&#x6539;&#xFF0C;&#x8FED;&#x4EE3;&#x5668;&#x4F1A;&#x5E72;&#x51C0;&#x5229;&#x843D;&#x5730;&#x4EA7;&#x751F;&#x5931;&#x8D25;&#xFF0C;&#x800C;&#x4E0D;&#x7528;&#x5192;&#x7740;&#x672A;&#x6765;&#x4E0D;&#x786E;&#x5B9A;&#x7684;&#x65F6;&#x95F4;&#x53D1;&#x751F;&#x4E0D;&#x786E;&#x5B9A;&#x7684;&#x884C;&#x4E3A;&#x7684;&#x98CE;&#x9669;&#x3002;</p>
+<p>&#x6CE8;&#x610F;,&#x8FED;&#x4EE3;&#x5668;&#x7684; fail-fast &#x884C;&#x4E3A;&#x662F;&#x65E0;&#x6CD5;&#x4FDD;&#x8BC1;&#x7684;&#xFF0C;&#x4E00;&#x822C;&#x6765;&#x8BF4;&#xFF0C;&#x53D1;&#x751F;&#x672A;&#x540C;&#x6B65;&#x7684;&#x5E76;&#x53D1;&#x4FEE;&#x6539;&#x65F6;&#xFF0C;&#x4EFB;&#x4F55;&#x4FDD;&#x8BC1;&#x90FD;&#x662F;&#x4E0D;&#x53EF;&#x80FD;&#x7684;&#x3002;fail-fast &#x8FED;&#x4EE3;&#x5668;&#x5C06;&#x5C3D;&#x91CF;&#x629B;&#x51FA; <code>ConcurrentModificationException</code>&#x3002;&#x56E0;&#x6B64;&#xFF0C;&#x7F16;&#x5199;&#x4E00;&#x4E2A;&#x6B63;&#x786E;&#x6027;&#x4F9D;&#x8D56;&#x4E8E;&#x8FD9;&#x4E2A;&#x5F02;&#x5E38;&#x7684;&#x7A0B;&#x5E8F;&#xFF0C;&#x662F;&#x5B8C;&#x5168;&#x9519;&#x8BEF;&#x7684;&#xFF1A;fail-fast &#x884C;&#x4E3A;&#x5E94;&#x8BE5;&#x53EA;&#x7528;&#x6765;&#x68C0;&#x6D4B; bug&#x3002;</p>
+<p>&#x672C;&#x7C7B;&#x5C5E;&#x4E8E; <strong>Java Collections Framework</strong>&#x3002;</p>
+<p><strong>Since:</strong> 1.2</p>
+<p><strong>See Also:</strong> Object.hashCode(), Collection, Map, TreeMap, Hashtable</p>
+<p><strong>Type parameters:</strong></p>
+<ul>
+<li>&lt;K&gt; - &#x6B64; map &#x4E2D;&#x7EF4;&#x62A4;&#x7684;&#x952E;&#x7684;&#x7C7B;&#x578B;</li>
+<li>&lt;V&gt; - &#x6620;&#x5C04;&#x4E2D;&#x503C;&#x7684;&#x7C7B;&#x578B;</li>
+</ul>
+<h1 id="Implementation-Notes"><a href="#Implementation-Notes" class="headerlink" title="Implementation Notes"></a>Implementation Notes</h1><blockquote>
+<p>&#x672C;&#x5B9E;&#x73B0;&#x7684;&#x4E00;&#x4E9B;&#x6CE8;&#x610F;&#x70B9;</p>
+</blockquote>
+<p>&#x672C; map &#x901A;&#x5E38;&#x4F5C;&#x4E3A;&#x6876;&#x5F0F;&#x54C8;&#x5E0C;&#x8868;&#xFF0C;&#x4F46;&#x5F53;&#x6876;&#x5185;&#x7684;&#x6570;&#x636E;&#x592A;&#x591A;&#x65F6;&#xFF0C;&#x5B83;&#x4EEC;&#x5C06;&#x4F1A;&#x88AB;&#x8F6C;&#x6362;&#x6210; TreeNode &#x6876;&#xFF0C;&#x4E0E; java.util.TreeMap &#x7684;&#x7ED3;&#x6784;&#x7C7B;&#x4F3C;&#x3002;&#x5927;&#x90E8;&#x5206;&#x65B9;&#x6CD5;&#x4F1A;&#x5C3D;&#x91CF;&#x4F7F;&#x7528;&#x666E;&#x901A;&#x7684;&#x6876;&#xFF0C;&#x4F46;&#x5982;&#x679C;&#x53EF;&#x7528;&#x65F6;&#xFF0C;&#x4F1A;&#x5207;&#x6362;&#x5230; TreeNode &#x65B9;&#x6CD5;&#xFF08;&#x53EA;&#x9700;&#x8981;&#x7B80;&#x5355;&#x5730;&#x901A;&#x8FC7;&#x68C0;&#x67E5;&#x7ED3;&#x70B9;&#x7684; instanceof &#x7ED3;&#x679C;&#xFF09;&#x3002;TreeNode &#x6876;&#x53EF;&#x4EE5;&#x50CF;&#x5176;&#x5B83;&#x7ED3;&#x70B9;&#x4E00;&#x6837;&#x904D;&#x5386;&#x548C;&#x4F7F;&#x7528;&#xFF0C;&#x4F46;&#x662F;&#x989D;&#x5916;&#x652F;&#x6301;&#x6570;&#x91CF;&#x8FC7;&#x591A;&#x65F6;&#x66F4;&#x5FEB;&#x5730;&#x67E5;&#x627E;&#x3002;&#x4F46;&#x662F;&#xFF0C;&#x7531;&#x4E8E;&#x6B63;&#x5E38;&#x4F7F;&#x7528;&#x65F6;&#x7EDD;&#x5927;&#x591A;&#x6570;&#x7684;&#x6876;&#x4E0D;&#x4F1A;&#x6570;&#x91CF;&#x8FC7;&#x591A;&#xFF0C;&#x56E0;&#x6B64;&#x68C0;&#x67E5;&#x6811;&#x578B;&#x6876;&#x7684;&#x5DE5;&#x4F5C;&#x4F1A;&#x63A8;&#x8FDF;&#x5230;&#x8868;&#x65B9;&#x6CD5;&#x65F6;&#x3002;</p>
+<p>&#x6811;&#x578B;&#x6876;&#xFF08;&#x5373;&#x6876;&#x5185;&#x7684;&#x5143;&#x7D20;&#x90FD;&#x662F; TreeNode&#xFF09;&#x4E3B;&#x8981;&#x662F;&#x6309; hashCode &#x6392;&#x5E8F;&#xFF0C;&#x4F46;&#x662F;&#x5728;&#x51B2;&#x7A81;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#xFF08;&#x4E24;&#x4E2A;&#x5143;&#x7D20;&#x5C5E;&#x4E8E;&#x540C;&#x6837;&#x7684; &#x201C;class C implements Comparable<c>&#x201D; &#x7C7B;&#x578B;&#xFF09;&#xFF0C;&#x5143;&#x7D20;&#x7684; compareTo &#x65B9;&#x6CD5;&#x5C06;&#x4F1A;&#x7528;&#x6765;&#x6392;&#x5E8F;&#x3002;&#xFF08;&#x6211;&#x4EEC;&#x8C28;&#x614E;&#x5730;&#x901A;&#x8FC7;&#x53CD;&#x5C04;&#x6765;&#x68C0;&#x67E5;&#x6CDB;&#x578B;&#x7C7B;&#x578B;&#x4EE5;&#x9A8C;&#x8BC1;&#x8FD9;&#x79CD;&#x60C5;&#x51B5;&#xFF0C;&#x89C1;&#x65B9;&#x6CD5; comparableClassFor&#xFF09;&#x3002;&#x5F53;&#x952E;&#x6709;&#x4E0D;&#x540C;&#x7684;&#x54C8;&#x5E0C;&#x6216;&#x8005;&#x53EF;&#x4EE5;&#x6392;&#x5E8F;&#x65F6;&#xFF0C;&#x4E3A;&#x4E86;&#x5728;&#x6700;&#x574F;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#x63D0;&#x4F9B; O(logn)&#x7684;&#x64CD;&#x4F5C;&#xFF0C;&#x6811;&#x578B;&#x6876;&#x5E26;&#x6765;&#x7684;&#x590D;&#x6742;&#x6027;&#x589E;&#x52A0;&#x662F;&#x503C;&#x5F97;&#x7684;&#x3002;&#x56E0;&#x6B64;&#xFF0C;&#x5F53; hashCode() &#x65B9;&#x6CD5;&#x7684;&#x8FD4;&#x56DE;&#x503C;&#x5206;&#x6563;&#x8F83;&#x5DEE;&#xFF0C;&#x6216;&#x8BB8;&#x591A;&#x952E;&#x7684; hashCode &#x76F8;&#x540C;&#xFF0C;&#x4E0D;&#x7BA1;&#x662F;&#x610F;&#x5916;&#x8FD8;&#x662F;&#x6076;&#x610F;&#x7684;&#xFF0C;&#x53EA;&#x8981;&#x5B83;&#x4EEC;&#x662F;&#x53EF;&#x6BD4;&#x8F83;&#x7684;&#xFF0C;&#x6027;&#x80FD;&#x53EF;&#x4EE5;&#x4F18;&#x96C5;&#x5730;&#x964D;&#x7EA7;&#x3002;&#xFF08;&#x5982;&#x679C;&#x8FD9;&#x79CD;&#x60C5;&#x51B5;&#x6CA1;&#x6709;&#x53D1;&#x751F;&#xFF0C;&#x76F8;&#x6BD4;&#x4E8E;&#x4E0D;&#x91C7;&#x53D6;&#x4EFB;&#x4F55;&#x9884;&#x9632;&#x63AA;&#x65BD;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x80FD;&#x4F1A;&#x635F;&#x5931;&#x65F6;&#x95F4;&#x6216;&#x7A7A;&#x95F4;&#x3002;&#x4F46;&#x662F;&#x552F;&#x4E00;&#x5DF2;&#x77E5;&#x7684;&#x8FD9;&#x79CD;&#x60C5;&#x51B5;&#x6E90;&#x81EA;&#x8F83;&#x5DEE;&#x7684;&#x7528;&#x6237;&#x7F16;&#x7A0B;&#x5B9E;&#x8DF5;&#xFF0C;&#x56E0;&#x6B64;&#x8FD9;&#x70B9;&#x635F;&#x5931;&#x4E5F;&#x4E0D;&#x4F1A;&#x6709;&#x592A;&#x5927;&#x7684;&#x533A;&#x522B;&#x3002;&#xFF09;</c></p>
+<p>&#x56E0;&#x4E3A; TreeNode &#x5927;&#x7EA6;&#x662F;&#x6B63;&#x5E38;&#x7ED3;&#x70B9;&#x7684;&#x4E24;&#x500D;&#x5927;&#xFF0C;&#x56E0;&#x6B64;&#xFF0C;&#x6211;&#x4EEC;&#x4EC5;&#x4F1A;&#x5728;&#x6709;&#x8DB3;&#x591F;&#x591A;&#x7684;&#x7ED3;&#x70B9;&#x65F6;&#x624D;&#x4F1A;&#x4F7F;&#x7528;&#x5B83;&#x4EEC;&#xFF08;&#x89C1; TREEIFY_THRESHOLD&#xFF09;&#x3002;&#x5F53;&#x5B83;&#x4EEC;&#x53D8;&#x5F97;&#x592A;&#x5C0F;&#x65F6;&#xFF08;&#x7531;&#x4E8E;&#x79FB;&#x9664;&#x6216;&#x91CD;&#x65B0;&#x8C03;&#x6574;&#x5927;&#x5C0F;&#xFF09;&#xFF0C;&#x5B83;&#x4EEC;&#x4F1A;&#x88AB;&#x8F6C;&#x6362;&#x56DE;&#x666E;&#x901A;&#x7684;&#x6876;&#x3002;&#x5728;&#x4F7F;&#x7528;&#x5206;&#x6563;&#x5EA6;&#x5F88;&#x597D;&#x7684; hashCode &#x65F6;&#xFF0C;&#x6811;&#x578B;&#x6876;&#x5F88;&#x5C11;&#x4F1A;&#x88AB;&#x4F7F;&#x7528;&#x3002;&#x7406;&#x60F3;&#x7684;&#x968F;&#x673A; hashCode &#x6761;&#x4EF6;&#x4E0B;&#xFF0C;&#x6876;&#x4E2D;&#x7ED3;&#x70B9;&#x7684;&#x9891;&#x5EA6;&#x7B26;&#x5408;&#x6CCA;&#x677E;&#x5206;&#x5E03;&#xFF08;<a href="http://en.wikipedia.org/wiki/Poisson_distribution&#xFF09;&#xFF0C;&#x5728;&#x9ED8;&#x8BA4;&#x7684;&#x8D1F;&#x8F7D;&#x56E0;&#x5B50;&#x4E3A;" target="_blank" rel="external">http://en.wikipedia.org/wiki/Poisson_distribution&#xFF09;&#xFF0C;&#x5728;&#x9ED8;&#x8BA4;&#x7684;&#x8D1F;&#x8F7D;&#x56E0;&#x5B50;&#x4E3A;</a> 0.75 &#x65F6;&#xFF0C;&#x6CCA;&#x677E;&#x5206;&#x5E03;&#x53C2;&#x6570;&#x7684;&#x5E73;&#x5747;&#x503C;&#x4E3A; 0.5&#xFF0C;&#x867D;&#x7136;&#x7531;&#x4E8E;&#x8C03;&#x6574;&#x7C92;&#x5EA6;&#x4F1A;&#x6709;&#x4E00;&#x4E2A;&#x8F83;&#x5927;&#x7684;&#x65B9;&#x5DEE;&#x3002;&#x5982;&#x679C;&#x5FFD;&#x7565;&#x65B9;&#x5DEE;&#xFF0C;&#x8868;&#x5927;&#x5C0F; k &#x7684;&#x671F;&#x671B;&#x503C;&#x662F; (exp(-0.5) * pow(0.5, k) / factorial(k))&#x3002;&#x6700;&#x521D;&#x51E0;&#x4E2A;&#x7684;&#x503C;&#x662F;&#xFF1A;</p>
+<ul>
+<li>0:    0.60653066</li>
+<li>1:    0.30326533</li>
+<li>2:    0.07581633</li>
+<li>3:    0.01263606</li>
+<li>4:    0.00157952</li>
+<li>5:    0.00015795</li>
+<li>6:    0.00001316</li>
+<li>7:    0.00000094</li>
+<li>8:    0.00000006</li>
+<li>&#x66F4;&#x5927;: &#x5C0F;&#x4E8E; 1/10000000</li>
+</ul>
+<p>&#x4E00;&#x822C;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x6811;&#x578B;&#x6876;&#x7684;&#x6839;&#x662F;&#x5B83;&#x7684;&#x7B2C;&#x4E00;&#x4E2A;&#x7ED3;&#x70B9;&#x3002;&#x4F46;&#x662F;&#xFF0C;&#x6709;&#x65F6;&#xFF08;&#x76EE;&#x524D;&#x4EC5;&#x5F53;&#x6267;&#x884C; Iterator.remove &#x65F6;&#xFF09;&#xFF0C;&#x6839;&#x53EF;&#x80FD;&#x4F1A;&#x5728;&#x5176;&#x5B83;&#x5730;&#x65B9;&#xFF0C;&#x4F46;&#x662F;&#x4F1A;&#x5728;&#x7236;&#x7ED3;&#x70B9;&#x94FE;&#x63A5;&#x65F6;&#xFF08;TreeNode.root() &#x65B9;&#x6CD5;&#xFF09;&#xFF0C;&#x6062;&#x590D;&#x6B63;&#x5E38;&#x3002;</p>
+<p>&#x5F53;&#x6876;&#x4E2D;&#x7684;&#x8868;&#x88AB;&#x8F6C;&#x6362;&#x6210;&#x6811;&#xFF0C;&#x6216;&#x8005;&#x88AB;&#x5206;&#x88C2;&#xFF0C;&#x6216;&#x8005;&#x88AB;&#x8F6C;&#x6362;&#x56DE;&#x666E;&#x901A;&#x7684;&#x6876;&#x65F6;&#xFF0C;&#x6211;&#x4EEC;&#x4F1A;&#x4FDD;&#x6301;&#x8BBF;&#x95EE;&#x548C;&#x904D;&#x5386;&#x7684;&#x76F8;&#x5BF9;&#x987A;&#x5E8F;&#xFF08;&#x5982; Node.next&#xFF09;&#x4E0D;&#x53D8;&#xFF0C;&#x4EE5;&#x66F4;&#x597D;&#x5730;&#x4FDD;&#x6301;&#x5C40;&#x90E8;&#x6027;&#xFF0C;&#x5E76;&#x4E14;&#x5728;&#x8C03;&#x7528; iterator.remove &#x65F6;&#x7A0D;&#x5FAE;&#x7B80;&#x5316;&#x5BF9;&#x5206;&#x88C2;&#x548C;&#x904D;&#x5386;&#x7684;&#x5904;&#x7406;&#x3002;&#x5F53;&#x5728;&#x63D2;&#x5165;&#x65F6;&#x4F7F;&#x7528;&#x6BD4;&#x8F83;&#x5668;&#x65F6;&#xFF0C;&#x4E3A;&#x4E86;&#x4FDD;&#x6301;&#x603B;&#x4F53;&#x987A;&#x5E8F;&#xFF0C;&#x6211;&#x4EEC;&#x4F1A;&#x6BD4;&#x8F83;&#x7C7B;&#x548C; identityHashCode&#x3002;</p>
+<p>&#x7C7B;&#x4F3C;&#x201C;&#x5E76;&#x53D1;&#x7F16;&#x7A0B;&#x201D;&#x7684;&#x201C;&#x57FA;&#x4E8E;SSA&#x201D;&#x7684;&#x7F16;&#x7A0B;&#x98CE;&#x683C;&#x6709;&#x52A9;&#x4E8E;&#x907F;&#x514D;&#x590D;&#x6742;&#x7684;&#x6307;&#x9488;&#x64CD;&#x4F5C;&#x65F6;&#x7684;&#x5BF9;&#x9F50;&#x9519;&#x8BEF;&#x3002;</p>
+<h1 id="&#x521D;&#x59CB;&#x503C;"><a href="#&#x521D;&#x59CB;&#x503C;" class="headerlink" title="&#x521D;&#x59CB;&#x503C;"></a>&#x521D;&#x59CB;&#x503C;</h1><blockquote>
+<p>&#x7C7B;&#x4E2D;&#x7684;&#x4E00;&#x4E9B;&#x521D;&#x59CB;&#x503C;&#x8BF4;&#x660E;</p>
+</blockquote>
+<ul>
+<li>DEFAULT_INITIAL_CAPACITY</li>
+</ul>
+<p>1 &lt;&lt; 4, &#x4E5F;&#x5C31;&#x662F;16&#xFF0C;&#x9ED8;&#x8BA4;&#x7684;&#x521D;&#x59CB;&#x5BB9;&#x91CF;&#xFF0C;&#x5FC5;&#x987B;&#x662F; 2 &#x7684;&#x5E42;</p>
+<ul>
+<li>MAXIMUM_CAPACITY</li>
+</ul>
+<p>1 &lt;&lt; 30&#xFF0C;&#x6700;&#x5927;&#x5BB9;&#x91CF;</p>
+<ul>
+<li>DEFAULT_LOAD_FACTOR</li>
+</ul>
+<p>0.75&#xFF0C;&#x9ED8;&#x8BA4;&#x7684;&#x8D1F;&#x8F7D;&#x56E0;&#x5B50;</p>
+<ul>
+<li>TREEIFY_THRESHOLD</li>
+</ul>
+<p>8&#xFF0C;&#x6876;&#x4E2D;&#x5143;&#x7D20;&#x4E2A;&#x6570;&#x7684;&#x9608;&#x503C;&#xFF0C;&#x5F53;&#x8D85;&#x8FC7;&#x8FD9;&#x4E2A;&#x503C;&#x65F6;&#xFF0C;&#x6876;&#x4F1A;&#x88AB;&#x8F6C;&#x6362;&#x6210;&#x6811;</p>
+<ul>
+<li>UNTREEIFY_THRESHOLD</li>
+</ul>
+<p>6&#xFF0C;&#x6876;&#x4E2D;&#x5143;&#x7D20;&#x4E2A;&#x6570;&#x7684;&#x9608;&#x503C;&#xFF0C;&#x5F53;&#x5C0F;&#x4E8E;&#x8FD9;&#x4E2A;&#x503C;&#x65F6;&#xFF0C;&#x6876;&#x4E2D;&#x7684;&#x6811;&#x7ED3;&#x6784;&#x4F1A;&#x88AB;&#x8F6C;&#x6362;&#x56DE;&#x6B63;&#x5E38;&#x7684;&#x7ED3;&#x6784;&#x3002;&#x8FD9;&#x4E2A;&#x503C;&#x5FC5;&#x987B;&#x5C0F;&#x4E8E; TREEIFY_THRESHOLD&#xFF0C;&#x5E76;&#x4E14;&#x6700;&#x5927;&#x4E3A; 6&#x3002;</p>
+<ul>
+<li>MIN_TREEIFY_CAPACITY</li>
+</ul>
+<p>64&#xFF0C;&#x53EF;&#x4EE5;&#x88AB;&#x8F6C;&#x6362;&#x6210;&#x6811;&#x7684;&#x6700;&#x5C0F;&#x7684;&#x5BB9;&#x91CF;&#x3002;&#x5982;&#x679C;&#x5BB9;&#x91CF;&#x5C0F;&#x4E8E;&#x8FD9;&#x4E2A;&#x503C;&#xFF0C;&#x5F53;&#x6876;&#x4E2D;&#x5143;&#x7D20;&#x8FC7;&#x591A;&#x65F6;&#xFF0C;&#x8868;&#x4F1A;&#x88AB;&#x6269;&#x5927;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x8F6C;&#x6362;&#x6210;&#x6811;&#x3002;&#x8FD9;&#x4E2A;&#x503C;&#x81F3;&#x5C11;&#x4E3A; 4 * TREEIFY_THRESHOLD&#x3002;</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/java/" rel="tag">#java</a>
+          
+            <a href="/tags/hashmap/" rel="tag">#hashmap</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/07/13/principles-of-object-oriented-design/" rel="next" title="Principles of Object Oriented Design">
+                <i class="fa fa-chevron-left"></i> Principles of Object Oriented Design
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/uploads/avatar.jpg"
+               alt="Jason Wang" />
+          <p class="site-author-name" itemprop="name">Jason Wang</p>
+          <p class="site-description motion-element" itemprop="description">Play Fun</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">18</span>
+              <span class="site-state-item-name">posts</span>
+            </a>
+          </div>
+
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">26</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#概述"><span class="nav-number">1.</span> <span class="nav-text">概述</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#术语"><span class="nav-number">1.1.</span> <span class="nav-text">术语</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#HashMap"><span class="nav-number">2.</span> <span class="nav-text">HashMap</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Implementation-Notes"><span class="nav-number">3.</span> <span class="nav-text">Implementation Notes</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#初始值"><span class="nav-number">4.</span> <span class="nav-text">初始值</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Jason Wang</span>
+</div>
+
+<div class="powered-by">
+  Powered by <a class="theme-link" href="http://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+  
+  
+  
+
+  
+
+  
+
+</body>
+</html>

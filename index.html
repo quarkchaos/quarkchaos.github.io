@@ -253,6 +253,219 @@
             
               
                 
+                <a class="post-title-link" href="/2016/07/17/java-hashmap/" itemprop="url">
+                  Java Hashmap
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2016-07-17T15:24:10+08:00" content="2016-07-17">
+              2016-07-17
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="&#x6982;&#x8FF0;"><a href="#&#x6982;&#x8FF0;" class="headerlink" title="&#x6982;&#x8FF0;"></a>&#x6982;&#x8FF0;</h1><p>&#x672C;&#x6587;&#x7FFB;&#x8BD1;&#x81EA; JDK 1.8 HashMap &#x7684;&#x6587;&#x6863;&#x3002;</p>
+<h2 id="&#x672F;&#x8BED;"><a href="#&#x672F;&#x8BED;" class="headerlink" title="&#x672F;&#x8BED;"></a>&#x672F;&#x8BED;</h2><table>
+<thead>
+<tr>
+<th>&#x82F1;&#x6587;</th>
+<th>&#x4E2D;&#x6587;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Hash</td>
+<td>&#x54C8;&#x5E0C;</td>
+</tr>
+<tr>
+<td>Key</td>
+<td>&#x952E;</td>
+</tr>
+<tr>
+<td>Value</td>
+<td>&#x503C;</td>
+</tr>
+<tr>
+<td>Bucket</td>
+<td>&#x6876;</td>
+</tr>
+<tr>
+<td>Capacity</td>
+<td>&#x5BB9;&#x91CF;</td>
+</tr>
+<tr>
+<td>Load Factor</td>
+<td>&#x8D1F;&#x8F7D;&#x56E0;&#x5B50;</td>
+</tr>
+<tr>
+<td>Iteration</td>
+<td>&#x8FED;&#x4EE3;</td>
+</tr>
+<tr>
+<td>Initial Capacity</td>
+<td>&#x521D;&#x59CB;&#x5BB9;&#x91CF;</td>
+</tr>
+<tr>
+<td>Rehashing</td>
+<td>&#x91CD;&#x54C8;&#x5E0C;</td>
+</tr>
+</tbody>
+</table>
+<h1 id="HashMap"><a href="#HashMap" class="headerlink" title="HashMap"></a>HashMap</h1><blockquote>
+<p>HashMap &#x7684;&#x8BF4;&#x660E;</p>
+</blockquote>
+<p><strong>java.util</strong></p>
+<p>public class <strong>HashMap</strong><k, v=""></k,></p>
+<p>extends java.util.AbstractMap<k, v=""></k,></p>
+<p>implements java.util.Map<k, v="">, java.lang.Cloneable, java.io.Serializable</k,></p>
+<p>&#x57FA;&#x4E8E;&#x54C8;&#x5E0C;&#x8868;&#x7684; <code>Map</code> &#x63A5;&#x53E3;&#x5B9E;&#x73B0;&#x3002;&#x672C;&#x5B9E;&#x73B0;&#x63D0;&#x4F9B;&#x4E86;&#x6240;&#x6709;&#x53EF;&#x9009;&#x7684; map &#x64CD;&#x4F5C;&#xFF0C;&#x5141;&#x8BB8; <code>null</code> &#x503C;&#x548C; <code>null</code> &#x952E;&#x3002;&#xFF08;<code>HashMap</code> &#x7C7B;&#x5927;&#x81F4;&#x76F8;&#x5F53;&#x4E8E; <code>Hashtable</code>&#xFF0C;&#x9664;&#x4E86;&#x5B83;&#x662F;&#x975E;&#x540C;&#x6B65;&#x7684;&#x5E76;&#x4E14;&#x5141;&#x8BB8; null)&#x3002;&#x8FD9;&#x4E2A;&#x7C7B;&#x4E0D;&#x4FDD;&#x8BC1; map &#x7684;&#x987A;&#x5E8F;&#xFF0C;&#x7279;&#x522B;&#x7684;&#xFF0C;&#x5B83;&#x4E5F;&#x4E0D;&#x4FDD;&#x8BC1;&#x8BE5;&#x987A;&#x5E8F;&#x968F;&#x7740;&#x65F6;&#x95F4;&#x4FDD;&#x6301;&#x4E0D;&#x53D8;&#x3002;</p>
+<p>&#x5047;&#x8BBE;&#x54C8;&#x5E0C;&#x51FD;&#x6570;&#x80FD;&#x4F7F;&#x5143;&#x7D20;&#x6B63;&#x786E;&#x5730;&#x5206;&#x6563;&#x5728;&#x6876;&#x4E2D;&#xFF0C;&#x672C;&#x5B9E;&#x73B0;&#x5C06;&#x63D0;&#x4F9B;&#x5E38;&#x91CF;&#x65F6;&#x95F4;&#x6027;&#x80FD;&#x7684;&#x57FA;&#x672C;&#x64CD;&#x4F5C;&#xFF08;<code>get</code> &#x548C; <code>put</code>&#xFF09;&#x3002;&#x8FED;&#x4EE3;&#x96C6;&#x5408;&#x65F6;&#x6240;&#x9700;&#x7684;&#x65F6;&#x95F4;&#x4E0E;&#x54C8;&#x5E0C;&#x8868;&#x7684;&#x201C;&#x5BB9;&#x91CF;&#x201D;&#xFF08;&#x6876;&#x7684;&#x6570;&#x91CF;&#xFF09;&#x52A0;&#x4E0A;&#x54C8;&#x5E0C;&#x8868;&#x7684;&#x5927;&#x5C0F;&#xFF08;&#x952E;-&#x503C;&#x5BF9;&#x6570;&#x91CF;&#xFF09;&#x6210;&#x6BD4;&#x4F8B;&#x3002;&#x56E0;&#x6B64;&#x975E;&#x5E38;&#x91CD;&#x8981;&#x7684;&#x4E00;&#x70B9;&#x662F;&#xFF0C;&#x5982;&#x679C;&#x8FED;&#x4EE3;&#x7684;&#x6027;&#x80FD;&#x975E;&#x5E38;&#x91CD;&#x8981;&#xFF0C;&#x90A3;&#x4E48;&#x521D;&#x59CB;&#x5BB9;&#x91CF;&#x4E0D;&#x5E94;&#x8BBE;&#x5F97;&#x592A;&#x9AD8;&#xFF08;&#x6216;&#x8D1F;&#x8F7D;&#x56E0;&#x5B50;&#x592A;&#x4F4E;&#xFF09;&#x3002;</p>
+<p>&#x4E00;&#x4E2A; <code>HashMap</code> &#x5B9E;&#x4F8B;&#x6709;&#x4E24;&#x4E2A;&#x53C2;&#x6570;&#x5F71;&#x54CD;&#x5176;&#x6027;&#x80FD;&#xFF1A;<em>&#x521D;&#x59CB;&#x5BB9;&#x91CF;</em>&#x548C;<em>&#x8D1F;&#x8F7D;&#x56E0;&#x5B50;</em>&#x3002;<em>&#x5BB9;&#x91CF;</em>&#x6307;&#x7684;&#x662F;&#x54C8;&#x5E0C;&#x8868;&#x4E2D;&#x6876;&#x7684;&#x6570;&#x91CF;&#xFF0C;&#x521D;&#x59CB;&#x5BB9;&#x91CF;&#x4E5F;&#x5C31;&#x662F;&#x521B;&#x5EFA;&#x54C8;&#x5E0C;&#x8868;&#x65F6;&#x7684;&#x5BB9;&#x91CF;&#x3002;<em>&#x8D1F;&#x8377;&#x56E0;&#x5B50;</em>&#x662F;&#x7528;&#x6765;&#x8861;&#x91CF;&#x54C8;&#x5E0C;&#x8868;&#x5BB9;&#x91CF;&#x81EA;&#x52A8;&#x589E;&#x957F;&#x4E4B;&#x524D;&#x5141;&#x8BB8;&#x8868;&#x4E2D;&#x6570;&#x636E;&#x6709;&#x591A;&#x6EE1;&#x3002;&#x5F53;&#x54C8;&#x5E0C;&#x8868;&#x4E2D;&#x7684; <code>Entry</code> &#x7684;&#x6570;&#x91CF;&#x8D85;&#x8FC7;&#x8D1F;&#x8F7D;&#x56E0;&#x5B50;&#x4E0E;&#x5F53;&#x524D;&#x5BB9;&#x91CF;&#x7684;&#x4E58;&#x79EF;&#x65F6;,&#x54C8;&#x5E0C;&#x8868;&#x5C06;&#x4F1A;&#x88AB;<em>&#x91CD;&#x54C8;&#x5E0C;</em>&#xFF08;&#x4E5F;&#x5C31;&#x662F;&#x5185;&#x90E8;&#x6570;&#x636E;&#x7ED3;&#x6784;&#x4F1A;&#x88AB;&#x91CD;&#x5EFA;&#xFF09;&#xFF0C;&#x4EE5;&#x4F7F;&#x54C8;&#x5E0C;&#x8868;&#x6709;&#x5927;&#x7EA6;&#x4E24;&#x500D;&#x6570;&#x91CF;&#x7684;&#x6876;&#x3002;</p>
+<p>&#x4F5C;&#x4E3A;&#x4E00;&#x822C;&#x89C4;&#x5219;&#xFF0C;&#x9ED8;&#x8BA4;&#x7684;&#x8D1F;&#x8F7D;&#x56E0;&#x5B50;&#xFF08;.75&#xFF09;&#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x4E2A;&#x826F;&#x597D;&#x7684;&#x65F6;&#x95F4;&#x548C;&#x7A7A;&#x95F4;&#x6210;&#x672C;&#x4E4B;&#x95F4;&#x7684;&#x6743;&#x8861;&#x3002;&#x66F4;&#x9AD8;&#x7684;&#x503C;&#x4F1A;&#x51CF;&#x5C11;&#x7684;&#x7A7A;&#x95F4;&#x5F00;&#x9500;&#xFF0C;&#x4F46;&#x4F1A;&#x589E;&#x52A0;&#x67E5;&#x627E;&#x6210;&#x672C;&#xFF08;&#x5F71;&#x54CD;&#x5927;&#x591A;&#x6570; <code>HashMap</code> &#x7C7B;&#x7684;&#x64CD;&#x4F5C;&#xFF0C;&#x5305;&#x62EC; <code>get</code> &#x548C; <code>put</code>&#xFF09;&#x3002;&#x8BBE;&#x7F6E;&#x521D;&#x59CB;&#x5BB9;&#x91CF;&#x65F6;&#xFF0C;&#x5E94;&#x5F53;&#x8003;&#x8651; map &#x4E2D;&#x9884;&#x671F;&#x7684; <code>Entry</code> &#x6570;&#x91CF;&#x548C;&#x8D1F;&#x8F7D;&#x56E0;&#x5B50;&#x3002;&#x5982;&#x679C;&#x521D;&#x59CB;&#x5BB9;&#x91CF;&#x5927;&#x4E8E;&#x6700;&#x5927;&#x7684; <code>Entry</code> &#x6570;&#x91CF;&#x9664;&#x4EE5;&#x8D1F;&#x8F7D;&#x56E0;&#x5B50;&#xFF0C;&#x5C06;&#x4E0D;&#x4F1A;&#x53D1;&#x751F;&#x91CD;&#x54C8;&#x5E0C;&#x3002;</p>
+<p>&#x5982;&#x679C;&#x9700;&#x8981;&#x5C06;&#x975E;&#x5E38;&#x591A;&#x7684;&#x952E;&#x503C;&#x5BF9;&#x5B58;&#x50A8;&#x5728; <code>HashMap</code> &#x5B9E;&#x4F8B;&#x4E2D;&#xFF0C;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x8DB3;&#x591F;&#x5927;&#x5BB9;&#x91CF;&#x7684;&#x54C8;&#x5E0C;&#x8868;&#x5C06;&#x4F1A;&#x4F7F;&#x5B58;&#x50A8;&#x8FC7;&#x7A0B;&#x6548;&#x7387;&#x66F4;&#x9AD8;&#xFF0C;&#x76F8;&#x6BD4;&#x4E8E;&#x6269;&#x5927;&#x54C8;&#x5E0C;&#x8868;&#x65F6;&#x81EA;&#x52A8;&#x6267;&#x884C;&#x7684;&#x91CD;&#x54C8;&#x5E0C;&#x3002;&#x9700;&#x8981;&#x6CE8;&#x610F;&#x7684;&#x662F;&#x4F7F;&#x7528;&#x8BB8;&#x591A;&#x76F8;&#x540C; <code>hashCode()</code> &#x7ED3;&#x679C;&#x7684;&#x952E;&#x5FC5;&#x7136;&#x4F1A;&#x51CF;&#x7F13;&#x54C8;&#x5E0C;&#x8868;&#x7684;&#x6027;&#x80FD;&#x3002;&#x4E3A;&#x4E86;&#x51CF;&#x5C0F;&#x5F71;&#x54CD;&#xFF0C;&#x5F53;&#x952E;&#x662F; <code>Comparable</code> &#x65F6;&#xFF0C;&#x672C;&#x7C7B;&#x5C06;&#x5BF9;&#x952E;&#x4F7F;&#x7528;&#x6BD4;&#x8F83;&#x987A;&#x5E8F;&#x4EE5;&#x5E2E;&#x52A9;&#x51CF;&#x5C11;&#x9ED8;&#x8BA4;&#x987A;&#x5E8F;&#x9020;&#x6210;&#x7684;&#x4E0D;&#x826F;&#x5F71;&#x54CD;&#x3002;</p>
+<p><strong>&#x6CE8;&#x610F;&#xFF0C;&#x672C;&#x5B9E;&#x73B0;&#x662F;&#x975E;&#x540C;&#x6B65;&#x7684;&#x3002;</strong>&#x5982;&#x679C;&#x591A;&#x4E2A;&#x7EBF;&#x7A0B;&#x5E76;&#x53D1;&#x8BBF;&#x95EE;&#x4E00;&#x4E2A;&#x54C8;&#x5E0C;&#x8868;&#xFF0C;&#x5E76;&#x4E14;&#x81F3;&#x5C11;&#x6709;&#x4E00;&#x4E2A;&#x7EBF;&#x7A0B;&#x6539;&#x53D8; map &#x7ED3;&#x6784;&#xFF0C;&#x5219;<em>&#x5FC5;&#x987B;</em>&#x5728;&#x5916;&#x90E8;&#x7A0B;&#x5E8F;&#x4E2D;&#x5B9E;&#x73B0;&#x540C;&#x6B65;&#x3002;&#xFF08;&#x7ED3;&#x6784;&#x6539;&#x52A8;&#x662F;&#x6307;&#x589E;&#x52A0;&#x6216;&#x5220;&#x9664;&#x4E00;&#x4E2A;&#x6216;&#x591A;&#x4E2A;&#x6620;&#x5C04;&#xFF1B;&#x4EC5;&#x4EC5;&#x6539;&#x53D8;&#x8868;&#x4E2D;&#x5DF2;&#x6709;&#x7684;&#x952E;&#x5BF9;&#x5E94;&#x7684;&#x503C;&#x5E76;&#x4E0D;&#x7B97;&#x7ED3;&#x6784;&#x6539;&#x52A8;&#x3002;&#xFF09;&#x8FD9;&#x901A;&#x5E38;&#x662F;&#x7531;&#x67D0;&#x4E2A;&#x5305;&#x542B;&#x4E86; map &#x7684;&#x5BF9;&#x8C61;&#x7684;&#x540C;&#x6B65;&#x6765;&#x5B9E;&#x73B0;&#x7684;&#x3002;</p>
+<p>&#x5982;&#x679C;&#x4E0D;&#x5B58;&#x5728;&#x8FD9;&#x6837;&#x7684;&#x5BF9;&#x8C61;&#xFF0C;&#x5E94;&#x5F53;&#x4F7F;&#x7528; <code>Collections.synchronizedMap</code> &#x65B9;&#x6CD5; &#x201C;&#x5C01;&#x88C5;&#x201D; map&#x3002;&#x6700;&#x597D;&#x662F;&#x5728;&#x521B;&#x5EFA;&#x65F6;&#x5B8C;&#x6210;&#xFF0C;&#x4EE5;&#x907F;&#x514D;&#x5BF9; map &#x975E;&#x540C;&#x6B65;&#x7684;&#x8BBF;&#x95EE;&#xFF1A;</p>
+<pre><code>Map m = Collections.synchronizedMap(new HashMap(...));
+</code></pre><p>&#x672C;&#x7C7B;&#x6240;&#x6709;&#x7684;&#x201C;&#x96C6;&#x5408;&#x89C6;&#x56FE;&#x65B9;&#x6CD5;&#x201D;&#x8FD4;&#x56DE;&#x7684;&#x8FED;&#x4EE3;&#x5668;&#x90FD;&#x662F; &#x201C;fail-fast&#x201D; &#x7684;&#x3002;&#x8FED;&#x4EE3;&#x5668;&#x521B;&#x5EFA;&#x540E;&#xFF0C;&#x5982;&#x679C; map &#x53D1;&#x751F;&#x4E86;&#x7ED3;&#x6784;&#x6539;&#x52A8;&#xFF08;&#x9664;&#x4E86;&#x8FED;&#x4EE3;&#x5668;&#x81EA;&#x5DF1;&#x7684; <code>remove</code> &#x65B9;&#x6CD5;&#x7684;&#x5176;&#x4ED6;&#x4EFB;&#x4F55;&#x65B9;&#x5F0F;&#xFF09;&#xFF0C;&#x8FED;&#x4EE3;&#x5668;&#x5C06;&#x629B;&#x51FA; <code>ConcurrentModificationException</code> &#x5F02;&#x5E38;&#x3002;&#x56E0;&#x6B64;&#xFF0C;&#x9762;&#x5BF9;&#x5E76;&#x53D1;&#x4FEE;&#x6539;&#xFF0C;&#x8FED;&#x4EE3;&#x5668;&#x4F1A;&#x5E72;&#x51C0;&#x5229;&#x843D;&#x5730;&#x4EA7;&#x751F;&#x5931;&#x8D25;&#xFF0C;&#x800C;&#x4E0D;&#x7528;&#x5192;&#x7740;&#x672A;&#x6765;&#x4E0D;&#x786E;&#x5B9A;&#x7684;&#x65F6;&#x95F4;&#x53D1;&#x751F;&#x4E0D;&#x786E;&#x5B9A;&#x7684;&#x884C;&#x4E3A;&#x7684;&#x98CE;&#x9669;&#x3002;</p>
+<p>&#x6CE8;&#x610F;,&#x8FED;&#x4EE3;&#x5668;&#x7684; fail-fast &#x884C;&#x4E3A;&#x662F;&#x65E0;&#x6CD5;&#x4FDD;&#x8BC1;&#x7684;&#xFF0C;&#x4E00;&#x822C;&#x6765;&#x8BF4;&#xFF0C;&#x53D1;&#x751F;&#x672A;&#x540C;&#x6B65;&#x7684;&#x5E76;&#x53D1;&#x4FEE;&#x6539;&#x65F6;&#xFF0C;&#x4EFB;&#x4F55;&#x4FDD;&#x8BC1;&#x90FD;&#x662F;&#x4E0D;&#x53EF;&#x80FD;&#x7684;&#x3002;fail-fast &#x8FED;&#x4EE3;&#x5668;&#x5C06;&#x5C3D;&#x91CF;&#x629B;&#x51FA; <code>ConcurrentModificationException</code>&#x3002;&#x56E0;&#x6B64;&#xFF0C;&#x7F16;&#x5199;&#x4E00;&#x4E2A;&#x6B63;&#x786E;&#x6027;&#x4F9D;&#x8D56;&#x4E8E;&#x8FD9;&#x4E2A;&#x5F02;&#x5E38;&#x7684;&#x7A0B;&#x5E8F;&#xFF0C;&#x662F;&#x5B8C;&#x5168;&#x9519;&#x8BEF;&#x7684;&#xFF1A;fail-fast &#x884C;&#x4E3A;&#x5E94;&#x8BE5;&#x53EA;&#x7528;&#x6765;&#x68C0;&#x6D4B; bug&#x3002;</p>
+<p>&#x672C;&#x7C7B;&#x5C5E;&#x4E8E; <strong>Java Collections Framework</strong>&#x3002;</p>
+<p><strong>Since:</strong> 1.2</p>
+<p><strong>See Also:</strong> Object.hashCode(), Collection, Map, TreeMap, Hashtable</p>
+<p><strong>Type parameters:</strong></p>
+<ul>
+<li>&lt;K&gt; - &#x6B64; map &#x4E2D;&#x7EF4;&#x62A4;&#x7684;&#x952E;&#x7684;&#x7C7B;&#x578B;</li>
+<li>&lt;V&gt; - &#x6620;&#x5C04;&#x4E2D;&#x503C;&#x7684;&#x7C7B;&#x578B;</li>
+</ul>
+<h1 id="Implementation-Notes"><a href="#Implementation-Notes" class="headerlink" title="Implementation Notes"></a>Implementation Notes</h1><blockquote>
+<p>&#x672C;&#x5B9E;&#x73B0;&#x7684;&#x4E00;&#x4E9B;&#x6CE8;&#x610F;&#x70B9;</p>
+</blockquote>
+<p>&#x672C; map &#x901A;&#x5E38;&#x4F5C;&#x4E3A;&#x6876;&#x5F0F;&#x54C8;&#x5E0C;&#x8868;&#xFF0C;&#x4F46;&#x5F53;&#x6876;&#x5185;&#x7684;&#x6570;&#x636E;&#x592A;&#x591A;&#x65F6;&#xFF0C;&#x5B83;&#x4EEC;&#x5C06;&#x4F1A;&#x88AB;&#x8F6C;&#x6362;&#x6210; TreeNode &#x6876;&#xFF0C;&#x4E0E; java.util.TreeMap &#x7684;&#x7ED3;&#x6784;&#x7C7B;&#x4F3C;&#x3002;&#x5927;&#x90E8;&#x5206;&#x65B9;&#x6CD5;&#x4F1A;&#x5C3D;&#x91CF;&#x4F7F;&#x7528;&#x666E;&#x901A;&#x7684;&#x6876;&#xFF0C;&#x4F46;&#x5982;&#x679C;&#x53EF;&#x7528;&#x65F6;&#xFF0C;&#x4F1A;&#x5207;&#x6362;&#x5230; TreeNode &#x65B9;&#x6CD5;&#xFF08;&#x53EA;&#x9700;&#x8981;&#x7B80;&#x5355;&#x5730;&#x901A;&#x8FC7;&#x68C0;&#x67E5;&#x7ED3;&#x70B9;&#x7684; instanceof &#x7ED3;&#x679C;&#xFF09;&#x3002;TreeNode &#x6876;&#x53EF;&#x4EE5;&#x50CF;&#x5176;&#x5B83;&#x7ED3;&#x70B9;&#x4E00;&#x6837;&#x904D;&#x5386;&#x548C;&#x4F7F;&#x7528;&#xFF0C;&#x4F46;&#x662F;&#x989D;&#x5916;&#x652F;&#x6301;&#x6570;&#x91CF;&#x8FC7;&#x591A;&#x65F6;&#x66F4;&#x5FEB;&#x5730;&#x67E5;&#x627E;&#x3002;&#x4F46;&#x662F;&#xFF0C;&#x7531;&#x4E8E;&#x6B63;&#x5E38;&#x4F7F;&#x7528;&#x65F6;&#x7EDD;&#x5927;&#x591A;&#x6570;&#x7684;&#x6876;&#x4E0D;&#x4F1A;&#x6570;&#x91CF;&#x8FC7;&#x591A;&#xFF0C;&#x56E0;&#x6B64;&#x68C0;&#x67E5;&#x6811;&#x578B;&#x6876;&#x7684;&#x5DE5;&#x4F5C;&#x4F1A;&#x63A8;&#x8FDF;&#x5230;&#x8868;&#x65B9;&#x6CD5;&#x65F6;&#x3002;</p>
+<p>&#x6811;&#x578B;&#x6876;&#xFF08;&#x5373;&#x6876;&#x5185;&#x7684;&#x5143;&#x7D20;&#x90FD;&#x662F; TreeNode&#xFF09;&#x4E3B;&#x8981;&#x662F;&#x6309; hashCode &#x6392;&#x5E8F;&#xFF0C;&#x4F46;&#x662F;&#x5728;&#x51B2;&#x7A81;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#xFF08;&#x4E24;&#x4E2A;&#x5143;&#x7D20;&#x5C5E;&#x4E8E;&#x540C;&#x6837;&#x7684; &#x201C;class C implements Comparable<c>&#x201D; &#x7C7B;&#x578B;&#xFF09;&#xFF0C;&#x5143;&#x7D20;&#x7684; compareTo &#x65B9;&#x6CD5;&#x5C06;&#x4F1A;&#x7528;&#x6765;&#x6392;&#x5E8F;&#x3002;&#xFF08;&#x6211;&#x4EEC;&#x8C28;&#x614E;&#x5730;&#x901A;&#x8FC7;&#x53CD;&#x5C04;&#x6765;&#x68C0;&#x67E5;&#x6CDB;&#x578B;&#x7C7B;&#x578B;&#x4EE5;&#x9A8C;&#x8BC1;&#x8FD9;&#x79CD;&#x60C5;&#x51B5;&#xFF0C;&#x89C1;&#x65B9;&#x6CD5; comparableClassFor&#xFF09;&#x3002;&#x5F53;&#x952E;&#x6709;&#x4E0D;&#x540C;&#x7684;&#x54C8;&#x5E0C;&#x6216;&#x8005;&#x53EF;&#x4EE5;&#x6392;&#x5E8F;&#x65F6;&#xFF0C;&#x4E3A;&#x4E86;&#x5728;&#x6700;&#x574F;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#x63D0;&#x4F9B; O(logn)&#x7684;&#x64CD;&#x4F5C;&#xFF0C;&#x6811;&#x578B;&#x6876;&#x5E26;&#x6765;&#x7684;&#x590D;&#x6742;&#x6027;&#x589E;&#x52A0;&#x662F;&#x503C;&#x5F97;&#x7684;&#x3002;&#x56E0;&#x6B64;&#xFF0C;&#x5F53; hashCode() &#x65B9;&#x6CD5;&#x7684;&#x8FD4;&#x56DE;&#x503C;&#x5206;&#x6563;&#x8F83;&#x5DEE;&#xFF0C;&#x6216;&#x8BB8;&#x591A;&#x952E;&#x7684; hashCode &#x76F8;&#x540C;&#xFF0C;&#x4E0D;&#x7BA1;&#x662F;&#x610F;&#x5916;&#x8FD8;&#x662F;&#x6076;&#x610F;&#x7684;&#xFF0C;&#x53EA;&#x8981;&#x5B83;&#x4EEC;&#x662F;&#x53EF;&#x6BD4;&#x8F83;&#x7684;&#xFF0C;&#x6027;&#x80FD;&#x53EF;&#x4EE5;&#x4F18;&#x96C5;&#x5730;&#x964D;&#x7EA7;&#x3002;&#xFF08;&#x5982;&#x679C;&#x8FD9;&#x79CD;&#x60C5;&#x51B5;&#x6CA1;&#x6709;&#x53D1;&#x751F;&#xFF0C;&#x76F8;&#x6BD4;&#x4E8E;&#x4E0D;&#x91C7;&#x53D6;&#x4EFB;&#x4F55;&#x9884;&#x9632;&#x63AA;&#x65BD;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x80FD;&#x4F1A;&#x635F;&#x5931;&#x65F6;&#x95F4;&#x6216;&#x7A7A;&#x95F4;&#x3002;&#x4F46;&#x662F;&#x552F;&#x4E00;&#x5DF2;&#x77E5;&#x7684;&#x8FD9;&#x79CD;&#x60C5;&#x51B5;&#x6E90;&#x81EA;&#x8F83;&#x5DEE;&#x7684;&#x7528;&#x6237;&#x7F16;&#x7A0B;&#x5B9E;&#x8DF5;&#xFF0C;&#x56E0;&#x6B64;&#x8FD9;&#x70B9;&#x635F;&#x5931;&#x4E5F;&#x4E0D;&#x4F1A;&#x6709;&#x592A;&#x5927;&#x7684;&#x533A;&#x522B;&#x3002;&#xFF09;</c></p>
+<p>&#x56E0;&#x4E3A; TreeNode &#x5927;&#x7EA6;&#x662F;&#x6B63;&#x5E38;&#x7ED3;&#x70B9;&#x7684;&#x4E24;&#x500D;&#x5927;&#xFF0C;&#x56E0;&#x6B64;&#xFF0C;&#x6211;&#x4EEC;&#x4EC5;&#x4F1A;&#x5728;&#x6709;&#x8DB3;&#x591F;&#x591A;&#x7684;&#x7ED3;&#x70B9;&#x65F6;&#x624D;&#x4F1A;&#x4F7F;&#x7528;&#x5B83;&#x4EEC;&#xFF08;&#x89C1; TREEIFY_THRESHOLD&#xFF09;&#x3002;&#x5F53;&#x5B83;&#x4EEC;&#x53D8;&#x5F97;&#x592A;&#x5C0F;&#x65F6;&#xFF08;&#x7531;&#x4E8E;&#x79FB;&#x9664;&#x6216;&#x91CD;&#x65B0;&#x8C03;&#x6574;&#x5927;&#x5C0F;&#xFF09;&#xFF0C;&#x5B83;&#x4EEC;&#x4F1A;&#x88AB;&#x8F6C;&#x6362;&#x56DE;&#x666E;&#x901A;&#x7684;&#x6876;&#x3002;&#x5728;&#x4F7F;&#x7528;&#x5206;&#x6563;&#x5EA6;&#x5F88;&#x597D;&#x7684; hashCode &#x65F6;&#xFF0C;&#x6811;&#x578B;&#x6876;&#x5F88;&#x5C11;&#x4F1A;&#x88AB;&#x4F7F;&#x7528;&#x3002;&#x7406;&#x60F3;&#x7684;&#x968F;&#x673A; hashCode &#x6761;&#x4EF6;&#x4E0B;&#xFF0C;&#x6876;&#x4E2D;&#x7ED3;&#x70B9;&#x7684;&#x9891;&#x5EA6;&#x7B26;&#x5408;&#x6CCA;&#x677E;&#x5206;&#x5E03;&#xFF08;<a href="http://en.wikipedia.org/wiki/Poisson_distribution&#xFF09;&#xFF0C;&#x5728;&#x9ED8;&#x8BA4;&#x7684;&#x8D1F;&#x8F7D;&#x56E0;&#x5B50;&#x4E3A;" target="_blank" rel="external">http://en.wikipedia.org/wiki/Poisson_distribution&#xFF09;&#xFF0C;&#x5728;&#x9ED8;&#x8BA4;&#x7684;&#x8D1F;&#x8F7D;&#x56E0;&#x5B50;&#x4E3A;</a> 0.75 &#x65F6;&#xFF0C;&#x6CCA;&#x677E;&#x5206;&#x5E03;&#x53C2;&#x6570;&#x7684;&#x5E73;&#x5747;&#x503C;&#x4E3A; 0.5&#xFF0C;&#x867D;&#x7136;&#x7531;&#x4E8E;&#x8C03;&#x6574;&#x7C92;&#x5EA6;&#x4F1A;&#x6709;&#x4E00;&#x4E2A;&#x8F83;&#x5927;&#x7684;&#x65B9;&#x5DEE;&#x3002;&#x5982;&#x679C;&#x5FFD;&#x7565;&#x65B9;&#x5DEE;&#xFF0C;&#x8868;&#x5927;&#x5C0F; k &#x7684;&#x671F;&#x671B;&#x503C;&#x662F; (exp(-0.5) * pow(0.5, k) / factorial(k))&#x3002;&#x6700;&#x521D;&#x51E0;&#x4E2A;&#x7684;&#x503C;&#x662F;&#xFF1A;</p>
+<ul>
+<li>0:    0.60653066</li>
+<li>1:    0.30326533</li>
+<li>2:    0.07581633</li>
+<li>3:    0.01263606</li>
+<li>4:    0.00157952</li>
+<li>5:    0.00015795</li>
+<li>6:    0.00001316</li>
+<li>7:    0.00000094</li>
+<li>8:    0.00000006</li>
+<li>&#x66F4;&#x5927;: &#x5C0F;&#x4E8E; 1/10000000</li>
+</ul>
+<p>&#x4E00;&#x822C;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x6811;&#x578B;&#x6876;&#x7684;&#x6839;&#x662F;&#x5B83;&#x7684;&#x7B2C;&#x4E00;&#x4E2A;&#x7ED3;&#x70B9;&#x3002;&#x4F46;&#x662F;&#xFF0C;&#x6709;&#x65F6;&#xFF08;&#x76EE;&#x524D;&#x4EC5;&#x5F53;&#x6267;&#x884C; Iterator.remove &#x65F6;&#xFF09;&#xFF0C;&#x6839;&#x53EF;&#x80FD;&#x4F1A;&#x5728;&#x5176;&#x5B83;&#x5730;&#x65B9;&#xFF0C;&#x4F46;&#x662F;&#x4F1A;&#x5728;&#x7236;&#x7ED3;&#x70B9;&#x94FE;&#x63A5;&#x65F6;&#xFF08;TreeNode.root() &#x65B9;&#x6CD5;&#xFF09;&#xFF0C;&#x6062;&#x590D;&#x6B63;&#x5E38;&#x3002;</p>
+<p>&#x5F53;&#x6876;&#x4E2D;&#x7684;&#x8868;&#x88AB;&#x8F6C;&#x6362;&#x6210;&#x6811;&#xFF0C;&#x6216;&#x8005;&#x88AB;&#x5206;&#x88C2;&#xFF0C;&#x6216;&#x8005;&#x88AB;&#x8F6C;&#x6362;&#x56DE;&#x666E;&#x901A;&#x7684;&#x6876;&#x65F6;&#xFF0C;&#x6211;&#x4EEC;&#x4F1A;&#x4FDD;&#x6301;&#x8BBF;&#x95EE;&#x548C;&#x904D;&#x5386;&#x7684;&#x76F8;&#x5BF9;&#x987A;&#x5E8F;&#xFF08;&#x5982; Node.next&#xFF09;&#x4E0D;&#x53D8;&#xFF0C;&#x4EE5;&#x66F4;&#x597D;&#x5730;&#x4FDD;&#x6301;&#x5C40;&#x90E8;&#x6027;&#xFF0C;&#x5E76;&#x4E14;&#x5728;&#x8C03;&#x7528; iterator.remove &#x65F6;&#x7A0D;&#x5FAE;&#x7B80;&#x5316;&#x5BF9;&#x5206;&#x88C2;&#x548C;&#x904D;&#x5386;&#x7684;&#x5904;&#x7406;&#x3002;&#x5F53;&#x5728;&#x63D2;&#x5165;&#x65F6;&#x4F7F;&#x7528;&#x6BD4;&#x8F83;&#x5668;&#x65F6;&#xFF0C;&#x4E3A;&#x4E86;&#x4FDD;&#x6301;&#x603B;&#x4F53;&#x987A;&#x5E8F;&#xFF0C;&#x6211;&#x4EEC;&#x4F1A;&#x6BD4;&#x8F83;&#x7C7B;&#x548C; identityHashCode&#x3002;</p>
+<p>&#x7C7B;&#x4F3C;&#x201C;&#x5E76;&#x53D1;&#x7F16;&#x7A0B;&#x201D;&#x7684;&#x201C;&#x57FA;&#x4E8E;SSA&#x201D;&#x7684;&#x7F16;&#x7A0B;&#x98CE;&#x683C;&#x6709;&#x52A9;&#x4E8E;&#x907F;&#x514D;&#x590D;&#x6742;&#x7684;&#x6307;&#x9488;&#x64CD;&#x4F5C;&#x65F6;&#x7684;&#x5BF9;&#x9F50;&#x9519;&#x8BEF;&#x3002;</p>
+<h1 id="&#x521D;&#x59CB;&#x503C;"><a href="#&#x521D;&#x59CB;&#x503C;" class="headerlink" title="&#x521D;&#x59CB;&#x503C;"></a>&#x521D;&#x59CB;&#x503C;</h1><blockquote>
+<p>&#x7C7B;&#x4E2D;&#x7684;&#x4E00;&#x4E9B;&#x521D;&#x59CB;&#x503C;&#x8BF4;&#x660E;</p>
+</blockquote>
+<ul>
+<li>DEFAULT_INITIAL_CAPACITY</li>
+</ul>
+<p>1 &lt;&lt; 4, &#x4E5F;&#x5C31;&#x662F;16&#xFF0C;&#x9ED8;&#x8BA4;&#x7684;&#x521D;&#x59CB;&#x5BB9;&#x91CF;&#xFF0C;&#x5FC5;&#x987B;&#x662F; 2 &#x7684;&#x5E42;</p>
+<ul>
+<li>MAXIMUM_CAPACITY</li>
+</ul>
+<p>1 &lt;&lt; 30&#xFF0C;&#x6700;&#x5927;&#x5BB9;&#x91CF;</p>
+<ul>
+<li>DEFAULT_LOAD_FACTOR</li>
+</ul>
+<p>0.75&#xFF0C;&#x9ED8;&#x8BA4;&#x7684;&#x8D1F;&#x8F7D;&#x56E0;&#x5B50;</p>
+<ul>
+<li>TREEIFY_THRESHOLD</li>
+</ul>
+<p>8&#xFF0C;&#x6876;&#x4E2D;&#x5143;&#x7D20;&#x4E2A;&#x6570;&#x7684;&#x9608;&#x503C;&#xFF0C;&#x5F53;&#x8D85;&#x8FC7;&#x8FD9;&#x4E2A;&#x503C;&#x65F6;&#xFF0C;&#x6876;&#x4F1A;&#x88AB;&#x8F6C;&#x6362;&#x6210;&#x6811;</p>
+<ul>
+<li>UNTREEIFY_THRESHOLD</li>
+</ul>
+<p>6&#xFF0C;&#x6876;&#x4E2D;&#x5143;&#x7D20;&#x4E2A;&#x6570;&#x7684;&#x9608;&#x503C;&#xFF0C;&#x5F53;&#x5C0F;&#x4E8E;&#x8FD9;&#x4E2A;&#x503C;&#x65F6;&#xFF0C;&#x6876;&#x4E2D;&#x7684;&#x6811;&#x7ED3;&#x6784;&#x4F1A;&#x88AB;&#x8F6C;&#x6362;&#x56DE;&#x6B63;&#x5E38;&#x7684;&#x7ED3;&#x6784;&#x3002;&#x8FD9;&#x4E2A;&#x503C;&#x5FC5;&#x987B;&#x5C0F;&#x4E8E; TREEIFY_THRESHOLD&#xFF0C;&#x5E76;&#x4E14;&#x6700;&#x5927;&#x4E3A; 6&#x3002;</p>
+<ul>
+<li>MIN_TREEIFY_CAPACITY</li>
+</ul>
+<p>64&#xFF0C;&#x53EF;&#x4EE5;&#x88AB;&#x8F6C;&#x6362;&#x6210;&#x6811;&#x7684;&#x6700;&#x5C0F;&#x7684;&#x5BB9;&#x91CF;&#x3002;&#x5982;&#x679C;&#x5BB9;&#x91CF;&#x5C0F;&#x4E8E;&#x8FD9;&#x4E2A;&#x503C;&#xFF0C;&#x5F53;&#x6876;&#x4E2D;&#x5143;&#x7D20;&#x8FC7;&#x591A;&#x65F6;&#xFF0C;&#x8868;&#x4F1A;&#x88AB;&#x6269;&#x5927;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x8F6C;&#x6362;&#x6210;&#x6811;&#x3002;&#x8FD9;&#x4E2A;&#x503C;&#x81F3;&#x5C11;&#x4E3A; 4 * TREEIFY_THRESHOLD&#x3002;</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/07/13/principles-of-object-oriented-design/" itemprop="url">
                   Principles of Object Oriented Design
                 </a>
@@ -2564,576 +2777,6 @@ DELETE /collection/resource&#xFF1A;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x7A7A;&#x65
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/03/22/gbs-build/" itemprop="url">
-                  GBS Build
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2016-03-22T21:21:47+08:00" content="2016-03-22">
-              2016-03-22
-            </time>
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <blockquote>
-<p>&#x672C;&#x6587;&#x662F; Tizen &#x7CFB;&#x7EDF;&#x7684; gbs build &#x7684;&#x7528;&#x6CD5;&#x7684;&#x4E2D;&#x82F1;&#x6587;&#x5BF9;&#x7167;&#x7248;&#xFF0C;&#x4E3B;&#x8981;&#x5185;&#x5BB9;&#x4E3A;&#x5982;&#x4F55;&#x4F7F;&#x7528; gbs build &#x547D;&#x4EE4;</p>
-<p><em>Reference: <a href="https://source.tizen.org/documentation/reference/git-build-system/usage/gbs-build" target="_blank" rel="external">https://source.tizen.org/documentation/reference/git-build-system/usage/gbs-build</a></em></p>
-</blockquote>
-<h1 id="gbs-build"><a href="#gbs-build" class="headerlink" title="gbs build"></a>gbs build</h1><p>PUBLISHED 19 Oct 2014</p>
-<p>By using &#x2018;gbs build&#x2019;, the developer can build the source code and generate rpm packages locally. For instructions on using the build subcommand, use this command: gbs build &#x2013;help</p>
-<blockquote>
-<p>&#x5F00;&#x53D1;&#x8005;&#x53EF;&#x4F7F;&#x7528;gbs build&#x5728;&#x672C;&#x5730;&#x7F16;&#x8BD1;&#x6E90;&#x4EE3;&#x7801;&#x7136;&#x540E;&#x751F;&#x6210;RPM&#x5305;&#x3002;&#x4F7F;&#x7528;&#x547D;&#x4EE4; gbs build &#x2013;help &#x53EF;&#x4EE5;&#x83B7;&#x53D6;&#x5173;&#x4E8E;&#x5B50;&#x547D;&#x4EE4; build &#x7684;&#x5E2E;&#x52A9;&#x6307;&#x5357;</p>
-</blockquote>
-<pre><code>$ gbs build -h
-</code></pre><h2 id="gbs-build-workflow-gbs-build-&#x5DE5;&#x4F5C;&#x6D41;&#x7A0B;"><a href="#gbs-build-workflow-gbs-build-&#x5DE5;&#x4F5C;&#x6D41;&#x7A0B;" class="headerlink" title="gbs build workflow (gbs build &#x5DE5;&#x4F5C;&#x6D41;&#x7A0B;)"></a>gbs build workflow (gbs build &#x5DE5;&#x4F5C;&#x6D41;&#x7A0B;)</h2><h3 id="Input-of-gbs-build-gbs-build&#x7684;&#x8F93;&#x5165;"><a href="#Input-of-gbs-build-gbs-build&#x7684;&#x8F93;&#x5165;" class="headerlink" title="Input of gbs build (gbs build&#x7684;&#x8F93;&#x5165;)"></a>Input of gbs build (gbs build&#x7684;&#x8F93;&#x5165;)</h3><p>Below is the input for gbs build:</p>
-<blockquote>
-<p>&#x4EE5;&#x4E0B;&#x662F; gbs build &#x6240;&#x9700;&#x8F93;&#x5165;&#xFF1A;</p>
-</blockquote>
-<ul>
-<li><p>git project(s) which contains rpm packaging files</p>
-<blockquote>
-<p>&#x5305;&#x542B;rpm packing&#x6587;&#x4EF6;&#x7684;git&#x9879;&#x76EE;</p>
-</blockquote>
-</li>
-<li><p>binary rpm repositories (remote or local)</p>
-<blockquote>
-<p>&#x4E8C;&#x8FDB;&#x5236;rpm&#x5305;&#x4ED3;&#x5E93;</p>
-</blockquote>
-</li>
-<li><p>project build configurations (macros, flags, etc)</p>
-<blockquote>
-<p>&#x9879;&#x76EE;&#x7F16;&#x8BD1;&#x914D;&#x7F6E;&#xFF0C;&#x5B8F;&#x5B9A;&#x4E49;&#x3001;&#x6807;&#x5FD7;&#x4F4D;&#x7B49;</p>
-</blockquote>
-</li>
-</ul>
-<p>The binary rpm repositories contain all the binary rpm packages which are used to create the chroot environment and build packages, which can be remote, like tizen release or snapshot repositories, or local repository. Local repository supports two types:</p>
-<blockquote>
-<p>&#x4E8C;&#x8FDB;&#x5236;rpm&#x5305;&#x4ED3;&#x5E93;&#x5305;&#x542B;&#x6240;&#x6709;rpm&#x5305;&#xFF0C;&#x8FD9;&#x4E9B;rpm&#x5305;&#x53EF;&#x4EE5;&#x7528;&#x6765;&#x521B;&#x5EFA;chroot&#x73AF;&#x5883;&#x548C;&#x7F16;&#x8BD1;&#x8F6F;&#x4EF6;&#x5305;&#x3002;&#x5305;&#x4ED3;&#x5E93;&#x53EF;&#x4EE5;&#x662F;&#x8FDC;&#x7A0B;&#x7684;&#x6216;&#x8005;&#x662F;&#x672C;&#x5730;&#x7684;&#xFF0C;&#x8FDC;&#x7A0B;&#x7684;&#x5982;Tizen&#x7684;&#x53D1;&#x5E03;&#x6216;&#x5FEB;&#x7167;&#x4ED3;&#x5E93;&#xFF0C;&#x672C;&#x5730;&#x4ED3;&#x5E93;&#x652F;&#x6301;&#x4E24;&#x79CD;&#x7C7B;&#x578B;&#xFF0C;&#x5982;&#x4E0B;&#xFF1A;</p>
-</blockquote>
-<ul>
-<li><p>A standard repository with repodata exists</p>
-<blockquote>
-<p>&#x5E26;repodata&#x7684;&#x6807;&#x51C6;&#x4ED3;&#x5E93;</p>
-</blockquote>
-</li>
-<li><p>A normal directory contains RPM packages. GBS will find all RPM packages under this directory.</p>
-<blockquote>
-<p>&#x5305;&#x542B;RPM&#x5305;&#x7684;&#x666E;&#x901A;&#x76EE;&#x5F55;&#xFF0C;GBS&#x53EF;&#x4EE5;&#x5728;&#x6B64;&#x76EE;&#x5F55;&#x4E0B;&#x627E;&#x5230;&#x6240;&#x6709;&#x7684;RPM&#x5305;</p>
-</blockquote>
-</li>
-</ul>
-<p>Please refer to <a href="https://source.tizen.org/documentation/reference/git-build-system/configuration-file" target="_blank" rel="external">Configuration File</a> part to configure a repository.</p>
-<blockquote>
-<p>&#x8BF7;&#x53C2;&#x8003;<a href="https://source.tizen.org/documentation/reference/git-build-system/configuration-file" target="_blank" rel="external">&#x914D;&#x7F6E;&#x6587;&#x4EF6;</a>&#x6765;&#x914D;&#x7F6E;&#x4E00;&#x4E2A;&#x8F6F;&#x4EF6;&#x5305;&#x4ED3;&#x5E93;</p>
-</blockquote>
-<h3 id="Build-workflow-&#x7F16;&#x8BD1;&#x6D41;&#x7A0B;"><a href="#Build-workflow-&#x7F16;&#x8BD1;&#x6D41;&#x7A0B;" class="headerlink" title="Build workflow (&#x7F16;&#x8BD1;&#x6D41;&#x7A0B;)"></a>Build workflow (&#x7F16;&#x8BD1;&#x6D41;&#x7A0B;)</h3><p>The input and output of gbs build are all repositories.</p>
-<blockquote>
-<p>gbs build&#x7684;&#x8F93;&#x5165;&#x548C;&#x8F93;&#x51FA;&#x90FD;&#x662F;&#x4ED3;&#x5E93;</p>
-</blockquote>
-<p><strong>Note</strong>: All the rpm packages under the output repository (by default, ~/GBS-ROOT/local/repos/&lt;VERSION&gt;/) will be used when building packages. That is, all the packages under the output repository will be applied to the build environment, so make sure the output repository is clean if you don&#x2019;t want this behavior.</p>
-<blockquote>
-<p>&#x6CE8;&#x610F;&#xFF1A;&#x8F93;&#x51FA;&#x4ED3;&#x5E93;&#xFF08;&#x9ED8;&#x8BA4;&#x4E3A;~/GBS-ROOT/local/repos/&lt;VERSION&gt;/&#xFF09;&#x4E0B;&#x6240;&#x6709;&#x7684;rpm&#x5305;&#x5C06;&#x4F1A;&#x88AB;&#x7528;&#x4E8E;&#x7F16;&#x8BD1;&#xFF0C;&#x5982;&#x679C;&#x4F60;&#x4E0D;&#x5E0C;&#x671B;&#x4F7F;&#x7528;&#x8FD9;&#x4E9B;&#x5305;&#xFF0C;&#x8BF7;&#x6E05;&#x7406;&#x6389;&#x8F93;&#x51FA;&#x4ED3;&#x5E93;&#x4E2D;&#x7684;rpm&#x5305;&#x3002;</p>
-</blockquote>
-<p>Here&#x2019;s the basic gbs build workflow</p>
-<blockquote>
-<p>gbs build&#x7684;&#x57FA;&#x672C;&#x6D41;&#x7A0B;</p>
-</blockquote>
-<pre><code> ____________________
-|                    |      ___________
-| Source Code (GIT)  |----&gt;|           |      _________________________
-|____________________|     |           |     |                         |
- ____________________      |           |     |  Local repository of    |
-|                    |     |           |     |                         |
-|    Build config    |----&gt;| GBS build |----&gt;|                         |
-|____________________|     |           |     |                         |
- ____________________      |           |     |  build RPM packages     |
-|                    |     |           |     |(~/GBS-ROOT/local/repos/)|
-|Binary repositories |     |           |     |_________________________|
-|in GBS conf         |----&gt;|___________|                  |
-|(Remote or Local)   |           ^                        |
-|____________________|           |________________________|
-</code></pre><p>From the above diagram, we can see the input and input are all repositories and the output repository located at &#x2018;~/GBS-ROOT/locals/repos/&#x2018; by default. You can change the repo path by using &#x2018;&#x2013;buildroot&#x2019; to specify a different build root.</p>
-<blockquote>
-<p>&#x8F93;&#x51FA;&#x4ED3;&#x5E93;&#x9ED8;&#x8BA4;&#x4E3A;&#xFF1A;<em>~/GBS-ROOT/local/repos</em>&#xFF0C;&#x53EF;&#x4EE5;&#x901A;&#x8FC7; <strong>&#x2013;buildroot</strong> &#x6307;&#x5B9A;build root&#x6765;&#x6539;&#x53D8;&#x4ED3;&#x5E93;&#x8DEF;&#x5F84;&#x3002;</p>
-</blockquote>
-<p>Local repos in gbs build root (&#x2018;~/GBS-ROOT&#x2019; by default) will affect build results, so you must make sure that repos don&#x2019;t contains old or unnecessary RPM packages. While running gbs build, you can specify &#x2018;&#x2013;clean-repos&#x2019; to clean up local repos, which gbs created, before building. We recommend that gbs users set different gbs build root directories for different profiles. There are several ways:</p>
-<blockquote>
-<p>gbs build root&#x4E0B;&#x7684;&#x672C;&#x5730;&#x4ED3;&#x5E93;&#x4F1A;&#x5F71;&#x54CD;&#x7F16;&#x8BD1;&#x7ED3;&#x679C;&#xFF0C;&#x6240;&#x4EE5;&#x4F60;&#x5FC5;&#x987B;&#x8981;&#x4FDD;&#x8BC1;&#x4ED3;&#x5E93;&#x91CC;&#x6CA1;&#x6709;&#x65E7;&#x7684;&#x8F6F;&#x4EF6;&#x5305;&#x6216;&#x8005;&#x65E0;&#x5173;&#x7684;&#x8F6F;&#x4EF6;&#x5305;&#x3002;&#x5728;&#x7F16;&#x8BD1;&#x7684;&#x65F6;&#x5019;&#x53EF;&#x4EE5;&#x7528; &#x2013;clean-repos &#x9009;&#x9879;&#x5728;&#x5B9E;&#x9645;&#x7F16;&#x8BD1;&#x524D;&#x6E05;&#x7406; gbs &#x521B;&#x5EFA;&#x7684;&#x672C;&#x5730;&#x4ED3;&#x5E93;&#x3002;&#x5EFA;&#x8BAE; gbs &#x4F7F;&#x7528;&#x8005;&#x9488;&#x5BF9;&#x4E0D;&#x540C;&#x7684;&#x573A;&#x666F;&#x8BBE;&#x7F6E;&#x4E0D;&#x540C;&#x7684; build root &#x76EE;&#x5F55;&#x3002;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x4EE5;&#x4E0B;&#x65B9;&#x6CD5;&#xFF1A;</p>
-</blockquote>
-<ul>
-<li><p>By default, the GBS build will put all output files under ~/GBS-ROOT/.</p>
-<blockquote>
-<p>GBS build&#x9ED8;&#x8BA4;&#x4F1A;&#x628A;&#x6240;&#x6709;&#x7684;&#x8F93;&#x51FA;&#x6587;&#x4EF6;&#x90FD;&#x653E;&#x5728; <em>~/GBS-ROOT/</em> &#x91CC;</p>
-</blockquote>
-</li>
-<li><p>If the environment variable TIZEN_BUILD_ROOT exists, ${TIZEN_BUILD_ROOT} will be used as output top dir</p>
-<blockquote>
-<p>&#x5982;&#x679C;&#x5B58;&#x5728;&#x73AF;&#x5883;&#x53D8;&#x91CF; TIZEN_BUILD_ROOT&#xFF0C;&#x5176;&#x503C; $(TIZEN_BUILD_ROOT) &#x5C06;&#x4F1A;&#x4F5C;&#x4E3A; build root</p>
-</blockquote>
-</li>
-<li><p>If -B option is specified, then the specified directory is used, even if ${TIZEN_BUILD_ROOT} exists</p>
-<blockquote>
-<p>&#x5982;&#x679C;&#x4F7F;&#x7528; -B &#x9009;&#x9879;&#xFF0C;&#x90A3;&#x4E48;&#x5C31;&#x5176;&#x53C2;&#x6570;&#x5C06;&#x4F5C;&#x4E3A; build root &#xFF0C;&#x5373;&#x4F7F;&#x73AF;&#x5883;&#x53D8;&#x91CF; $(TIZEN_BUILD_ROOT) &#x5B58;&#x5728;</p>
-</blockquote>
-</li>
-</ul>
-<h3 id="Output-of-gbs-build-gbs-build-&#x8F93;&#x51FA;"><a href="#Output-of-gbs-build-gbs-build-&#x8F93;&#x51FA;" class="headerlink" title="Output of gbs build (gbs build &#x8F93;&#x51FA;)"></a>Output of gbs build (gbs build &#x8F93;&#x51FA;)</h3><p>Structure of a GBS build root directory</p>
-<blockquote>
-<p>GBS build root&#x7684;&#x76EE;&#x5F55;&#x7ED3;&#x6784;</p>
-</blockquote>
-<pre><code>gbs output top dir
-|-- local
-| |-- cache # repodata and RPMs from remote repositories
-| |-- repos # generated local repo top directory
-| | |-- tizen # distro one: tizen
-| | | |-- armv7l # store armv7l RPM packages
-| | | |-- i586 # store x86 RPM packages
-| | `-- tizen2.0 # build for distro two: tizen2.0
-| | `-- i586 # the same as above
-| |-- scratch.armv7l.0 # first build root for arm build
-| |-- scratch.i586.0 # second build root for x86 build
-| |-- scratch.i586.1 # third build root for x86 build
-| |-- scratch.i586.2 # fourth build root for x86 build
-| |-- scratch.i586.3 # fifth build root for x86 build
-| | # The above build root dir can be used by gbs chroot &lt;build root dir&gt;
-| `-- sources # sources generated for build, including tarball, spec, patches, etc.
-| |-- tizen
-| `-- tizen2.0
-`-- meta # meta data used by gbs
-</code></pre><h2 id="GBS-Build-Examples-Basic-Usage-GBS-Build&#x793A;&#x4F8B;&#xFF0C;&#x57FA;&#x672C;&#x7528;&#x6CD5;"><a href="#GBS-Build-Examples-Basic-Usage-GBS-Build&#x793A;&#x4F8B;&#xFF0C;&#x57FA;&#x672C;&#x7528;&#x6CD5;" class="headerlink" title="GBS Build Examples (Basic Usage) (GBS Build&#x793A;&#x4F8B;&#xFF0C;&#x57FA;&#x672C;&#x7528;&#x6CD5;)"></a>GBS Build Examples (Basic Usage) (GBS Build&#x793A;&#x4F8B;&#xFF0C;&#x57FA;&#x672C;&#x7528;&#x6CD5;)</h2><p>1 Build a single package.</p>
-<blockquote>
-<p>&#x7F16;&#x8BD1;&#x5355;&#x4E2A;&#x5305;</p>
-</blockquote>
-<pre><code>$ cd package1
-$ gbs build -A i586
-</code></pre><p>2 Build a package for different architectures.</p>
-<blockquote>
-<p>&#x4E3A;&#x4E0D;&#x540C;&#x7684;&#x67B6;&#x6784;&#x7F16;&#x8BD1;&#x5305;</p>
-</blockquote>
-<p><strong>Note</strong>: Supported architectures include: x86_64, i586, armv6l, armv7hl, armv7l, aarch64, mips, mipsel.</p>
-<blockquote>
-<p>&#x6CE8;&#x610F;&#xFF1A;&#x652F;&#x6301;&#x7684;&#x67B6;&#x6784;&#x6709;&#xFF1A; x86_64, i586, armv6l, armv7hl, armv7l, aarch64, mips, mipsel.</p>
-</blockquote>
-<pre><code>$ gbs build -A armv7l #build package for armv7l
-$ gbs build -A i586 #build package for i586
-</code></pre><p>3 Make a clean build by deleting the old build root. This option must be specified if the repo has been changed, for example, changed to another release.</p>
-<blockquote>
-<p>&#x5220;&#x9664;&#x65E7;&#x7684;build root&#xFF0C;&#x5168;&#x65B0;&#x7F16;&#x8BD1;&#x3002;&#x5F53;&#x8F6F;&#x4EF6;&#x5305;&#x4ED3;&#x5E93;&#x6709;&#x53D8;&#x5316;&#x65F6;&#xFF0C;&#x5FC5;&#x987B;&#x4F7F;&#x7528;&#x8FD9;&#x4E2A;&#x9009;&#x9879;&#xFF0C;&#x6BD4;&#x5982;&#x6539;&#x6210;&#x4F7F;&#x7528;&#x53E6;&#x4E00;&#x4E2A;&#x53D1;&#x884C;&#x7248;&#x7684;&#x8F6F;&#x4EF6;&#x4ED3;&#x5E93;&#x65F6;.</p>
-</blockquote>
-<pre><code>$ gbs build -A armv7l --clean
-</code></pre><p>4 Build the package with a specific commit.</p>
-<blockquote>
-<p>&#x4E3A;&#x7279;&#x5B9A;&#x63D0;&#x4EA4;&#x7F16;&#x8BD1;&#x5305;</p>
-</blockquote>
-<pre><code>$ gbs build -A armv7l --commit=&lt;COMMIT_ID&gt;
-</code></pre><p>5 Use &#x2013;overwrite to trigger a rebuild.</p>
-<blockquote>
-<p>&#x7528;&#x2013;overwrite&#x89E6;&#x53D1;&#x4E00;&#x6B21;&#x91CD;&#x65B0;&#x7F16;&#x8BD1;</p>
-</blockquote>
-<p>If you have already built before, and want to rebuild, &#x2013;overwrite should be specified, or the packages will be skipped.</p>
-<blockquote>
-<p>&#x5982;&#x679C;&#x4EE5;&#x524D;&#x5DF2;&#x7ECF;&#x7F16;&#x8BD1;&#x8FC7;&#xFF0C;&#x5E76;&#x4E14;&#x60F3;&#x91CD;&#x65B0;&#x7F16;&#x8BD1;&#xFF0C;&#x5E94;&#x8BE5;&#x4F7F;&#x7528;&#x2013;overwrite&#xFF0C;&#x5426;&#x5219;&#x5DF2;&#x7ECF;&#x7F16;&#x8FC7;&#x7684;&#x5305;&#x4F1A;&#x88AB;&#x8DF3;&#x8FC7;</p>
-</blockquote>
-<pre><code>$ gbs build -A i586 --overwrite
-</code></pre><p>If you change the commit or specify &#x2013;include-all option, it will always rebuild, so &#x2013;overwrite is not needed.</p>
-<blockquote>
-<p>&#x5982;&#x679C;&#x6709;&#x65B0;&#x63D0;&#x4EA4;&#x6216;&#x8005;&#x5E26;&#x9009;&#x9879;&#x2013;include-all&#xFF0C;&#x5219;GBS&#x603B;&#x662F;&#x4F1A;&#x91CD;&#x65B0;&#x7F16;&#x8BD1;&#xFF0C;&#x6B64;&#x65F6;&#x6EF4;&#x5FC5;&#x8981;&#x4F7F;&#x7528;&#x2013;overwrite</p>
-</blockquote>
-<p>6 Output the debug info.</p>
-<blockquote>
-<p>&#x8F93;&#x51FA;&#x8C03;&#x8BD5;&#x4FE1;&#x606F;</p>
-</blockquote>
-<pre><code>$ gbs build -A i586 --debug
-</code></pre><p>7 Build against a local repository. You can config the local repo at .gbs.conf file or through the command line.</p>
-<pre><code>$ gbs build -R /path/to/repo/dir/ -A i586
-</code></pre><p>8 Use &#x2013;noinit to build package in offline mode.</p>
-<blockquote>
-<p>&#x4F7F;&#x7528; &#x2013;noinit &#x9009;&#x9879;&#xFF0C;&#x5728;&#x79BB;&#x7EBF;&#x6A21;&#x5F0F;&#x4E0B;&#x7F16;&#x8BD1;</p>
-</blockquote>
-<p>&#x2013;noinit option can only be used if build root is ready. With &#x2013;noinit option, gbs will not connect the remote repo, and skip parsing &amp; checking repo and initialize build environment. rpmbuild will be used to build the package directly. Here&#x2019;s an example:</p>
-<blockquote>
-<p>&#x5728;build root&#x51C6;&#x5907;&#x597D;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x9009;&#x9879; &#x2013;noinit&#x3002;&#x4F7F;&#x7528; &#x2013;noinit &#x9009;&#x9879;&#x65F6;&#xFF0C;gbs&#x4E0D;&#x4F1A;&#x8FDE;&#x63A5;&#x8FDC;&#x7A0B;&#x4ED3;&#x5E93;&#x5E76;&#x4E14;&#x4F1A;&#x8DF3;&#x8FC7;&#x89E3;&#x6790;/&#x68C0;&#x67E5;&#x4ED3;&#x5E93;&#x548C;&#x521D;&#x59CB;&#x5316;&#x7F16;&#x8BD1;&#x73AF;&#x5883;&#xFF0C;&#x76F4;&#x63A5;&#x4F7F;&#x7528;rpmbuild&#x7F16;&#x8BD1;&#x5305;. </p>
-<p><strong>&#x91CD;&#x8981;</strong>&#xFF1A;&#x6B64;&#x9009;&#x9879;&#x53EF;&#x7528;&#x4E8E;&#x5FEB;&#x901F;&#x7F16;&#x8BD1;</p>
-</blockquote>
-<pre><code>$ gbs build -A i586 # build first and create build environment
-$ gbs build -A i586 --noinit # use --noinit to start building directly
-</code></pre><p>9 Build with all uncommitted changes using &#x2013;include-all.</p>
-<blockquote>
-<p>&#x4F7F;&#x7528; &#x2013;include-all &#x9009;&#x9879;&#x7F16;&#x8BD1;&#x6240;&#x6709;&#x7684;&#x672A;&#x63D0;&#x4EA4;&#x7684;&#x6539;&#x52A8;</p>
-<p><strong>&#x91CD;&#x8981;</strong>&#xFF0C;&#x6B64;&#x9009;&#x9879;&#x4E3A;&#x5E38;&#x7528;&#x9009;&#x9879;&#xFF0C;&#x5F53;&#x7528;&#x6237;&#x672C;&#x5730;&#x6709;&#x4FEE;&#x6539;&#x53C8;&#x6CA1;&#x6709;&#x63D0;&#x4EA4;&#x65F6;&#xFF0C;&#x7ECF;&#x5E38;&#x9700;&#x8981;&#x4F7F;&#x7528;&#x6B64;&#x9009;&#x9879;&#x7528;&#x4E8E;&#x6D4B;&#x8BD5;&#x65B0;&#x4EE3;&#x7801;</p>
-</blockquote>
-<p>For example, the git tree contains one modified file and two extra files:</p>
-<blockquote>
-<p>&#x4F8B;&#x5982;&#xFF0C;git&#x76EE;&#x5F55;&#x4E2D;&#x5305;&#x542B;&#x4E00;&#x4E2A;&#x6539;&#x52A8;&#x7684;&#x6587;&#x4EF6;&#x548C;&#x4E8C;&#x4E2A;&#x65B0;&#x52A0;&#x7684;&#x6587;&#x4EF6;</p>
-</blockquote>
-<pre><code>$ git status -s
-M ail.pc.in
-?? base.repo
-?? main.repo
-</code></pre><p><strong>Build without the &#x2013;include-all option</strong></p>
-<blockquote>
-<p>&#x4E0D;&#x7528;&#x2013;include-all&#x7F16;&#x8BD1;</p>
-</blockquote>
-<p>Builds committed files only. All the modified files, which are not committed nor added, will NOT be built:</p>
-<blockquote>
-<p>&#x4EC5;&#x7F16;&#x8BD1;&#x5DF2;&#x63D0;&#x4EA4;&#x7684;&#x6587;&#x4EF6;&#x3002;&#x6240;&#x6709;&#x672A;&#x63D0;&#x4EA4;&#x6216;&#x672A;&#x6DFB;&#x52A0;&#x5230;&#x7248;&#x672C;&#x63A7;&#x5236;&#x7684;&#x6587;&#x4EF6;&#x90FD;&#x4E0D;&#x4F1A;&#x88AB;&#x7F16;&#x8BD1;:</p>
-</blockquote>
-<pre><code>$ gbs build -A i586
-warning: the following untracked files would NOT be included: base.repo main.repo
-warning: the following uncommitted changes would NOT be included: ail.pc.in
-warning: you can specify &apos;--include-all&apos; option to include these uncommitted and untracked files.
-....
-info: Binaries RPM packages can be found here:
-/home/test/GBS-ROOT/local/scratch.i586.0/home/abuild/rpmbuild/RPMS/
-info: Done
-</code></pre><p><strong>Build with the &#x2013;include-all option builds all the files</strong></p>
-<blockquote>
-<p>&#x4F7F;&#x7528;&#x2013;include-all&#x6765;&#x7F16;&#x8BD1;&#x6240;&#x6709;&#x7684;&#x6587;&#x4EF6;</p>
-</blockquote>
-<pre><code>$ gbs build -A i586 --include-all
-info: the following untracked files would be included: base.repo main.repo
-info: the following un-committed changes would be included: ail.pc.in
-info: export tar ball and packaging files
-...
-...
-[build finished]
-</code></pre><p><strong>Use .gitignore to ignore specific files, when using the &#x2013;include-all option.</strong></p>
-<blockquote>
-<p>&#x5F53;&#x4F7F;&#x7528;&#x2013;incldue-all&#x65F6;&#x53EF;&#x4EE5;&#x7528;.gitignore&#x6765;&#x5FFD;&#x7565;&#x7279;&#x5B9A;&#x7684;&#x6587;&#x4EF6;</p>
-</blockquote>
-<p>If you want to ignore some files types, you can update your .gitignore. For example:</p>
-<blockquote>
-<p>&#x5982;&#x679C;&#x8981;&#x60F3;&#x5FFD;&#x7565;&#x67D0;&#x7C7B;&#x578B;&#x6587;&#x4EF6;&#x53EF;&#x4EE5;&#x4FEE;&#x6539;.gitignore&#xFF0C;&#x4F8B;&#x5982;&#xFF1A;</p>
-</blockquote>
-<pre><code>$ cat .gitignore
-.*
-*/.*
-*.pyc
-*.patch*
-</code></pre><h2 id="Incremental-build"><a href="#Incremental-build" class="headerlink" title="Incremental build"></a>Incremental build</h2><blockquote>
-<p>&#x589E;&#x91CF;&#x7F16;&#x8BD1;</p>
-</blockquote>
-<h3 id="Incremental-Concept"><a href="#Incremental-Concept" class="headerlink" title="Incremental Concept"></a>Incremental Concept</h3><blockquote>
-<p>&#x589E;&#x91CF;&#x7684;&#x6982;&#x5FF5;</p>
-</blockquote>
-<p>Starting from gbs 0.10, the gbs build subcommand supports building incrementally, which can be enabled by specifying the &#x2018;&#x2013;incremental&#x2019; option.</p>
-<blockquote>
-<p>&#x4ECE;gbs 0.10&#x5F00;&#x59CB;&#xFF0C;gbs build&#x5C31;&#x652F;&#x6301;&#x589E;&#x91CF;&#x5F0F;&#x7684;&#x7F16;&#x8BD1;&#xFF0C;&#x901A;&#x8FC7;&#x6307;&#x5B9A;&#x2013;incremental&#x9009;&#x9879;&#x6765;&#x542F;&#x7528;&#x3002;</p>
-</blockquote>
-<p>This mode is designed for development and verification of single packages. It is not intended to replace the standard mode. Only one package can be built at a time using this mode.</p>
-<blockquote>
-<p>&#x8FD9;&#x79CD;&#x6A21;&#x5F0F;&#x4E3B;&#x8981;&#x7528;&#x6765;&#x5F00;&#x53D1;&#x548C;&#x9A8C;&#x8BC1;&#x5355;&#x4E2A;&#x8F6F;&#x4EF6;&#x5305;&#xFF0C;&#x4E0D;&#x662F;&#x7528;&#x6765;&#x66FF;&#x4EE3;&#x6807;&#x51C6;&#x7684;&#x7F16;&#x8BD1;&#x6A21;&#x5F0F;&#x3002;&#x5728;&#x6B64;&#x6A21;&#x5F0F;&#x4E0B;&#xFF0C;&#x4E00;&#x6B21;&#x53EA;&#x80FD;&#x7F16;&#x8BD1;&#x4E00;&#x4E2A;&#x5305;&#x3002;</p>
-</blockquote>
-<p>This mode will set up the build environment in multiple steps, finishing by mounting the local Git tree of a package in the chroot build environment.</p>
-<blockquote>
-<p>&#x8FD9;&#x79CD;&#x6A21;&#x5F0F;&#x5206;&#x6210;&#x591A;&#x6B65;&#x6765;&#x8BBE;&#x7F6E;&#x7F16;&#x8BD1;&#x73AF;&#x5883;&#xFF0C;&#x628A;&#x672C;&#x5730;&#x7684;&#x8F6F;&#x4EF6;&#x5305;&#x7684;Git&#x76EE;&#x5F55;&#x7ED1;&#x5B9A;&#x5230;chroot&#x7684;&#x7F16;&#x8BD1;&#x76EE;&#x5F55;&#x540E;&#x5C31;&#x5B8C;&#x6210;&#x4E86;&#x3002;</p>
-</blockquote>
-<p>Note: Because gbs will mount your git tree to the build root, be very careful when you remove your build root. You need to make sure you&#x2019;ve already umounted the source tree manually before you remove it.</p>
-<blockquote>
-<p>&#x6CE8;&#x610F;&#xFF1A;&#x56E0;&#x4E3A;gbs&#x4F1A;&#x628A;git&#x76EE;&#x5F55;&#x7ED1;&#x5B9A;&#x5230;buid root&#xFF0C;&#x6240;&#x4EE5;&#x5F53;&#x8981;&#x5220;&#x9664;build root&#x65F6;&#x8981;&#x975E;&#x5E38;&#x5C0F;&#x5FC3;&#xFF0C;&#x5220;&#x9664;&#x524D;&#x8981;&#x786E;&#x5B9A;&#x5DF2;&#x7ECF;&#x624B;&#x52A8;&#x5730;&#x628A;&#x6E90;&#x7801;&#x89E3;&#x7ED1;&#x5B9A;&#x3002;</p>
-</blockquote>
-<p>This has the following benefits:</p>
-<blockquote>
-<p>&#x8FD9;&#x79CD;&#x6A21;&#x5F0F;&#x6709;&#x4EE5;&#x4E0B;&#x4F18;&#x70B9;&#xFF1A;</p>
-</blockquote>
-<ul>
-<li><p>The build environment uses the latest source code and changes to source do not trigger a new build environment (in the chroot).</p>
-<blockquote>
-<p>&#x7F16;&#x8BD1;&#x73AF;&#x5883;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x6700;&#x65B0;&#x7684;&#x6E90;&#x4EE3;&#x7801;&#xFF0C;&#x5E76;&#x4E14;&#x4EE3;&#x7801;&#x7684;&#x6539;&#x52A8;&#x4E0D;&#x4F1A;&#x4FEE;&#x6539;&#x7F16;&#x8BD1;&#x73AF;&#x5883;</p>
-</blockquote>
-</li>
-<li><p>The Git source tree becomes the source of the builds. Any change made in the Git repository followed by invocation of the build script will build the changed sources</p>
-<blockquote>
-<p>git&#x76EE;&#x5F55;&#x53D8;&#x6210;&#x4E86;&#x7F16;&#x8BD1;&#x7684;&#x6E90;&#x76EE;&#x5F55;&#xFF0C;&#x53EA;&#x8981;&#x5728;git&#x4E2D;&#x7684;&#x4EFB;&#x4F55;&#x6539;&#x52A8;&#x4E4B;&#x540E;&#xFF0C;&#x8C03;&#x7528;&#x7F16;&#x8BD1;&#x547D;&#x4EE4;&#xFF0C;&#x5C31;&#x53EF;&#x4EE5;&#x7F16;&#x8BD1;&#x6539;&#x52A8;&#x8FC7;&#x7684;&#x6E90;&#x4EE3;&#x7801;</p>
-</blockquote>
-</li>
-<li><p>If the build fails for some reason, the build script will continue from the spot where it has failed, once the code has been changed to fix the problem causing the failure.</p>
-<blockquote>
-<p>&#x7F16;&#x8BD1;&#x5931;&#x8D25;&#x540E;&#xFF0C;&#x4E00;&#x65E6;&#x5BFC;&#x81F4;&#x7F16;&#x8BD1;&#x5931;&#x8D25;&#x7684;&#x9519;&#x8BEF;&#x88AB;&#x4FEE;&#x6B63;&#xFF0C;&#x7F16;&#x8BD1;&#x811A;&#x672C;&#x4F1A;&#x4ECE;&#x5148;&#x524D;&#x5931;&#x8D25;&#x7684;&#x5730;&#x65B9;&#x63A5;&#x7740;&#x7F16;&#x8BD1;</p>
-</blockquote>
-</li>
-</ul>
-<p>This mode is, in many ways, similar to traditional code development, where changes are made to sources, followed by running make to test and compile the changes. However, it enables development using the build environment of the target, instead of the host OS.</p>
-<blockquote>
-<p>&#x4ECE;&#x4E0D;&#x540C;&#x7684;&#x65B9;&#x9762;&#x8BF4;&#xFF0C;&#x8FD9;&#x79CD;&#x6A21;&#x5F0F;&#x7C7B;&#x4F3C;&#x4E8E;&#x4F20;&#x7EDF;&#x7684;&#x4EE3;&#x7801;&#x5F00;&#x53D1;&#xFF1A;&#x4FEE;&#x6539;&#x4EE3;&#x7801;&#x7136;&#x540E;&#x8FD0;&#x884C;make&#x7F16;&#x8BD1;&#x6539;&#x52A8;&#x3002;&#x4E0D;&#x540C;&#x7684;&#x5730;&#x65B9;&#x5728;&#x4E8E;&#xFF0C;&#x589E;&#x91CF;&#x7F16;&#x8BD1;&#x4F7F;&#x7528;&#x7F16;&#x8BD1;&#x73AF;&#x5883;&#x800C;&#x4E0D;&#x662F;&#x5BBF;&#x4E3B;&#x673A;&#x5668;&#x7684;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;</p>
-</blockquote>
-<p>This method has some limitations, mostly related to packaging and how the sources are maintained. Among others, it depends on how the RPM spec file is composed:</p>
-<blockquote>
-<p>&#x8FD9;&#x79CD;&#x6A21;&#x5F0F;&#x6709;&#x4E00;&#x4E9B;&#x9650;&#x5236;&#xFF0C;&#x90FD;&#x662F;&#x5173;&#x4E8E;&#x6253;&#x5305;&#x548C;&#x4EE3;&#x7801;&#x7684;&#x7BA1;&#x7406;&#x3002;&#x5C24;&#x5176;&#x662F;&#x4F9D;&#x8D56;&#x4E8E;RPM&#x7684;spec&#x6587;&#x4EF6;</p>
-</blockquote>
-<ul>
-<li><p>It does not support patches in the spec file. All source has to be maintained as part of the Git tree</p>
-<blockquote>
-<p>&#x4E0D;&#x652F;&#x6301;spec&#x6587;&#x4EF6;&#x4E2D;&#x7684;patches&#xFF0C;&#x6240;&#x6709;&#x7684;&#x6E90;&#x7801;&#x5FC5;&#x987B;&#x662F;git&#x76EE;&#x5F55;&#x7684;&#x4E00;&#x90E8;&#x5206;</p>
-</blockquote>
-</li>
-<li><p>It requires a clean packaging workflow. Exotic workflows in the spec files might not work well, because this mode expects the following model:</p>
-<blockquote>
-<p>&#x9700;&#x8981;&#x4E00;&#x4E2A;&#x6574;&#x6D01;&#x7684;&#x6253;&#x5305;&#x6D41;&#x7A0B;&#x3002;spec&#x6587;&#x4EF6;&#x4E2D;&#x7684;&#x6781;&#x7279;&#x6B8A;&#x7684;&#x6D41;&#x7A0B;&#x53EF;&#x80FD;&#x4E0D;&#x4F1A;&#x6709;&#x6548;&#xFF0C;&#x56E0;&#x4E3A;&#x8FD9;&#x79CD;&#x6A21;&#x5F0F;&#x9884;&#x671F;&#x4EE5;&#x4E0B;&#x6A21;&#x578B;&#xFF1A;</p>
-</blockquote>
-<ol>
-<li>Code preparation (%prep) &#xFF08;&#x4EE3;&#x7801;&#x51C6;&#x5907;&#xFF09;</li>
-<li>Code building (%build) &#xFF08;&#x4EE3;&#x7801;&#x7F16;&#x8BD1;&#xFF09;</li>
-<li>Code installation (%install) &#xFF08;&#x4EE3;&#x7801;&#x5B89;&#x88C5;&#xFF09;</li>
-</ol>
-</li>
-</ul>
-<ul>
-<li><p>Because we run the %build section every time, if the %build script has configuration scripts (auto-tools), binaries might be regenerated, causing a complete build every time. To avoid this, you are encouraged to use the following macros, which can be overridden using the &#x2013;no-configure option:</p>
-<blockquote>
-<p>&#x56E0;&#x4E3A;&#x6BCF;&#x6B21;&#x90FD;&#x8FD0;&#x884C;&#x7F16;&#x8BD1;&#x90E8;&#x5206;&#xFF0C;&#x5982;&#x679C;%build&#x811A;&#x672C;&#x6709;&#x81EA;&#x52A8;&#x914D;&#x7F6E;&#x811A;&#x672C;&#xFF0C;&#x4E8C;&#x8FDB;&#x5236;&#x6587;&#x4EF6;&#x4F1A;&#x88AB;&#x91CD;&#x65B0;&#x751F;&#x6210;&#xFF0C;&#x5BFC;&#x81F4;&#x6BCF;&#x6B21;&#x90FD;&#x5B8C;&#x5168;&#x7F16;&#x8BD1;&#x3002;&#x4E3A;&#x4E86;&#x907F;&#x514D;&#x8FD9;&#x6837;&#x60C5;&#x51B5;&#x53D1;&#x751F;&#xFF0C;&#x63A8;&#x8350;&#x4F7F;&#x7528;&#x4E0B;&#x9762;&#x7684;&#x5B8F;&#xFF0C;&#x8FD9;&#x4E9B;&#x5B8F;&#x80FD;&#x591F;&#x7528;&#x2013;no-configure&#x9009;&#x9879;&#x6765;&#x8986;&#x76D6;</p>
-</blockquote>
-<ol>
-<li>%configure: runs the configure script with pre-defined paths and options.</li>
-<li>%reconfigure: regenerates the scripts and runs %configure</li>
-<li>%autogen: runs the autogen script</li>
-</ol>
-</li>
-</ul>
-<h3 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h3><p>In this example, we use dlog source code. First, we need to build with &#x2013;incremental, then just modify one source file, and trigger the incremental build again. We will see that only modified source code has been compiled during the incremental build.</p>
-<pre><code>$ cd dlog
-# first build:
-$ gbs build -A i586 --incremental
-$ vim log.c # change code
-# second build:
-$ gbs build -A i586 --incremental
-info: generate repositories ...
-info: build conf has been downloaded at:
-/var/tmp/test-gbs/tizen.conf
-info: Start building packages from: /home/test/packages/dlog (git)
-info: Prepare sources...
-info: Retrieving repo metadata...
-info: Parsing package data...
-info: *** overwriting dlog-0.4.1-5.1 i586 ***
-info: Next pass:
-dlog
-info: *** building dlog-0.4.1-5.1 i586 tizen (worker: 0) ***
-info: Doing incremental build
-[ 0s] Memory limit set to 10854336KB
-[ 0s] Using BUILD_ROOT=/home/test/GBS-ROOT/local/scratch.i586.0
-[ 0s] Using BUILD_ARCH=i686:i586:i486:i386:noarch
-[ 0s] test-desktop started &quot;build dlog.spec&quot; at Thu Sep 13 07:36:14 UTC 2012.
-[ 0s] -----------------------------------------------------------------
-[ 0s] ----- building dlog.spec (user abuild)
-[ 0s] -----------------------------------------------------------------
-[ 0s] -----------------------------------------------------------------
-[ 0s] + rpmbuild --short-circuit -bc /home/abuild/rpmbuild/SOURCES/dlog.spec
-[ 0s] Executing(%build): /bin/sh -e /var/tmp/rpm-tmp.XLz8je
-[ 0s] + umask 022
-[ 0s] + export LD_AS_NEEDED
-[ 4s] + make -j4
-[ 4s] make all-am
-[ 4s] make[1]: Entering directory /home/abuild/rpmbuild/BUILD/dlog-0.4.1
-[ 4s] /bin/sh ./libtool --tag=CC --mode=compile gcc -c -o log.lo log.c
-[ 4s] mv -f .deps/log.Tpo .deps/log.Plo
-[ 4s] /bin/sh ./libtool --tag=CC --mode=link gcc -o libdlog.la /usr/lib log.lo
-[ 4s] libtool: link: gcc -shared .libs/log.o -o .libs/libdlog.so.0.0.0
-[ 4s] libtool: link: ar cru .libs/libdlog.a log.o
-[ 4s] libtool: link: ranlib .libs/libdlog.a
-[ 4s] make[1]: Leaving directory /home/abuild/rpmbuild/BUILD/dlog-0.4.1
-[ 4s] + exit 0
-[ 4s] finished &quot;build dlog.spec&quot; at Thu Sep 13 07:36:18 UTC 2012.
-[ 4s]
-info: finished incremental building dlog
-info: Local repo can be found here:
-/home/test/GBS-ROOT/local/repos/tizen/
-info: Done
-</code></pre><p>From the buildlog, we can see that only log.c has been re-compiled. That&#x2019;s the incremental build behavior.</p>
-<p>&#x2013;noinit option can be used together with &#x2013;incremental to make a build more quickly, like:</p>
-<pre><code>$ gbs build --incremental --noinit
-</code></pre><h3 id="Limitations-of-Incremental-Build"><a href="#Limitations-of-Incremental-Build" class="headerlink" title="Limitations of Incremental Build"></a>Limitations of Incremental Build</h3><blockquote>
-<p>&#x589E;&#x91CF;&#x7F16;&#x8BD1;&#x7684;&#x9650;&#x5236;</p>
-</blockquote>
-<p>Incremental build doesn&#x2019;t support all packages. Here are some limitations:</p>
-<blockquote>
-<p>&#x589E;&#x91CF;&#x7F16;&#x8BD1;&#x4E0D;&#x652F;&#x6301;&#x6240;&#x6709;&#x7684;&#x5305;&#x3002;&#x4E00;&#x4E9B;&#x9650;&#x5236;&#x5982;&#x4E0B;:</p>
-</blockquote>
-<ul>
-<li><p>Incremental build currently supports building only a single package. It doesn&#x2019;t support building multiple packages in parallel</p>
-<blockquote>
-<p>&#x53EA;&#x652F;&#x6301;&#x5355;&#x4E2A;&#x5305;</p>
-</blockquote>
-</li>
-<li><p>The tarball&#x2019;s name in the spec file should be %{name}-%{version}.{tar.gz|tar.bz2|zip|&#x2026;}, otherwise GBS can&#x2019;t mount source code to build the root correctly</p>
-<blockquote>
-<p>spec&#x6587;&#x4EF6;&#x4E2D;&#x7684;&#x538B;&#x7F29;&#x5305;&#x540D;&#x5B57;&#x5FC5;&#x987B;&#x662F;%{name}-%{version}.{tar.gz|tar.bz2|zip|&#x2026;}&#xFF0C;&#x5426;&#x5219;GBS&#x65E0;&#x6CD5;&#x6B63;&#x786E;&#x628A;&#x6E90;&#x7801;&#x7ED1;&#x5B9A;&#x5230;build root&#x4E2D;</p>
-</blockquote>
-</li>
-<li><p>%prep section should only contains %setup macro to unpack tarball, and should not contains other source code related operations, such as unpack another source, apply patches, etc.</p>
-<blockquote>
-<p>%prep&#x90E8;&#x5206;&#x5E94;&#x8BE5;&#x4EC5;&#x5305;&#x542B;&#x7528;&#x4E8E;&#x89E3;&#x5727;&#x538B;&#x7F29;&#x5305;&#x7684;%setup&#x5B8F;&#xFF0C;&#x800C;&#x4E0D;&#x5E94;&#x8BE5;&#x542B;&#x6709;&#x5BF9;&#x6E90;&#x4EE3;&#x7801;&#x7684;&#x5176;&#x4ED6;&#x64CD;&#x4F5C;&#xFF0C;&#x6BD4;&#x5982;&#x89E3;&#x538B;&#x5176;&#x4ED6;&#x6E90;&#x7801;&#x6216;&#x6253;patch&#x7B49;&#x90FD;&#x4E0D;&#x5141;&#x8BB8;</p>
-</blockquote>
-</li>
-</ul>
-<h2 id="Multiple-packages-build-dependency-build-&#x591A;&#x5305;&#x7F16;&#x8BD1;"><a href="#Multiple-packages-build-dependency-build-&#x591A;&#x5305;&#x7F16;&#x8BD1;" class="headerlink" title="Multiple packages build (dependency build) (&#x591A;&#x5305;&#x7F16;&#x8BD1;)"></a>Multiple packages build (dependency build) (&#x591A;&#x5305;&#x7F16;&#x8BD1;)</h2><p>Multiple package build has been supported since gbs 0.10. If packages have dependencies on each other, gbs will build packages in the correct order calculated by dependency relationship. Previously built out RPMs will be used to build the following packages that depend on them, which is the dependency build.</p>
-<blockquote>
-<p>&#x4ECE;gbs 0.10&#x5F00;&#x59CB;&#x5C31;&#x652F;&#x6301;&#x591A;&#x5305;&#x7F16;&#x8BD1;&#x3002;&#x5982;&#x679C;&#x5305;&#x6709;&#x76F8;&#x4E92;&#x7684;&#x4F9D;&#x8D56;&#xFF0C;gbs&#x4F1A;&#x8BA1;&#x7B97;&#x51FA;&#x5B83;&#x4EEC;&#x4E4B;&#x95F4;&#x7684;&#x5173;&#x7CFB;&#x7136;&#x540E;&#x6309;&#x6B63;&#x786E;&#x7684;&#x987A;&#x5E8F;&#x6765;&#x7F16;&#x8BD1;&#x3002;&#x4F5C;&#x4E3A;&#x4F9D;&#x8D56;&#x7F16;&#x8BD1;&#xFF0C;&#x5148;&#x524D;&#x7F16;&#x8BD1;&#x51FA;&#x7684;RPM&#x5305;&#x4F1A;&#x7528;&#x6765;&#x7F16;&#x8BD1;&#x540E;&#x9762;&#x7684;&#x6709;&#x4F9D;&#x8D56;&#x9700;&#x6C42;&#x7684;&#x5305;</p>
-</blockquote>
-<p>Examples:</p>
-<p>1 Build all packages under a specified package directory</p>
-<blockquote>
-<p>&#x7F16;&#x8BD1;&#x6307;&#x5B9A;&#x76EE;&#x5F55;&#x4E0B;&#x7684;&#x6240;&#x6709;&#x7684;&#x5305;</p>
-</blockquote>
-<pre><code>$ mkdir tizen-packages
-$ cp package1 package2 package3 ... tizen-packages/
-$ gbs build -A i586 tizen-packages # build all packages under tizen-packages
-</code></pre><p>2 Build multiple packages in parallel with &#x2013;threads</p>
-<blockquote>
-<p>&#x4F7F;&#x7528;&#x2013;threads&#x9009;&#x9879;&#x6765;&#x5E76;&#x884C;&#x7F16;&#x8BD1;&#x591A;&#x4E2A;&#x5305;</p>
-</blockquote>
-<pre><code># current directory have multiple packages, --threads can be used to set the max build worker at the same time
-$ gbs build -A armv7l --threads=4
-</code></pre><p>3 Select a group of packages to be built</p>
-<blockquote>
-<p>&#x9009;&#x62E9;&#x7F16;&#x8BD1;&#x4E00;&#x7EC4;&#x5305;</p>
-</blockquote>
-<p>The &#x2013;binary-from-file option specifies a text file that contains a name list of RPM packages to be built. The format in the text file is one package per line.</p>
-<p>The &#x2013;binary-list option specifies a list in which the package names are separated by comma.</p>
-<p>When the number of packages is small, thus the packages can be clearly presented in command line, it is recommended to use the &#x2013;binary-list option for simplicity.</p>
-<pre><code>$ gbs build -A i586 --binary-from-file=/path/to/packages.list
-$ gbs build -A i586 --binary-list=&lt;pkg1&gt;,&lt;pkg2&gt;
-</code></pre><p>4 Exclude certain packages.</p>
-<blockquote>
-<p>&#x6392;&#x9664;&#x67D0;&#x4E9B;&#x5305;</p>
-</blockquote>
-<p>The &#x2013;exclude option specifies a list in which the names of packages to be ignored are separated by comma. The &#x2013;exclude-from-file option specifies a text file that contains a name list of packages to be ignored.</p>
-<pre><code>$ gbs build -A i586 tizen-packages --exclude=&lt;pkg1&gt;
-$ gbs build -A i586 tizen-packages --exclude=&lt;pkg1&gt;,&lt;pkg2&gt;
-$ gbs build -A i586 tizen-packages --exclude-from-file=/path/to/packages.list
-</code></pre><p>5 Build packages based on dependencies.</p>
-<blockquote>
-<p>&#x57FA;&#x4E8E;&#x4F9D;&#x8D56;&#x6765;&#x7F16;&#x8BD1;&#x5305;</p>
-</blockquote>
-<p>The &#x2013;deps option enables GBS to build specific packages, together with all the related packages on which they depend.The &#x2013;rdep option enables GBS to build specific packages, together with all the related packages that depend on them.</p>
-<p>The specific packages can be included by the &#x2013;binary-from-file option or the &#x2013;binary-list option, and be excluded by the &#x2013;exclude option or the &#x2013;exclude-from-file option.</p>
-<p>These two options are compatible. When added at the same time, besides the specific packages, GBS will build not only the related packages on which they depend, but also all the related packages that depend on them.</p>
-<pre><code>$ gbs build -A i586 --binary-list=&lt;pkg1&gt;,&lt;pkg2&gt; --deps
-$ gbs build -A i586 --binary-list=&lt;pkg1&gt;,&lt;pkg2&gt; --rdeps
-$ gbs build -A i586 --binary-list=&lt;pkg1&gt;,&lt;pkg2&gt; --deps --rdeps
-</code></pre><h2 id="Other-useful-options-&#x5176;&#x4ED6;&#x6709;&#x7528;&#x7684;&#x9009;&#x9879;"><a href="#Other-useful-options-&#x5176;&#x4ED6;&#x6709;&#x7528;&#x7684;&#x9009;&#x9879;" class="headerlink" title="Other useful options (&#x5176;&#x4ED6;&#x6709;&#x7528;&#x7684;&#x9009;&#x9879;)"></a>Other useful options (&#x5176;&#x4ED6;&#x6709;&#x7528;&#x7684;&#x9009;&#x9879;)</h2><h3 id="Install-extra-packages-to-build-root"><a href="#Install-extra-packages-to-build-root" class="headerlink" title="Install extra packages to build root"></a>Install extra packages to build root</h3><blockquote>
-<p>&#x5B89;&#x88C5;&#x989D;&#x5916;&#x7684;&#x5305;&#x5230;build root&#x4E2D;</p>
-</blockquote>
-<p>&#x2013;extra-packs=<pkgs list="" sep="" by="" comma=""> can be used to install extra packages:</pkgs></p>
-<pre><code>$ gbs build --extra-packs=vim,zypper,gcc,gdb ...
-</code></pre><h3 id="Keep-all-packages-in-build-root"><a href="#Keep-all-packages-in-build-root" class="headerlink" title="Keep all packages in build root"></a>Keep all packages in build root</h3><blockquote>
-<p>&#x4FDD;&#x7559;&#x6240;&#x6709;build root&#x4E2D;&#x7684;&#x5305;</p>
-</blockquote>
-<p>Generally, gbs build will remove unnecessary packages in build root. While transferring to build another package, you can use &#x2013;keep-packs to keep all unnecessary packages, and just install missing build required packages. This option can be used to speed up build multiple packages.</p>
-<blockquote>
-<p>&#x901A;&#x5E38;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;gbs build&#x4F1A;&#x628A;build root&#x4E2D;&#x7684;&#x4E0D;&#x9700;&#x8981;&#x7684;&#x5305;&#x5220;&#x9664;&#x6389;&#x3002;&#x5F53;&#x8981;&#x7F16;&#x8BD1;&#x53E6;&#x5916;&#x7684;&#x5305;&#x65F6;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x2013;keep-packs&#x9009;&#x9879;&#x6765;&#x4FDD;&#x7559;&#x4E0D;&#x518D;&#x9700;&#x8981;&#x7684;&#x5305;&#x800C;&#x53EA;&#x5B89;&#x88C5;&#x7F3A;&#x5931;&#x7684;&#x4F9D;&#x8D56;&#x5305;&#x3002;&#x8FD9;&#x4E2A;&#x9009;&#x9879;&#x53EF;&#x4EE5;&#x52A0;&#x901F;&#x591A;&#x4E2A;&#x5305;&#x7684;&#x7F16;&#x8BD1;&#x3002;</p>
-<p><strong>&#x91CD;&#x8981;</strong>&#xFF1A;&#x91CD;&#x8981;&#x9009;&#x9879;&#xFF0C;&#x53EF;&#x4EE5;&#x8282;&#x7701;&#x7F16;&#x8BD1;&#x65F6;&#x95F4;</p>
-</blockquote>
-<pre><code>$ gbs build --keep-packs
-</code></pre><p>&#x2013;keep-packs can be used to create one build root for building multiple packages. Once the build root is ready, you can use &#x2013;noinit to build these packages quickly.</p>
-<blockquote>
-<p>&#x2013;keep-packs&#x9009;&#x9879;&#x53EF;&#x4EE5;&#x7528;&#x6765;&#x4E3A;&#x591A;&#x4E2A;&#x5305;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;build root&#x3002;&#x4E00;&#x65E6;build root&#x51C6;&#x5907;&#x597D;&#xFF0C;&#x5C31;&#x53EF;&#x4EE5;&#x7528; &#x2013;noinit &#x9009;&#x9879;&#x6765;&#x5FEB;&#x901F;&#x7684;&#x7F16;&#x8BD1;&#x8FD9;&#x4E9B;&#x5305;</p>
-<p><strong>&#x91CD;&#x8981;</strong>&#xFF1A;&#x2013;keep-packs &#x914D;&#x5408; &#x2013;noinit&#xFF0C;&#x53EF;&#x4EE5;&#x8282;&#x7701;&#x7F16;&#x8BD1;&#x65F6;&#x95F4;</p>
-</blockquote>
-<pre><code>$ gbs build pkg1/ --keep-packs -A i586
-$ gbs build pkg2/ --keep-packs -A i586
-$ gbs build pkg3/ --keep-packs -A i586
-</code></pre><p>Now, the build root (~/GBS-ROOT/local/scratch.i586.0) is ready for building pkg1, pkg2, and pkg3. You can use &#x2013;noinit to build them offline, and don&#x2019;t need waste time to check repo updates and build root.</p>
-<pre><code>$ gbs build pkg1 --noinit
-$ gbs build pkg2 --noinit
-$ gbs build pkg3 --noinit
-</code></pre><h2 id="Fetch-the-project-build-conf-and-customize-build-root-for-Advanced-Users-&#xFF08;&#x9AD8;&#x7EA7;&#x7528;&#x6237;&#xFF0C;&#x83B7;&#x53D6;&#x9879;&#x76EE;&#x7684;&#x7F16;&#x8BD1;&#x914D;&#x7F6E;&#x548C;&#x5B9A;&#x5236;build-root&#xFF09;"><a href="#Fetch-the-project-build-conf-and-customize-build-root-for-Advanced-Users-&#xFF08;&#x9AD8;&#x7EA7;&#x7528;&#x6237;&#xFF0C;&#x83B7;&#x53D6;&#x9879;&#x76EE;&#x7684;&#x7F16;&#x8BD1;&#x914D;&#x7F6E;&#x548C;&#x5B9A;&#x5236;build-root&#xFF09;" class="headerlink" title="Fetch the project build conf and customize build root (for Advanced Users) &#xFF08;&#x9AD8;&#x7EA7;&#x7528;&#x6237;&#xFF0C;&#x83B7;&#x53D6;&#x9879;&#x76EE;&#x7684;&#x7F16;&#x8BD1;&#x914D;&#x7F6E;&#x548C;&#x5B9A;&#x5236;build root&#xFF09;"></a>Fetch the project build conf and customize build root (for Advanced Users) &#xFF08;&#x9AD8;&#x7EA7;&#x7528;&#x6237;&#xFF0C;&#x83B7;&#x53D6;&#x9879;&#x76EE;&#x7684;&#x7F16;&#x8BD1;&#x914D;&#x7F6E;&#x548C;&#x5B9A;&#x5236;build root&#xFF09;</h2><p>Project build conf describes the project build configurations for the project, including pre-defined macros/packages/flags in the build environment. In Tizen releases, the build conf is released together with the released repo. You can find an example at: <a href="http://download.tizen.org/releases/daily/trunk/ivi/latest/builddata/xxx-build.conf" target="_blank" rel="external">http://download.tizen.org/releases/daily/trunk/ivi/latest/builddata/xxx-build.conf</a></p>
-<pre><code>gbs build will fetch the build conf automatically
-</code></pre><p>Starting from gbs 0.7.1, by default, gbs will fetch the build conf from a remote repo, if you specify the remote Tizen repo, and then store it in your temp environment. Here&#x2019;s the build log:</p>
-<pre><code>$ gbs build -A i586
-info: generate repositories ...
-info: build conf has been downloaded at:
-/var/tmp/&lt;user&gt;-gbs/tizen2.0.conf
-info: generate tar ball: packaging/acpid-2.0.14.tar.bz2
-[sudo] password for &lt;user&gt;:
-
-build the package using your own project build conf, using the -D option
-</code></pre><p>You can save it and modify it, and then use it for your purposes:</p>
-<pre><code>cp /var/tmp/&lt;user&gt;-gbs/tizen2.0.conf ~/tizen2.0.conf
-$ gbs build -A i586 -D ~/tizen2.0.conf
-</code></pre><p>If you need to customize the build config, refer to: <a href="http://en.opensuse.org/openSUSE:Build_Service_prjconf" target="_blank" rel="external">http://en.opensuse.org/openSUSE:Build_Service_prjconf</a></p>
-<p><em>Reference: <a href="https://source.tizen.org/documentation/reference/git-build-system/usage/gbs-build" target="_blank" rel="external">https://source.tizen.org/documentation/reference/git-build-system/usage/gbs-build</a></em></p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -3179,7 +2822,7 @@ $ gbs build -A i586 -D ~/tizen2.0.conf
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">17</span>
+              <span class="site-state-item-count">18</span>
               <span class="site-state-item-name">posts</span>
             </a>
           </div>
@@ -3189,7 +2832,7 @@ $ gbs build -A i586 -D ~/tizen2.0.conf
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">25</span>
+                <span class="site-state-item-count">26</span>
                 <span class="site-state-item-name">tags</span>
               </a>
             </div>
