@@ -1,0 +1,709 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="java,object-oriented,encapsulation,inheritence,polymorphism," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="Object Oriented (&amp;#x9762;&amp;#x5411;&amp;#x5BF9;&amp;#x8C61;)&amp;#x9762;&amp;#x5411;&amp;#x5BF9;&amp;#x8C61;&amp;#x7684;&amp;#x7279;&amp;#x5F81;&amp;#x6709;&amp;#x4E09;&amp;#x65B9;&amp;#x9762;&amp;#xFF1A;
+
+Encapsulation (&amp;#x5C01;&amp;#x88C5;)
+Inheritence (&amp;#x7EE">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Dive into Java -- (4) Object-Oriented">
+<meta property="og:url" content="https://quarkchaos.github.com/2016/07/18/dive-into-java-4-object-oriented/index.html">
+<meta property="og:site_name" content="Jason Wang's Playground">
+<meta property="og:description" content="Object Oriented (&amp;#x9762;&amp;#x5411;&amp;#x5BF9;&amp;#x8C61;)&amp;#x9762;&amp;#x5411;&amp;#x5BF9;&amp;#x8C61;&amp;#x7684;&amp;#x7279;&amp;#x5F81;&amp;#x6709;&amp;#x4E09;&amp;#x65B9;&amp;#x9762;&amp;#xFF1A;
+
+Encapsulation (&amp;#x5C01;&amp;#x88C5;)
+Inheritence (&amp;#x7EE">
+<meta property="og:updated_time" content="2016-07-18T12:06:26.132Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Dive into Java -- (4) Object-Oriented">
+<meta name="twitter:description" content="Object Oriented (&amp;#x9762;&amp;#x5411;&amp;#x5BF9;&amp;#x8C61;)&amp;#x9762;&amp;#x5411;&amp;#x5BF9;&amp;#x8C61;&amp;#x7684;&amp;#x7279;&amp;#x5F81;&amp;#x6709;&amp;#x4E09;&amp;#x65B9;&amp;#x9762;&amp;#xFF1A;
+
+Encapsulation (&amp;#x5C01;&amp;#x88C5;)
+Inheritence (&amp;#x7EE">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: 'Author'
+    }
+  };
+</script>
+
+  <title> Dive into Java -- (4) Object-Oriented | Jason Wang's Playground </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?ea2c42d3a5f14cd212a7a74fe032f86d";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Jason Wang's Playground</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/404.html" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />
+            
+            公益404
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Dive into Java -- (4) Object-Oriented
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2016-07-18T19:57:00+08:00" content="2016-07-18">
+              2016-07-18
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="Object-Oriented-&#x9762;&#x5411;&#x5BF9;&#x8C61;"><a href="#Object-Oriented-&#x9762;&#x5411;&#x5BF9;&#x8C61;" class="headerlink" title="Object Oriented (&#x9762;&#x5411;&#x5BF9;&#x8C61;)"></a>Object Oriented (&#x9762;&#x5411;&#x5BF9;&#x8C61;)</h1><p>&#x9762;&#x5411;&#x5BF9;&#x8C61;&#x7684;&#x7279;&#x5F81;&#x6709;&#x4E09;&#x65B9;&#x9762;&#xFF1A;</p>
+<ul>
+<li>Encapsulation (&#x5C01;&#x88C5;)</li>
+<li>Inheritence (&#x7EE7;&#x627F;)</li>
+<li>Polymorphism (&#x591A;&#x6001;)</li>
+</ul>
+<h1 id="&#x7EE7;&#x627F;"><a href="#&#x7EE7;&#x627F;" class="headerlink" title="&#x7EE7;&#x627F;"></a>&#x7EE7;&#x627F;</h1><p>Java &#x53EA;&#x652F;&#x6301;&#x5355;&#x7EE7;&#x627F;&#xFF0C;&#x4F46;&#x53EF;&#x4EE5;&#x5B9E;&#x73B0;&#x591A;&#x4E2A;&#x63A5;&#x53E3;</p>
+<h2 id="abstract-class-VS-interface"><a href="#abstract-class-VS-interface" class="headerlink" title="abstract class VS interface"></a>abstract class VS interface</h2><table>
+<thead>
+<tr>
+<th></th>
+<th>abstract class</th>
+<th>interface</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&#x8BBE;&#x8BA1;&#x76EE;&#x7684;</td>
+<td>&#x5728;&#x4EE3;&#x7801;&#x5B9E;&#x73B0;&#x65B9;&#x9762;&#x53D1;&#x6325;&#x4F5C;&#x7528;&#xFF0C;&#x53EF;&#x4EE5;&#x5B9E;&#x73B0;&#x4EE3;&#x7801;&#x7684;&#x91CD;&#x7528;</td>
+<td>&#x5728;&#x7CFB;&#x7EDF;&#x6846;&#x67B6;&#x8BBE;&#x8BA1;&#x65B9;&#x6CD5;&#x53D1;&#x6325;&#x4F5C;&#x7528;&#xFF0C;&#x4E3B;&#x8981;&#x5B9A;&#x4E49;&#x6A21;&#x5757;&#x4E4B;&#x95F4;&#x7684;&#x901A;&#x4FE1;</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>&#x521D;&#x59CB;&#x5316;&#x5757;</td>
+<td>&#x53EF;&#x4EE5;</td>
+<td>&#x4E0D;&#x53EF;&#x4EE5;</td>
+</tr>
+<tr>
+<td>&#x6784;&#x9020;&#x65B9;&#x6CD5;</td>
+<td>&#x53EF;&#x4EE5;<br>&#x4F46;&#x662F;&#x4E0D;&#x80FD;&#x7528;&#x4E8E;&#x521B;&#x5EFA;&#x5BF9;&#x8C61;&#xFF0C;&#x800C;&#x662F;&#x8BA9;&#x5B50;&#x7C7B;&#x8C03;&#x7528;</td>
+<td>&#x4E0D;&#x53EF;&#x4EE5;</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>&#x65B9;&#x6CD5;</td>
+<td>&#x6CA1;&#x6709;&#x9650;&#x5236;&#xFF0C;&#x53EF;&#x4EE5;&#x540C;&#x65F6;&#x5305;&#x542B;&#x62BD;&#x8C61;&#x548C;&#x975E;&#x62BD;&#x8C61;&#x7684;&#x65B9;&#x6CD5;</td>
+<td>&#x53EA;&#x80FD;&#x5E76;&#x4E14;&#x9ED8;&#x8BA4;&#x662F; public abstract &#x65B9;&#x6CD5;</td>
+</tr>
+<tr>
+<td>&#x5C5E;&#x6027;</td>
+<td>&#x9759;&#x6001;&#x5E38;&#x91CF;&#x5C5E;&#x6027;&#x548C;&#x666E;&#x901A;&#x5C5E;&#x6027;</td>
+<td>&#x53EA;&#x80FD;&#x5E76;&#x4E14;&#x9ED8;&#x8BA4;&#x662F; public static final &#x5C5E;&#x6027;</td>
+</tr>
+<tr>
+<td>&#x7EE7;&#x627F;/&#x5B9E;&#x73B0;</td>
+<td>&#x4E00;&#x4E2A;&#x7C7B;&#x662F;&#x53EA;&#x80FD;&#x7EE7;&#x627F;&#x4E00;&#x4E2A;&#x62BD;&#x8C61;&#x7C7B;</td>
+<td>&#x4E00;&#x4E2A;&#x7C7B;&#x53EF;&#x4EE5;&#x53EF;&#x4EE5;&#x5B9E;&#x73B0;&#x591A;&#x4E2A;&#x63A5;&#x53E3;<br>&#x4E00;&#x4E2A;&#x63A5;&#x53E3;&#x4E0D;&#x80FD;&#x5B9E;&#x73B0;&#x53E6;&#x4E00;&#x4E2A;&#x63A5;&#x53E3;&#xFF0C;&#x4F46;&#x5B83;&#x53EF;&#x4EE5;&#x7EE7;&#x627F;&#x591A;&#x4E2A;&#x5176;&#x4ED6;&#x63A5;&#x53E3;&#x3002;</td>
+</tr>
+<tr>
+<td>&#x65B9;&#x6CD5;&#x5B9E;&#x73B0;</td>
+<td>&#x91CD;&#x5199;&#x7236;&#x7C7B;&#x7684;&#x62BD;&#x8C61;&#x65B9;&#x6CD5;&#x6216;&#x8005;&#x5C06;&#x5B50;&#x7C7B;&#x5B9A;&#x4E49;&#x4E3A;&#x62BD;&#x8C61;&#x7C7B;</td>
+<td>&#x5FC5;&#x987B;&#x8981;&#x5B9E;&#x73B0;&#x63A5;&#x53E3;&#x58F0;&#x660E;&#x7684;&#x6240;&#x6709;&#x65B9;&#x6CD5;</td>
+</tr>
+</tbody>
+</table>
+<p>&#x793A;&#x4F8B;&#xFF1A;</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">interface A {}</span><br><span class="line">interface B {}</span><br><span class="line"></span><br><span class="line">interface C extends A, B {} // &#x63A5;&#x53E3;&#x53EF;&#x4EE5;&#x7EE7;&#x627F;&#x591A;&#x4E2A;&#x63A5;&#x53E3; A &#x548C; B &#x90FD;&#x662F;&#x63A5;&#x53E3;</span><br></pre></td></tr></table></figure>
+<h1 id="&#x591A;&#x6001;"><a href="#&#x591A;&#x6001;" class="headerlink" title="&#x591A;&#x6001;"></a>&#x591A;&#x6001;</h1><p>Java &#x4E2D;&#x5B9E;&#x73B0;&#x591A;&#x6001;&#x7684;&#x673A;&#x5236;&#x662F;&#xFF1A;</p>
+<ol>
+<li>Override&#xFF08;&#x8986;&#x76D6;&#xFF09;</li>
+<li>Overload&#xFF08;&#x91CD;&#x8F7D;&#xFF09;</li>
+</ol>
+<p>&#x5BF9;&#x6BD4;&#xFF1A;</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Override&#xFF08;&#x8986;&#x76D6;&#xFF09;</th>
+<th>Overloade&#xFF08;&#x91CD;&#x8F7D;&#xFF09;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Scope</td>
+<td>&#x7236;&#x7C7B;&#x4E0E;&#x5B50;&#x7C7B;&#x4E4B;&#x95F4;&#x591A;&#x6001;&#x6027;&#x7684;&#x4E00;&#x79CD;&#x8868;&#x73B0;</td>
+<td>&#x4E00;&#x4E2A;&#x7C7B;&#x4E2D;&#x591A;&#x6001;&#x6027;&#x7684;&#x4E00;&#x79CD;&#x8868;&#x73B0;</td>
+</tr>
+<tr>
+<td>&#x57FA;&#x672C;&#x6982;&#x5FF5;</td>
+<td>&#x5B50;&#x7C7B;&#x4E2D;&#x5B9A;&#x4E49;&#x7684;&#x65B9;&#x6CD5;&#x4E0E;&#x5176;&#x7236;&#x7C7B;&#x4E2D;&#x7684;&#x65B9;&#x6CD5;&#x6709;&#x76F8;&#x540C;&#x7684;&#x540D;&#x79F0;&#x3001;&#x53C2;&#x6570;&#x5217;&#x8868;&#x3001;&#x8FD4;&#x56DE;&#x503C;&#x7C7B;&#x578B;</td>
+<td>&#x4E00;&#x4E2A;&#x7C7B;&#x4E2D;&#x5177;&#x6709;&#x76F8;&#x540C;&#x65B9;&#x6CD5;&#x540D;&#x7684;&#x65B9;&#x6CD5;&#x7684;&#x53C2;&#x6570;&#x5217;&#x8868;&#x5728;&#x987A;&#x5E8F;&#x3001;&#x4E2A;&#x6570;&#x3001;&#x7C7B;&#x578B;&#x4E0A;&#x5B58;&#x5728;&#x4E0D;&#x540C;<br><br>&#xFF08;&#x4E0E;&#x65B9;&#x6CD5;&#x7684;&#x8FD4;&#x56DE;&#x503C;&#x7C7B;&#x578B;&#x65E0;&#x5173;&#xFF09;</td>
+</tr>
+</tbody>
+</table>
+<h2 id="Override-&#xFF08;&#x8986;&#x76D6;&#xFF09;"><a href="#Override-&#xFF08;&#x8986;&#x76D6;&#xFF09;" class="headerlink" title="Override &#xFF08;&#x8986;&#x76D6;&#xFF09;"></a>Override &#xFF08;&#x8986;&#x76D6;&#xFF09;</h2><ol>
+<li>&#x65B9;&#x6CD5;&#x7684;&#x53C2;&#x6570;&#x7B7E;&#x540D;&#x548C;&#x8FD4;&#x56DE;&#x503C;&#x7C7B;&#x578B;&#x5FC5;&#x987B;&#x76F8;&#x540C;&#xFF0C;&#x8BBF;&#x95EE;&#x63A7;&#x5236;&#x4FEE;&#x9970;&#x7B26;&#x53EF;&#x4EE5;&#x4E0D;&#x540C;&#xFF0C;&#x4F46;&#x662F;&#x5B50;&#x7C7B;&#x65B9;&#x6CD5;&#x4E0D;&#x80FD;&#x7F29;&#x5C0F;&#x7236;&#x7C7B;&#x65B9;&#x6CD5;&#x7684;&#x8BBF;&#x95EE;&#x6743;&#x9650;&#x3002;</li>
+<li>&#x5B50;&#x7C7B;&#x65B9;&#x6CD5;&#x629B;&#x51FA;&#x7684;&#x5F02;&#x5E38;&#x5FC5;&#x987B;&#x548C;&#x7236;&#x7C7B;&#x65B9;&#x6CD5;&#x629B;&#x51FA;&#x7684;&#x5F02;&#x5E38;&#x76F8;&#x540C;&#xFF0C;&#x6216;&#x8005;&#x662F;&#x7236;&#x7C7B;&#x65B9;&#x6CD5;&#x629B;&#x51FA;&#x7684;&#x5F02;&#x5E38;&#x7C7B;&#x7684;&#x5B50;&#x7C7B;&#x3002;</li>
+<li>&#x7236;&#x7C7B;&#x7684;&#x9759;&#x6001;&#x65B9;&#x6CD5;&#x662F;&#x4E0D;&#x80FD;&#x88AB;&#x5B50;&#x7C7B;&#x8986;&#x76D6;&#x4E3A;&#x975E;&#x9759;&#x6001;&#x65B9;&#x6CD5;&#x3002;&#x7236;&#x7C7B;&#x7684;&#x975E;&#x9759;&#x6001;&#x65B9;&#x6CD5;&#x4E0D;&#x80FD;&#x88AB;&#x5B50;&#x7C7B;&#x8986;&#x76D6;&#x4E3A;&#x9759;&#x6001;&#x65B9;&#x6CD5;&#x3002;</li>
+<li>&#x5B50;&#x7C7B;&#x53EF;&#x4EE5;&#x5B9A;&#x4E49;&#x4E0E;&#x7236;&#x7C7B;&#x7684;&#x9759;&#x6001;&#x65B9;&#x6CD5;&#x540C;&#x540D;&#x7684;&#x9759;&#x6001;&#x65B9;&#x6CD5;&#xFF0C;&#x4EE5;&#x4FBF;&#x5728;&#x5B50;&#x7C7B;&#x4E2D;&#x9690;&#x85CF;&#x7236;&#x7C7B;&#x7684;&#x9759;&#x6001;&#x65B9;&#x6CD5;&#x3002;&#x533A;&#x522B;&#xFF1A;&#x8FD0;&#x884C;&#x65F6;&#xFF0C;JVM &#x628A;&#x9759;&#x6001;&#x65B9;&#x6CD5;&#x548C;&#x6240;&#x5C5E;&#x7684;&#x7C7B;&#x7ED1;&#x5B9A;&#xFF0C;&#x800C;&#x628A;&#x5B9E;&#x4F8B;&#x65B9;&#x6CD5;&#x548C;&#x6240;&#x5C5E;&#x7684;&#x5B9E;&#x4F8B;&#x7ED1;&#x5B9A;&#x3002;</li>
+<li>&#x7236;&#x7C7B;&#x7684;&#x79C1;&#x6709;&#x65B9;&#x6CD5;&#x4E0D;&#x80FD;&#x88AB;&#x8986;&#x76D6;</li>
+<li>&#x7236;&#x7C7B;&#x7684;&#x975E;&#x62BD;&#x8C61;&#x65B9;&#x6CD5;&#x53EF;&#x4EE5;&#x88AB;&#x8986;&#x76D6;&#x4E3A;&#x62BD;&#x8C61;&#x65B9;&#x6CD5;</li>
+</ol>
+<h3 id="JVM-&#x5B9E;&#x73B0;"><a href="#JVM-&#x5B9E;&#x73B0;" class="headerlink" title="JVM &#x5B9E;&#x73B0;"></a>JVM &#x5B9E;&#x73B0;</h3><p>&#x539F;&#x5219;&#xFF1A;&#x201C;&#x7F16;&#x8BD1;&#x770B;&#x5DE6;&#x8FB9;&#xFF0C;&#x8FD0;&#x884C;&#x770B;&#x53F3;&#x8FB9;&#x201D;&#xFF0C;&#x5373;&#xFF1A;&#x5728;&#x7F16;&#x8BD1;&#x65F6;&#xFF0C;&#x770B;&#x5F15;&#x7528;&#x7C7B;&#x578B;&#x7684;&#x7C7B;&#x662F;&#x5426;&#x6709;&#x6B64;&#x65B9;&#x6CD5;&#xFF1B;&#x5728;&#x8FD0;&#x884C;&#x65F6;&#xFF0C;&#x770B;&#x5BF9;&#x8C61;&#x6240;&#x5728;&#x7684;&#x7C7B;&#x662F;&#x5426;&#x6709;&#x8C03;&#x7528;&#x7684;&#x65B9;&#x6CD5;&#x3002;</p>
+<p>1) &#x5BF9;&#x4E8E;&#x4E00;&#x4E2A;&#x5F15;&#x7528;&#x7C7B;&#x578B;&#x7684;&#x53D8;&#x91CF;&#xFF0C;Java&#x7F16;&#x8BD1;&#x5668;&#x6309;&#x7167;&#x5B83;&#x58F0;&#x660E;&#x7684;&#x7C7B;&#x578B;&#x6765;&#x5904;&#x7406;&#x3002;</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Base base = <span class="keyword">new</span> Sub();</span><br><span class="line">base.subMethod();</span><br></pre></td></tr></table></figure>
+<p>&#x7F16;&#x8BD1;&#x51FA;&#x9519;&#xFF0C;&#x7F16;&#x8BD1;&#x5668;&#x8BA4;&#x4E3A; base &#x662F; Base &#x7C7B;&#x578B;&#x7684;&#x5F15;&#x7528;&#x53D8;&#x91CF;&#xFF0C;Base &#x7C7B;&#x6CA1;&#x6709; subMethod() &#x65B9;&#x6CD5;&#x3002;&#x5FC5;&#x987B;&#x4F7F;&#x7528;&#x5F3A;&#x5236;&#x8F6C;&#x6362;&#x3002;</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(Sub)(base).subMethod();</span><br></pre></td></tr></table></figure>
+<p>2) &#x5BF9;&#x4E8E;&#x4E00;&#x4E2A;&#x5F15;&#x7528;&#x7C7B;&#x578B;&#x7684;&#x53D8;&#x91CF;&#xFF0C;&#x8FD0;&#x884C;&#x65F6; JVM &#x6309;&#x7167;&#x5B83;&#x5B9E;&#x9645;&#x5F15;&#x7528;&#x7684;&#x5BF9;&#x8C61;&#x6765;&#x5904;&#x7406;&#x3002;</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Base base = <span class="keyword">new</span> Base();</span><br><span class="line">Sub sub = (Sub)base;</span><br></pre></td></tr></table></figure>
+<p>&#x7F16;&#x8BD1;&#x901A;&#x8FC7;&#xFF0C;&#x4F46;&#x662F;&#x8FD0;&#x884C;&#x65F6;&#x629B;&#x51FA; ClassCastException&#x3002;&#x5728;&#x8FD0;&#x884C;&#x65F6;&#xFF0C;&#x5B50;&#x7C7B;&#x7684;&#x5F15;&#x7528;&#x7C7B;&#x578B;&#x53D8;&#x91CF;&#x53EF;&#x4EE5;&#x8F6C;&#x6362;&#x4E3A;&#x7236;&#x7C7B;&#x7684;&#x5F15;&#x7528;&#x7C7B;&#x578B;&#xFF0C;&#x800C;&#x76F8;&#x53CD;&#x7684;&#x8FC7;&#x7A0B;&#x5374;&#x4E0D;&#x53EF;&#x4EE5;&#x3002;</p>
+<p>3) &#x5728;&#x8FD0;&#x884C;&#x65F6;&#x73AF;&#x5883;&#x4E2D;&#xFF0C;&#x901A;&#x8FC7;&#x5F15;&#x7528;&#x7C7B;&#x578B;&#x53D8;&#x91CF;&#x6765;&#x8BBF;&#x95EE;&#x6240;&#x5F15;&#x7528;&#x5BF9;&#x8C61;&#x7684;&#x65B9;&#x6CD5;&#x548C;&#x5C5E;&#x6027;&#x65F6;&#xFF0C;JVM &#x91C7;&#x7528;&#x4EE5;&#x4E0B;&#x7684;&#x7ED1;&#x5B9A;&#x89C4;&#x5219;&#x3002;</p>
+<ol>
+<li>&#x5B9E;&#x4F8B;&#x65B9;&#x6CD5;&#x4E0E;&#x5F15;&#x7528;&#x53D8;&#x91CF;&#x5B9E;&#x9645;&#x5F15;&#x7528;&#x7684;&#x5BF9;&#x8C61;&#x7684;&#x65B9;&#x6CD5;&#x7ED1;&#x5B9A;&#xFF0C;&#x5373;&#x52A8;&#x6001;&#x7ED1;&#x5B9A;&#x3002;</li>
+<li>&#x9759;&#x6001;&#x65B9;&#x6CD5;&#x4E0E;&#x5F15;&#x7528;&#x53D8;&#x91CF;&#x6240;&#x58F0;&#x660E;&#x7684;&#x7C7B;&#x578B;&#x7684;&#x65B9;&#x6CD5;&#x7ED1;&#x5B9A;&#xFF0C;&#x5373;&#x9759;&#x6001;&#x7ED1;&#x5B9A;&#x3002; &#x7F16;&#x8BD1;&#x9636;&#x6BB5;&#x5373;&#x7ED1;&#x5B9A;&#x5B8C;&#x6210;&#x3002;</li>
+<li>&#x6210;&#x5458;&#x53D8;&#x91CF;(&#x9759;&#x6001;&#x53D8;&#x91CF;&#x548C;&#x5B9E;&#x4F8B;&#x53D8;&#x91CF;) &#x4E0E;&#x5F15;&#x7528;&#x7C7B;&#x578B;&#x6240;&#x58F0;&#x660E;&#x7684;&#x7C7B;&#x578B;&#x7684;&#x6210;&#x5458;&#x53D8;&#x91CF;&#x7ED1;&#x5B9A;&#x3002;&#x9759;&#x6001;&#x7ED1;&#x5B9A;&#x3002;</li>
+</ol>
+<p>&#x4F8B;&#x5B50;&#xFF1A;</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Base</span> </span>{</span><br><span class="line">  <span class="keyword">public</span> String a = <span class="string">&quot;Base&quot;</span>;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">hello</span><span class="params">()</span> </span>{</span><br><span class="line">    System.out.println(<span class="string">&quot;Base.hello&quot;</span>);</span><br><span class="line">  }</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">say</span><span class="params">()</span> </span>{</span><br><span class="line">    <span class="keyword">this</span>.hello();</span><br><span class="line">    System.out.println(<span class="string">&quot;Base.x = &quot;</span> + <span class="keyword">this</span>.a);</span><br><span class="line">  }</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Sub</span> <span class="keyword">extends</span> <span class="title">Base</span> </span>{</span><br><span class="line">  <span class="keyword">public</span> String a = <span class="string">&quot;Sub&quot;</span>;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">hello</span><span class="params">()</span> </span>{</span><br><span class="line">    System.out.println(<span class="string">&quot;Sub.hello&quot;</span>);</span><br><span class="line">  }</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">say</span><span class="params">()</span> </span>{</span><br><span class="line">    <span class="keyword">this</span>.hello();</span><br><span class="line">    System.out.println(<span class="string">&quot;Sub.x = &quot;</span> + <span class="keyword">this</span>.a);</span><br><span class="line">  }</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>{</span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>{</span><br><span class="line">    Sub sub = <span class="keyword">new</span> Sub();</span><br><span class="line"></span><br><span class="line">    Base base = (Base)sub;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// &#x8986;&#x76D6;&#x6D4B;&#x8BD5;&#xFF1A;&#x666E;&#x901A;&#x65B9;&#x6CD5;</span></span><br><span class="line">    sub.say();</span><br><span class="line">    base.say();</span><br><span class="line"></span><br><span class="line">    <span class="comment">// &#x8986;&#x76D6;&#x6D4B;&#x8BD5;&#xFF1A;&#x9759;&#x6001;&#x65B9;&#x6CD5;</span></span><br><span class="line">    sub.hello();</span><br><span class="line">    base.hello();</span><br><span class="line"></span><br><span class="line">    <span class="comment">//  &#x8986;&#x76D6;&#x6D4B;&#x8BD5;&#xFF1A;&#x5C5E;&#x6027;</span></span><br><span class="line">    System.out.println(sub.a);</span><br><span class="line">    System.out.println(base.a);</span><br><span class="line">  }</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+<p>&#x7ED3;&#x679C;&#xFF1A;</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">Sub.hello</span><br><span class="line">Sub.x = Sub</span><br><span class="line"></span><br><span class="line">Sub.hello	// &#x52A8;&#x6001;&#x7ED1;&#x5B9A;&#x4E2D;&#x8C03;&#x7528;&#x7684;&#x9759;&#x6001;&#x65B9;&#x6CD5;&#xFF0C;&#x4E5F;&#x53D8;&#x6210;&#x52A8;&#x6001;&#x7ED1;&#x5B9A;</span><br><span class="line">Sub.x = Sub // &#x666E;&#x901A;&#x65B9;&#x6CD5;&#xFF0C;&#x52A8;&#x6001;&#x7ED1;&#x5B9A;</span><br><span class="line"></span><br><span class="line">Sub.hello</span><br><span class="line">Base.hello	// &#x9759;&#x6001;&#x65B9;&#x6CD5;&#xFF0C;&#x9759;&#x6001;&#x7ED1;&#x5B9A;</span><br><span class="line"></span><br><span class="line">Sub</span><br><span class="line">Base		// &#x6210;&#x5458;&#x53D8;&#x91CF;&#xFF0C;&#x9759;&#x6001;&#x7ED1;&#x5B9A;</span><br></pre></td></tr></table></figure>
+<h2 id="Overload&#xFF08;&#x91CD;&#x8F7D;&#xFF09;"><a href="#Overload&#xFF08;&#x91CD;&#x8F7D;&#xFF09;" class="headerlink" title="Overload&#xFF08;&#x91CD;&#x8F7D;&#xFF09;"></a>Overload&#xFF08;&#x91CD;&#x8F7D;&#xFF09;</h2><p>&#x5982;&#x679C;&#x5728;&#x4E00;&#x4E2A;&#x7C7B;&#x4E2D;&#x5B9A;&#x4E49;&#x4E86;&#x591A;&#x4E2A;&#x91CD;&#x8F7D;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x53EA;&#x9700;&#x6839;&#x636E;&#x6240;&#x4F20;&#x53C2;&#x6570;&#x5217;&#x8868;&#x7684;&#x4E0D;&#x540C;&#x6765;&#x8C03;&#x7528;&#x4E0D;&#x540C;&#x7684;&#x91CD;&#x8F7D;&#x65B9;&#x6CD5;&#x3002;</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/java/" rel="tag">#java</a>
+          
+            <a href="/tags/object-oriented/" rel="tag">#object-oriented</a>
+          
+            <a href="/tags/encapsulation/" rel="tag">#encapsulation</a>
+          
+            <a href="/tags/inheritence/" rel="tag">#inheritence</a>
+          
+            <a href="/tags/polymorphism/" rel="tag">#polymorphism</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/07/17/java-hashmap/" rel="next" title="Java Hashmap">
+                <i class="fa fa-chevron-left"></i> Java Hashmap
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/uploads/avatar.jpg"
+               alt="Jason Wang" />
+          <p class="site-author-name" itemprop="name">Jason Wang</p>
+          <p class="site-description motion-element" itemprop="description">Play Fun</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">19</span>
+              <span class="site-state-item-name">posts</span>
+            </a>
+          </div>
+
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">30</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Object-Oriented-面向对象"><span class="nav-number">1.</span> <span class="nav-text">Object Oriented (面向对象)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#继承"><span class="nav-number">2.</span> <span class="nav-text">继承</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#abstract-class-VS-interface"><span class="nav-number">2.1.</span> <span class="nav-text">abstract class VS interface</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#多态"><span class="nav-number">3.</span> <span class="nav-text">多态</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Override-（覆盖）"><span class="nav-number">3.1.</span> <span class="nav-text">Override （覆盖）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#JVM-实现"><span class="nav-number">3.1.1.</span> <span class="nav-text">JVM 实现</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Overload（重载）"><span class="nav-number">3.2.</span> <span class="nav-text">Overload（重载）</span></a></li></ol></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Jason Wang</span>
+</div>
+
+<div class="powered-by">
+  Powered by <a class="theme-link" href="http://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+  
+  
+  
+
+  
+
+  
+
+</body>
+</html>
