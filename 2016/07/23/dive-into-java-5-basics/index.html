@@ -1,0 +1,821 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="java," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="Java &amp;#x57FA;&amp;#x672C;&amp;#x77E5;&amp;#x8BC6;
+
+Java &amp;#x57FA;&amp;#x672C;&amp;#x7C7B;&amp;#x578B;&amp;#x57FA;&amp;#x672C;&amp;#x6570;&amp;#x636E;&amp;#x7C7B;&amp;#x578B;
+
+
+&amp;#x7C7B;&amp;#x578B;
+&amp;#x5B57;&amp;#x957F;
+&amp;#x8BF4;&amp;#x660E;
+
+
+
+
+byte
+1
+&amp;#x5B57;&amp;#">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Dive into Java -- (5) Basics">
+<meta property="og:url" content="https://quarkchaos.github.com/2016/07/23/dive-into-java-5-basics/index.html">
+<meta property="og:site_name" content="Jason Wang's Playground">
+<meta property="og:description" content="Java &amp;#x57FA;&amp;#x672C;&amp;#x77E5;&amp;#x8BC6;
+
+Java &amp;#x57FA;&amp;#x672C;&amp;#x7C7B;&amp;#x578B;&amp;#x57FA;&amp;#x672C;&amp;#x6570;&amp;#x636E;&amp;#x7C7B;&amp;#x578B;
+
+
+&amp;#x7C7B;&amp;#x578B;
+&amp;#x5B57;&amp;#x957F;
+&amp;#x8BF4;&amp;#x660E;
+
+
+
+
+byte
+1
+&amp;#x5B57;&amp;#">
+<meta property="og:updated_time" content="2016-07-23T06:45:49.856Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Dive into Java -- (5) Basics">
+<meta name="twitter:description" content="Java &amp;#x57FA;&amp;#x672C;&amp;#x77E5;&amp;#x8BC6;
+
+Java &amp;#x57FA;&amp;#x672C;&amp;#x7C7B;&amp;#x578B;&amp;#x57FA;&amp;#x672C;&amp;#x6570;&amp;#x636E;&amp;#x7C7B;&amp;#x578B;
+
+
+&amp;#x7C7B;&amp;#x578B;
+&amp;#x5B57;&amp;#x957F;
+&amp;#x8BF4;&amp;#x660E;
+
+
+
+
+byte
+1
+&amp;#x5B57;&amp;#">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: 'Author'
+    }
+  };
+</script>
+
+  <title> Dive into Java -- (5) Basics | Jason Wang's Playground </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?ea2c42d3a5f14cd212a7a74fe032f86d";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Jason Wang's Playground</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/404.html" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />
+            
+            公益404
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Dive into Java -- (5) Basics
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2016-07-23T14:40:40+08:00" content="2016-07-23">
+              2016-07-23
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<p>Java &#x57FA;&#x672C;&#x77E5;&#x8BC6;</p>
+</blockquote>
+<h1 id="Java-&#x57FA;&#x672C;&#x7C7B;&#x578B;"><a href="#Java-&#x57FA;&#x672C;&#x7C7B;&#x578B;" class="headerlink" title="Java &#x57FA;&#x672C;&#x7C7B;&#x578B;"></a>Java &#x57FA;&#x672C;&#x7C7B;&#x578B;</h1><h2 id="&#x57FA;&#x672C;&#x6570;&#x636E;&#x7C7B;&#x578B;"><a href="#&#x57FA;&#x672C;&#x6570;&#x636E;&#x7C7B;&#x578B;" class="headerlink" title="&#x57FA;&#x672C;&#x6570;&#x636E;&#x7C7B;&#x578B;"></a>&#x57FA;&#x672C;&#x6570;&#x636E;&#x7C7B;&#x578B;</h2><table>
+<thead>
+<tr>
+<th>&#x7C7B;&#x578B;</th>
+<th>&#x5B57;&#x957F;</th>
+<th>&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>byte</td>
+<td>1</td>
+<td>&#x5B57;&#x8282;&#x578B;</td>
+</tr>
+<tr>
+<td>short</td>
+<td>2</td>
+<td>&#x77ED;&#x6574;&#x578B;</td>
+</tr>
+<tr>
+<td>int</td>
+<td>4</td>
+<td>&#x6574;&#x578B;</td>
+</tr>
+<tr>
+<td>long</td>
+<td>8</td>
+<td>&#x957F;&#x6574;&#x578B;</td>
+</tr>
+<tr>
+<td>float</td>
+<td>4</td>
+<td>&#x5355;&#x7CBE;&#x5EA6;&#x6D6E;&#x70B9;&#x6570;</td>
+</tr>
+<tr>
+<td>double</td>
+<td>8</td>
+<td>&#x53CC;&#x7CBE;&#x5EA6;&#x6D6E;&#x70B9;&#x6570;</td>
+</tr>
+<tr>
+<td>char</td>
+<td></td>
+<td>&#x5B57;&#x7B26;&#x578B;</td>
+</tr>
+<tr>
+<td>boolean</td>
+<td></td>
+<td>&#x5E03;&#x5C14;&#x578B;</td>
+</tr>
+</tbody>
+</table>
+<p>long &#x548C; double &#x5728;&#x5185;&#x5B58;&#x4E2D;&#x5360;&#x4E24;&#x4E2A; SLOT&#xFF0C;&#x5176;&#x5B83;&#x7C7B;&#x578B;&#x5728;&#x5185;&#x5B58;&#x4E2D;&#x5360;&#x4E00;&#x4E2A; SLOT&#x3002;</p>
+<p>String &#x4E0D;&#x662F;&#x57FA;&#x672C;&#x6570;&#x636E;&#x7C7B;&#x578B;&#xFF0C;&#x5B83;&#x662F;&#x4E00;&#x79CD;&#x7279;&#x6B8A;&#x7684;&#x7C7B;&#x3002;</p>
+<h2 id="Object"><a href="#Object" class="headerlink" title="Object"></a>Object</h2><h3 id="java-lang-Object"><a href="#java-lang-Object" class="headerlink" title="java.lang.Object"></a>java.lang.Object</h3><p>java.lang &#x5305;&#x5728;&#x4F7F;&#x7528;&#x7684;&#x65F6;&#x5019;&#x65E0;&#x9700;&#x663E;&#x793A;&#x5BFC;&#x5165;&#xFF0C;&#x7F16;&#x8BD1;&#x65F6;&#x7531;&#x7F16;&#x8BD1;&#x5668;&#x81EA;&#x52A8;&#x5BFC;&#x5165;&#x3002; Object &#x7C7B;&#x662F;&#x7C7B;&#x5C42;&#x6B21;&#x7ED3;&#x6784;&#x7684;&#x6839;&#xFF0C;Java &#x4E2D;&#x6240;&#x6709;&#x7684;&#x7C7B;&#x4ECE;&#x6839;&#x672C;&#x4E0A;&#x90FD;&#x7EE7;&#x627F;&#x81EA;&#x8FD9;&#x4E2A;&#x7C7B;&#x3002; Object &#x7C7B;&#x662F; Java &#x4E2D;&#x552F;&#x4E00;&#x6CA1;&#x6709;&#x7236;&#x7C7B;&#x7684;&#x7C7B;&#x3002;&#x5176;&#x4ED6;&#x6240;&#x6709;&#x7684;&#x7C7B;&#xFF0C;&#x5305;&#x62EC;&#x6807;&#x51C6;&#x5BB9;&#x5668;&#x7C7B;&#xFF0C;&#x6BD4;&#x5982;&#x6570;&#x7EC4;&#xFF0C;&#x90FD;&#x7EE7;&#x627F;&#x4E86; Object &#x7C7B;&#x4E2D;&#x7684;&#x65B9;&#x6CD5;&#x3002;</p>
+<p>Object &#x7C7B;&#x4E2D;&#x7684;&#x65B9;&#x6CD5;&#x5982;&#x4E0B;&#xFF1A;</p>
+<h3 id="protected-Object-clone"><a href="#protected-Object-clone" class="headerlink" title="protected Object clone()"></a>protected Object clone()</h3><p>Creates and returns a copy of this object.</p>
+<ul>
+<li>&#x4F1A;&#x629B;&#x51FA; CloneNotSupportedException</li>
+</ul>
+<p>&#x4F7F;&#x7528;&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;&#x7684;&#x7C7B;&#x5FC5;&#x987B;&#x5B9E;&#x73B0; java.lang.Cloneable &#x63A5;&#x53E3;&#xFF0C;&#x5426;&#x5219;&#x4F1A;&#x629B;&#x51FA;CloneNotSupportedException &#x5F02;&#x5E38;&#x3002;&#x800C; Cloneable &#x63A5;&#x53E3;&#x5176;&#x5B9E;&#x53EA;&#x662F;&#x4E2A;&#x7A7A;&#x63A5;&#x53E3;&#xFF0C;&#x4E0D;&#x9700;&#x8981;&#x5199;&#x4EFB;&#x4F55;&#x65B9;&#x6CD5;&#x3002;</p>
+<ul>
+<li>&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;&#x662F; protected &#x4FEE;&#x9970;&#x7684;
+&#x91CD;&#x5199; clone() &#x65B9;&#x6CD5;&#x7684;&#x65F6;&#x5019;&#x9700;&#x8981;&#x5199;&#x6210; public&#xFF0C;&#x4EE5;&#x8BA9;&#x7C7B;&#x5916;&#x90E8;&#x7684;&#x4EE3;&#x7801;&#x8C03;&#x7528;&#x3002;</li>
+</ul>
+<h3 id="boolean-equals-Object-obj"><a href="#boolean-equals-Object-obj" class="headerlink" title="boolean equals(Object obj)"></a>boolean equals(Object obj)</h3><p>Indicates whether some other object is &#x201C;equal to&#x201D; this one.</p>
+<p><strong>equals() &#x65B9;&#x6CD5;&#x9700;&#x8981;&#x5177;&#x6709;&#x5982;&#x4E0B;&#x7279;&#x70B9;&#xFF1A;</strong></p>
+<ul>
+<li><p>&#x81EA;&#x53CD;&#x6027;&#xFF08;reflexive&#xFF09;&#xFF1A;&#x4EFB;&#x4F55;&#x975E;&#x7A7A;&#x5F15;&#x7528; x&#xFF0C;x.equals(x) &#x8FD4;&#x56DE;&#x4E3A;true&#x3002;</p>
+</li>
+<li><p>&#x5BF9;&#x79F0;&#x6027;&#xFF08;symmetric&#xFF09;&#xFF1A;&#x4EFB;&#x4F55;&#x975E;&#x7A7A;&#x5F15;&#x7528; x &#x548C; y&#xFF0C;x.equals(y) &#x8FD4;&#x56DE; true &#x5F53;&#x4E14;&#x4EC5;&#x5F53;y.equals(x) &#x8FD4;&#x56DE; true&#x3002;</p>
+</li>
+<li><p>&#x4F20;&#x9012;&#x6027;&#xFF08;transitive&#xFF09;&#xFF1A;&#x4EFB;&#x4F55;&#x975E;&#x7A7A;&#x5F15;&#x7528; x &#x548C; y&#xFF0C;&#x5982;&#x679C; x.equals(y) &#x8FD4;&#x56DE;true&#xFF0C;&#x5E76;&#x4E14;y.equals(z) &#x8FD4;&#x56DE; true&#xFF0C;&#x90A3;&#x4E48; x.equals(z) &#x8FD4;&#x56DE; true&#x3002;</p>
+</li>
+<li><p>&#x4E00;&#x81F4;&#x6027;&#xFF08;consistent&#xFF09;&#xFF1A;&#x4E24;&#x4E2A;&#x975E;&#x7A7A;&#x5F15;&#x7528; x &#x548C; y&#xFF0C;x.equals(y) &#x7684;&#x591A;&#x6B21;&#x8C03;&#x7528;&#x5E94;&#x8BE5;&#x4FDD;&#x6301;&#x4E00;&#x81F4;&#x7684;&#x7ED3;&#x679C;&#xFF08;&#x524D;&#x63D0;&#x6761;&#x4EF6;&#x662F;&#x5728;&#x591A;&#x6B21;&#x6BD4;&#x8F83;&#x4E4B;&#x95F4;&#x6CA1;&#x6709;&#x4FEE;&#x6539; x &#x548C; y &#x7528;&#x4E8E;&#x6BD4;&#x8F83;&#x7684;&#x76F8;&#x5173;&#x4FE1;&#x606F;&#xFF09;&#x3002;</p>
+</li>
+</ul>
+<p><strong>&#x7EA6;&#x5B9A;&#xFF1A;</strong></p>
+<ul>
+<li>&#x5BF9;&#x4E8E;&#x4EFB;&#x4F55;&#x975E;&#x7A7A;&#x5F15;&#x7528; x&#xFF0C;x.equals(null) &#x5E94;&#x8BE5;&#x8FD4;&#x56DE;&#x4E3A; <code>false</code>&#x3002;</li>
+<li>&#x91CD;&#x5199; equals() &#x65B9;&#x6CD5;&#x65F6;&#xFF0C;&#x5E94;&#x8BE5;&#x540C;&#x65F6;&#x91CD;&#x5199; hashCode() &#x65B9;&#x6CD5;&#x3002;</li>
+</ul>
+<p><strong>== VS equals()</strong></p>
+<ul>
+<li><code>==</code> &#x8FD0;&#x7B97;&#x7B26;&#x5224;&#x65AD;&#x4E24;&#x4E2A;&#x5F15;&#x7528;&#x662F;&#x5426;&#x6307;&#x5411;&#x540C;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#x3002;</li>
+<li>equals() &#x65B9;&#x6CD5;&#x5E94;&#x5F53;&#x7528;&#x6765;&#x5224;&#x65AD;&#x4E24;&#x4E2A;&#x5BF9;&#x8C61;&#x5185;&#x5BB9;&#x662F;&#x5426;&#x76F8;&#x7B49;&#x3002;</li>
+</ul>
+<p>Object &#x7C7B;&#x4E2D;&#x7684; equals() &#x65B9;&#x6CD5;&#x4EE3;&#x7801;&#x5982;&#x4E0B;&#xFF1A;</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">equals</span><span class="params">(Object obj)</span></span><br><span class="line"></span>{</span><br><span class="line">    <span class="keyword">return</span> (<span class="keyword">this</span> == obj);</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+<p>&#x5373; Object &#x7C7B;&#x4E2D;&#x7684; equals() &#x65B9;&#x6CD5;&#x7B49;&#x4EF7;&#x4E8E; <code>==</code> &#x3002;</p>
+<p>&#x5982;&#x679C;&#x9700;&#x8981;&#x5224;&#x65AD;&#x4E24;&#x4E2A;&#x5BF9;&#x8C61;&#x662F;&#x5426;&#x5185;&#x5BB9;&#x76F8;&#x7B49;&#x65F6;&#xFF0C;&#x5E94;&#x5F53;&#x91CD;&#x5199; equals() &#x65B9;&#x6CD5;&#x3002;</p>
+<h3 id="int-hashCode"><a href="#int-hashCode" class="headerlink" title="int hashCode()"></a>int hashCode()</h3><p>Returns a hash code value for the object.</p>
+<p>&#x5F53;&#x91CD;&#x5199; equals() &#x65B9;&#x6CD5;&#x65F6;&#xFF0C;&#x5FC5;&#x987B;&#x91CD;&#x5199; hashCode() &#x65B9;&#x6CD5;&#x3002;</p>
+<p><strong>hashCode &#x9700;&#x8981;&#x6EE1;&#x8DB3;&#x7684;&#x6761;&#x4EF6;&#x5982;&#x4E0B;&#xFF1A;</strong></p>
+<p>(1) &#x5728; Java &#x5E94;&#x7528;&#x7684;&#x4E00;&#x6B21;&#x6267;&#x884C;&#x8FC7;&#x7A0B;&#x4E2D;&#xFF0C;&#x5982;&#x679C;&#x5BF9;&#x8C61;&#x7528;&#x4E8E; equals() &#x6BD4;&#x8F83;&#x7684;&#x4FE1;&#x606F;&#x6CA1;&#x6709;&#x88AB;&#x4FEE;&#x6539;&#xFF0C;&#x90A3;&#x4E48;&#x540C;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#x591A;&#x6B21;&#x8C03;&#x7528; hashCode() &#x65B9;&#x6CD5;&#x5E94;&#x8BE5;&#x8FD4;&#x56DE;&#x540C;&#x4E00;&#x4E2A;&#x6574;&#x578B;&#x503C;&#x3002;</p>
+<p>&#x5E94;&#x7528;&#x7684;&#x591A;&#x6B21;&#x6267;&#x884C;&#x4E2D;&#xFF0C;&#x8FD9;&#x4E2A;&#x503C;&#x4E0D;&#x9700;&#x8981;&#x4FDD;&#x6301;&#x4E00;&#x81F4;&#xFF0C;&#x5373;&#x6BCF;&#x6B21;&#x6267;&#x884C;&#x90FD;&#x662F;&#x4FDD;&#x6301;&#x7740;&#x5404;&#x81EA;&#x4E0D;&#x540C;&#x7684;&#x503C;&#x3002;</p>
+<p>(2) &#x5982;&#x679C; equals() &#x5224;&#x65AD;&#x4E24;&#x4E2A;&#x5BF9;&#x8C61;&#x76F8;&#x7B49;&#xFF0C;&#x90A3;&#x4E48;&#x5B83;&#x4EEC;&#x7684; hashCode() &#x65B9;&#x6CD5;&#x5E94;&#x8BE5;&#x8FD4;&#x56DE;&#x540C;&#x6837;&#x7684;&#x503C;&#x3002;</p>
+<p>(3) &#x5982;&#x679C; equals() &#x5224;&#x65AD;&#x4E24;&#x4E2A;&#x5BF9;&#x8C61;&#x4E0D;&#x76F8;&#x7B49;&#xFF0C;&#x90A3;&#x4E48;&#x5B83;&#x4EEC;&#x7684; hashCode() &#x65B9;&#x6CD5;&#x5E76;&#x4E0D;&#x9700;&#x8981;&#x4E0D;&#x540C;&#x3002;</p>
+<p>&#x5373;&#xFF0C;&#x4E24;&#x4E2A;&#x5BF9;&#x8C61;&#x7528; equals() &#x65B9;&#x6CD5;&#x6BD4;&#x8F83;&#x8FD4;&#x56DE; false &#xFF0C;&#x5B83;&#x4EEC;&#x7684; hashCode &#x53EF;&#x4EE5;&#x76F8;&#x540C;&#x4E5F;&#x53EF;&#x4EE5;&#x4E0D;&#x540C;&#x3002;&#x4F46;&#x662F;&#xFF0C;&#x4E3A;&#x4E0D;&#x76F8;&#x7B49;&#x7684;&#x5BF9;&#x8C61;&#x4EA7;&#x751F;&#x4E0D;&#x540C;&#x7684; hashCode &#x53EF;&#x4EE5;&#x6539;&#x5584;&#x54C8;&#x5E0C;&#x8868;&#x7684;&#x6027;&#x80FD;&#x3002;</p>
+<p>Object &#x7C7B;&#x9ED8;&#x8BA4;&#x7684; hashCode() &#x65B9;&#x6CD5;&#x8FD4;&#x56DE;&#x5BF9;&#x8C61;&#x7684;&#x5730;&#x5740;&#x3002;</p>
+<h3 id="String-toString"><a href="#String-toString" class="headerlink" title="String toString()"></a>String toString()</h3><p>Returns a string representation of the object.</p>
+<p>Object &#x7C7B;&#x4E2D;&#x7684; toString() &#x65B9;&#x6CD5;&#x5B9A;&#x4E49;&#x5982;&#x4E0B;&#xFF1A;</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">toString</span><span class="params">()</span></span><br><span class="line"></span>{</span><br><span class="line">    <span class="keyword">return</span> getClass().getName() + <span class="string">&quot;@&quot;</span> + Integer.toHexString(hashCode());</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+<h2 id="Integer"><a href="#Integer" class="headerlink" title="Integer"></a>Integer</h2><p>Integer &#x7C7B;&#x662F; int &#x7C7B;&#x578B;&#x7684;&#x88C5;&#x7BB1;&#x7C7B;</p>
+<p><strong>int</strong></p>
+<ol>
+<li>int &#x662F;&#x57FA;&#x672C;&#x6570;&#x636E;&#x7C7B;&#x578B;</li>
+<li>&#x4F7F;&#x7528;&#x65F6;&#x65E0;&#x9700;&#x4F7F;&#x7528; new &#x521B;&#x5EFA;&#x5BF9;&#x8C61;&#xFF0C;&#x4E5F;&#x4E0D;&#x9700;&#x8981;&#x989D;&#x5916;&#x7684;&#x5F15;&#x7528;&#x7A7A;&#x95F4;&#x4FDD;&#x5B58;&#x8F85;&#x52A9;&#x4FE1;&#x606F;</li>
+<li>&#x7531;&#x4E8E;&#x4E0D;&#x662F;&#x5BF9;&#x8C61;&#xFF0C;&#x6CA1;&#x6709;&#x76F8;&#x5E94;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x5728;&#x67D0;&#x4E9B;&#x573A;&#x5408;&#x4F7F;&#x7528;&#x53D7;&#x9650;</li>
+</ol>
+<p><strong>Integer:</strong></p>
+<ol>
+<li>Integer &#x662F;&#x4E00;&#x79CD;&#x5C01;&#x88C5;&#x7C7B;&#xFF0C;&#x5B83;&#x7528; final &#x5173;&#x952E;&#x5B57;&#x4FEE;&#x9970;&#xFF0C;&#x4E0D;&#x80FD;&#x88AB;&#x7EE7;&#x627F;</li>
+<li>Integer &#x5F25;&#x8865;&#x4E86;&#x57FA;&#x672C;&#x6570;&#x636E;&#x7C7B;&#x578B;&#x5728;&#x9762;&#x5411;&#x5BF9;&#x8C61;&#x65B9;&#x9762;&#x7684;&#x6B20;&#x7F3A;&#xFF0C;&#x5B83;&#x53EF;&#x4EE5;&#x5B9E;&#x4F8B;&#x5316;&#x5BF9;&#x8C61;&#xFF0C;&#x4E14;&#x8BE5;&#x7C7B;&#x4E2D;&#x8FD8;&#x63D0;&#x4F9B;&#x4E86;&#x591A;&#x4E2A;&#x7528;&#x4E8E;&#x5904;&#x7406; int &#x578B;&#x6570;&#x636E;&#x7684;&#x529F;&#x80FD;&#x65B9;&#x6CD5;&#x3002;</li>
+<li>&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x81EA;&#x52A8;&#x7684;&#x62C6;&#x7BB1;&#x548C;&#x5C01;&#x7BB1;&#x5728; int &#x548C; Integer &#x7C7B;&#x578B;&#x4E4B;&#x95F4;&#x81EA;&#x52A8;&#x8F6C;&#x6362;&#x3002;</li>
+</ol>
+<h2 id="String"><a href="#String" class="headerlink" title="String"></a>String</h2><p>String &#x662F;&#x4E00;&#x79CD;&#x7279;&#x6B8A;&#x7684;&#x7C7B;&#xFF0C;String &#x7C7B;&#x521D;&#x59CB;&#x5316;&#x540E;&#x662F;&#x4E0D;&#x53EF;&#x53D8;&#x7684;(immutable)&#x3002;</p>
+<p>&#x5728;&#x8FDB;&#x884C;&#x8FDE;&#x63A5;&#x64CD;&#x4F5C;&#x65F6;&#xFF0C;String &#x6BCF;&#x6B21;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x65B0;&#x7684; String &#x5B9E;&#x4F8B;&#xFF0C;&#x4F1A;&#x4EA7;&#x751F;&#x5F88;&#x591A;&#x4E34;&#x65F6;&#x53D8;&#x91CF;&#xFF0C;&#x56E0;&#x6B64;&#xFF0C;&#x5927;&#x91CF;&#x5B57;&#x7B26;&#x4E32;&#x62FC;&#x63A5;&#x65F6;&#xFF0C;&#x6700;&#x597D;&#x4F7F;&#x7528; StringBuffer &#x6216; StringBuilder&#x3002;</p>
+<h3 id="StringBuffer-StringBuilder"><a href="#StringBuffer-StringBuilder" class="headerlink" title="StringBuffer/StringBuilder"></a>StringBuffer/StringBuilder</h3><p>StringBuffer &#x548C; StringBuilder &#x90FD;&#x53EF;&#x4EE5;&#x7528;&#x6765;&#x62FC;&#x63A5;&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x4E24;&#x8005;&#x90FD;&#x4E0D;&#x4F1A;&#x751F;&#x6210;&#x4E34;&#x65F6;&#x53D8;&#x91CF;&#x3002;</p>
+<p>&#x533A;&#x522B;&#xFF1A;</p>
+<p>StringBuilder &#x662F;&#x975E;&#x7EBF;&#x7A0B;&#x5B89;&#x5168;&#x7248; StringBuffer&#xFF0C;&#x6027;&#x80FD;&#x4F18;&#x4E8E; StringBuffer&#x3002;</p>
+<h3 id="hashCode"><a href="#hashCode" class="headerlink" title="hashCode()"></a>hashCode()</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/** </span><br><span class="line"> * Returns a hash code for this string. The hash code for a </span><br><span class="line"> * &lt;code&gt;String&lt;/code&gt; object is computed as </span><br><span class="line"> * &lt;blockquote&gt;&lt;pre&gt;</span><br><span class="line"> * s[0]*31^(n-1) + s[1]*31^(n-2) + ... + s[n-1] </span><br><span class="line"> * &lt;/pre&gt;&lt;/blockquote&gt; </span><br><span class="line"> * using &lt;code&gt;int&lt;/code&gt; arithmetic, where &lt;code&gt;s[i]&lt;/code&gt; is the </span><br><span class="line"> * &lt;i&gt;i&lt;/i&gt;th character of the string, &lt;code&gt;n&lt;/code&gt; is the length of </span><br><span class="line"> * the string, and &lt;code&gt;^&lt;/code&gt; indicates exponentiation. </span><br><span class="line"> * (The hash value of the empty string is zero.) </span><br><span class="line"> * </span><br><span class="line"> * <span class="doctag">@return</span>  a hash code value for this object. </span><br><span class="line"> */</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">hashCode</span><span class="params">()</span> </span>{</span><br><span class="line">	<span class="keyword">int</span> h = hash;</span><br><span class="line">	<span class="keyword">if</span> (h == <span class="number">0</span>) {</span><br><span class="line">		<span class="keyword">int</span> off = offset;</span><br><span class="line">		<span class="keyword">char</span> val[] = value;</span><br><span class="line">		<span class="keyword">int</span> len = count;</span><br><span class="line"></span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; len; i++) {</span><br><span class="line">			h = <span class="number">31</span>*h + val[off++];</span><br><span class="line">		}</span><br><span class="line">	   hash = h;</span><br><span class="line">   }</span><br><span class="line">   <span class="keyword">return</span> h;</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+<h2 id="&#x8BED;&#x6CD5;&#x7CD6;"><a href="#&#x8BED;&#x6CD5;&#x7CD6;" class="headerlink" title="&#x8BED;&#x6CD5;&#x7CD6;"></a>&#x8BED;&#x6CD5;&#x7CD6;</h2><p>foreach &#x662F;&#x4E00;&#x79CD; Iterator &#x8BED;&#x6CD5;&#x7CD6;&#xFF0C;&#x5176;&#x539F;&#x7406;&#x5982;&#x4E0B;&#xFF1A;</p>
+<p>foreach &#x7528;&#x6CD5;&#xFF1A;</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (String s : strings) {</span><br><span class="line">    System.out.println(s);</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+<p>&#x7C7B;&#x4F3C;&#x4E8E;&#xFF1A;</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Iterator&lt;String&gt; iterator = strings.iterator();</span><br><span class="line"><span class="keyword">while</span> (iterator.hasNext()) {</span><br><span class="line">    String s = iterator.next();</span><br><span class="line">    System.out.println(s);</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+<h1 id="&#x4FEE;&#x9970;&#x7B26;"><a href="#&#x4FEE;&#x9970;&#x7B26;" class="headerlink" title="&#x4FEE;&#x9970;&#x7B26;"></a>&#x4FEE;&#x9970;&#x7B26;</h1><h2 id="&#x8BBF;&#x95EE;&#x63A7;&#x5236;"><a href="#&#x8BBF;&#x95EE;&#x63A7;&#x5236;" class="headerlink" title="&#x8BBF;&#x95EE;&#x63A7;&#x5236;"></a>&#x8BBF;&#x95EE;&#x63A7;&#x5236;</h2><table>
+<thead>
+<tr>
+<th>&#x4FEE;&#x9970;&#x7B26;</th>
+<th>&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>private</td>
+<td>&#x53EA;&#x80FD;&#x5728;&#x540C;&#x4E00;&#x4E2A;&#x7C7B;&#x4E2D;&#x8BBF;&#x95EE;</td>
+</tr>
+<tr>
+<td>&#x9ED8;&#x8BA4;</td>
+<td>&#x53EA;&#x80FD;&#x5728;&#x540C;&#x4E00;&#x4E2A;&#x5305;&#x4E2D;&#x8BBF;&#x95EE;</td>
+</tr>
+<tr>
+<td>protected</td>
+<td>&#x53EF;&#x4EE5;&#x5728;&#x540C;&#x4E00;&#x4E2A;&#x5305;&#x548C;&#x5B50;&#x7C7B;&#x4E2D;&#x8BBF;&#x95EE;</td>
+</tr>
+<tr>
+<td>public</td>
+<td>&#x4E0D;&#x9650;&#x5236;&#x8BBF;&#x95EE;</td>
+</tr>
+</tbody>
+</table>
+<h2 id="static"><a href="#static" class="headerlink" title="static"></a>static</h2><ul>
+<li>&#x4FEE;&#x9970;&#x53D8;&#x91CF;</li>
+<li>&#x4FEE;&#x9970;&#x65B9;&#x6CD5;</li>
+<li>&#x4FEE;&#x9970;&#x9759;&#x6001;&#x5757;</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span> </span>{</span><br><span class="line">  <span class="keyword">public</span> <span class="keyword">static</span> String foobar;</span><br><span class="line">  <span class="keyword">static</span> {</span><br><span class="line">    foobar = <span class="string">&quot;hello&quot;</span>;</span><br><span class="line">  }</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+<ul>
+<li>&#x4FEE;&#x9970;&#x9759;&#x6001;&#x5185;&#x90E8;&#x7C7B;</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Outer</span> </span>{</span><br><span class="line">  <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">Inner</span> </span>{</span><br><span class="line">	<span class="comment">//...</span></span><br><span class="line">  }</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="comment">// &#x5B9E;&#x4F8B;&#x5316;</span></span><br><span class="line">Outer.Inner in = <span class="keyword">new</span> Outer.Inner();</span><br></pre></td></tr></table></figure>
+<ul>
+<li>&#x9759;&#x6001;&#x5BFC;&#x5165;</li>
+</ul>
+<p>&#x4F7F;&#x7528;&#x9759;&#x6001;&#x5BFC;&#x5165;&#x53EF;&#x4EE5;&#x4F7F;&#x88AB;&#x5BFC;&#x5165;&#x7C7B;&#x7684;&#x9759;&#x6001;&#x53D8;&#x91CF;&#x548C;&#x9759;&#x6001;&#x65B9;&#x6CD5;&#x5728;&#x5F53;&#x524D;&#x7C7B;&#x76F4;&#x63A5;&#x53EF;&#x89C1;&#xFF0C;&#x4F7F;&#x7528;&#x8FD9;&#x4E9B;&#x9759;&#x6001;&#x6210;&#x5458;&#x65E0;&#x9700;&#x518D;&#x7ED9;&#x51FA;&#x4ED6;&#x4EEC;&#x7684;&#x7C7B;&#x540D;&#x3002;</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="keyword">static</span> java.lang.System.out; <span class="comment">//&#x5BFC;&#x5165;java.lang&#x5305;&#x4E0B;&#x7684;System&#x7C7B;&#x7684;&#x9759;&#x6001;&#x53D8;&#x91CF;out;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HelloWorld</span> </span>{</span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>{</span><br><span class="line">    out.print(<span class="string">&quot;Hello World!&quot;</span>); <span class="comment">//&#x4E0D;&#x7528;&#x518D;&#x5199;&#x6210;System.out.println(&quot;Hello World!&quot;)&#x4E86;&#xFF0C;&#x56E0;&#x4E3A;&#x5DF2;&#x7ECF;&#x5BFC;&#x5165;&#x4E86;&#x8FD9;&#x4E2A;&#x9759;&#x6001;&#x53D8;&#x91CF;out&#x3002;</span></span><br><span class="line">  }</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+<h2 id="final"><a href="#final" class="headerlink" title="final"></a>final</h2><p><code>final</code> &#x5173;&#x952E;&#x5B57;&#x53EF;&#x7528;&#x4E8E;&#x4FEE;&#x9970;&#x7C7B;&#x3001;&#x53D8;&#x91CF;&#x548C;&#x65B9;&#x6CD5;&#xFF0C;&#x7528;&#x4E8E;&#x8868;&#x793A;&#x5B83;&#x6240;&#x4FEE;&#x9970;&#x7684;&#x7C7B;&#x3001;&#x53D8;&#x91CF;&#x548C;&#x65B9;&#x6CD5;&#x4E0D;&#x53EF;&#x6539;&#x53D8;&#x3002;</p>
+<table>
+<thead>
+<tr>
+<th>&#x4FEE;&#x9970;&#x5BF9;&#x8C61;</th>
+<th>&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&#x53D8;&#x91CF;</td>
+<td>&#x8868;&#x793A;&#x8BE5;&#x53D8;&#x91CF;&#x4E00;&#x65E6;&#x83B7;&#x5F97;&#x4E86;&#x521D;&#x59CB;&#x503C;&#x4E4B;&#x540E;&#x5C31;&#x4E0D;&#x53EF;&#x88AB;&#x6539;&#x53D8;&#xFF0C;final &#x65E2;&#x53EF;&#x4FEE;&#x9970;&#x6210;&#x5458;&#x53D8;&#x91CF;&#xFF08;&#x5305;&#x62EC;&#x7C7B;&#x53D8;&#x91CF;&#x548C;&#x5B9E;&#x4F8B;&#x53D8;&#x91CF;&#xFF09;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x4FEE;&#x9970;&#x5C40;&#x90E8;&#x53D8;&#x91CF;&#x3001;&#x5F62;&#x53C2;&#x3002;</td>
+</tr>
+<tr>
+<td>&#x65B9;&#x6CD5;</td>
+<td>&#x65B9;&#x6CD5;&#x4E0D;&#x53EF;&#x88AB;&#x91CD;&#x5199;&#xFF0C;&#x5982;&#x679C;&#x4E0D;&#x5E0C;&#x671B;&#x5B50;&#x7C7B;&#x91CD;&#x5199;&#x7236;&#x7C7B;&#x7684;&#x67D0;&#x4E2A;&#x65B9;&#x6CD5;&#xFF0C;&#x5219;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; final &#x4FEE;&#x9970;&#x8BE5;&#x65B9;&#x6CD5;&#x3002;</td>
+</tr>
+<tr>
+<td>&#x7C7B;</td>
+<td>&#x4E0D;&#x53EF;&#x4EE5;&#x6709;&#x5B50;&#x7C7B;</td>
+</tr>
+</tbody>
+</table>
+<p><strong>&#x4F8B;&#x5B50;</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">final</span> StringBuffer a = <span class="keyword">new</span> StringBuffer(<span class="string">&quot;foo&quot;</span>); </span><br><span class="line"><span class="keyword">final</span> StringBuffer b = <span class="keyword">new</span> StringBuffer(<span class="string">&quot;bar&quot;</span>); </span><br><span class="line"></span><br><span class="line">a = b; <span class="comment">// &#x7F16;&#x8BD1;&#x5931;&#x8D25;</span></span><br><span class="line">a.append(<span class="string">&quot;bar&quot;</span>); <span class="comment">// &#x7F16;&#x8BD1;&#x901A;&#x8FC7;</span></span><br></pre></td></tr></table></figure>
+<p>&#x7531;&#x6B64;&#x53EF;&#x89C1;&#xFF0C;<code>final</code> &#x53EA;&#x5BF9;&#x5F15;&#x7528;&#x7684;<code>&#x503C;</code>&#xFF08;&#x5373;&#x5185;&#x5B58;&#x5730;&#x5740;&#xFF09;&#x6709;&#x6548;&#xFF0C;&#x5F15;&#x7528;&#x53EA;&#x80FD;&#x6307;&#x5411;&#x521D;&#x59CB;&#x6307;&#x5411;&#x7684;&#x90A3;&#x4E2A;&#x5BF9;&#x8C61;&#xFF0C;&#x4E4B;&#x540E;&#x65E0;&#x6CD5;&#x6539;&#x53D8;&#x5B83;&#x7684;&#x6307;&#x5411;&#x3002;&#x4F46;&#x662F; <code>final</code> &#x65E0;&#x6CD5;&#x963B;&#x6B62;&#x5B83;&#x6240;&#x6307;&#x5411;&#x7684;&#x5BF9;&#x8C61;&#x7684;&#x53D8;&#x5316;&#x3002;</p>
+<p><strong>&#x5BF9;&#x6BD4; finally &#x548C; finalize</strong></p>
+<p><code>finally</code> &#x5173;&#x952E;&#x5B57;&#x7528;&#x4E8E;&#x5F02;&#x5E38;&#x5904;&#x7406;&#x673A;&#x5236;&#xFF0C;&#x5F80;&#x5F80;&#x8DDF;&#x5728; <code>try-catch</code> &#x8BED;&#x53E5;&#x5757;&#x4E4B;&#x540E;&#xFF0C;<code>finally</code> &#x8BED;&#x53E5;&#x6240;&#x5305;&#x542B;&#x7684;&#x4EE3;&#x7801;&#x51E0;&#x4E4E;&#x5728;&#x4EFB;&#x4F55;&#x60C5;&#x51B5;&#x4E0B;&#x90FD;&#x4F1A;&#x88AB;&#x6267;&#x884C;&#xFF0C;&#x4E14;&#x5728; <code>try-catch</code> &#x8BED;&#x53E5;&#x5757;&#x4E2D;&#x53EA;&#x80FD;&#x6709;&#x4E00;&#x4E2A; <code>finally</code> &#x8BED;&#x53E5;&#x5757;&#x3002;</p>
+<p><code>finalize</code>&#xFF0C;&#x5783;&#x573E;&#x56DE;&#x6536;&#x5668;&#x8981;&#x56DE;&#x6536;&#x5BF9;&#x8C61;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x9996;&#x5148;&#x8981;&#x8C03;&#x7528;&#x8FD9;&#x4E2A;&#x7C7B;&#x7684; <code>finalize</code> &#x65B9;&#x6CD5;&#x3002;
+&#x5229;&#x7528; finalization &#x673A;&#x5236;&#xFF0C;&#x7528;&#x6237;&#x53EF;&#x4EE5;&#x5B9A;&#x4E49;&#x4E00;&#x4E9B;&#x7279;&#x6B8A;&#x7684;&#x64CD;&#x4F5C;&#xFF0C;&#x8FD9;&#x4E9B;&#x64CD;&#x4F5C;&#x5728;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#x5C06;&#x8981;&#x88AB;&#x5783;&#x573E;&#x56DE;&#x6536;&#x7A0B;&#x5E8F;&#x91CA;&#x653E;&#x65F6;&#x6267;&#x884C;&#x3002;
+&#x4F46;&#x662F; finalize &#x7684;&#x6267;&#x884C;&#x662F;&#x4E0D;&#x786E;&#x5B9A;&#x7684;&#xFF0C;&#x65E2;&#x4E0D;&#x786E;&#x5B9A;&#x7531;&#x54EA;&#x4E2A;&#x7EBF;&#x7A0B;&#x6267;&#x884C;&#xFF0C;&#x4E5F;&#x4E0D;&#x786E;&#x5B9A;&#x6267;&#x884C;&#x7684;&#x987A;&#x5E8F;&#x3002;&#x56E0;&#x6B64;&#x4E0D;&#x63A8;&#x8350;&#x4F7F;&#x7528;&#x6B64;&#x65B9;&#x6CD5;&#x3002;</p>
+<h2 id="transient"><a href="#transient" class="headerlink" title="transient"></a>transient</h2><p>&#x53D8;&#x91CF;&#x4FEE;&#x9970;&#x7B26;&#xFF0C;&#x5982;&#x679C;&#x7528; <code>transient</code> &#x58F0;&#x660E;&#x4E00;&#x4E2A;&#x5B9E;&#x4F8B;&#x53D8;&#x91CF;&#xFF0C;&#x5F53;&#x5BF9;&#x8C61;&#x5B58;&#x50A8;&#x65F6;&#xFF0C;&#x5B83;&#x7684;&#x503C;&#x4E0D;&#x9700;&#x8981;&#x7EF4;&#x6301;&#x3002;&#x4E5F;&#x5C31;&#x662F;&#x8BF4;&#xFF0C;&#x7528; <code>transient</code> &#x5173;&#x952E;&#x5B57;&#x6807;&#x8BB0;&#x7684;&#x6210;&#x5458;&#x53D8;&#x91CF;&#x4E0D;&#x53C2;&#x4E0E;&#x5E8F;&#x5217;&#x5316;&#x8FC7;&#x7A0B;&#x3002;</p>
+<h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><ol>
+<li>Java&#x2122; Platform, Standard Edition 8 API Specification. Oracle. <a href="http://docs.oracle.com/javase/8/docs/api/overview-summary.html" target="_blank" rel="external">http://docs.oracle.com/javase/8/docs/api/overview-summary.html</a></li>
+<li>Java Object&#x7C7B;. &#x5723;&#x9A91;&#x58EB;wind. <a href="http://www.cnblogs.com/mengdd/archive/2013/01/03/2842809.html" target="_blank" rel="external">http://www.cnblogs.com/mengdd/archive/2013/01/03/2842809.html</a></li>
+</ol>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/java/" rel="tag">#java</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/07/18/dive-into-java-4-object-oriented/" rel="next" title="Dive into Java -- (4) Object-Oriented">
+                <i class="fa fa-chevron-left"></i> Dive into Java -- (4) Object-Oriented
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/uploads/avatar.jpg"
+               alt="Jason Wang" />
+          <p class="site-author-name" itemprop="name">Jason Wang</p>
+          <p class="site-description motion-element" itemprop="description">Play Fun</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">20</span>
+              <span class="site-state-item-name">posts</span>
+            </a>
+          </div>
+
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">30</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Java-基本类型"><span class="nav-number">1.</span> <span class="nav-text">Java 基本类型</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#基本数据类型"><span class="nav-number">1.1.</span> <span class="nav-text">基本数据类型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Object"><span class="nav-number">1.2.</span> <span class="nav-text">Object</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#java-lang-Object"><span class="nav-number">1.2.1.</span> <span class="nav-text">java.lang.Object</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#protected-Object-clone"><span class="nav-number">1.2.2.</span> <span class="nav-text">protected Object clone()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#boolean-equals-Object-obj"><span class="nav-number">1.2.3.</span> <span class="nav-text">boolean equals(Object obj)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#int-hashCode"><span class="nav-number">1.2.4.</span> <span class="nav-text">int hashCode()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#String-toString"><span class="nav-number">1.2.5.</span> <span class="nav-text">String toString()</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Integer"><span class="nav-number">1.3.</span> <span class="nav-text">Integer</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#String"><span class="nav-number">1.4.</span> <span class="nav-text">String</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#StringBuffer-StringBuilder"><span class="nav-number">1.4.1.</span> <span class="nav-text">StringBuffer/StringBuilder</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#hashCode"><span class="nav-number">1.4.2.</span> <span class="nav-text">hashCode()</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#语法糖"><span class="nav-number">1.5.</span> <span class="nav-text">语法糖</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#修饰符"><span class="nav-number">2.</span> <span class="nav-text">修饰符</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#访问控制"><span class="nav-number">2.1.</span> <span class="nav-text">访问控制</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#static"><span class="nav-number">2.2.</span> <span class="nav-text">static</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#final"><span class="nav-number">2.3.</span> <span class="nav-text">final</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#transient"><span class="nav-number">2.4.</span> <span class="nav-text">transient</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Reference"><span class="nav-number">3.</span> <span class="nav-text">Reference</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Jason Wang</span>
+</div>
+
+<div class="powered-by">
+  Powered by <a class="theme-link" href="http://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+  
+  
+  
+
+  
+
+  
+
+</body>
+</html>
